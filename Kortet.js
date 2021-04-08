@@ -9,7 +9,6 @@ var planTegning = undefined;
 var figurer = [];
 var søgefelt = new Søg();
 
-//Hej
 
 function setup(){
     createCanvas(canvasStr*canvasZoom, canvasStr*canvasHeightDiff*canvasZoom); //canvas
