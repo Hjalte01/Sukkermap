@@ -52,10 +52,17 @@ function draw(){
 
 
     
+
+    
     
 
     
 
+}
+
+
+function mouseClicked(){
+    console.log(round(mouseX,0) + " , " + round(mouseY, 0))
 }
 
 function preload(){

@@ -72,7 +72,6 @@ class YdreBygning{
             this.counter = 25;
             clickArealSum = 0;
             arealSum = 0;
-            console.log()
 
 
             for(let i = 0; i < xy.length-1; i+=2){
@@ -82,7 +81,7 @@ class YdreBygning{
                 parameter = (punkterlængde[0]+punkterlængde[1]+punkterlængde[2])/2;
                 arealSum += sqrt(parameter*(parameter-punkterlængde[0])*(parameter-punkterlængde[1])*(parameter-punkterlængde[2]));
             }
-            console.log("clickArealSum: " + clickArealSum + ", arealSum: " + arealSum);
+            // console.log("clickArealSum: " + clickArealSum + ", arealSum: " + arealSum);
 
             arealSum = round(arealSum/100)*100 
 
@@ -97,7 +96,7 @@ class YdreBygning{
             }
             clickArealSum = round(clickArealSum/100)*100;
 
-            console.log("clickArealSum: " + clickArealSum + ", arealSum: " + arealSum);
+            // console.log("clickArealSum: " + clickArealSum + ", arealSum: " + arealSum);
 
 
 
