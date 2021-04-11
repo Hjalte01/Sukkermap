@@ -22,10 +22,7 @@ function setup(){
     indreTing = new IndreBygning();
     indreBygninger = new Arrays().indreArray();
 
-
-    
-
-    
+    setupSpot();
 
 }
 
@@ -35,8 +32,8 @@ function draw(){
     
     
     if(planTegning != undefined) {
-        
-        
+    
+
         indreTing.indreBygningCanvas();
         
         
@@ -51,11 +48,7 @@ function draw(){
     }
 
 
-    
-
-    
-    
-
+    drawSpot();
     
 
 }
