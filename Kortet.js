@@ -9,7 +9,6 @@ var planTegning = undefined;
 var figurer = [];
 var søgefelt = new Søg();
 
-
 function setup(){
     createCanvas(canvasStr*canvasZoom, canvasStr*canvasHeightDiff*canvasZoom); //canvas
     
@@ -47,9 +46,8 @@ function draw(){
         console.log(advInput.value);
     }
 
-
     drawSpot();
-    
+  
 
 }
 
