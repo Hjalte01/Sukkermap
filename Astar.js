@@ -1,7 +1,7 @@
 var arrayTemp = [];
 var openSet = [];
 var closedSet = [];
-var Path = [];
+var path = [];
 var w, h;
 var start, end;
 var current;
@@ -47,7 +47,7 @@ class Astar{
 
                 openSet = [];
                 closedSet = [];
-                Path = [];
+                path = [];
                 h = width/300;
                 w = h;
                 current = undefined;
@@ -170,15 +170,12 @@ class Astar{
 }
 
 function removeFromArray(arr, elt){
-    console.log("halooo");
     for(let i = 0; i < arr.length; i++){
         if(arr[i] == elt){
             arr.splice(i, 1);
             i--;
-            console.log("damn");
         }
     }
-    console.log("damn2");
 }
 
 function heuristic(a, b){
