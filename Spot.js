@@ -16,9 +16,12 @@ function removeFromArray(arr, elt) {
     return d;
   }
   
+
+// Canvas createCanvas(canvasStr*canvasZoom, canvasStr*canvasHeightDiff*canvasZoom);
+
   // How many columns and rows?
-  var cols = 10;
-  var rows = 10;
+  var cols = 1125;
+  var rows = 554;
   
   // This will be the 2D array
   var grid = new Array(cols);
@@ -63,8 +66,8 @@ function removeFromArray(arr, elt) {
   
   
     // Start and end
-    start = grid[0][0];
-    end = grid[9][9];
+    start = grid[121][105];
+    end = grid[271][71];
     //start.wall = false;
     //end.wall = false;
   
@@ -240,43 +243,11 @@ function Spot(i, j) {
       
       this.neighbors.push(grid[4][0]); */
   
-      if( i == 0 && j == 0) {
+      if( i == 121 && j == 105) {
         
-       this.neighbors.push(grid[9] [0]);
-        
-      }
-      
-      if (i == 9 && j == 0) {
-        
-        this.neighbors.push(grid[9][9]);
+       this.neighbors.push(grid[271] [71]);
         
       }
-      
-      
-    /*
-      if (i < cols - 1) {
-        this.neighbors.push(grid[i + 1][j]);
-      }
-      if (i > 0) {
-        this.neighbors.push(grid[i - 1][j]);
-      }
-      if (j < rows - 1) {
-        this.neighbors.push(grid[i][j + 1]);
-      }
-      if (j > 0) {
-        this.neighbors.push(grid[i][j - 1]);
-      }
-      if (i > 0 && j > 0) {
-        this.neighbors.push(grid[i - 1][j - 1]);
-      }
-      if (i < cols - 1 && j > 0) {
-        this.neighbors.push(grid[i + 1][j - 1]);
-      }
-      if (i > 0 && j < rows - 1) {
-        this.neighbors.push(grid[i - 1][j + 1]);
-      }
-      if (i < cols - 1 && j < rows - 1) {
-        this.neighbors.push(grid[i + 1][j + 1]);
-      } */
+    
     }
   }
