@@ -1,4 +1,5 @@
 let bol;
+let pathfindingAlgorithm = new Astar();
 class IndreBygning extends YdreBygning{
     constructor(){
         super();
@@ -7,8 +8,16 @@ class IndreBygning extends YdreBygning{
     indreBygningCanvas(){
         indreBygninger[planTegning][0]();
 
+        push();
+        stroke(0);
+        strokeWeight(1);
         text("Plantegning: " + planTegning, width/1.1, width/20);
+        pop();
+        
         pile();
+
+        
+        pathfindingAlgorithm.loop();
 
     }
 

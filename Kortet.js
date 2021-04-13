@@ -10,6 +10,7 @@ var figurer = [];
 var søgefelt = new Søg();
 
 
+
 function setup(){
     createCanvas(canvasStr*canvasZoom, canvasStr*canvasHeightDiff*canvasZoom); //canvas
     
@@ -22,7 +23,7 @@ function setup(){
     indreTing = new IndreBygning();
     indreBygninger = new Arrays().indreArray();
 
-    setupSpot();
+    // setupSpot();
 
 }
 
@@ -48,7 +49,7 @@ function draw(){
     }
 
 
-    drawSpot();
+    // drawSpot();
     
 
 }

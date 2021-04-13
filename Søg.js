@@ -1,10 +1,5 @@
 var advInput;
 var inputArray = [
-'Kortet',
-'Stuen',
-'1. sal',      
-'2. sal',
-'3. sal',
 'Administrationen', //5
 'Atriumgården',
 'Auditoriet', 
@@ -17,12 +12,12 @@ var inputArray = [
 'Træværkstedet',
 'Tårnet'] //15
 
+
+
 class Søg {
 
     inputfelt(){
-
     advInput = document.getElementById("listInput"); //tager id fra datalist i html filen
-
     // for(let i = 0; inputArray.length > i; i++){ // Kører array igennem ved hjælp af loop
     // kan ikke se hvad loopet gør, men man kunne bruge det ved at indtaste i inputArray[i]
     // Dog skal man lave en if statement for, hvad plantegningen er lig med, ved ikke om det
