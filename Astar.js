@@ -7,9 +7,10 @@ var start, end;
 var current;
 var neighbors;
 var neighbor;
-var inputStart = "audutrim";
-var inputEnd = "array nr. 5";
+var inputStart;
+var inputEnd;
 var setupBol = true;
+var doneBol = false;
 
 
 
@@ -26,13 +27,13 @@ class Astar{
         if(inputStart != undefined && inputEnd != undefined){
             if(setupBol){ 
                 setupBol = false;
-                arrayTemp[0] = new spot(79, 119, "audutrim");
+                arrayTemp[0] = new spot(79, 119, "Tårnet");
                 arrayTemp[1] = new spot(82, 132);
-                arrayTemp[2] = new spot(241, 63);
+                arrayTemp[2] = new spot(241, 63, "Fysik");
                 arrayTemp[3] = new spot(241, 78);
                 arrayTemp[4] = new spot(300, 200);
                 arrayTemp[5] = new spot(800, 400, "array nr. 5");
-                arrayTemp[6] = new spot(1000, 400, "33");
+                arrayTemp[6] = new spot(1000, 400, "Kemi");
 
                 arrayTemp[0].addNeighbors([1, 2]);
                 arrayTemp[1].addNeighbors([0, 3]);
@@ -171,7 +172,6 @@ class Astar{
                     var tempPrompt = "\"" + prompt("Indtast lokale- eller vej nr. f.eks. 33(lokale), 0(stue), 131(lokale), eller 100(1 sal)") + "\"";
                     console.log("arrayTemp[" + arrayTemp.length + "] = new spot(" + round(mouseX, 0) + ", " + round(mouseY, 0) + ", " + tempPrompt + ");");
                     arrayTemp[arrayTemp.length] = new spot(round(mouseX, 0), round(mouseY, 0), tempPrompt);
-                    
                     // arrayTemp[6] = new spot(1000, 400, "33");
                 }
                 push();

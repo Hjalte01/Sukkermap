@@ -7,7 +7,7 @@ var ydreTing;
 var indreTing;
 var planTegning = undefined;
 var figurer = [];
-var søgefelt = new Søg();
+var søgefelt;
 
 
 
@@ -23,8 +23,7 @@ function setup(){
     indreTing = new IndreBygning();
     indreBygninger = new Arrays().indreArray();
 
-    // setupSpot();
-
+    søgefelt = new Søg();
 }
 
 
@@ -43,21 +42,11 @@ function draw(){
     }
 
 
-    advInput = document.getElementById("listInput");
-    if(advInput.value != '' && keyCode == ENTER){
-        console.log(advInput.value);
-    }
-
-
-    // drawSpot();
-    
+  
+    søgefelt.inputfelt();
 
 }
 
-
-// function mouseClicked(){
-//     console.log(round(mouseX,0) + " , " + round(mouseY, 0))
-// }
 
 function preload(){
     kortImg = loadImage('img/sukkertoppen.png'); //kortet 

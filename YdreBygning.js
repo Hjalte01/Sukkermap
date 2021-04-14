@@ -13,7 +13,7 @@ class YdreBygning{
     ydreBygningCanvas(){
         background(kortImg);
     
-        søgefelt.inputfelt();
+        
 
         ydreTing.områder();
 

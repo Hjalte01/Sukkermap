@@ -6,3 +6,11 @@ canvas {
     display: block;
     width: 800px;
 }
+
+form {
+    display: inline-block;
+}
+
+p {
+    display: inline-block;
+}
