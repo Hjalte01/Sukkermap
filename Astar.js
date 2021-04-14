@@ -26,24 +26,11 @@ class Astar{
     loop(){
         if(inputStart != undefined && inputEnd != undefined){
             if(setupBol){ 
+                if(arrayTemp[0] == undefined){
+                    arraySetup.aStarArray();
+                }
+
                 setupBol = false;
-                arrayTemp[0] = new spot(79, 119, "Tårnet");
-                arrayTemp[1] = new spot(82, 132);
-                arrayTemp[2] = new spot(241, 63, "Fysik");
-                arrayTemp[3] = new spot(241, 78);
-                arrayTemp[4] = new spot(300, 200);
-                arrayTemp[5] = new spot(800, 400, "array nr. 5");
-                arrayTemp[6] = new spot(1000, 400, "Kemi");
-
-                arrayTemp[0].addNeighbors([1, 2]);
-                arrayTemp[1].addNeighbors([0, 3]);
-                arrayTemp[2].addNeighbors([0, 3]);
-                arrayTemp[3].addNeighbors([1, 2, 4]);
-                arrayTemp[4].addNeighbors([3, 5]);
-                arrayTemp[5].addNeighbors([4, 6]);
-                arrayTemp[6].addNeighbors([5]);
-
-
                 openSet = [];
                 closedSet = [];
                 path = [];
@@ -123,9 +110,9 @@ class Astar{
 
             // draw segment
 
-            for(let i = 0; i < arrayTemp.length; i++){
-                arrayTemp[i].show();
-            }
+            // for(let i = 0; i < arrayTemp.length; i++){
+            //     arrayTemp[i].show();
+            // } points'ne ved ikke om det gør det ser bedre ud med eller uden
 
             path = [];
             var temp = current;
@@ -168,8 +155,8 @@ class Astar{
 
             //draw flere array
             (function keyPressed(){
-                if(keyIsDown(65)){ //key a for add
-                    var tempPrompt = "\"" + prompt("Indtast lokale- eller vej nr. f.eks. 33(lokale), 0(stue), 131(lokale), eller 100(1 sal)") + "\"";
+                if(keyIsDown(107)){ //key + numlock for add
+                    var tempPrompt = prompt("Indtast lokale- eller vej nr. f.eks. 33(lokale), 0(stue), 131(lokale), eller 100(1 sal)");
                     console.log("arrayTemp[" + arrayTemp.length + "] = new spot(" + round(mouseX, 0) + ", " + round(mouseY, 0) + ", " + tempPrompt + ");");
                     arrayTemp[arrayTemp.length] = new spot(round(mouseX, 0), round(mouseY, 0), tempPrompt);
                     // arrayTemp[6] = new spot(1000, 400, "33");
@@ -180,7 +167,7 @@ class Astar{
                 point(arrayTemp[arrayTemp.length-1].x, arrayTemp[arrayTemp.length-1].y);
                 pop();
 
-                if(keyCode === 73){ //key i for index
+                if(keyCode === 110){ //key , for numlock for index
                     push();
                     textSize(15);
                     noStroke();
@@ -191,7 +178,7 @@ class Astar{
                     pop();
                 }
 
-                if(keyIsDown(78)){ //key n for nabo
+                if(keyIsDown(109)){ //key - for numlock for nabo
                     var tempPrompt = prompt("Indtast naboer til index: " + [arrayTemp.length-1] + ". Skriv f.eks: 1, 2, 4");
                     console.log("arrayTemp[" + [arrayTemp.length-1] + "].addNeighbors([" + tempPrompt + "]);")
 
@@ -219,11 +206,11 @@ function heuristic(a, b){
     return d;
 }
 
-function spot(x, y, text){
+function spot(x, y, text, tag){
     this.x = x;
     this.y = y;
     this.text = text;
-
+    this.tag = tag;
     this.f = 0;
     this.g = 0;
     this.h = 0;

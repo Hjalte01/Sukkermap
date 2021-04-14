@@ -6,7 +6,7 @@ class IndreBygning extends YdreBygning{
     }
 
     indreBygningCanvas(){
-        indreBygninger[planTegning][0]();
+        indreBygninger[planTegning]();
 
         push();
         stroke(0);

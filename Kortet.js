@@ -2,12 +2,13 @@ let kortImg;
 let canvasStr = 1500;
 let canvasZoom = 0.75;
 let canvasHeightDiff = 0.4933;
-var indreBygninger = [];
+var arraySetup;
 var ydreTing;
 var indreTing;
 var planTegning = undefined;
 var figurer = [];
 var søgefelt;
+var indreBygninger = [];
 
 
 
@@ -21,8 +22,8 @@ function setup(){
 
     ydreTing = new YdreBygning();
     indreTing = new IndreBygning();
-    indreBygninger = new Arrays().indreArray();
-
+    arraySetup = new Arrays();
+    indreBygninger = [indreTing.stue, indreTing.sal1, indreTing.sal2, indreTing.sal3];
     søgefelt = new Søg();
 }
 

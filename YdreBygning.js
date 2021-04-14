@@ -24,7 +24,7 @@ class YdreBygning{
     områder(){
 
 
-        if(ydreTing.pointConnections([0, 0, width, 0, width, height], "LINES")) planTegning = 1;
+        if(ydreTing.pointConnections([0, 0, width, 0, width, height, 0, height], "LINES")) planTegning = 0;
     }
     
 
