@@ -55,9 +55,9 @@ function draw(){
 }
 
 
-function mouseClicked(){
-    console.log(round(mouseX,0) + " , " + round(mouseY, 0))
-}
+// function mouseClicked(){
+//     console.log(round(mouseX,0) + " , " + round(mouseY, 0))
+// }
 
 function preload(){
     kortImg = loadImage('img/sukkertoppen.png'); //kortet 

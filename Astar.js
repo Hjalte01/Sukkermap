@@ -34,8 +34,6 @@ class Astar{
                 arrayTemp[5] = new spot(800, 400, "array nr. 5");
                 arrayTemp[6] = new spot(1000, 400, "33");
 
-                            
-
                 arrayTemp[0].addNeighbors([1, 2]);
                 arrayTemp[1].addNeighbors([0, 3]);
                 arrayTemp[2].addNeighbors([0, 3]);
@@ -165,6 +163,43 @@ class Astar{
             stroke(0);
             if(start != undefined) text(start.text, start.x, start.y);
             text(end.text, end.x, end.y);
+
+
+            //draw flere array
+            (function keyPressed(){
+                if(keyIsDown(65)){ //key a for add
+                    var tempPrompt = "\"" + prompt("Indtast lokale- eller vej nr. f.eks. 33(lokale), 0(stue), 131(lokale), eller 100(1 sal)") + "\"";
+                    console.log("arrayTemp[" + arrayTemp.length + "] = new spot(" + round(mouseX, 0) + ", " + round(mouseY, 0) + ", " + tempPrompt + ");");
+                    arrayTemp[arrayTemp.length] = new spot(round(mouseX, 0), round(mouseY, 0), tempPrompt);
+                    
+                    // arrayTemp[6] = new spot(1000, 400, "33");
+                }
+                push();
+                stroke(255, 0, 0);
+                strokeWeight(5);
+                point(arrayTemp[arrayTemp.length-1].x, arrayTemp[arrayTemp.length-1].y);
+                pop();
+
+                if(keyCode === 73){ //key i for index
+                    push();
+                    textSize(15);
+                    noStroke();
+                    fill(0);
+                    for(let i = 0; i < arrayTemp.length; i++){
+                        text(i, arrayTemp[i].x, arrayTemp[i].y);
+                    }
+                    pop();
+                }
+
+                if(keyIsDown(78)){ //key n for nabo
+                    var tempPrompt = prompt("Indtast naboer til index: " + [arrayTemp.length-1] + ". Skriv f.eks: 1, 2, 4");
+                    console.log("arrayTemp[" + [arrayTemp.length-1] + "].addNeighbors([" + tempPrompt + "]);")
+
+                    // arrayTemp[0].addNeighbors([1, 2]);
+                } 
+
+            })();
+            
         }
     }
 }
