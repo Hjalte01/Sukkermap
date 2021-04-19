@@ -1,5 +1,6 @@
 let bol;
 let pathfindingAlgorithm = new Astar();
+
 class IndreBygning extends YdreBygning{
     constructor(){
         super();
@@ -58,16 +59,15 @@ class IndreBygning extends YdreBygning{
 
 }   
 function pile(){
-
-    if(planTegning > 0){
-        if(figurer[0].pointConnections([width/2, height-height/500, width/2-width/70, height-height/30, width/2+width/70, height-height/30], undefined)){
-            planTegning--; 
+        if(planTegning > 0){
+            if(figurer[1].pointConnections([[width/2, height-height/500], [width/2-width/70, height-height/30], [width/2+width/70, height-height/30]]) || keyCode === 40){ 
+                planTegning--; 
+            }
         } 
-    } 
-
-    if(planTegning < 3){
-        if(figurer[1].pointConnections([width/2, height/500, width/2-width/70, height/30, width/2+width/70, height/30], undefined)){
-            planTegning++;
+        if(planTegning < 3){
+            if(figurer[2].pointConnections([[width/2, height/500], [width/2-width/70, height/30], [width/2+width/70, height/30]]) || keyCode === 38){
+                planTegning++;
+            }
         }
-    }
+        keyCode = undefined;
 }

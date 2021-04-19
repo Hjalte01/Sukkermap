@@ -1,13 +1,18 @@
 let punkterlængde = [];
 let parameter;
-let arealSum = 0;
 let clickArealSum = 0;
-let centerGæt;
-let counter = 0;
+
 
 class YdreBygning{
-    constructor(){
-        this.counter = 0;
+    constructor(countdown){
+        this.centerGæt = createVector(0, 0);
+        this.arealSum = 0;
+        this.scaling;
+        this.maxCountdown = countdown;
+        this.countdown = countdown;
+        this.xy;
+
+
     }
 
     ydreBygningCanvas(){
@@ -24,84 +29,97 @@ class YdreBygning{
     områder(){
 
 
-        if(ydreTing.pointConnections([0, 0, width, 0, width, height, 0, height], "LINES")) planTegning = 0;
+        if(figurer[0].pointConnections([[0, 0], [width, 0], [width, height], [0, height]], "LINES")) planTegning = 0;
     }
     
 
  
 
-
-
-
-    pointConnections(xy, fyld){
-        centerGæt = createVector(0, 0);
-        if(this.counter > 0) this.counter--;
-
-        
+    /*
+    Når man kalder denne metode, så kan man give den punkter, som danner en figur. Derefter kan man specifikkere figuren
+    ved det næste argument, f.eks. er "LINES" en figur med kun linjer i stedet for at fylde figuren ud, som den gør, hvis der står undefined.
+    Det næste argument er igen et array, hvor det første element viser linjer mellem centergæt og punkterne. 
+    Det andet element viser fra mus pos. til punkterne. 
+    f.eks - variable.pointConnections([punkt0], [punkt1], [punkt2], ext.], undefined, [true, true])
+    */
+    pointConnections(xy, fyld, visuelt){ 
+        this.visuelt = visuelt; //viser visuelt, hvis true
+        if(this.xy == undefined) this.xy = xy;
         push();
         stroke(255, 0, 0);
         strokeWeight(width/500);
 
-        for(let i = 0; i < xy.length; i += 2){
-            centerGæt.x += xy[i];
-            centerGæt.y += xy[i+1];
+        if(this.centerGæt.x == 0 && this.centerGæt.y == 0){
+            for(let i = 0; i < this.xy.length; i++){
+                this.centerGæt.x += this.xy[i][0];       
+                this.centerGæt.y += this.xy[i][1];
+            }
+        
+            this.centerGæt.x = this.centerGæt.x/this.xy.length; //laver et gæt på midten af figuren
+            this.centerGæt.y = this.centerGæt.y/this.xy.length;
         }
-            centerGæt.x = centerGæt.x/(xy.length/2);
-            centerGæt.y = centerGæt.y/(xy.length/2);
 
 
-        if(fyld == undefined) beginShape();
+        if(fyld == undefined) beginShape();     // fyld gør at man enten ser linjer, eller en figur
         if(fyld == "LINES") beginShape(LINES);
             
-        for(let i = 0; i < xy.length-1; i += 2){
-            if(fyld == "LINES" && i > 1) {
-                vertex(xy[i], xy[i+1]);            
+        for(let i = 0; i < this.xy.length; i++){   //danner figuren 
+            if(fyld == "LINES" && i > 0) {
+                vertex(this.xy[i][0], this.xy[i][1]);            
             }
-            vertex(xy[i], xy[i+1]);
+            vertex(this.xy[i][0], this.xy[i][1]);
         }
-        // if(fyld == "LINES")vertex(xy[xy.length-2], xy[xy.length-1]);
-        vertex(xy[0], xy[1]);
+        vertex(this.xy[0][0], this.xy[0][1]);
         endShape();
-
+        
+        strokeWeight(1);
+        stroke(255, 0, 0);
+        if(this.visuelt != undefined) if(this.visuelt[0]){
+            for(let i = 0; i < xy.length; i++){
+               line(this.xy[i][0], this.xy[i][1], this.centerGæt.x, this.centerGæt.y);
+            }
+        }
+        if(this.visuelt != undefined) if(this.visuelt[1]){
+            for(let i = 0; i < xy.length; i++){
+               line(this.xy[i][0], this.xy[i][1], mouseX/currentScalling, mouseY/currentScalling); 
+            }
+        }
+        
 
         pop();
 
+        if(this.countdown <= 0 || this.countdown == undefined){
+            if(mouseIsPressed && this.xy.length >= 3){ //hvis man klikker på figuren
+                this.countdown = this.maxCountdown;
+                clickArealSum = 0;
+                
+                
+                if(this.arealSum == 0 || this.scaling != currentScalling) for(let i = 0; i < this.xy.length; i++){
+                    punkterlængde[0] = sqrt(pow(this.centerGæt.x-this.xy[i][0],2) + pow(this.centerGæt.y-this.xy[i][1],2));
+                    punkterlængde[1] = sqrt(pow(this.xy[i][0]-this.xy[(i+1)%this.xy.length][0],2) + pow(this.xy[i][1]-this.xy[(i+1)%this.xy.length][1],2));
+                    punkterlængde[2] = sqrt(pow(this.xy[(i+1)%this.xy.length][0]-this.centerGæt.x,2) + pow(this.xy[(i+1)%this.xy.length][1]-this.centerGæt.y,2));
+                    parameter = (punkterlængde[0]+punkterlængde[1]+punkterlængde[2])/2;
+                    this.arealSum += sqrt(parameter*(parameter-punkterlængde[0])*(parameter-punkterlængde[1])*(parameter-punkterlængde[2])); 
+                }
+                
+                this.arealSum = round(this.arealSum/100)*100;
+                // console.log(`this.arealSum = ${this.arealSum}`);
 
 
-        if(mouseIsPressed && xy.length >= 6 && this.counter <= 0){
-            this.counter = 25;
-            clickArealSum = 0;
-            arealSum = 0;
+                for(let i = 0; i < this.xy.length; i++){
+                    punkterlængde[0] = sqrt(pow(mouseX/currentScalling-this.xy[i][0],2) + pow(mouseY/currentScalling-this.xy[i][1],2));
+                    punkterlængde[1] = sqrt(pow(this.xy[i][0]-this.xy[(i+1)%this.xy.length][0],2) + pow(this.xy[i][1]-this.xy[(i+1)%this.xy.length][1],2));
+                    punkterlængde[2] = sqrt(pow(this.xy[(i+1)%this.xy.length][0]-mouseX/currentScalling,2) + pow(this.xy[(i+1)%this.xy.length][1]-mouseY/currentScalling,2));
+                    parameter = (punkterlængde[0]+punkterlængde[1]+punkterlængde[2])/2;
+                    clickArealSum += sqrt(parameter*(parameter-punkterlængde[0])*(parameter-punkterlængde[1])*(parameter-punkterlængde[2]));
+                }
+                clickArealSum = round(clickArealSum/100)*100;
+                // console.log(`clickarealSum = ${clickArealSum}`);
 
-
-            for(let i = 0; i < xy.length-1; i+=2){
-                punkterlængde[0] = sqrt(pow(centerGæt.x-xy[i],2)+pow(centerGæt.y-xy[i+1],2));
-                punkterlængde[1] = sqrt(pow(xy[i]-xy[(i+2)%xy.length],2)+pow(xy[i+1]-xy[(i+3)%xy.length],2));
-                punkterlængde[2] = sqrt(pow(xy[(i+2)%xy.length]-centerGæt.x,2)+pow(xy[(i+3)%xy.length]-centerGæt.y,2));
-                parameter = (punkterlængde[0]+punkterlængde[1]+punkterlængde[2])/2;
-                arealSum += sqrt(parameter*(parameter-punkterlængde[0])*(parameter-punkterlængde[1])*(parameter-punkterlængde[2]));
+                this.scaling = currentScalling;
+                if(clickArealSum <= this.arealSum) return true; //Der blev klikket på figuren
             }
-            // console.log("clickArealSum: " + clickArealSum + ", arealSum: " + arealSum);
-
-            arealSum = round(arealSum/100)*100 
-
-
-            for(let i = 0; i < xy.length-1; i+=2){
-                punkterlængde[0] = sqrt(pow(mouseX-xy[i],2)+pow(mouseY-xy[i+1],2));
-                punkterlængde[1] = sqrt(pow(xy[i]-xy[(i+2)%xy.length],2)+pow(xy[i+1]-xy[(i+3)%xy.length],2));
-                punkterlængde[2] = sqrt(pow(xy[(i+2)%xy.length]-mouseX,2)+pow(xy[(i+3)%xy.length]-mouseY,2));
-                parameter = (punkterlængde[0]+punkterlængde[1]+punkterlængde[2])/2;
-                clickArealSum += sqrt(parameter*(parameter-punkterlængde[0])*(parameter-punkterlængde[1])*(parameter-punkterlængde[2]));
-                // console.log("p0: " + punkterlængde[0] + ", p1: " + punkterlængde[1] + ", p2: " + punkterlængde[2] + ", i: " + i);                
-            }
-            clickArealSum = round(clickArealSum/100)*100;
-
-            // console.log("clickArealSum: " + clickArealSum + ", arealSum: " + arealSum);
-
-
-
-            if(clickArealSum <= arealSum) return true; //Der blev klikket på figuren
-            
         }
+        if(this.countdown > 0) this.countdown --;
     }
 }

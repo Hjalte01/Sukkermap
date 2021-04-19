@@ -1,6 +1,6 @@
 let kortImg;
 let canvasStr = 1500;
-let canvasZoom = 0.75;
+let canvasZoom = 1536;
 let canvasHeightDiff = 0.4933;
 var arraySetup;
 var ydreTing;
@@ -9,15 +9,17 @@ var planTegning = undefined;
 var figurer = [];
 var søgefelt;
 var indreBygninger = [];
+var currentScalling;
 
 
 
 function setup(){
-    createCanvas(canvasStr*canvasZoom, canvasStr*canvasHeightDiff*canvasZoom); //canvas
-    
-    for(let i = 0; i < 2; i++){
-        figurer[i] = new YdreBygning();
+    createCanvas(canvasStr*0.75, canvasStr*canvasHeightDiff*0.75); //canvas
+    for(let i = 0; i < 3; i++){ //tilføj en figur
+        figurer[i] = new YdreBygning(20); //personlig countdown lav en ny figur, uden argument for ingen countdown
     }
+
+    
 
 
     ydreTing = new YdreBygning();
@@ -30,6 +32,9 @@ function setup(){
 
 
 function draw(){
+    clear();
+    currentScalling = windowWidth/canvasZoom;
+    scale(currentScalling); 
     
     
     if(planTegning != undefined) {
@@ -45,6 +50,7 @@ function draw(){
 
   
     søgefelt.inputfelt();
+
 
 }
 

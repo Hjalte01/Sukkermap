@@ -11,9 +11,23 @@ class Søg {
 
     inputfelt(){
         
-
+        
         advInput1 = document.getElementById("listInput1").value.toLowerCase(); //tager id fra datalist i html filen, 
         advInput2 = document.getElementById("listInput2").value.toLowerCase(); //som er de to inputs i venstre hjørne når koden kører
+        
+        //scaler input og paragraph
+        document.getElementById("listInput1").style.width = (156.8*currentScalling).toString() + "px";
+        document.getElementById("listInput1").style.height = (16*currentScalling).toString()+"px" + "px";
+        document.getElementById("listInput2").style.width = (156.8*currentScalling).toString() + "px";
+        document.getElementById("listInput2").style.height = (16*currentScalling).toString()+"px" + "px";
+        document.getElementById("fra").style.fontSize = (100*currentScalling).toString()+"%";
+        document.getElementById("til").style.fontSize = (100*currentScalling).toString()+"%";
+        //position input og paragraph
+        document.getElementById("listInput2").style.left = "400px";
+        // document.getElementById("listInput2").style.height = (16*windowWidth/canvasZoom).toString()+"px" + "px";
+
+
+
         
         optionsLength = document.getElementById("valgList1").options.length; //længden af hvor mange option der er i vores inputliste
 
@@ -30,7 +44,7 @@ class Søg {
                 inputStart = advInput1;
                 tempAdvInput1 = advInput1;
             } 
-            if(advInput2 == valgArray1[i] && tempAdvInput1 != advInput1 || advInput2 == valgArray1[i] && tempAdvInput2 != advInput2){
+            if(advInput2 == valgArray1[i] && tempAdvInput2 != advInput2 || advInput2 == valgArray1[i] && tempAdvInput1 != advInput1){
                 inputEnd = advInput2;
                 tempAdvInput2 = advInput2;
             }

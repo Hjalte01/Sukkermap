@@ -21,10 +21,10 @@ class Astar{
     constructor(){
 
     }
-
+    
 
     loop(){
-        if(inputStart != undefined && inputEnd != undefined){
+        if(inputStart != undefined && inputEnd != undefined && inputStart != inputEnd){
             if(setupBol){ 
                 if(arrayTemp[0] == undefined){
                     arraySetup.aStarArray();
@@ -135,9 +135,9 @@ class Astar{
             textSize(12);
             stroke(0);
             if(start != undefined) text(start.text, start.x, start.y);
-            text(end.text, end.x, end.y);
+            if(end != undefined) text(end.text, end.x, end.y);
 
-        } else if(end != undefined){
+        } else if(end != undefined && start != undefined){
             noFill();
             stroke(255, 0, 200);
             strokeWeight(w / 2);
@@ -156,9 +156,9 @@ class Astar{
             //draw flere array
             (function keyPressed(){
                 if(keyIsDown(107)){ //key + numlock for add
-                    var tempPrompt = prompt("Indtast lokale- eller vej nr. f.eks. 33(lokale), 0(stue), 131(lokale), eller 100(1 sal)");
-                    console.log("arrayTemp[" + arrayTemp.length + "] = new spot(" + round(mouseX, 0) + ", " + round(mouseY, 0) + ", " + tempPrompt + ");");
-                    arrayTemp[arrayTemp.length] = new spot(round(mouseX, 0), round(mouseY, 0), tempPrompt);
+                    var tempPrompt = prompt("arrayTemp[100] = new spot(879, 474, \"tag\", \"sal\"\)\;");
+                    console.log("arrayTemp[" + arrayTemp.length + "] = new spot(" + round(mouseX/currentScalling, 0) + ", " + round(mouseY/currentScalling, 0) + ", " + tempPrompt + ");");
+                    arrayTemp[arrayTemp.length] = new spot(round(mouseX/currentScalling, 0), round(mouseY/currentScalling, 0), tempPrompt);
                     // arrayTemp[6] = new spot(1000, 400, "33");
                 }
                 push();
@@ -167,13 +167,19 @@ class Astar{
                 point(arrayTemp[arrayTemp.length-1].x, arrayTemp[arrayTemp.length-1].y);
                 pop();
 
-                if(keyCode === 110){ //key , for numlock for index
+                if(keyIsDown(110)){ //key , for numlock for index
                     push();
                     textSize(15);
                     noStroke();
                     fill(0);
                     for(let i = 0; i < arrayTemp.length; i++){
-                        text(i, arrayTemp[i].x, arrayTemp[i].y);
+                        if(`${planTegning}. sal` == arrayTemp[i].tag){
+                            text(i, arrayTemp[i].x, arrayTemp[i].y);
+                        }else if(planTegning == 0){ 
+                            if("stue" == arrayTemp[i].tag){
+                                text(i, arrayTemp[i].x, arrayTemp[i].y);
+                            }
+                        }
                     }
                     pop();
                 }
