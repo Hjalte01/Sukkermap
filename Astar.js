@@ -5,12 +5,14 @@ var path = [];
 var w, h;
 var start, end;
 var current;
+var temp;
 var neighbors;
 var neighbor;
 var inputStart;
 var inputEnd;
 var setupBol = true;
 var doneBol = false;
+var tempG;
 
 
 
@@ -26,10 +28,9 @@ class Astar{
     loop(){
         if(inputStart != undefined && inputEnd != undefined && inputStart != inputEnd){
             if(setupBol){ 
-                if(arrayTemp[0] == undefined){
-                    arraySetup.aStarArray();
-                }
-
+                
+                arraySetup.aStarArray();
+                
                 setupBol = false;
                 openSet = [];
                 closedSet = [];
@@ -39,6 +40,7 @@ class Astar{
                 current = undefined;
                 neighbors = undefined;
                 neighbor = undefined;
+                temp = undefined;
                 for(let i = 0; i < arrayTemp.length; i++){
                     if(arrayTemp[i].text != undefined){
                         if(arrayTemp[i].text == inputStart) start = arrayTemp[i];
@@ -52,7 +54,7 @@ class Astar{
 
             if(openSet.length > 0){
                 var winner = 0;
-                for(var i = 0; i < openSet.length; i++){
+                for(let i = 0; i < openSet.length; i++){
                     if(openSet[i].f < openSet[winner].f){
                         winner = i;
                     }       
@@ -61,14 +63,12 @@ class Astar{
                 current = openSet[winner];
 
                 if(current == end){
-                    // noLoop(); //skabe problemer
                     console.log("Done");
                     setupBol = true;
                     inputEnd = undefined;
                     inputStart = undefined;
 
                 }
-
                 removeFromArray(openSet, current);
                 closedSet.push(current);
                 neighbors = current.neighbors;
@@ -76,7 +76,7 @@ class Astar{
                     neighbor = neighbors[i];
 
                     if(!closedSet.includes(neighbor)){
-                        var tempG = current.g + heuristic(neighbor, current);
+                        tempG = current.g + heuristic(neighbor, current);
 
                         var newPath = false;
                         if(openSet.includes(neighbor)){
@@ -96,6 +96,7 @@ class Astar{
                             neighbor.f = neighbor.g + neighbor.h;
                             neighbor.previous = current;
                         }
+                        
                     }
                 }
             }else{
@@ -115,11 +116,13 @@ class Astar{
             // } points'ne ved ikke om det gør det ser bedre ud med eller uden
 
             path = [];
-            var temp = current;
+            temp = current;
             path.push(temp);
             while(temp.previous){
                 path.push(temp.previous);
                 temp = temp.previous;
+                
+
             }
 
 

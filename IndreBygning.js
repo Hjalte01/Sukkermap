@@ -17,8 +17,8 @@ class IndreBygning extends YdreBygning{
         
         pile();
 
-        
         pathfindingAlgorithm.loop();
+
 
     }
 

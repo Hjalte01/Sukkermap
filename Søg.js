@@ -44,7 +44,7 @@ class Søg {
                 inputStart = advInput1;
                 tempAdvInput1 = advInput1;
             } 
-            if(advInput2 == valgArray1[i] && tempAdvInput2 != advInput2 || advInput2 == valgArray1[i] && tempAdvInput1 != advInput1){
+            if(advInput2 == valgArray1[i] && tempAdvInput1 != advInput1 || advInput2 == valgArray1[i] && tempAdvInput2 != advInput2){
                 inputEnd = advInput2;
                 tempAdvInput2 = advInput2;
             }
