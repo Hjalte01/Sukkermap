@@ -36,7 +36,6 @@ function draw(){
     currentScalling = windowWidth/canvasZoom;
     scale(currentScalling); 
     
-    
     if(planTegning != undefined) {
     
 
@@ -50,9 +49,8 @@ function draw(){
 
   
     søgefelt.inputfelt();
-
-
 }
+
 
 
 function preload(){
@@ -61,6 +59,5 @@ function preload(){
     sal1Img = loadImage('img/1.sal.png')//1.sal
     sal2Img = loadImage('img/2.sal.png')//2.sal
     sal3Img = loadImage('img/3.sal.png')//3.sal
-
-    
 }
+

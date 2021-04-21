@@ -13,6 +13,8 @@ var inputEnd;
 var setupBol = true;
 var doneBol = false;
 var tempG;
+var keyKomma = false;
+
 
 
 
@@ -170,7 +172,8 @@ class Astar{
                 point(arrayTemp[arrayTemp.length-1].x, arrayTemp[arrayTemp.length-1].y);
                 pop();
 
-                if(keyIsDown(110)){ //key , for numlock for index
+                if(keyIsDown(110) || keyKomma){ //key , for numlock for index
+                    keyKomma = true;
                     push();
                     textSize(15);
                     noStroke();
