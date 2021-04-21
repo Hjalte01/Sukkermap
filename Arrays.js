@@ -123,13 +123,52 @@ class Arrays{
         //printer
 
         //trappe
-        arrayTemp[127] = new spot(278, 259, "trappe", "stue");
-        arrayTemp[133] = new spot(279, 93, "trappe", "stue");
-        arrayTemp[141] = new spot(399, 99, "trappe", "stue");
-        arrayTemp[152] = new spot(630, 157, "trappe", "stue");
-        arrayTemp[160] = new spot(690, 485, "trappe", "stue");
-        arrayTemp[169] = new spot(961, 437, "trappe", "stue");
-
+        arrayTemp[127] = new spot(278, 259, "trappe", "stue"); //tårn indgang
+        arrayTemp[179] = new spot(278, 259, "trappe", "1. sal");
+        arrayTemp[180] = new spot(278, 259, "trappe", "2. sal");
+        arrayTemp[181] = new spot(278, 259, "trappe", "3. sal");
+        arrayTemp[214] = new spot(390, 365, "trappe", "stue"); //tårn udgang
+        arrayTemp[215] = new spot(390, 365, "trappe", "1. sal");
+        arrayTemp[216] = new spot(390, 365, "trappe", "2. sal");
+        arrayTemp[217] = new spot(390, 365, "trappe", "3. sal");
+        arrayTemp[218] = new spot(304, 293, "trappe", "3. sal"); //tårn til 4. sal
+        arrayTemp[141] = new spot(399, 99, "trappe", "stue"); //metalværksted / biologi
+        arrayTemp[184] = new spot(399, 99, "trappe", "1. sal");
+        arrayTemp[185] = new spot(399, 99, "trappe", "2. sal");
+        arrayTemp[152] = new spot(630, 157, "trappe", "stue"); //3D printere
+        arrayTemp[186] = new spot(630, 157, "trappe", "1. sal");
+        arrayTemp[187] = new spot(630, 157, "trappe", "2. sal");
+        arrayTemp[188] = new spot(630, 157, "trappe", "3. sal");
+        arrayTemp[160] = new spot(690, 485, "trappe", "stue"); //fysik/kemi/biologi indgang
+        arrayTemp[189] = new spot(690, 485, "trappe", "1. sal");
+        arrayTemp[190] = new spot(690, 485, "trappe", "2. sal");
+        arrayTemp[191] = new spot(690, 485, "trappe", "3. sal");
+        arrayTemp[169] = new spot(961, 437, "trappe", "stue"); //fysik/kemi/biologi udgang primære
+        arrayTemp[192] = new spot(961, 437, "trappe", "1. sal");
+        arrayTemp[193] = new spot(961, 437, "trappe", "2. sal");
+        arrayTemp[194] = new spot(961, 437, "trappe", "3. sal");
+        arrayTemp[195] = new spot(550, 492, "trappe", "stue"); //fysik/kemi/biologi udgang sekundær
+        arrayTemp[196] = new spot(550, 492, "trappe", "1. sal");
+        arrayTemp[197] = new spot(550, 492, "trappe", "2. sal");
+        arrayTemp[198] = new spot(550, 492, "trappe", "3. sal");
+        arrayTemp[199] = new spot(533, 284, "trappe", "stue"); //adminstrationen
+        arrayTemp[200] = new spot(533, 284, "trappe", "1. sal");
+        arrayTemp[201] = new spot(742, 361, "trappe", "stue"); //lærerværelset
+        arrayTemp[202] = new spot(742, 361, "trappe", "1. sal");
+        arrayTemp[203] = new spot(742, 361, "trappe", "2. sal");
+        arrayTemp[204] = new spot(742, 361, "trappe", "3. sal");
+        arrayTemp[209] = new spot(734, 261, "trappe", "stue"); // imellem lærerværelset og lektiecafen
+        arrayTemp[210] = new spot(734, 261, "trappe", "1. sal");
+        arrayTemp[211] = new spot(734, 261, "trappe", "2. sal");
+        arrayTemp[212] = new spot(734, 261, "trappe", "3. sal");
+        arrayTemp[133] = new spot(279, 93, "trappe", "stue"); //biograf indgang
+        arrayTemp[182] = new spot(279, 93, "trappe", "1. sal");
+        arrayTemp[183] = new spot(279, 93, "trappe", "2. sal");
+        arrayTemp[205] = new spot(62, 143, "trappe", "stue"); //biograf udgang
+        arrayTemp[206] = new spot(62, 143, "trappe", "1. sal");
+        arrayTemp[207] = new spot(62, 143, "trappe", "2. sal");
+        arrayTemp[208] = new spot(62, 143, "trappe", "3. sal");
+        arrayTemp[213] = new spot(136, 107, "trappe", "2. sal"); //til biografen
 
 
         //forbindinger mellem spotsne i stue
@@ -199,6 +238,21 @@ class Arrays{
         arrayTemp[176] = new spot(842, 374, "binding", "stue");
         arrayTemp[177] = new spot(831, 357, "binding", "stue");
         arrayTemp[178] = new spot(814, 333, "binding", "stue");
+        arrayTemp[219] = new spot(274, 72, "binding", "1. sal");
+        arrayTemp[220] = new spot(239, 70, "binding", "1. sal");
+        arrayTemp[221] = new spot(193, 70, "binding", "1. sal");
+        arrayTemp[222] = new spot(150, 80, "binding", "1. sal");
+        arrayTemp[223] = new spot(82, 123, "binding", "1. sal");
+        arrayTemp[224] = new spot(299, 261, "binding", "1. sal");
+        arrayTemp[225] = new spot(298, 290, "binding", "1. sal");
+        arrayTemp[226] = new spot(307, 320, "binding", "1. sal");
+        arrayTemp[227] = new spot(331, 318, "binding", "1. sal");
+        arrayTemp[228] = new spot(363, 317, "binding", "1. sal");
+        arrayTemp[229] = new spot(391, 350, "binding", "1. sal");
+        arrayTemp[230] = new spot(399, 409, "binding", "stue");
+        arrayTemp[231] = new spot(38, 155, "binding", "stue");
+        arrayTemp[232] = new spot(92, 225, "binding", "stue");
+        arrayTemp[233] = new spot(179, 180, "binding", "stue");
         
 
 
@@ -222,9 +276,9 @@ class Arrays{
         arrayTemp[8].addNeighbors([108]);
         arrayTemp[9].addNeighbors([26, 119]);
         arrayTemp[10].addNeighbors([123, 127]);
-        arrayTemp[11].addNeighbors([]);
-        arrayTemp[12].addNeighbors([]);
-        arrayTemp[13].addNeighbors([]);
+        arrayTemp[11].addNeighbors([176]);
+        arrayTemp[12].addNeighbors([177]);
+        arrayTemp[13].addNeighbors([178]);
         arrayTemp[14].addNeighbors([]);
         arrayTemp[15].addNeighbors([7, 145]);
         arrayTemp[16].addNeighbors([]);
@@ -258,9 +312,9 @@ class Arrays{
         arrayTemp[44].addNeighbors([]);
         arrayTemp[45].addNeighbors([]);
         arrayTemp[46].addNeighbors([]);
-        arrayTemp[47].addNeighbors([]);
-        arrayTemp[48].addNeighbors([]);
-        arrayTemp[49].addNeighbors([]);
+        arrayTemp[47].addNeighbors([220]);
+        arrayTemp[48].addNeighbors([223]);
+        arrayTemp[49].addNeighbors([223]);
         arrayTemp[50].addNeighbors([]);
         arrayTemp[51].addNeighbors([]);
         arrayTemp[52].addNeighbors([]);
@@ -268,10 +322,10 @@ class Arrays{
         arrayTemp[54].addNeighbors([]);
         arrayTemp[55].addNeighbors([]);
         arrayTemp[56].addNeighbors([]);
-        arrayTemp[57].addNeighbors([]);
-        arrayTemp[58].addNeighbors([]);
-        arrayTemp[59].addNeighbors([]);
-        arrayTemp[60].addNeighbors([]);
+        arrayTemp[57].addNeighbors([225]);
+        arrayTemp[58].addNeighbors([226]);
+        arrayTemp[59].addNeighbors([227]);
+        arrayTemp[60].addNeighbors([228]);
         arrayTemp[61].addNeighbors([]);
         arrayTemp[62].addNeighbors([]);
         arrayTemp[63].addNeighbors([]);
@@ -318,7 +372,7 @@ class Arrays{
         arrayTemp[104].addNeighbors([]);
         arrayTemp[105].addNeighbors([]);
         arrayTemp[106].addNeighbors([]);
-        arrayTemp[107].addNeighbors([108, 156, 157]);
+        arrayTemp[107].addNeighbors([108, 156, 157, 230]);
         arrayTemp[108].addNeighbors([8, 107, 109]);
         arrayTemp[109].addNeighbors([108, 110, 114]);
         arrayTemp[110].addNeighbors([109, 111, 112]);
@@ -338,13 +392,13 @@ class Arrays{
         arrayTemp[124].addNeighbors([123, 125]);
         arrayTemp[125].addNeighbors([124, 126]);
         arrayTemp[126].addNeighbors([125]);
-        arrayTemp[127].addNeighbors([10, 128]);
+        arrayTemp[127].addNeighbors([10, 128, 179]);
         arrayTemp[128].addNeighbors([127, 129]);
-        arrayTemp[129].addNeighbors([128, 130]);
+        arrayTemp[129].addNeighbors([128, 130, 233]);
         arrayTemp[130].addNeighbors([129, 131, 138]);
         arrayTemp[131].addNeighbors([130, 132, 139]);
         arrayTemp[132].addNeighbors([131, 133, 134]);
-        arrayTemp[133].addNeighbors([132]);
+        arrayTemp[133].addNeighbors([132, 182]);
         arrayTemp[134].addNeighbors([132, 135]);
         arrayTemp[135].addNeighbors([134, 136]);
         arrayTemp[136].addNeighbors([135, 137]);
@@ -363,7 +417,7 @@ class Arrays{
         arrayTemp[149].addNeighbors([148, 150]);
         arrayTemp[150].addNeighbors([149, 151, 153]);
         arrayTemp[151].addNeighbors([17, 150, 153]);
-        arrayTemp[152].addNeighbors([17]);
+        arrayTemp[152].addNeighbors([17, 186]);
         arrayTemp[153].addNeighbors([150, 151, 154]);
         arrayTemp[154].addNeighbors([116, 153, 155]);
         arrayTemp[155].addNeighbors([118, 138, 154]);
@@ -371,7 +425,7 @@ class Arrays{
         arrayTemp[157].addNeighbors([25, 107, 158]);
         arrayTemp[158].addNeighbors([24, 157, 159, 175]);
         arrayTemp[159].addNeighbors([158, 160, 161, 174]);
-        arrayTemp[160].addNeighbors([159]);
+        arrayTemp[160].addNeighbors([159, 189]);
         arrayTemp[161].addNeighbors([159, 162, 173]);
         arrayTemp[162].addNeighbors([23, 161, 163]);
         arrayTemp[163].addNeighbors([4, 5, 6, 22, 162, 164]);
@@ -380,7 +434,7 @@ class Arrays{
         arrayTemp[166].addNeighbors([19, 165, 167]);
         arrayTemp[167].addNeighbors([166, 168, 170]);
         arrayTemp[168].addNeighbors([167, 169, 171]);
-        arrayTemp[169].addNeighbors([168]);
+        arrayTemp[169].addNeighbors([168, 192]);
         arrayTemp[170].addNeighbors([18, 167]);
         arrayTemp[171].addNeighbors([165, 168, 172, 176]);
         arrayTemp[172].addNeighbors([4, 5, 6, 171, 173]);
@@ -390,6 +444,63 @@ class Arrays{
         arrayTemp[176].addNeighbors([11, 171, 177]);
         arrayTemp[177].addNeighbors([12, 176, 178]);
         arrayTemp[178].addNeighbors([13, 177]);
+        arrayTemp[179].addNeighbors([127, 180, 224]);
+        arrayTemp[180].addNeighbors([179, 181]);
+        arrayTemp[181].addNeighbors([180]);
+        arrayTemp[182].addNeighbors([133, 183, 219]);
+        arrayTemp[183].addNeighbors([182]);
+        arrayTemp[184].addNeighbors([]);
+        arrayTemp[185].addNeighbors([]);
+        arrayTemp[186].addNeighbors([152, 187]);
+        arrayTemp[187].addNeighbors([186, 188]);
+        arrayTemp[188].addNeighbors([187]);
+        arrayTemp[189].addNeighbors([160, 190]);
+        arrayTemp[190].addNeighbors([189, 191]);
+        arrayTemp[191].addNeighbors([190]);
+        arrayTemp[192].addNeighbors([169, 193]);
+        arrayTemp[193].addNeighbors([192, 194]);
+        arrayTemp[194].addNeighbors([193]);
+        arrayTemp[195].addNeighbors([]);
+        arrayTemp[196].addNeighbors([]);
+        arrayTemp[197].addNeighbors([]);
+        arrayTemp[198].addNeighbors([]);
+        arrayTemp[199].addNeighbors([]);
+        arrayTemp[200].addNeighbors([]);
+        arrayTemp[201].addNeighbors([]);
+        arrayTemp[202].addNeighbors([]);
+        arrayTemp[203].addNeighbors([]);
+        arrayTemp[204].addNeighbors([]);
+        arrayTemp[205].addNeighbors([206, 231]);
+        arrayTemp[206].addNeighbors([205, 207, 223]);
+        arrayTemp[207].addNeighbors([206, 208]);
+        arrayTemp[208].addNeighbors([207]);
+        arrayTemp[209].addNeighbors([]);
+        arrayTemp[210].addNeighbors([]);
+        arrayTemp[211].addNeighbors([]);
+        arrayTemp[212].addNeighbors([]);
+        arrayTemp[213].addNeighbors([]);
+        arrayTemp[214].addNeighbors([215, 230]);
+        arrayTemp[215].addNeighbors([214, 216, 229]);
+        arrayTemp[216].addNeighbors([215, 217]);
+        arrayTemp[217].addNeighbors([216]);
+        arrayTemp[218].addNeighbors([]);
+        arrayTemp[219].addNeighbors([182, 220]);
+        arrayTemp[220].addNeighbors([47, 50, 219, 221]);
+        arrayTemp[221].addNeighbors([220, 222]);
+        arrayTemp[222].addNeighbors([221, 223]);
+        arrayTemp[223].addNeighbors([48, 49, 206, 222]);
+        arrayTemp[224].addNeighbors([179, 225]);
+        arrayTemp[225].addNeighbors([57, 224, 226]);
+        arrayTemp[226].addNeighbors([58, 225, 227]);
+        arrayTemp[227].addNeighbors([59, 226, 228]);
+        arrayTemp[228].addNeighbors([60, 227, 229]);
+        arrayTemp[229].addNeighbors([215, 228]);
+        arrayTemp[230].addNeighbors([107, 214]);
+        arrayTemp[231].addNeighbors([205, 232]);
+        arrayTemp[232].addNeighbors([231, 233]);
+        arrayTemp[233].addNeighbors([129, 232]);
+
+
 
 
 

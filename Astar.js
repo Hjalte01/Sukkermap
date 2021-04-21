@@ -148,7 +148,13 @@ class Astar{
             strokeWeight(w / 2);
             beginShape();
             for(let i = 0; i < path.length; i++){
-                vertex(path[i].x, path[i].y);
+                if(path[i].tag == `${planTegning}. sal`){
+                    vertex(path[i].x, path[i].y);
+                }else if(planTegning == 0){
+                    if(path[i].tag == "stue"){
+                        vertex(path[i].x, path[i].y);
+                    }
+                }
             }
             endShape();
             strokeWeight(1);
