@@ -368,7 +368,7 @@ class Arrays{
         arrayTemp[59].addNeighbors([227]);
         arrayTemp[60].addNeighbors([228]);
         arrayTemp[61].addNeighbors([236]);
-        arrayTemp[62].addNeighbors([2337]);
+        arrayTemp[62].addNeighbors([237]);
         arrayTemp[63].addNeighbors([237]);
         arrayTemp[64].addNeighbors([]);
         arrayTemp[65].addNeighbors([]);

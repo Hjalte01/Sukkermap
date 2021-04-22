@@ -78,10 +78,12 @@ class Astar{
                 neighbors = current.neighbors;
                 for(let i = 0; i < neighbors.length; i++){
                     neighbor = neighbors[i];
+                    
 
                     if(!closedSet.includes(neighbor)){
-                        tempG = current.g + heuristic(neighbor, current);
 
+
+                        tempG = current.g + heuristic(neighbor, current);
                         var newPath = false;
                         if(openSet.includes(neighbor)){
                             if(tempG < neighbor.g){
@@ -214,9 +216,7 @@ function removeFromArray(arr, elt){
     }
 }
 
-function heuristic(a, b){
-    console.log(a);
-    console.log(b);
+function heuristic(a, b){   
     var d = dist(a.x, a.y, b.x, b.y);
     
 
