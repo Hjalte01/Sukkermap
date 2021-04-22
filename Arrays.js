@@ -720,7 +720,7 @@ class Arrays{
         arrayTemp[335].addNeighbors([101, 334, 337]);
         arrayTemp[336].addNeighbors([96, 337]);
         arrayTemp[337].addNeighbors([335, 336, 338]);
-        arrayTemp[338].addNeighbors([337, 399, 100]);
+        arrayTemp[338].addNeighbors([100, 337, 339]);
         arrayTemp[339].addNeighbors([99, 338, 340]);
         arrayTemp[340].addNeighbors([98, 339, 341]);
         arrayTemp[341].addNeighbors([340, 342]);

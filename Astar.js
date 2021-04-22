@@ -82,7 +82,6 @@ class Astar{
 
                     if(!closedSet.includes(neighbor)){
 
-
                         tempG = current.g + heuristic(neighbor, current);
                         var newPath = false;
                         if(openSet.includes(neighbor)){
@@ -148,9 +147,17 @@ class Astar{
             for(let i = 0; i < path.length; i++){
                 if(path[i].tag == `${planTegning}. sal`){
                     vertex(path[i].x, path[i].y);
+                    if(i < path.length-1) if(path[i+1].tag != `${planTegning}. sal`){
+                        endShape();
+                        beginShape();
+                    }
                 }else if(planTegning == 0){
                     if(path[i].tag == "stue"){
                         vertex(path[i].x, path[i].y);
+                        if(i < path.length-1) if(path[i+1].tag != "stue"){
+                            endShape();
+                            beginShape();
+                        }
                     }
                 }
             }
