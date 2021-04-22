@@ -21,6 +21,8 @@ class YdreBygning{
         
 
         ydreTing.områder();
+        pathfindingAlgorithm.loop();
+
 
     }
 
