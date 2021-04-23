@@ -14,7 +14,7 @@ class Søg {
         
         advInput1 = document.getElementById("listInput1").value.toLowerCase(); //tager id fra datalist i html filen, 
         advInput2 = document.getElementById("listInput2").value.toLowerCase(); //som er de to inputs i venstre hjørne når koden kører
-        
+
         //scaler input og paragraph
         document.getElementById("listInput1").style.width = (156.8*currentScalling).toString() + "px";
         document.getElementById("listInput1").style.height = (16*currentScalling).toString()+"px" + "px";
@@ -23,9 +23,8 @@ class Søg {
         document.getElementById("fra").style.fontSize = (100*currentScalling).toString()+"%";
         document.getElementById("til").style.fontSize = (100*currentScalling).toString()+"%";
         //position input og paragraph
-        document.getElementById("listInput2").style.left = "400px";
+        document.getElementById("listInput2").style.top = "400px";
         // document.getElementById("listInput2").style.height = (16*windowWidth/canvasZoom).toString()+"px" + "px";
-
 
 
         

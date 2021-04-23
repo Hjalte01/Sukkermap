@@ -15,9 +15,10 @@ var currentScalling;
 
 function setup(){
     createCanvas(canvasStr*0.75, canvasStr*canvasHeightDiff*0.75); //canvas
-    for(let i = 0; i < 3; i++){ //tilføj en figur
+    for(let i = 0; i < 4; i++){ //tilføj en figur
         figurer[i] = new YdreBygning(20); //personlig countdown lav en ny figur, uden argument for ingen countdown
     }
+    
 
     
 

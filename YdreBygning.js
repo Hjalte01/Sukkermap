@@ -9,7 +9,7 @@ class YdreBygning{
         this.arealSum = 0;
         this.scaling;
         this.maxCountdown = countdown;
-        this.countdown = countdown;
+        this.countdown = 0;
         this.xy;
 
 
@@ -44,7 +44,7 @@ class YdreBygning{
     Det andet element viser fra mus pos. til punkterne. 
     f.eks - variable.pointConnections([punkt0], [punkt1], [punkt2], ext.], undefined, [true, true])
     */
-    pointConnections(xy, fyld, visuelt){ 
+    pointConnections(xy, fyld, visuelt, texts){ 
         this.visuelt = visuelt; //viser visuelt, hvis true
         if(this.xy == undefined) this.xy = xy;
         push();
@@ -60,6 +60,8 @@ class YdreBygning{
             this.centerGæt.x = this.centerGæt.x/this.xy.length; //laver et gæt på midten af figuren
             this.centerGæt.y = this.centerGæt.y/this.xy.length;
         }
+        
+
 
 
         if(fyld == undefined) beginShape();     // fyld gør at man enten ser linjer, eller en figur
@@ -86,11 +88,20 @@ class YdreBygning{
                line(this.xy[i][0], this.xy[i][1], mouseX/currentScalling, mouseY/currentScalling); 
             }
         }
+
+        if(texts != undefined){
+            textSize(24);
+            noStroke();
+            fill(0);
+            textAlign(CENTER, CENTER);
+            text(texts, this.centerGæt.x, this.centerGæt.y);
+        }
         
 
         pop();
 
         if(this.countdown <= 0 || this.countdown == undefined){
+            if(keyCode === 38 || keyCode === 40) this.countdown = this.maxCountdown;
             if(mouseIsPressed && this.xy.length >= 3){ //hvis man klikker på figuren
                 this.countdown = this.maxCountdown;
                 clickArealSum = 0;
@@ -105,7 +116,7 @@ class YdreBygning{
                 }
                 
                 this.arealSum = round(this.arealSum/100)*100;
-                // console.log(`this.arealSum = ${this.arealSum}`);
+                console.log(`this.arealSum = ${this.arealSum}`);
 
 
                 for(let i = 0; i < this.xy.length; i++){
@@ -116,12 +127,11 @@ class YdreBygning{
                     clickArealSum += sqrt(parameter*(parameter-punkterlængde[0])*(parameter-punkterlængde[1])*(parameter-punkterlængde[2]));
                 }
                 clickArealSum = round(clickArealSum/100)*100;
-                // console.log(`clickarealSum = ${clickArealSum}`);
+                console.log(`clickarealSum = ${clickArealSum}`);
 
                 this.scaling = currentScalling;
-                if(clickArealSum <= this.arealSum) return true; //Der blev klikket på figuren
+                if(clickArealSum - 100 <= this.arealSum) return true; //Der blev klikket på figuren
             }
-        }
-        if(this.countdown > 0) this.countdown --;
+        }else if(this.countdown > 0) this.countdown --;
     }
 }

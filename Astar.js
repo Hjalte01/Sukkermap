@@ -160,6 +160,8 @@ class Astar{
                         }
                     }
                 }
+                if(planTegning === undefined) vertex(path[i].x, path[i].y);
+
             }
             endShape();
             strokeWeight(1);
