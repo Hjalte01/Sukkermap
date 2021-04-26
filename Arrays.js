@@ -380,7 +380,7 @@ class Arrays{
             console.log(`arrayTemp[${i}].addNeighbors([]);`);
         }
         */
-
+        //alle naboer
         arrayTemp[0].addNeighbors([118]);
         arrayTemp[1].addNeighbors([156, 174]);
         arrayTemp[2].addNeighbors([333]);
@@ -706,7 +706,6 @@ class Arrays{
         arrayTemp[322].addNeighbors([301, 302, 303, 304]);
         arrayTemp[323].addNeighbors([316, 324]);
         arrayTemp[324].addNeighbors([323, 348]);
-
         arrayTemp[325].addNeighbors([181, 326, 330]);
         arrayTemp[326].addNeighbors([102, 218, 325, 327]);
         arrayTemp[327].addNeighbors([103, 326, 328]);
@@ -733,24 +732,5 @@ class Arrays{
         arrayTemp[348].addNeighbors([95, 324]);
         arrayTemp[349].addNeighbors([106, 350]);
         arrayTemp[350].addNeighbors([218, 349]);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    }
-
-
-    
+    }    
 }

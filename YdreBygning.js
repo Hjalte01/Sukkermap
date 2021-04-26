@@ -28,7 +28,7 @@ class YdreBygning{
 
 
 
-    områder(){
+    områder(){ 
 
 
         if(figurer[0].pointConnections([[0, 0], [width, 0], [width, height], [0, height]], "LINES")) planTegning = 0;
@@ -116,7 +116,7 @@ class YdreBygning{
                 }
                 
                 this.arealSum = round(this.arealSum/100)*100;
-                console.log(`this.arealSum = ${this.arealSum}`);
+                // console.log(`this.arealSum = ${this.arealSum}`);
 
 
                 for(let i = 0; i < this.xy.length; i++){
@@ -127,7 +127,7 @@ class YdreBygning{
                     clickArealSum += sqrt(parameter*(parameter-punkterlængde[0])*(parameter-punkterlængde[1])*(parameter-punkterlængde[2]));
                 }
                 clickArealSum = round(clickArealSum/100)*100;
-                console.log(`clickarealSum = ${clickArealSum}`);
+                // console.log(`clickarealSum = ${clickArealSum}`);
 
                 this.scaling = currentScalling;
                 if(clickArealSum - 100 <= this.arealSum) return true; //Der blev klikket på figuren

@@ -9,7 +9,7 @@ var optionsLength;
 
 class Søg {
 
-    inputfelt(){
+    inputfelt(){  //input felterne
         
         
         advInput1 = document.getElementById("listInput1").value.toLowerCase(); //tager id fra datalist i html filen, 

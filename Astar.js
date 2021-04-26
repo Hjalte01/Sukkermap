@@ -171,46 +171,39 @@ class Astar{
             text(end.text, end.x, end.y);
 
 
-            //draw flere array
-            (function keyPressed(){
-                if(keyIsDown(107)){ //key + numlock for add
-                    var tempPrompt = prompt("arrayTemp[100] = new spot(879, 474, \"tag\", \"sal\"\)\;");
-                    console.log("arrayTemp[" + arrayTemp.length + "] = new spot(" + round(mouseX/currentScalling, 0) + ", " + round(mouseY/currentScalling, 0) + ", " + tempPrompt + ");");
-                    arrayTemp[arrayTemp.length] = new spot(round(mouseX/currentScalling, 0), round(mouseY/currentScalling, 0), tempPrompt);
-                    // arrayTemp[6] = new spot(1000, 400, "33");
-                }
-                push();
-                stroke(255, 0, 0);
-                strokeWeight(5);
-                point(arrayTemp[arrayTemp.length-1].x, arrayTemp[arrayTemp.length-1].y);
-                pop();
+            //draw flere array, altså til at gøre det nemmere for os at tilføje lokaler
+            if(keyIsDown(107)){ //key + numlock for add
+                var tempPrompt = prompt("arrayTemp[100] = new spot(879, 474, \"tag\", \"sal\"\)\;");
+                console.log("arrayTemp[" + arrayTemp.length + "] = new spot(" + round(mouseX/currentScalling, 0) + ", " + round(mouseY/currentScalling, 0) + ", " + tempPrompt + ");");
+                arrayTemp[arrayTemp.length] = new spot(round(mouseX/currentScalling, 0), round(mouseY/currentScalling, 0), tempPrompt);
+                // arrayTemp[6] = new spot(1000, 400, "33");
+            }
 
-                if(keyIsDown(110) || keyKomma){ //key , for numlock for index
-                    keyKomma = true;
-                    push();
-                    textSize(15);
-                    noStroke();
-                    fill(0);
-                    for(let i = 0; i < arrayTemp.length; i++){
-                        if(`${planTegning}. sal` == arrayTemp[i].tag){
+            if(keyIsDown(110) || keyKomma){ //key , for numlock for index
+                keyKomma = true;
+                push();
+                textSize(15);
+                noStroke();
+                fill(0);
+                for(let i = 0; i < arrayTemp.length; i++){
+                    if(`${planTegning}. sal` == arrayTemp[i].tag){
+                        text(i, arrayTemp[i].x, arrayTemp[i].y);
+                    }else if(planTegning == 0){ 
+                        if("stue" == arrayTemp[i].tag){
                             text(i, arrayTemp[i].x, arrayTemp[i].y);
-                        }else if(planTegning == 0){ 
-                            if("stue" == arrayTemp[i].tag){
-                                text(i, arrayTemp[i].x, arrayTemp[i].y);
-                            }
                         }
                     }
-                    pop();
                 }
+                pop();
+            }
 
-                if(keyIsDown(109)){ //key - for numlock for nabo
-                    var tempPrompt = prompt("Indtast naboer til index: " + [arrayTemp.length-1] + ". Skriv f.eks: 1, 2, 4");
-                    console.log("arrayTemp[" + [arrayTemp.length-1] + "].addNeighbors([" + tempPrompt + "]);")
+            if(keyIsDown(109)){ //key - for numlock for nabo
+                var tempPrompt = prompt("Indtast naboer til index: " + [arrayTemp.length-1] + ". Skriv f.eks: 1, 2, 4");
+                console.log("arrayTemp[" + [arrayTemp.length-1] + "].addNeighbors([" + tempPrompt + "]);")
 
-                    // arrayTemp[0].addNeighbors([1, 2]);
-                } 
+                // arrayTemp[0].addNeighbors([1, 2]);
+            } 
 
-            })();
             
         }
     }
