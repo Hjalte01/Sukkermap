@@ -54,7 +54,7 @@ class Arrays{
         arrayTemp[43] = new spot(443, 62, "143", "1. sal");
         arrayTemp[44] = new spot(412, 76, "144", "1. sal");
         arrayTemp[45] = new spot(531, 76, "145", "1. sal");
-        arrayTemp[46] = new spot(607, 88, "147", "1. sal");
+        arrayTemp[46] = new spot(607, 88, "141", "1. sal");
         arrayTemp[47] = new spot(240, 62, "151", "1. sal");
         arrayTemp[48] = new spot(78, 119, "152", "1. sal");
         arrayTemp[49] = new spot(83, 133, "153", "1. sal");
