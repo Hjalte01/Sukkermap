@@ -10,19 +10,21 @@ var figurer = [];
 var søgefelt;
 var indreBygninger = [];
 var currentScalling;
+var menu;
 
 
 
 function setup(){
     createCanvas(canvasStr*0.75, canvasStr*canvasHeightDiff*0.75); //canvas
-    for(let i = 0; i < 4; i++){ //tilføj en figur
+    for(let i = 0; i <= 5; i++){ //tilføj en figur
         figurer[i] = new YdreBygning(20); //personlig countdown lav en ny figur, uden argument for ingen countdown
     }
-    
 
     
 
+    
 
+    menu = new Menu();
     ydreTing = new YdreBygning();
     indreTing = new IndreBygning();
     arraySetup = new Arrays();
@@ -36,20 +38,21 @@ function draw(){
     clear();
     currentScalling = windowWidth/canvasZoom;
     scale(currentScalling); 
-    
+
     if(planTegning != undefined) {
     
 
         indreTing.indreBygningCanvas();
-        
-        
+
+
     }else{
         ydreTing.ydreBygningCanvas();
     }
 
-
-  
     søgefelt.inputfelt();
+    menu.mainMenu();
+
+
 }
 
 
@@ -60,5 +63,6 @@ function preload(){
     sal1Img = loadImage('img/1.sal.png')//1.sal
     sal2Img = loadImage('img/2.sal.png')//2.sal
     sal3Img = loadImage('img/3.sal.png')//3.sal
+    questionMark = loadImage('img/question mark.png'); //question mark til menu
 }
 

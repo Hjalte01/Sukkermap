@@ -32,6 +32,7 @@ class Astar{
             if(setupBol){ 
                 
                 arraySetup.aStarArray();
+                if(coronaTrapper.value) console.log("hej");
                 
                 setupBol = false;
                 openSet = [];

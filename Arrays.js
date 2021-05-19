@@ -17,7 +17,7 @@ class Arrays{
         arrayTemp[7]  = new spot(500, 101,  "metalværstedet", "stue");
         arrayTemp[352] = new spot(265, 284, "spisesal", "stue");
         arrayTemp[8]  = new spot(577, 373, "studievejledning", "stue");
-        arrayTemp[355] = new spot(681, 468, "testcenter", "3. sal");
+        arrayTemp[355] = new spot(1008, 496, "testcenter", "3. sal");
         arrayTemp[9]  = new spot(465, 268, "træværkstedet", "stue");
         arrayTemp[10] = new spot(291, 267, "tårnet", "stue");
         //lokaler på stuen
@@ -377,6 +377,7 @@ class Arrays{
         arrayTemp[354] = new spot(209, 244, "binding", "stue");
         arrayTemp[356] = new spot(133, 409, "binding", "stue");
         arrayTemp[357] = new spot(135, 316, "binding", "stue");
+        arrayTemp[358] = new spot(999, 455, "binding", "3. sal");
 
 
         
@@ -721,7 +722,7 @@ class Arrays{
         arrayTemp[330].addNeighbors([325, 329]);
         arrayTemp[331].addNeighbors([104, 328, 332]);
         arrayTemp[332].addNeighbors([217, 331]);
-        arrayTemp[333].addNeighbors([2, 97, 191, 355]);
+        arrayTemp[333].addNeighbors([2, 97, 191]);
         arrayTemp[334].addNeighbors([97, 335]);
         arrayTemp[335].addNeighbors([101, 334, 337]);
         arrayTemp[336].addNeighbors([96, 337]);
@@ -731,7 +732,7 @@ class Arrays{
         arrayTemp[340].addNeighbors([98, 339, 341]);
         arrayTemp[341].addNeighbors([340, 342]);
         arrayTemp[342].addNeighbors([341, 343]);
-        arrayTemp[343].addNeighbors([342, 344]);
+        arrayTemp[343].addNeighbors([342, 344, 358]);
         arrayTemp[344].addNeighbors([194, 343]);
         arrayTemp[345].addNeighbors([188, 346]);
         arrayTemp[346].addNeighbors([93, 345, 347]);
@@ -743,9 +744,12 @@ class Arrays{
         arrayTemp[352].addNeighbors([124]);
         arrayTemp[353].addNeighbors([352, 354]);
         arrayTemp[354].addNeighbors([129, 233, 353]);
-        arrayTemp[355].addNeighbors([333]);
+        arrayTemp[355].addNeighbors([358]);
         arrayTemp[356].addNeighbors([230, 357]);
         arrayTemp[357].addNeighbors([232, 356]);
+        arrayTemp[358].addNeighbors([343, 355]);
+
+
 
 
 
