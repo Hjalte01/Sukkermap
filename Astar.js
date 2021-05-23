@@ -32,7 +32,6 @@ class Astar{
             if(setupBol){ 
                 
                 arraySetup.aStarArray();
-                if(coronaTrapper.value) console.log("hej");
                 
                 setupBol = false;
                 openSet = [];
@@ -222,13 +221,12 @@ function removeFromArray(arr, elt){
 function heuristic(a, b){   
     try{
         var d = dist(a.x, a.y, b.x, b.y);
-        console.log(b.text);
-        if(a.text == "trappe" && b.text == "trappe") console.log("hje");// d += 50;
+        if(a.text == "trappe" && b.text == "trappe") d += 50;
     }
     catch(err){
-        console.log(err);
-        console.log(a);
-        console.log(b);
+        console.log("err = " + err);
+        console.log("a = " + a);
+        console.log("b = " + b);
         noLoop();
     }   
     

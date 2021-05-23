@@ -1,6 +1,7 @@
 
 var pause = false;
 var coronaTrapper;
+var coronaTrapperBol = false;
 
 class Menu{
 
@@ -20,14 +21,13 @@ class Menu{
             push();
             fill(0, 0, 0, 100);
             rect(400, 100, width-800, height-200); 
-
             fill(255);
             textSize(32);
             textAlign(CENTER, TOP);
             text("Settings", 400, 100, width-800, height-200);
             textSize(12);
             
-            coronaTrapper = createCheckbox("textCorona", true);
+            coronaTrapper = createCheckbox("textCorona", coronaTrapperBol);
             coronaTrapper.elt.style.color = "red";
             coronaTrapper.position(320, 140);
             coronaTrapper.changed(coronaTrapperFunc);
@@ -45,6 +45,8 @@ class Menu{
 function coronaTrapperFunc(){
 
     if (this.checked()){
+        if(coronaTrapperBol) coronaTrapperBol = false;
+        else console.log("hej");
         console.log("Checked")
     } else {
 

@@ -21,9 +21,6 @@ function setup(){
     }
 
     
-
-    
-
     menu = new Menu();
     ydreTing = new YdreBygning();
     indreTing = new IndreBygning();
@@ -36,9 +33,9 @@ function setup(){
 
 function draw(){
     clear();
+    canvasZoom = screen.width;
     currentScalling = windowWidth/canvasZoom;
     scale(currentScalling); 
-
     if(planTegning != undefined) {
     
 
