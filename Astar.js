@@ -14,6 +14,8 @@ var setupBol = true;
 var doneBol = false;
 var tempG;
 var keyKomma = false;
+var select;
+var option;
 
 
 
@@ -28,6 +30,10 @@ class Astar{
     
 
     loop(){
+
+        select = document.getElementById('farveRute');
+        option = select.options[select.selectedIndex];
+
         if(inputStart != undefined && inputEnd != undefined && inputStart != inputEnd){
             if(setupBol){ 
                 
@@ -126,7 +132,20 @@ class Astar{
 
 
             noFill();
-            stroke(255, 0, 200);
+            
+            if (option.value == "pink") {
+                stroke(255, 0, 200);
+            } else if (option.value == "blå") {
+                stroke(0, 0, 200);
+            } else if (option.value == "grøn") {
+                stroke(0, 200, 0);
+            } else if (option.value == "rød") {
+                stroke(200, 0, 0);
+            } else if (option.value == "orange"){
+                stroke(255,165,0);
+            }
+            
+            
             strokeWeight(w / 2);
             beginShape();
             for(let i = 0; i < path.length; i++){
@@ -141,7 +160,17 @@ class Astar{
 
         } else if(end != undefined && start != undefined){
             noFill();
-            stroke(255, 0, 200);
+            if (option.value == "pink") {
+                stroke(255, 0, 200);
+            } else if (option.value == "blå") {
+                stroke(0, 0, 200);
+            } else if (option.value == "grøn") {
+                stroke(0, 200, 0);
+            } else if (option.value == "rød") {
+                stroke(200, 0, 0);
+            } else if (option.value == "orange"){
+                stroke(255,165,0);
+            }
             strokeWeight(w / 2);
             beginShape();
             for(let i = 0; i < path.length; i++){

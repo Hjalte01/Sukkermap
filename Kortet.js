@@ -47,7 +47,7 @@ function draw(){
     }
 
     søgefelt.inputfelt();
-    menu.mainMenu();
+    // menu.mainMenu();
 
 
 }

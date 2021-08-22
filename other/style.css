@@ -8,7 +8,6 @@ canvas {
     width: 50%;
 } 
 
-
 form {
     position: relative;
     display: inline-block;
@@ -25,6 +24,11 @@ form {
     display: inline-block;
 } 
 
+/* #listInput1, #listInput2 {
+    display: inline;
+    position:relative;
+} */
+
  #version{
     position: relative;
     font-size: 12px;
@@ -32,3 +36,83 @@ form {
     color: red;
     display: inline-block;
 } 
+
+body{
+    margin: 0;
+}
+
+
+ul.topNav  {
+    list-style:none;
+    overflow: hidden;
+    margin: 0px;
+    padding: 0px;
+    /* height: 85px; */
+    background-color: #121026;
+    border-bottom: 10px solid #141414;
+
+}
+
+/* Hvis skærmen er under 800px så vil css ændres til det her*/
+@media screen and (max-width: 800px) {
+    ul.topNav li {
+        float: none;
+        padding: auto;
+    }
+    #fra, #til {
+        display:block;
+        text-align: center;
+        right: auto;
+        width: auto;
+    }
+
+    form {
+        display:block;
+        text-align: center;
+    }
+
+    /* Prøver at fixed canvas så det vende vandret når man bruger mobil, 
+    men det lidt svært at sætte dens position, 
+    samt pil knappen og kort knappen ikke vil virke, side at deres koordinater bliver ændret /*
+    /* canvas {
+        /* text-align:center;
+        transform: rotate(90deg);
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 200px;
+        margin-right: 0;
+        margin-top: auto;
+        display: block; 
+        width: 0%;
+        float:center; 
+    } */
+  }
+
+li {
+    float:right;
+    /* height: auto;
+    width: auto; */
+    padding: 5px 0px;
+    font-family: Arial, sans-serif ;
+
+}
+
+li a:hover {
+    background-color: #090813;
+}
+
+li a {
+    position: relative;
+    display: block;
+    padding: 25px;
+    color: #eb5332;
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+}
