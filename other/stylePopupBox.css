@@ -87,7 +87,7 @@ select{
     color:black;
     font-size: 15px;
     margin-left: 10px;   
-    display:block;
+    /* display:block; */
     text-align: center;
     right: auto;
     width: auto; 
