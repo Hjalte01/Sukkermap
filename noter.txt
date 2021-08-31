@@ -1,6 +1,5 @@
 Liste over ting der er fedt, hvis det nås:
 
-Animations pil - Larry
 tog/bus stationer 
 Ny lokaler 252 
 Bygning navne samt kendte steder på skolen 
@@ -8,8 +7,9 @@ Bygning navne samt kendte steder på skolen
 Indstillinger 
     Bordtennis 
     Toiletter 
+    Animations pil - samt hastigheden på animationen
 
-Mobil venlig 
+Mobil venlig, så folk kan klikke på en link i deres mobil og bruge den uden at downloade en app
 
 
 Kantinen nr 80 
