@@ -21,17 +21,3 @@ window.onclick = function(event) {
 
     }
 }
-
-// function update() {
-//     var select = document.getElementById('farveRute');
-//     var option = select.options[select.selectedIndex];
-
-//     // document.getElementById('value').value = option.value;
-//     // document.getElementById('text').value = option.text;
-
-//     console.log(option.value);
-
-
-// }
-
-// update();

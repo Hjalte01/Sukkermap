@@ -4,7 +4,7 @@ class Arrays{
     }
 
     aStarArray(){
-        
+
         //Kendte steder
         arrayTemp[0]  = new spot(522, 273, "administrationen", "stue");
         arrayTemp[1]  = new spot(699, 414, "atriumgården", "stue");
@@ -21,22 +21,22 @@ class Arrays{
         arrayTemp[9]  = new spot(465, 268, "træværkstedet", "stue");
         arrayTemp[10] = new spot(291, 267, "tårnet", "stue");
         //lokaler på stuen
-        arrayTemp[11] = new spot(853, 371, "1", "stue");
-        arrayTemp[12] = new spot(845, 361, "2", "stue");
-        arrayTemp[13] = new spot(821, 324, "3", "stue");
-        arrayTemp[14] = new spot(463, 101, "36", "stue");
-        arrayTemp[15] = new spot(500, 100, "37", "stue");
-        arrayTemp[16] = new spot(559, 101, "38", "stue");
-        arrayTemp[17] = new spot(642, 172, "39", "stue");
-        arrayTemp[18] = new spot(1013, 483, "71", "stue");
-        arrayTemp[19] = new spot(917, 473, "73", "stue");
-        arrayTemp[20] = new spot(862, 473, "74", "stue");
-        arrayTemp[21] = new spot(831, 473, "74a", "stue");
-        arrayTemp[22] = new spot(785, 489, "75", "stue");
-        arrayTemp[23] = new spot(723, 474, "76", "stue");
-        arrayTemp[24] = new spot(675, 482, "77", "stue");
-        arrayTemp[25] = new spot(591, 483, "78", "stue");
-        arrayTemp[26] = new spot(465, 268, "81", "stue");
+        arrayTemp[11] = new spot(853, 371, "001", "stue");
+        arrayTemp[12] = new spot(845, 361, "002", "stue");
+        arrayTemp[13] = new spot(821, 324, "003", "stue");
+        arrayTemp[14] = new spot(463, 101, "036", "stue");
+        arrayTemp[15] = new spot(500, 100, "037", "stue");
+        arrayTemp[16] = new spot(559, 101, "038", "stue");
+        arrayTemp[17] = new spot(642, 172, "039", "stue");
+        arrayTemp[18] = new spot(1013, 483, "071", "stue");
+        arrayTemp[19] = new spot(917, 473, "073", "stue");
+        arrayTemp[20] = new spot(862, 473, "074", "stue");
+        arrayTemp[21] = new spot(831, 473, "074a", "stue");
+        arrayTemp[22] = new spot(785, 489, "075", "stue");
+        arrayTemp[23] = new spot(723, 474, "076", "stue");
+        arrayTemp[24] = new spot(675, 482, "077", "stue");
+        arrayTemp[25] = new spot(591, 483, "078", "stue");
+        arrayTemp[26] = new spot(465, 268, "081", "stue");
         // 1. sal
         arrayTemp[27] = new spot(752, 328, "103", "1. sal");
         arrayTemp[28] = new spot(804, 319, "105", "1. sal");
@@ -59,9 +59,10 @@ class Arrays{
         arrayTemp[45] = new spot(531, 76, "145", "1. sal");
         arrayTemp[46] = new spot(607, 88, "141", "1. sal");
         arrayTemp[47] = new spot(240, 62, "151", "1. sal");
-        arrayTemp[48] = new spot(78, 119, "152", "1. sal");
-        arrayTemp[49] = new spot(83, 133, "153", "1. sal");
-        arrayTemp[50] = new spot(240, 79, "154", "1. sal");
+        arrayTemp[359] = new spot(148, 74, "152", "1. sal");
+        arrayTemp[48] = new spot(78, 119, "153", "1. sal");
+        arrayTemp[49] = new spot(83, 133, "154", "1. sal");
+        arrayTemp[50] = new spot(240, 79, "155", "1. sal");
         arrayTemp[51] = new spot(1008, 483, "170", "1. sal");
         arrayTemp[52] = new spot(887, 474, "172", "1. sal");
         arrayTemp[53] = new spot(832, 490, "173", "1. sal");
@@ -96,8 +97,8 @@ class Arrays{
         arrayTemp[81] = new spot(557, 88, "242", "2. sal");
         arrayTemp[82] = new spot(518, 87, "243", "2. sal");
         arrayTemp[83] = new spot(461, 88, "244", "2. sal");
-        arrayTemp[84] = new spot(172, 67, "250", "2. sal");
         arrayTemp[85] = new spot(255, 61, "251", "2. sal");
+        arrayTemp[84] = new spot(172, 67, "252", "2. sal");
         arrayTemp[86] = new spot(76, 122, "253", "2. sal");
         arrayTemp[87] = new spot(90, 131, "254", "2. sal");
         arrayTemp[88] = new spot(239, 77, "255", "2. sal");
@@ -611,7 +612,7 @@ class Arrays{
         arrayTemp[219].addNeighbors([182, 220]);
         arrayTemp[220].addNeighbors([47, 50, 219, 221]);
         arrayTemp[221].addNeighbors([220, 222]);
-        arrayTemp[222].addNeighbors([221, 223]);
+        arrayTemp[222].addNeighbors([221, 223, 359]);
         arrayTemp[223].addNeighbors([48, 49, 206, 222]);
         arrayTemp[224].addNeighbors([179, 225]);
         arrayTemp[225].addNeighbors([57, 224, 226]);
@@ -748,6 +749,8 @@ class Arrays{
         arrayTemp[356].addNeighbors([230, 357]);
         arrayTemp[357].addNeighbors([232, 356]);
         arrayTemp[358].addNeighbors([343, 355]);
+        arrayTemp[359].addNeighbors([222]);
+
 
 
 

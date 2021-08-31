@@ -16,6 +16,7 @@ var tempG;
 var keyKomma = false;
 var select;
 var option;
+var triangle = 0;
 
 
 
@@ -173,7 +174,7 @@ class Astar{
             }
             strokeWeight(w / 2);
             beginShape();
-            for(let i = 0; i < path.length; i++){
+            for(let i = 0; i < path.length; i++){ 
                 if(path[i].tag == `${planTegning}. sal`){
                     vertex(path[i].x, path[i].y);
                     if(i < path.length-1) if(path[i+1].tag != `${planTegning}. sal`){
@@ -190,7 +191,6 @@ class Astar{
                     }
                 }
                 if(planTegning === undefined) vertex(path[i].x, path[i].y);
-
             }
             endShape();
             strokeWeight(1);
@@ -200,15 +200,19 @@ class Astar{
             text(end.text, end.x, end.y);
 
 
+            //tegn pil til hvor man skal hen
+            // triangle(path[triangle])
+
+
             //draw flere array, altså til at gøre det nemmere for os at tilføje lokaler
-            if(keyIsDown(107)){ //key + numlock for add
+            if(keyIsDown(107)){ //key "+" numlock for add
                 var tempPrompt = prompt("arrayTemp[100] = new spot(879, 474, \"tag\", \"sal\"\)\;");
                 console.log("arrayTemp[" + arrayTemp.length + "] = new spot(" + round(mouseX/currentScalling, 0) + ", " + round(mouseY/currentScalling, 0) + ", " + tempPrompt + ");");
                 arrayTemp[arrayTemp.length] = new spot(round(mouseX/currentScalling, 0), round(mouseY/currentScalling, 0), tempPrompt);
                 // arrayTemp[6] = new spot(1000, 400, "33");
             }
 
-            if(keyIsDown(110) || keyKomma){ //key , for numlock for index
+            if(keyIsDown(110) || keyKomma){ //key "," for numlock for index
                 keyKomma = true;
                 push();
                 textSize(15);

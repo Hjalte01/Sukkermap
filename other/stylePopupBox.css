@@ -68,8 +68,27 @@ label{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-select{
+/* 
+.farveRute{
     color:black;
     font-size: 15px;
     margin-left: 10px;    
+}
+.aktiviteter{
+    color:white;
+    font-size: 15px;
+    margin-left: 10px;    
+}
+*/
+
+
+
+select{
+    color:black;
+    font-size: 15px;
+    margin-left: 10px;   
+    display:block;
+    text-align: center;
+    right: auto;
+    width: auto; 
 }
