@@ -16,7 +16,7 @@ var tempG;
 var keyKomma = false;
 var select;
 var option;
-var triangle = 0;
+var triCount;
 
 
 
@@ -40,6 +40,7 @@ class Astar{
                 
                 arraySetup.aStarArray();
                 
+                triCount = 0;
                 setupBol = false;
                 openSet = [];
                 closedSet = [];
@@ -175,19 +176,11 @@ class Astar{
             strokeWeight(w / 2);
             beginShape();
             for(let i = 0; i < path.length; i++){ 
-                if(path[i].tag == `${planTegning}. sal`){
+                if(path[i].tag == `${planTegning}. sal` || path[i].tag == "stue" && planTegning == 0){
                     vertex(path[i].x, path[i].y);
-                    if(i < path.length-1) if(path[i+1].tag != `${planTegning}. sal`){
+                    if(i < path.length-1 && path[i].tag == `${planTegning}. sal` && path[i+1].tag != `${planTegning}. sal` || i < path.length-1 && path[i].tag == "stue" && path[i+1].tag != "stue"){
                         endShape();
                         beginShape();
-                    }
-                }else if(planTegning == 0){
-                    if(path[i].tag == "stue"){
-                        vertex(path[i].x, path[i].y);
-                        if(i < path.length-1) if(path[i+1].tag != "stue"){
-                            endShape();
-                            beginShape();
-                        }
                     }
                 }
                 if(planTegning === undefined) vertex(path[i].x, path[i].y);
@@ -200,8 +193,27 @@ class Astar{
             text(end.text, end.x, end.y);
 
 
-            //tegn pil til hvor man skal hen
-            // triangle(path[triangle])
+            //trekant animation
+            triCount -= 0.05; //animations hastighed
+            if(ceil(triCount) <= 0) triCount = path.length-1;
+
+            push();
+            fill(0, 255, 0);
+            noStroke(); 
+
+            let tempPoint1_2 = createVector(path[ceil(triCount-1)].x - path[ceil(triCount)].x, path[ceil(triCount-1)].y - path[ceil(triCount)].y);
+            let tempPoint2Rate = 10/sqrt(tempPoint1_2.x**2 + tempPoint1_2.y**2);
+            if(path[ceil(triCount-1)].tag == `${planTegning}. sal` || planTegning == undefined || path[ceil(triCount-1)].tag == "stue" && planTegning == 0){
+                triangle(
+                    path[ceil(triCount)].x - tempPoint1_2.y * tempPoint2Rate,
+                    path[ceil(triCount)].y + tempPoint1_2.x * tempPoint2Rate,
+                    path[ceil(triCount)].x + tempPoint1_2.x * tempPoint2Rate,
+                    path[ceil(triCount)].y + tempPoint1_2.y * tempPoint2Rate,
+                    path[ceil(triCount)].x + tempPoint1_2.y * tempPoint2Rate,
+                    path[ceil(triCount)].y - tempPoint1_2.x * tempPoint2Rate
+                );
+            }
+            pop();
 
 
             //draw flere array, altså til at gøre det nemmere for os at tilføje lokaler

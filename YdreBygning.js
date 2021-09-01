@@ -30,8 +30,7 @@ class YdreBygning{
 
     områder(){ 
 
-
-        if(figurer[0].pointConnections([[198/10, 0], [width, 0], [width, height], [0, height], [0, 299/10], [198/10, 299/10]], "LINES")) planTegning = 0;
+        if(figurer[0].pointConnections([[0, 0], [width, 0], [width, height], [0, height]], "LINES")) planTegning = 0;
     }
     
 
