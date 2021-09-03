@@ -55,7 +55,10 @@ class IndreBygning extends YdreBygning{
 }   
 
 function tilbageKnap(){
-    if(figurer[3].pointConnections([[width-110, 0], [width, 0], [width, 35], [width-110, 35]], undefined, undefined, "Kortet")) planTegning = undefined;
+    if(figurer[3].pointConnections([[width-110, 0], [width, 0], [width, 35], [width-110, 35]], undefined, undefined, "Kortet")){
+        planTegning = undefined;
+        triCount.change = true;
+    } 
 }
 
 
@@ -64,6 +67,7 @@ function pile(){
         if(figurer[1].pointConnections([[width/2, height-height/500], [width/2-width/70, height-height/30], [width/2+width/70, height-height/30]]) || keyCode === 40 && figurer[1].countdown <= 0){ 
             planTegning--; 
             keyCode = undefined;
+            triCount.change = true;
         }
     }
 
@@ -71,6 +75,7 @@ function pile(){
         if(figurer[2].pointConnections([[width/2, height/500], [width/2-width/70, height/30], [width/2+width/70, height/30]]) || keyCode === 38 && figurer[2].countdown <= 0){
             planTegning++;
             keyCode = undefined;
+            triCount.change = true;
         }
     }
 }

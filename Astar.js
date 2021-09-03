@@ -16,7 +16,7 @@ var tempG;
 var keyKomma = false;
 var select;
 var option;
-var triCount;
+var triCount = {pivot:0, mindsteVærdi:[], maxVærdi:[], change:true};
 
 
 
@@ -40,7 +40,7 @@ class Astar{
                 
                 arraySetup.aStarArray();
                 
-                triCount = 0;
+                triCount.change = true;
                 setupBol = false;
                 openSet = [];
                 closedSet = [];
@@ -75,7 +75,7 @@ class Astar{
                 current = openSet[winner];
 
                 if(current == end){
-                    console.log("Done");
+                    // console.log("Done");
                     setupBol = true;
                     inputEnd = undefined;
                     inputStart = undefined;
@@ -160,6 +160,8 @@ class Astar{
             if(start != undefined) text(start.text, start.x, start.y);
             if(end != undefined) text(end.text, end.x, end.y);
 
+
+        // Hvis kortet er sorteret færdigt, så sker dette
         } else if(end != undefined && start != undefined){
             noFill();
             if (option.value == "pink") {
@@ -194,26 +196,8 @@ class Astar{
 
 
             //trekant animation
-            triCount -= 0.05; //animations hastighed
-            if(ceil(triCount) <= 0) triCount = path.length-1;
-
-            push();
-            fill(0, 255, 0);
-            noStroke(); 
-
-            let tempPoint1_2 = createVector(path[ceil(triCount-1)].x - path[ceil(triCount)].x, path[ceil(triCount-1)].y - path[ceil(triCount)].y);
-            let tempPoint2Rate = 10/sqrt(tempPoint1_2.x**2 + tempPoint1_2.y**2);
-            if(path[ceil(triCount-1)].tag == `${planTegning}. sal` || planTegning == undefined || path[ceil(triCount-1)].tag == "stue" && planTegning == 0){
-                triangle(
-                    path[ceil(triCount)].x - tempPoint1_2.y * tempPoint2Rate,
-                    path[ceil(triCount)].y + tempPoint1_2.x * tempPoint2Rate,
-                    path[ceil(triCount)].x + tempPoint1_2.x * tempPoint2Rate,
-                    path[ceil(triCount)].y + tempPoint1_2.y * tempPoint2Rate,
-                    path[ceil(triCount)].x + tempPoint1_2.y * tempPoint2Rate,
-                    path[ceil(triCount)].y - tempPoint1_2.x * tempPoint2Rate
-                );
-            }
-            pop();
+            grønPil();
+            
 
 
             //draw flere array, altså til at gøre det nemmere for os at tilføje lokaler
@@ -253,6 +237,63 @@ class Astar{
         }
     }
 }
+
+
+function grønPil(){
+    
+    if(triCount.change == true){
+        triCount = {pivot:0, mindsteVærdi:[], maxVærdi:[], change:true};
+        if(planTegning == undefined){
+            triCount.mindsteVærdi[0] = 0;
+            triCount.maxVærdi[0] = path.length-1;
+        }else{
+            for(let i = 0; i < path.length; i++){
+                if(path[ceil(i)].tag == `${planTegning}. sal` || path[ceil(i)].tag == "stue" && planTegning == 0){
+                    if(triCount.change == true) {
+                        triCount.mindsteVærdi[triCount.mindsteVærdi.length] = i;
+                        triCount.change = false;
+                    }
+                    triCount.maxVærdi[triCount.mindsteVærdi.length-1] = i;
+                }else{
+                    triCount.change = true;
+                }
+            }
+        } 
+        triCount.change = false;
+    }
+    if(triCount.mindsteVærdi != "" ||triCount.maxVærdi != ""){
+
+        triCount.pivot -= 0.05; //animations hastighed¨
+        triCount.maxVærdi[-1] = triCount.maxVærdi[triCount.mindsteVærdi.length-1]; // lidt sketchy måde at lave arr[-1]
+        for(let i = triCount.mindsteVærdi.length-1; i >= 0; i--){
+            if(ceil(triCount.pivot) <= triCount.mindsteVærdi[0] && i == 0 || ceil(triCount.pivot) <= triCount.mindsteVærdi[i] && ceil(triCount.pivot) > triCount.maxVærdi[i-1]){
+                triCount.pivot = triCount.maxVærdi[i-1];
+                
+                if(i == 0){
+                    triCount.pivot = triCount.maxVærdi[triCount.mindsteVærdi.length-1];
+                } 
+            } 
+        }
+
+        push();
+        fill(0, 255, 0);
+        noStroke(); 
+        let tempPoint1_2 = createVector(path[ceil(triCount.pivot-1)].x - path[ceil(triCount.pivot)].x, path[ceil(triCount.pivot-1)].y - path[ceil(triCount.pivot)].y);
+        let tempPoint2Rate = 10/sqrt(tempPoint1_2.x**2 + tempPoint1_2.y**2);
+        if(path[ceil(triCount.pivot-1)].tag == `${planTegning}. sal` || planTegning == undefined || path[ceil(triCount.pivot-1)].tag == "stue" && planTegning == 0){
+            triangle(
+                path[ceil(triCount.pivot)].x - tempPoint1_2.y * tempPoint2Rate,
+                path[ceil(triCount.pivot)].y + tempPoint1_2.x * tempPoint2Rate,
+                path[ceil(triCount.pivot)].x + tempPoint1_2.x * tempPoint2Rate,
+                path[ceil(triCount.pivot)].y + tempPoint1_2.y * tempPoint2Rate,
+                path[ceil(triCount.pivot)].x + tempPoint1_2.y * tempPoint2Rate,
+                path[ceil(triCount.pivot)].y - tempPoint1_2.x * tempPoint2Rate
+            );
+        }
+        pop();
+    }
+}
+
 
 function removeFromArray(arr, elt){
     for(let i = 0; i < arr.length; i++){

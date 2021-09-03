@@ -30,7 +30,10 @@ class YdreBygning{
 
     områder(){ 
 
-        if(figurer[0].pointConnections([[0, 0], [width, 0], [width, height], [0, height]], "LINES")) planTegning = 0;
+        if(figurer[0].pointConnections([[0, 0], [width, 0], [width, height], [0, height]], "LINES")){
+            planTegning = 0;
+            triCount.change = true;
+        } 
     }
     
 

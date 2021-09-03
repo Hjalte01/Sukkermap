@@ -2,31 +2,42 @@ Link til liveshare: https://prod.liveshare.vsengsaas.visualstudio.com/join?5ACD5
 
 
 Liste over ting der er fedt, hvis det nås:
+Mangler:
 
-tog/bus stationer 
-Ny lokaler 252 
-Bygning navne samt kendte steder på skolen 
+- bus stationer
+- Bygning navne samt kendte steder på skolen 
+- Indstillinger 
+    - Bordtennis 
+    - Toiletter 
+    - Animations pil, samt hastigheden på animationen
 
-Indstillinger 
-    Bordtennis 
-    Toiletter 
-    Animations pil - samt hastigheden på animationen
+- Mobil venlig, så folk kan klikke på en link i deres mobil og bruge den uden at downloade en app
 
-Mobil venlig, så folk kan klikke på en link i deres mobil og bruge den uden at downloade en app
+- Kantinen nr 80 
+- Biograf nr 351
 
-
-Kantinen nr 80 
-Biograf nr 351
-
-Mangler 
-    004 - Læsevejledning 
-    006 - Rektor Kontor
-    051 - Fredagscafe
-    052 - Musiklokale
-    053 - Musik lille
-    061 - PG lokale 
-    070 - Kemi indgnang 
-    373 - lille hjørne lokale 
-    379 - Samtalerum - Studv. 
+ 
+- 004 - Læsevejledning 
+- 006 - Rektor Kontor
+- 051 - Fredagscafe
+- 052 - Musiklokale
+- 053 - Musik lille
+- 061 - PG lokale 
+- 070 - Kemi indgnang 
+- 373 - lille hjørne lokale 
+- 379 - Samtalerum - Studv. 
 
 
+
+-----------------------------------------------------------------------------------------
+Done:
+
+
+- QR-kode
+
+Lokaler/steder:
+- Ny lokaler 252
+- tog stationer
+- spar
+- parkeringsplads
+- i bil
