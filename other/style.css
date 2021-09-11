@@ -54,7 +54,7 @@ ul.topNav  {
 }
 
 /* Hvis skærmen er under 800px så vil css ændres til det her*/
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 850px) {
     ul.topNav li {
         float: none;
         padding: auto;
@@ -74,18 +74,19 @@ ul.topNav  {
     /* Prøver at fixed canvas så det vende vandret når man bruger mobil, 
     men det lidt svært at sætte dens position, 
     samt pil knappen og kort knappen ikke vil virke, side at deres koordinater bliver ændret /*
-    /* canvas {
-        /* text-align:center;
-        transform: rotate(90deg);
-        padding-left: 0px;
-        padding-right: 0px;
-        margin-left: 200px;
-        margin-right: 0;
-        margin-top: auto;
-        display: block; 
-        width: 0%;
-        float:center; 
-    } */
+    */
+    canvas {
+        /* text-align:center; */
+        /* transform: rotate(90deg); */
+        /* padding-left: 0px; */
+        /* padding-right: 0px; */
+        margin-left: 100px;
+        /* margin-right: 0; */
+        /* margin-top: auto; */
+        /* display: block;  */
+        /* width: 0%; */
+        /* float:center;  */
+    }
   }
 
 li {
