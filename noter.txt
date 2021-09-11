@@ -1,7 +1,8 @@
 Link til liveshare: https://prod.liveshare.vsengsaas.visualstudio.com/join?5ACD54DDFD90539219D43F55AA1FD538633F
 
 
-Liste over ting der er fedt, hvis det nås:
+Liste over ting der skal nås:
+-----------------------------------------------------------------------------------------
 Mangler:
 
 - bus stationer

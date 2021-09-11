@@ -16,7 +16,7 @@ var tempG;
 var keyKomma = false;
 var select;
 var option;
-var triCount = {pivot:0, mindsteVærdi:[], maxVærdi:[], change:true};
+var triCount = {pivot:0, mindsteVærdi:[], maxVærdi:[], change:true, fejl:false};
 
 
 
@@ -113,11 +113,12 @@ class Astar{
                     }
                 }
             }else{
-                console.log("fejl, noget gik galt, ikke vores skyld");
-                alert("Hjælp os med at skrive en bugRapport for en bedre version, venligst skriv det ind i javascript/p5 og sig hvor vi skal paste koden ind");
+                console.log("fejl, noget gik galt, formodentlig en connection error");
+                alert("Hjælp os med at skrive en bugRapport for en bedre version, gerne skriv hvilke to steder i skrev i søgefeltet for at fejlen forekommer :)");
                 setupBol = true;
                 inputEnd = undefined;
                 inputStart = undefined;
+                triCount.fejl = true;
                 return;
             }
 
@@ -240,57 +241,59 @@ class Astar{
 
 
 function grønPil(){
-    
-    if(triCount.change == true){
-        triCount = {pivot:0, mindsteVærdi:[], maxVærdi:[], change:true};
-        if(planTegning == undefined){
-            triCount.mindsteVærdi[0] = 0;
-            triCount.maxVærdi[0] = path.length-1;
-        }else{
-            for(let i = 0; i < path.length; i++){
-                if(path[ceil(i)].tag == `${planTegning}. sal` || path[ceil(i)].tag == "stue" && planTegning == 0){
-                    if(triCount.change == true) {
-                        triCount.mindsteVærdi[triCount.mindsteVærdi.length] = i;
-                        triCount.change = false;
+    if(triCount.fejl == false){
+        if(triCount.change == true){
+            triCount = {pivot:0, mindsteVærdi:[], maxVærdi:[], change:true, fejl:false};
+            if(planTegning == undefined){
+                triCount.mindsteVærdi[0] = 0;
+                triCount.maxVærdi[0] = path.length-1;
+            }else{
+                for(let i = 0; i < path.length; i++){
+                    if(path[ceil(i)].tag == `${planTegning}. sal` || path[ceil(i)].tag == "stue" && planTegning == 0){
+                        if(triCount.change == true) {
+                            triCount.mindsteVærdi[triCount.mindsteVærdi.length] = i;
+                            triCount.change = false;
+                        }
+                        triCount.maxVærdi[triCount.mindsteVærdi.length-1] = i;
+                    }else{
+                        triCount.change = true;
                     }
-                    triCount.maxVærdi[triCount.mindsteVærdi.length-1] = i;
-                }else{
-                    triCount.change = true;
                 }
-            }
-        } 
-        triCount.change = false;
-    }
-    if(triCount.mindsteVærdi != "" ||triCount.maxVærdi != ""){
-
-        triCount.pivot -= 0.05; //animations hastighed¨
-        triCount.maxVærdi[-1] = triCount.maxVærdi[triCount.mindsteVærdi.length-1]; // lidt sketchy måde at lave arr[-1]
-        for(let i = triCount.mindsteVærdi.length-1; i >= 0; i--){
-            if(ceil(triCount.pivot) <= triCount.mindsteVærdi[0] && i == 0 || ceil(triCount.pivot) <= triCount.mindsteVærdi[i] && ceil(triCount.pivot) > triCount.maxVærdi[i-1]){
-                triCount.pivot = triCount.maxVærdi[i-1];
-                
-                if(i == 0){
-                    triCount.pivot = triCount.maxVærdi[triCount.mindsteVærdi.length-1];
-                } 
             } 
+            triCount.change = false;
         }
+        if(triCount.mindsteVærdi != "" ||triCount.maxVærdi != ""){
 
-        push();
-        fill(0, 255, 0);
-        noStroke(); 
-        let tempPoint1_2 = createVector(path[ceil(triCount.pivot-1)].x - path[ceil(triCount.pivot)].x, path[ceil(triCount.pivot-1)].y - path[ceil(triCount.pivot)].y);
-        let tempPoint2Rate = 10/sqrt(tempPoint1_2.x**2 + tempPoint1_2.y**2);
-        if(path[ceil(triCount.pivot-1)].tag == `${planTegning}. sal` || planTegning == undefined || path[ceil(triCount.pivot-1)].tag == "stue" && planTegning == 0){
-            triangle(
-                path[ceil(triCount.pivot)].x - tempPoint1_2.y * tempPoint2Rate,
-                path[ceil(triCount.pivot)].y + tempPoint1_2.x * tempPoint2Rate,
-                path[ceil(triCount.pivot)].x + tempPoint1_2.x * tempPoint2Rate,
-                path[ceil(triCount.pivot)].y + tempPoint1_2.y * tempPoint2Rate,
-                path[ceil(triCount.pivot)].x + tempPoint1_2.y * tempPoint2Rate,
-                path[ceil(triCount.pivot)].y - tempPoint1_2.x * tempPoint2Rate
-            );
+            triCount.pivot -= 0.05; //animations hastighed¨
+            triCount.maxVærdi[-1] = triCount.maxVærdi[triCount.mindsteVærdi.length-1]; // lidt sketchy måde at lave arr[-1]
+            for(let i = triCount.mindsteVærdi.length-1; i >= 0; i--){
+                if(ceil(triCount.pivot) <= triCount.mindsteVærdi[0] && i == 0 || ceil(triCount.pivot) <= triCount.mindsteVærdi[i] && ceil(triCount.pivot) > triCount.maxVærdi[i-1]){
+                    triCount.pivot = triCount.maxVærdi[i-1];
+                    
+                    if(i == 0){
+                        triCount.pivot = triCount.maxVærdi[triCount.mindsteVærdi.length-1];
+                    } 
+                } 
+            }
+
+            push();
+            fill(0, 255, 0);
+            noStroke(); 
+            // console(triCount);
+            let tempPoint1_2 = createVector(path[ceil(triCount.pivot-1)].x - path[ceil(triCount.pivot)].x, path[ceil(triCount.pivot-1)].y - path[ceil(triCount.pivot)].y);
+            let tempPoint2Rate = 10/sqrt(tempPoint1_2.x**2 + tempPoint1_2.y**2);
+            if(path[ceil(triCount.pivot-1)].tag == `${planTegning}. sal` || planTegning == undefined || path[ceil(triCount.pivot-1)].tag == "stue" && planTegning == 0){
+                triangle(
+                    path[ceil(triCount.pivot)].x - tempPoint1_2.y * tempPoint2Rate,
+                    path[ceil(triCount.pivot)].y + tempPoint1_2.x * tempPoint2Rate,
+                    path[ceil(triCount.pivot)].x + tempPoint1_2.x * tempPoint2Rate,
+                    path[ceil(triCount.pivot)].y + tempPoint1_2.y * tempPoint2Rate,
+                    path[ceil(triCount.pivot)].x + tempPoint1_2.y * tempPoint2Rate,
+                    path[ceil(triCount.pivot)].y - tempPoint1_2.x * tempPoint2Rate
+                );
+            }
+            pop();
         }
-        pop();
     }
 }
 
