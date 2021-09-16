@@ -12,7 +12,9 @@ class IndreBygning extends YdreBygning{
         push();
         stroke(0);
         strokeWeight(1);
-        text("Plantegning: " + planTegning, width/1.1, width/20);
+        textSize(30);
+        planTegning == 0 ? text("Stue", width/1.1, width/15) : text(planTegning + ". sal", width/1.1, width/15);
+        
         pop();
         
         pile();
@@ -20,10 +22,6 @@ class IndreBygning extends YdreBygning{
 
         pathfindingAlgorithm.loop();
 
-
-    }
-
-    kælder(){
 
     }
 

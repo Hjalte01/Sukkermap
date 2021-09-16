@@ -81,8 +81,6 @@ label{
 }
 */
 
-
-
 select{
     color:black;
     font-size: 15px;
@@ -91,4 +89,10 @@ select{
     text-align: center;
     right: auto;
     width: auto; 
+}
+
+.content-divider{
+    height: 100%;
+    width: 100%;
+
 }

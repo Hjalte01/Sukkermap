@@ -9,6 +9,18 @@
     <link rel="stylesheet" type="text/css" href="other/style.css">
     <link rel="stylesheet" href="other/stylePopupBox.css">
     <meta charset="utf-8">
+
+    <!-- JavaScript filer-->
+    <script src="PopupBox.js" defer></script>
+    <script src="Menu.js" defer></script>
+    <script src="Astar.js" defer></script>
+    <script src="Søg.js" defer></script>
+    <script src="Arrays.js" defer></script>
+    <script src="YdreBygning.js" defer></script>
+    <script src="IndreBygning.js" defer></script>
+    <script src="Kortet.js" defer></script>
+
+
   
   </head>
   <body>
@@ -24,7 +36,7 @@
     <p id='fra'>Fra</p>
        <!-- Array list i søgefletet, som har id valList-->
     <form>
-      <input list="valgList1" id='listInput1'> 
+      <input list="valgList1" id='listInput1' value='Tog(F/Rød) endestation'> 
       <datalist id="valgList1"> 
         <option id='111' value='Tog(F/Rød) endestation'>
         <option id='112' value='Tog(A/E/F) mellemstation'>
@@ -152,46 +164,90 @@
 
    <p id='til'>til</p>
     <form>
-      <input list="valgList1" id='listInput2'> 
+      <input list="valgList1" id='listInput2' value="I bil"> 
       <datalist id="valgList1"> 
       </datalist>
     </form>
+
        
       
     <input type="image"  id="btnOpen" class="indstillinger" src="img/indstilling_ikon.png" alt="Indstillinger">
 
-  <!-- Checkboxe uden p5, da der gik kluder med p5 -->
-  <!-- <input type='checkbox' id='coronaTrapper'>
-  <label for='Corona trapper'></label><br> -->
+    <!-- Checkboxe uden p5, da der gik kluder med p5 -->
+    <!-- <input type='checkbox' id='coronaTrapper'>
+    <label for='Corona trapper'></label><br> -->
 
-  <!-- versionen man er på lige nu, husk at ændre den, hver gang github bliver updateret for nu af -->
-  <p id='version'>Version: 1.2</p>
+    <!-- versionen man er på lige nu, husk at ændre den, hver gang github bliver updateret for nu af -->
+   <p id='updated'>Updated: </p>
 
-  <!-- Indstillinger og popup boxen-->
-  <div id="popupBox" class="popupBoxClass">
-    <div class="popupBox-content">
-      <span class="xClose" id="xBtn">&times;</span>
-      <h1>Indstillinger</h1>
-      <label for="farveRute">Vælg farven på ruten</label>
-      <select id="farveRute"style="width:150px; height: 25px;">
-        <option value="pink"> Pink</option>
-        <option value="grøn">Grøn</option>
-        <option value="blå">Blå</option>
-        <option value="rød">Rød</option>
-        <option value="orange">Orange</option>
-      </select>
+    <!-- Indstillinger og popup boxen-->
+    <div id="popupBox" class="popupBoxClass">
+      <div class="popupBox-content">
+        <span class="xClose" id="xBtn">&times;</span>
+        <h1>Indstillinger</h1>
+
+        <div class="content-divider">  <!-- Lige nu er dette ligegyldtigt men kan bruges til at danne to sektioner, det må vi lige snakke om :) -->
+          <div class="content-divider-sections">
+            <label for="farveRute">Vælg farven på ruten</label>
+            <select id="farveRute"style="width:150px; height: 25px;">
+              <option value="pink"> Pink</option>
+              <option value="grøn">Grøn</option>
+              <option value="blå">Blå</option>
+              <option value="rød">Rød</option>
+              <option value="orange">Orange</option>
+            </select>
+            <input type="color" id="colorInp">
+          </div>
+
+          <div class="content-divider">
+            <label for="farveRute">Vælg farven på ruten2</label>
+            <select id="farveRute"style="width:150px; height: 25px;">
+              <option value="pink"> Pink</option>
+              <option value="grøn">Grøn</option>
+              <option value="blå">Blå</option>
+              <option value="rød">Rød</option>
+              <option value="orange">Orange</option>
+            </select>
+          </div>
+
+          <div class="content-divider">
+            <label for="farveRute">Vælg farven på ruten3</label>
+            <select id="farveRute"style="width:150px; height: 25px;">
+              <option value="pink"> Pink</option>
+              <option value="grøn">Grøn</option>
+              <option value="blå">Blå</option>
+              <option value="rød">Rød</option>
+              <option value="orange">Orange</option>
+            </select>
+          </div>
+
+          <div class="content-divider">
+            <label for="farveRute">Vælg farven på ruten4</label>
+            <select id="farveRute"style="width:150px; height: 25px;">
+              <option value="pink"> Pink</option>
+              <option value="grøn">Grøn</option>
+              <option value="blå">Blå</option>
+              <option value="rød">Rød</option>
+              <option value="orange">Orange</option>
+            </select>
+          </div>
+
+          <div class="content-divider">
+            <label for="farveRute">Vælg farven på ruten etc.</label>
+            <select id="farveRute"style="width:150px; height: 25px;">
+              <option value="pink"> Pink</option>
+              <option value="grøn">Grøn</option>
+              <option value="blå">Blå</option>
+              <option value="rød">Rød</option>
+              <option value="orange">Orange</option>
+            </select>
+          </div>
+
+
+            
+        </div>>
+      </div>
     </div>
-  </div>
-
-  <!-- JavaScript filer-->
-    <script src="PopupBox.js"></script>
-    <script src="Menu.js"></script>
-    <script src="Astar.js"></script>
-    <script src="Søg.js"></script>
-    <script src="Arrays.js"></script>
-    <script src="YdreBygning.js"></script>
-    <script src="IndreBygning.js"></script>
-    <script src="Kortet.js"></script>
-
+    
 </body>
 </html>

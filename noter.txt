@@ -11,6 +11,8 @@ Mangler:
     - Bordtennis 
     - Toiletter 
     - Animations pil, samt hastigheden på animationen
+    - local storage (husker det data man har laver fra sidst)
+    - session storage (kan ikke se om det kunne være brugbart i vores tilfælde)
 
 - Mobil venlig, så folk kan klikke på en link i deres mobil og bruge den uden at downloade en app
 
@@ -28,6 +30,11 @@ Mangler:
 - 373 - lille hjørne lokale 
 - 379 - Samtalerum - Studv. 
 
+- HTML elementer der er nice at have med
+    - <input type="color"> // Dette gør at man selv kan vælge en farve og trykke på den i et grid med farver
+    - <progress value="50" max="100">50%</progress> // dette kan vi bruge til at lave en progress linje, 
+    hvis man selv må vælge om man vil se rute animationen.
+
 
 
 -----------------------------------------------------------------------------------------
@@ -42,3 +49,16 @@ Lokaler/steder:
 - spar
 - parkeringsplads
 - i bil
+
+
+
+
+
+--------------------------------------------------------------------------
+nvm. dette her vil bare gerne huske nogle commands jeg så, som var nyttige
+- commands
+    - alt + leftclick --> dette laver en ny cursor
+    - ctrl + d --> dette gør at når man har markeret et navn, som går igen, så laver man en cursor på den næste med samme navn.
+    - shift + alt + f --> fikser format(undtaget css og visse andre)
+    - ctrl + p (tryk p derefter) --> skifter faner nemmere
+ 

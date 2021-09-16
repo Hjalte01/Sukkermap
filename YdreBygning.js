@@ -50,7 +50,7 @@ class YdreBygning{
         this.visuelt = visuelt; //viser visuelt, hvis true
         if(this.xy == undefined) this.xy = xy;
         push();
-        stroke(255, 0, 0);
+        stroke(0);
         strokeWeight(width/500);
 
         if(this.centerGæt.x == 0 && this.centerGæt.y == 0){

@@ -14,8 +14,6 @@ var setupBol = true;
 var doneBol = false;
 var tempG;
 var keyKomma = false;
-var select;
-var option;
 var triCount = {pivot:0, mindsteVærdi:[], maxVærdi:[], change:true, fejl:false};
 
 
@@ -32,8 +30,7 @@ class Astar{
 
     loop(){
 
-        select = document.getElementById('farveRute');
-        option = select.options[select.selectedIndex];
+        
 
         if(inputStart != undefined && inputEnd != undefined && inputStart != inputEnd){
             if(setupBol){ 
@@ -136,18 +133,8 @@ class Astar{
 
             noFill();
             
-            if (option.value == "pink") {
-                stroke(255, 0, 200);
-            } else if (option.value == "blå") {
-                stroke(0, 0, 200);
-            } else if (option.value == "grøn") {
-                stroke(0, 200, 0);
-            } else if (option.value == "rød") {
-                stroke(200, 0, 0);
-            } else if (option.value == "orange"){
-                stroke(255,165,0);
-            }
             
+            stroke(farveInp); //farve option
             
             strokeWeight(w / 2);
             beginShape();
@@ -165,17 +152,7 @@ class Astar{
         // Hvis kortet er sorteret færdigt, så sker dette
         } else if(end != undefined && start != undefined){
             noFill();
-            if (option.value == "pink") {
-                stroke(255, 0, 200);
-            } else if (option.value == "blå") {
-                stroke(0, 0, 200);
-            } else if (option.value == "grøn") {
-                stroke(0, 200, 0);
-            } else if (option.value == "rød") {
-                stroke(200, 0, 0);
-            } else if (option.value == "orange"){
-                stroke(255,165,0);
-            }
+            stroke(farveInp); // farve option
             strokeWeight(w / 2);
             beginShape();
             for(let i = 0; i < path.length; i++){ 

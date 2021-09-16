@@ -33,9 +33,10 @@ function setup(){
 
 function draw(){
     clear();
+
     canvasZoom = screen.width;
-    currentScalling = windowWidth/canvasZoom;
-    scale(currentScalling); 
+    currentScalling = windowWidth/canvasZoom;   
+    scale(currentScalling); //en stor fejl i forhold til at få css til at virke ordentlig med telefon 
     if(planTegning != undefined) {
     
 
@@ -63,3 +64,10 @@ function preload(){
     questionMark = loadImage('img/question mark.png'); //question mark til menu
 }
 
+
+
+
+//updated
+var p = document.getElementById('updated');
+    currentDate = new Date();
+    p.textContent = `Updated: ${currentDate.getDate()}/${currentDate.getMonth()+1}/${currentDate.getFullYear()}`;
