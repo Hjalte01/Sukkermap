@@ -180,15 +180,36 @@
     <!-- versionen man er på lige nu, husk at ændre den, hver gang github bliver updateret for nu af -->
    <p id='updated'>Updated: </p>
 
+
+    <!-- Hjælpere -->
+    <div id="hjælpereNavigation">Tryk, hvor der skal tilføjes et nyt sted/område/printere/toilet/m.m.</div>
+    <div id="hjælpereContainer">
+      <div class="popupBox-content" style="width:30%; height:30%; padding: 0%;">
+        <span class="xClose" id="hjælperXBtn">&times;</span>
+        <div class="hjælpereTitelSection">
+          <label for="hjælpereTitel">Titel:</label>
+          <input id="hjælpereTitel" placeholder="Ex. Lokale 144/printer/toilet/område/m.m." style="width:240px;">
+        </div>
+        <div>
+          <p id="hjælperekoordinater" style="margin: 10px 0 0 10px;"></p>
+        </div>
+        <div class="hjælpereTitelSection">
+          <textarea placeholder="Beskrivelse..." style="width:280px; height:110px;"></textarea>
+        </div>
+      </div>
+    </div>
+
+
     <!-- Indstillinger og popup boxen-->
     <div id="popupBox" class="popupBoxClass">
       <div class="popupBox-content">
         <span class="xClose" id="xBtn">&times;</span>
         <h1>Indstillinger</h1>
 
-        <div class="content-divider">  <!-- Lige nu er dette ligegyldtigt men kan bruges til at danne to sektioner, det må vi lige snakke om :) -->
+        <div class="content-divider"> 
+          <!-- farve på ruten -->
           <div class="content-divider-sections">
-            <label for="farveRute">Vælg farven på ruten</label>
+            <label for="farveRute">Farven på ruten</label>
             <select id="farveRute"style="width:150px; height: 25px;">
               <option value="pink"> Pink</option>
               <option value="grøn">Grøn</option>
@@ -198,49 +219,23 @@
             </select>
             <input type="color" id="colorInp">
           </div>
-
-          <div class="content-divider">
-            <label for="farveRute">Vælg farven på ruten2</label>
-            <select id="farveRute"style="width:150px; height: 25px;">
-              <option value="pink"> Pink</option>
-              <option value="grøn">Grøn</option>
-              <option value="blå">Blå</option>
-              <option value="rød">Rød</option>
-              <option value="orange">Orange</option>
-            </select>
+          <!-- hastighed pilen -->
+          <div class="content-divider-sections">
+            <label for="hastighedPil">Hastighed på vejledningspilen</label>
+            <input id="hastighedPil" value=0.05>
           </div>
 
-          <div class="content-divider">
-            <label for="farveRute">Vælg farven på ruten3</label>
-            <select id="farveRute"style="width:150px; height: 25px;">
-              <option value="pink"> Pink</option>
-              <option value="grøn">Grøn</option>
-              <option value="blå">Blå</option>
-              <option value="rød">Rød</option>
-              <option value="orange">Orange</option>
-            </select>
+          <div class="content-divider-sections">
+            <label for="farveRute">Kommer snart</label>
+          </div>
+          <!-- Hjælp til at danne flere lokaler -->
+          <div class="content-divider-sections">
+            <label for="Hjælpere">Hjælp til at danne flere lokaler/områder/toileter/printere/osv.</label>
+            <button id="hjælpBtn">Tryk her for at hjælpe</button>
           </div>
 
-          <div class="content-divider">
-            <label for="farveRute">Vælg farven på ruten4</label>
-            <select id="farveRute"style="width:150px; height: 25px;">
-              <option value="pink"> Pink</option>
-              <option value="grøn">Grøn</option>
-              <option value="blå">Blå</option>
-              <option value="rød">Rød</option>
-              <option value="orange">Orange</option>
-            </select>
-          </div>
-
-          <div class="content-divider">
-            <label for="farveRute">Vælg farven på ruten etc.</label>
-            <select id="farveRute"style="width:150px; height: 25px;">
-              <option value="pink"> Pink</option>
-              <option value="grøn">Grøn</option>
-              <option value="blå">Blå</option>
-              <option value="rød">Rød</option>
-              <option value="orange">Orange</option>
-            </select>
+          <div class="content-divider-sections">
+            <label for="farveRute">Kommer snart etc.</label>
           </div>
 
 

@@ -241,7 +241,7 @@ function grønPil(){
         }
         if(triCount.mindsteVærdi != "" ||triCount.maxVærdi != ""){
 
-            triCount.pivot -= 0.05; //animations hastighed¨
+            triCount.pivot -= hastighedPil; //animations hastighed¨
             triCount.maxVærdi[-1] = triCount.maxVærdi[triCount.mindsteVærdi.length-1]; // lidt sketchy måde at lave arr[-1]
             for(let i = triCount.mindsteVærdi.length-1; i >= 0; i--){
                 if(ceil(triCount.pivot) <= triCount.mindsteVærdi[0] && i == 0 || ceil(triCount.pivot) <= triCount.mindsteVærdi[i] && ceil(triCount.pivot) > triCount.maxVærdi[i-1]){

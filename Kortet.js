@@ -11,6 +11,7 @@ var søgefelt;
 var indreBygninger = [];
 var currentScalling;
 var menu;
+var popupBox;
 
 
 
@@ -20,7 +21,7 @@ function setup(){
         figurer[i] = new YdreBygning(20); //personlig countdown lav en ny figur, uden argument for ingen countdown
     }
 
-    
+    popupBox = new PopupBox();
     menu = new Menu();
     ydreTing = new YdreBygning();
     indreTing = new IndreBygning();
@@ -32,24 +33,27 @@ function setup(){
 
 
 function draw(){
-    clear();
+    if(popupBoxContainer.style.display == "" && hjælpereNavigation.style.display == "" && hjælpereContainer.style.display == ""){
+        clear();
+        canvasZoom = screen.width;
+        currentScalling = windowWidth/canvasZoom;   
+        scale(currentScalling); //en stor fejl i forhold til at få css til at virke ordentlig med telefon 
+        if(planTegning != undefined) {
+        
 
-    canvasZoom = screen.width;
-    currentScalling = windowWidth/canvasZoom;   
-    scale(currentScalling); //en stor fejl i forhold til at få css til at virke ordentlig med telefon 
-    if(planTegning != undefined) {
-    
-
-        indreTing.indreBygningCanvas();
+            indreTing.indreBygningCanvas();
 
 
-    }else{
-        ydreTing.ydreBygningCanvas();
+        }else{
+            ydreTing.ydreBygningCanvas();
+        }
+
+        søgefelt.inputfelt();
+        // menu.mainMenu();
+        
+
     }
-
-    søgefelt.inputfelt();
-    // menu.mainMenu();
-
+    popupBox.loop();
 
 }
 

@@ -10,7 +10,6 @@ Mangler:
 - Indstillinger 
     - Bordtennis 
     - Toiletter 
-    - Animations pil, samt hastigheden på animationen
     - local storage (husker det data man har laver fra sidst)
     - session storage (kan ikke se om det kunne være brugbart i vores tilfælde)
 
@@ -49,6 +48,10 @@ Lokaler/steder:
 - spar
 - parkeringsplads
 - i bil
+
+
+- Indstillinger
+    - Animations pil, samt hastigheden på animationen
 
 
 
