@@ -78,9 +78,21 @@
 }
 
 .hjælpereTitelSection{
+    display: flex;
     padding: 10px 0 0 10px;
     width: 80%;
 }
+
+#hjælpereSubmitBtn{
+    background-color: greenyellow;
+    width: 2em;
+}
+
+.hjælpereRotateParagraph{
+    transform: rotate(90deg);
+    margin: 0 0 60px 0;
+}
+
 
 .popupBox-content h1{
     color:#eb5332;

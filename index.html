@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="other/stylePopupBox.css">
     <meta charset="utf-8">
 
+
     <!-- JavaScript filer-->
     <script src="PopupBox.js" defer></script>
     <script src="Menu.js" defer></script>
@@ -187,14 +188,22 @@
       <div class="popupBox-content" style="width:30%; height:30%; padding: 0%;">
         <span class="xClose" id="hjælperXBtn">&times;</span>
         <div class="hjælpereTitelSection">
+          <!--  -->
           <label for="hjælpereTitel">Titel:</label>
           <input id="hjælpereTitel" placeholder="Ex. Lokale 144/printer/toilet/område/m.m." style="width:240px;">
         </div>
         <div>
-          <p id="hjælperekoordinater" style="margin: 10px 0 0 10px;"></p>
+          <!--  -->
+          <p id="hjælperekoordinater" type="text" style="margin: 10px 0 0 10px;"></p>
         </div>
         <div class="hjælpereTitelSection">
-          <textarea placeholder="Beskrivelse..." style="width:280px; height:110px;"></textarea>
+          <!--  -->
+          <textarea id="beskrivelse" type="text" placeholder="Beskrivelse..." style="width:280px; height:110px;"></textarea>
+          <!--  -->
+          <button id="hjælpereSubmitBtn">
+            <p class="hjælpereRotateParagraph">Submit</p>
+          </button>
+          
         </div>
       </div>
     </div>
@@ -230,7 +239,7 @@
           </div>
           <!-- Hjælp til at danne flere lokaler -->
           <div class="content-divider-sections">
-            <label for="Hjælpere">Hjælp til at danne flere lokaler/områder/toileter/printere/osv.</label>
+            <label for="Hjælpere"><b>VIRKER IKKE ENDNU, men det kommer til at være - </b>Hjælp til at danne flere lokaler/områder/toileter/printere/osv.</label>
             <button id="hjælpBtn">Tryk her for at hjælpe</button>
           </div>
 
