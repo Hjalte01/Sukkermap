@@ -7,7 +7,6 @@ class YdreBygning{
     constructor(countdown){
         this.centerGæt = createVector(0, 0);
         this.arealSum = 0;
-        this.scaling;
         this.maxCountdown = countdown;
         this.countdown = 0;
         this.xy;
@@ -87,7 +86,7 @@ class YdreBygning{
         }
         if(this.visuelt != undefined) if(this.visuelt[1]){
             for(let i = 0; i < xy.length; i++){
-               line(this.xy[i][0], this.xy[i][1], mouseX/currentScalling, mouseY/currentScalling); 
+               line(this.xy[i][0], this.xy[i][1], mouseX, mouseY); 
             }
         }
 
@@ -109,7 +108,7 @@ class YdreBygning{
                 clickArealSum = 0;
                 
                 
-                if(this.arealSum == 0 || this.scaling != currentScalling) for(let i = 0; i < this.xy.length; i++){
+                if(this.arealSum == 0) for(let i = 0; i < this.xy.length; i++){
                     punkterlængde[0] = sqrt(pow(this.centerGæt.x-this.xy[i][0],2) + pow(this.centerGæt.y-this.xy[i][1],2));
                     punkterlængde[1] = sqrt(pow(this.xy[i][0]-this.xy[(i+1)%this.xy.length][0],2) + pow(this.xy[i][1]-this.xy[(i+1)%this.xy.length][1],2));
                     punkterlængde[2] = sqrt(pow(this.xy[(i+1)%this.xy.length][0]-this.centerGæt.x,2) + pow(this.xy[(i+1)%this.xy.length][1]-this.centerGæt.y,2));
@@ -122,16 +121,15 @@ class YdreBygning{
 
 
                 for(let i = 0; i < this.xy.length; i++){
-                    punkterlængde[0] = sqrt(pow(mouseX/currentScalling-this.xy[i][0],2) + pow(mouseY/currentScalling-this.xy[i][1],2));
+                    punkterlængde[0] = sqrt(pow(mouseX-this.xy[i][0],2) + pow(mouseY-this.xy[i][1],2));
                     punkterlængde[1] = sqrt(pow(this.xy[i][0]-this.xy[(i+1)%this.xy.length][0],2) + pow(this.xy[i][1]-this.xy[(i+1)%this.xy.length][1],2));
-                    punkterlængde[2] = sqrt(pow(this.xy[(i+1)%this.xy.length][0]-mouseX/currentScalling,2) + pow(this.xy[(i+1)%this.xy.length][1]-mouseY/currentScalling,2));
+                    punkterlængde[2] = sqrt(pow(this.xy[(i+1)%this.xy.length][0]-mouseX,2) + pow(this.xy[(i+1)%this.xy.length][1]-mouseY,2));
                     parameter = (punkterlængde[0]+punkterlængde[1]+punkterlængde[2])/2;
                     clickArealSum += sqrt(parameter*(parameter-punkterlængde[0])*(parameter-punkterlængde[1])*(parameter-punkterlængde[2]));
                 }
                 clickArealSum = round(clickArealSum/100)*100;
                 // console.log(`clickarealSum = ${clickArealSum}`);
 
-                this.scaling = currentScalling;
                 if(clickArealSum - 100 <= this.arealSum) return true; //Der blev klikket på figuren
             }
         }else if(this.countdown > 0) this.countdown --;

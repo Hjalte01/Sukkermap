@@ -9,7 +9,6 @@ var planTegning = undefined;
 var figurer = [];
 var søgefelt;
 var indreBygninger = [];
-var currentScalling;
 var menu;
 var popupBox;
 
@@ -36,9 +35,6 @@ function draw(){
     if(popupBoxContainer.style.display == "" && hjælpereNavigation.style.display == "" && hjælpereContainer.style.display == ""){
         clear();
         canvasZoom = screen.width;
-        // currentScalling = windowWidth/canvasZoom;   
-        currentScalling = 1;
-        // scale(currentScalling);  
         if(planTegning != undefined) {
         
 
@@ -69,6 +65,7 @@ function preload(){
     sal2Img = loadImage('img/2.sal.png')//2.sal
     sal3Img = loadImage('img/3.sal.png')//3.sal
     questionMark = loadImage('img/question mark.png'); //question mark til menu
+    planTegningImg = loadImage('img/plantegningicon.')
 }
 
 

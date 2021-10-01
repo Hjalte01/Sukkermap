@@ -16,12 +16,12 @@ class Søg {
         advInput2 = document.getElementById("listInput2").value.toLowerCase(); //som er de to inputs i venstre hjørne når koden kører
 
         //scaler input og paragraph
-        document.getElementById("listInput1").style.width = (156.8*currentScalling).toString() + "px";
-        document.getElementById("listInput1").style.height = (16*currentScalling).toString()+"px" + "px";
-        document.getElementById("listInput2").style.width = (156.8*currentScalling).toString() + "px";
-        document.getElementById("listInput2").style.height = (16*currentScalling).toString()+"px" + "px";
-        document.getElementById("fra").style.fontSize = (100*currentScalling).toString()+"%";
-        document.getElementById("til").style.fontSize = (100*currentScalling).toString()+"%";
+        document.getElementById("listInput1").style.width = (156.8).toString() + "px";
+        document.getElementById("listInput1").style.height = (16).toString()+"px" + "px";
+        document.getElementById("listInput2").style.width = (156.8).toString() + "px";
+        document.getElementById("listInput2").style.height = (16).toString()+"px" + "px";
+        document.getElementById("fra").style.fontSize = (100).toString()+"%";
+        document.getElementById("til").style.fontSize = (100).toString()+"%";
         //position input og paragraph
         document.getElementById("listInput2").style.top = "400px";
         // document.getElementById("listInput2").style.height = (16*windowWidth/canvasZoom).toString()+"px" + "px";

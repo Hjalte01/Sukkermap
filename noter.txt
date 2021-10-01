@@ -1,5 +1,5 @@
-Link til liveshare: https://prod.liveshare.vsengsaas.visualstudio.com/join?5ACD54DDFD90539219D43F55AA1FD538633F
-
+Link til liveshare: 
+https://prod.liveshare.vsengsaas.visualstudio.com/join?C17F891153E67986D8726FE9916778549691
 
 Liste over ting der skal nås:
 -----------------------------------------------------------------------------------------
@@ -64,4 +64,5 @@ nvm. dette her vil bare gerne huske nogle commands jeg så, som var nyttige
     - ctrl + d --> dette gør at når man har markeret et navn, som går igen, så laver man en cursor på den næste med samme navn.
     - shift + alt + f --> fikser format(undtaget css og visse andre)
     - ctrl + p (tryk p derefter) --> skifter faner nemmere
+    - crtl + x --> slet linje
  

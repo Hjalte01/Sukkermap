@@ -181,8 +181,8 @@ class Astar{
             //draw flere array, altså til at gøre det nemmere for os at tilføje lokaler
             if(keyIsDown(107)){ //key "+" numlock for add
                 var tempPrompt = prompt("arrayTemp[100] = new spot(879, 474, \"tag\", \"sal\"\)\;");
-                console.log("arrayTemp[" + arrayTemp.length + "] = new spot(" + round(mouseX/currentScalling, 0) + ", " + round(mouseY/currentScalling, 0) + ", " + tempPrompt + ");");
-                arrayTemp[arrayTemp.length] = new spot(round(mouseX/currentScalling, 0), round(mouseY/currentScalling, 0), tempPrompt);
+                console.log("arrayTemp[" + arrayTemp.length + "] = new spot(" + round(mouseX, 0) + ", " + round(mouseY, 0) + ", " + tempPrompt + ");");
+                arrayTemp[arrayTemp.length] = new spot(round(mouseX, 0), round(mouseY, 0), tempPrompt);
                 // arrayTemp[6] = new spot(1000, 400, "33");
             }
 
