@@ -5,10 +5,11 @@
 } */
 #defaultCanvas0{
 
-    width: 10px;
-
+    /* width: 10px; */
+    /* padding: 5px; */
 
 }
+
 
 canvas {
     /* padding-left: 0; */
@@ -16,8 +17,8 @@ canvas {
     /* margin-left: auto; */
     /* margin-right: auto; */
     /* display: block;  */
-    width: 10px;
-    aspect-ratio: none;
+    /* width: 10px; */
+    /* aspect-ratio: none; */
 
 }
 
@@ -52,6 +53,7 @@ form {
 
 body{
     margin: 0;
+    overflow: hidden;
 }
 
 
@@ -80,8 +82,11 @@ ul.topNav  {
     }
 
     form {
-        display:block;
+        display:block;  
         text-align: center;
+    }
+    body{
+        overflow: auto;
     }
 
     /* Prøver at fixed canvas så det vende vandret når man bruger mobil, 

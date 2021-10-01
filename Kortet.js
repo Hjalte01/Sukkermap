@@ -36,8 +36,9 @@ function draw(){
     if(popupBoxContainer.style.display == "" && hjælpereNavigation.style.display == "" && hjælpereContainer.style.display == ""){
         clear();
         canvasZoom = screen.width;
-        currentScalling = windowWidth/canvasZoom;   
-        scale(currentScalling);  
+        // currentScalling = windowWidth/canvasZoom;   
+        currentScalling = 1;
+        // scale(currentScalling);  
         if(planTegning != undefined) {
         
 
@@ -54,6 +55,8 @@ function draw(){
 
     }
     popupBox.loop();
+
+    console.log(`width: ${width}, height: ${height}, kortimg width: ${kortImg.width}`);
 
 }
 
