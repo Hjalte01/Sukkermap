@@ -193,10 +193,6 @@ h1 {
     body{
         /* overflow: show; */
     }
-    html{
-        overflow-x: scroll;
-        overflow-y: scroll;
-    }
 
 
   }
