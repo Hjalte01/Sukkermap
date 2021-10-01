@@ -16,6 +16,11 @@ class YdreBygning{
 
     ydreBygningCanvas(){
         background(kortImg);
+        planTegningImg.width = width/10;
+        planTegningImg.height = width/10;
+
+        image(planTegningImg, width-planTegningImg.width, 0);
+        
     
         
 
@@ -29,7 +34,8 @@ class YdreBygning{
 
     områder(){ 
 
-        if(figurer[0].pointConnections([[0, 0], [width, 0], [width, height], [0, height]], "LINES")){
+
+        if(figurer[0].pointConnections([[width-planTegningImg.width, 0], [width, 0], [width, planTegningImg.height], [width-planTegningImg.width, planTegningImg.height]], "LINES", "#00000000")){
             planTegning = 0;
             triCount.change = true;
         } 
@@ -45,12 +51,13 @@ class YdreBygning{
     Det andet element viser fra mus pos. til punkterne. 
     f.eks - variable.pointConnections([punkt0], [punkt1], [punkt2], ext.], undefined, [true, true])
     */
-    pointConnections(xy, fyld, visuelt, texts){ 
-        this.visuelt = visuelt; //viser visuelt, hvis true
+    pointConnections(xy, fyld, fillFarve, texts){ 
+        // this.visuelt = visuelt; //viser visuelt, hvis true
         if(this.xy == undefined) this.xy = xy;
         push();
-        stroke(0);
+        stroke(fillFarve);
         strokeWeight(width/500);
+        fill(fillFarve);
 
         if(this.centerGæt.x == 0 && this.centerGæt.y == 0){
             for(let i = 0; i < this.xy.length; i++){
@@ -78,17 +85,6 @@ class YdreBygning{
         endShape();
         
         strokeWeight(1);
-        stroke(255, 0, 0);
-        if(this.visuelt != undefined) if(this.visuelt[0]){
-            for(let i = 0; i < xy.length; i++){
-               line(this.xy[i][0], this.xy[i][1], this.centerGæt.x, this.centerGæt.y);
-            }
-        }
-        if(this.visuelt != undefined) if(this.visuelt[1]){
-            for(let i = 0; i < xy.length; i++){
-               line(this.xy[i][0], this.xy[i][1], mouseX, mouseY); 
-            }
-        }
 
         if(texts != undefined){
             textSize(24);

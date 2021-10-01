@@ -52,8 +52,6 @@ function draw(){
     }
     popupBox.loop();
 
-    console.log(`width: ${width}, height: ${height}, kortimg width: ${kortImg.width}`);
-
 }
 
 
@@ -65,7 +63,7 @@ function preload(){
     sal2Img = loadImage('img/2.sal.png')//2.sal
     sal3Img = loadImage('img/3.sal.png')//3.sal
     questionMark = loadImage('img/question mark.png'); //question mark til menu
-    planTegningImg = loadImage('img/plantegningicon.')
+    planTegningImg = loadImage('img/plantegningIcon - Copy.png');
 }
 
 

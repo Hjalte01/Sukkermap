@@ -68,43 +68,7 @@ ul.topNav  {
 
 }
 
-/* Hvis skærmen er under 800px så vil css ændres til det her*/
-@media screen and (max-width: 850px) {
-    ul.topNav li {
-        float: none;
-        padding: auto;
-    }
-    #fra, #til {
-        display:block;
-        text-align: center;
-        right: auto;
-        width: auto;
-    }
 
-    form {
-        display:block;  
-        text-align: center;
-    }
-    body{
-        overflow: auto;
-    }
-
-    /* Prøver at fixed canvas så det vende vandret når man bruger mobil, 
-    men det lidt svært at sætte dens position, 
-    samt pil knappen og kort knappen ikke vil virke, side at deres koordinater bliver ændret /*
-    */
-    /* canvas { */
-        /* text-align:center; */
-        /* transform: rotate(90deg); */
-        /* padding-left: 0px; */
-        /* padding-right: 0px; */
-        /* margin-right: 0; */
-        /* margin-top: auto; */
-        /* display: block;  */
-        /* width: 0%; */
-        /* float:center;  */
-    /* } */
-  }
 
 li {
     float:right;
@@ -134,3 +98,97 @@ li a {
 h1 {
     font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Nav dropdown til mobil */
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  .dropdown {
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;  
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: black;
+    font-family: inherit;
+    margin: 0;
+  }
+  
+  .dropdown:hover .dropbtn, .dropbtn:focus {
+    background-color: red;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #ddd;
+  }
+  
+  .show {
+    display: block;
+  }
+
+  .dropdown, .navbar {
+      display:none;
+  }
+
+  /* Hvis skærmen er under 800px så vil css ændres til det her*/
+@media screen and (max-width: 850px) {
+    ul.topNav li {
+        float: none;
+        padding: auto;
+        display: none;
+    }
+    #fra, #til {
+        display:block;
+        text-align: center;
+        right: auto;
+        width: auto;
+    }
+
+    form {
+        display:block;  
+        text-align: center;
+    }
+
+    .dropdown, .navbar {
+        display:block;
+    }
+
+
+  }

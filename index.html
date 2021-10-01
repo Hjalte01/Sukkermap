@@ -13,6 +13,7 @@
 
 
     <!-- JavaScript filer-->
+    <script src="Dropdown.js" defer> </script>
     <script src="PopupBox.js" defer></script>
     <script src="Menu.js" defer></script>
     <script src="Astar.js" defer></script>
@@ -34,9 +35,25 @@
         <li ><a href="html/projektet.html">Om projektet</a></li>
         <li><a href="index.html">Sukkermap</a></li>
       </ul>
+
     </header>  
 
-    <p id='fra'>Fra</p>
+    <div class="navbar">
+      <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()">Dropdown
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+        <a href="html/kontakt.html">Kontakt os</a>
+        <a href="html/koden.html">Om koden</a>
+        <a href="html/projektet.html">Om projektet</a>
+        <a href="index.html">Sukkermap</a>
+        </div>
+        </div> 
+    </div>
+
+
+    <p id='fra'>Fra </p>
        <!-- Array list i søgefletet, som har id valList-->
     <form>
       <input list="valgList1" id='listInput1' value='Tog(F/Rød) endestation'> 
