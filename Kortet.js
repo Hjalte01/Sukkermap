@@ -37,7 +37,7 @@ function draw(){
         clear();
         canvasZoom = screen.width;
         currentScalling = windowWidth/canvasZoom;   
-        scale(currentScalling); //en stor fejl i forhold til at få css til at virke ordentlig med telefon 
+        scale(currentScalling);  
         if(planTegning != undefined) {
         
 
