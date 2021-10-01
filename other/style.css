@@ -190,5 +190,9 @@ h1 {
         display:block;
     }
 
+    body{
+        overflow: show;
+    }
+
 
   }
