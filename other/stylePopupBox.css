@@ -1,4 +1,5 @@
 /*ikonet på indstillingerne før boksen kommer frem*/
+
 .indstillingerDiv{
     display: block;
     width: 65px;
@@ -7,18 +8,21 @@
     float: right; 
 }
 
+
 .indstillinger {
-    width: 100%;
-    height: 100%;
+    width: 65px;
+    height: 65px;
+    animation: indstillinger-img-animation 3s linear 0; 
 }
 
+
 .indstillinger:hover {
-    animation: indstillinger-img-animation 3s linear forwards infinite ;
+    animation-iteration-count: infinite;
 }
 
 @keyframes indstillinger-img-animation{
     0% {
-        transform: rotate(0deg);
+        transform: rotate(0deg)
     }
     100% { 
         transform: rotate(360deg);
