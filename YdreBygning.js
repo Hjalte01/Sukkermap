@@ -19,7 +19,7 @@ class YdreBygning{
         planTegningImg.width = width/10;
         planTegningImg.height = width/10;
 
-        image(planTegningImg, width-planTegningImg.width, 0);
+        var planImg = image(planTegningImg, width-planTegningImg.width, 0);
         
     
         

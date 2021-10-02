@@ -59,7 +59,7 @@ function draw(){
 function preload(){
     kortImg = loadImage('img/sukkertoppen.png'); //kortet 
     stueImg = loadImage('img/stue.png'); //stue  
-    sal1Img = loadImage('img/1.sal.png')//1.sal
+    sal1Img = loadImage('img/1.s al.png')//1.sal
     sal2Img = loadImage('img/2.sal.png')//2.sal
     sal3Img = loadImage('img/3.sal.png')//3.sal
     questionMark = loadImage('img/question mark.png'); //question mark til menu
