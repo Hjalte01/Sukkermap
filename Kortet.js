@@ -64,7 +64,7 @@ function preload(){
     sal2Img = loadImage('img/2.sal.png')//2.sal
     sal3Img = loadImage('img/3.sal.png')//3.sal
     questionMark = loadImage('img/question mark.png'); //question mark til menu
-    planTegningImg = loadImage('img/plantegningIcon.png');
+    planTegningImg = loadImage('img/stue.png');
 }
 
 
