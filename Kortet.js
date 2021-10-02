@@ -1,4 +1,5 @@
 let kortImg;
+let planTegningImg;
 let canvasStr = 1500;
 let canvasZoom = 1536;
 let canvasHeightDiff = 0.4933;
