@@ -1,47 +1,16 @@
-
-/* 
-.p5Canvas{
-    width: 100px;
-} */
-#defaultCanvas0{
-
-    /* width: 10px; */
-    /* padding: 5px; */
-
-}
-
-
-canvas {
-    /* padding-left: 0; */
-    /* padding-right: 0; */
-    /* margin-left: auto; */
-    /* margin-right: auto; */
-    /* display: block;  */
-    /* width: 10px; */
-    /* aspect-ratio: none; */
-
-}
-
 form {
     position: relative;
     display: inline-block;
 }
 
 #fra {
-    position: relative;
-    right: -13%;
-    width: 14.5%;
     display: inline-block;
+    margin: 0;
 }
 #til {
-    /* position: relative; */
+    margin: 0;
     display: inline-block;
 } 
-
-/* #listInput1, #listInput2 {
-    display: inline;
-    position:relative;
-} */
 
  #updated{
     position: relative;
@@ -66,6 +35,11 @@ ul.topNav  {
     background-color: #121026;
     border-bottom: 10px solid #141414;
 
+}
+.listInputForm{
+    /* position: inherit; */
+    margin: 10px;
+    display: inline-block;
 }
 
 
@@ -97,6 +71,7 @@ li a {
 
 h1 {
     font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
 }
 
 /* Nav dropdown til mobil */
@@ -104,26 +79,39 @@ h1 {
     overflow: hidden;
     background-color: #333;
     font-family: Arial, Helvetica, sans-serif;
-  }
+    display: none;
+    float: left;
+    overflow: hidden;
+    width: 100%;
+    height: 4.5rem;
+    margin: 0;
+    position: static;
+    top: 0;
+}
+.arrow{
+    border: solid white;
+    border-width: 0 5px 5px 0;
+    display: inline-block;
+    padding: 10px;
+}
+.down{
+    transform: rotate(45deg);
+}
+
+
   
-  .navbar a {
+.navbar a {
     float: left;
     font-size: 16px;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-  }
-  .dropdown {
-    float: left;
-    overflow: hidden;
-    width: 100%;
-    margin: 0;
-  }
+}
   
-  .dropdown .dropbtn {
+.dropbtn {
     cursor: pointer;
-    font-size: 16px;  
+    font-size: 8.5px;  
     border: none;
     outline: none;
     color: white;
@@ -131,54 +119,61 @@ h1 {
     background-color: black;
     font-family: inherit;
     margin: 0;
-  }
+    position: absolute;
+    top: 0;
+    right: 0;
+}
   
-  .dropdown:hover .dropbtn, .dropbtn:focus {
+.dropbtn:hover, .dropbtn:focus {
     background-color: red;
-  }
+}
   
-  .dropdown-content {
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #f9f9f9;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-  }
+    right: 0;
+}
   
-  .dropdown-content a {
+.dropdown-content a {
     float: none;
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     text-align: left;
-  }
+}
   
-  .dropdown-content a:hover {
+/* .dropdown-content a:hover {
     background-color: #ddd;
-  }
+} */
   
   .show {
     display: block;
   }
 
-  .dropdown, .navbar {
-      display:none;
-  }
+.mobilParagraph{
+    color: white;
+    font-size: 2rem;
+    position: relative;
+    top: 0;
+    margin: 0;
+    padding: 1.2rem 0 0 0.5rem;
+}
 
   /* Hvis skærmen er under 800px så vil css ændres til det her*/
 @media screen and (max-width: 850px) {
-    ul.topNav li {
+    ul.topNav {
         float: none;
         padding: auto;
         display: none;
     }
     #fra, #til {
-        display:block;
+
         text-align: center;
-        right: auto;
-        width: auto;
     }
 
     form {
@@ -186,13 +181,26 @@ h1 {
         text-align: center;
     }
 
-    .dropdown, .navbar {
-        display:block;
+    .navbar {
+        display: block;
+    }
+    .dropbtn {
+        display: block;
     }
 
-    body{
-        /* overflow: show; */
+    h1{
+        font-size: 1.5em;
+        margin: 0;
+        text-align: left;
+    }
+    #updated{
+        display: none;
     }
 
+    .indstillingerDiv{
+        position: absolute;
+        top: 4.3em;
+        right: 0;
+    }
 
   }

@@ -68,8 +68,3 @@ function preload(){
 
 
 
-
-//updated
-var p = document.getElementById('updated');
-    currentDate = new Date();
-    p.textContent = `Updated: ${currentDate.getDate()}/${currentDate.getMonth()+1}/${currentDate.getFullYear()}`;

@@ -37,24 +37,24 @@
 
     </header>  
 
+    <!-- Drowdown i mobil-mode -->
     <div class="navbar">
-      <div class="dropdown">
-        <button class="dropbtn" onclick="myFunction()">Dropdown
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content" id="myDropdown">
+      <p class="mobilParagraph">Sukkermap</p>
+      <button class="dropbtn" onclick="myFunction()">
+        <p class="arrow down"></p>
+      </button>
+      <div class="dropdown-content" id="myDropdown">
         <a href="html/kontakt.html">Kontakt os</a>
         <a href="html/koden.html">Om koden</a>
         <a href="html/projektet.html">Om projektet</a>
         <a href="index.html">Sukkermap</a>
-        </div>
-        </div> 
+      </div>
     </div>
 
 
-    <p id='fra'>Fra </p>
        <!-- Array list i søgefletet, som har id valList-->
-    <form>
+    <form class="listInputForm">
+      <p id='fra'>Fra:</p>
       <input list="valgList1" id='listInput1' value=''> 
       <datalist id="valgList1"> 
         <option id='111' value='Tog(F/Rød) endestation'>
@@ -181,8 +181,8 @@
       </datalist>
     </form>
 
-   <p id='til'>til</p>
-    <form>
+    <form class="listInputForm">
+      <p id='til'>Til:</p>
       <input list="valgList1" id='listInput2' value="I bil"> 
       <datalist id="valgList1"> 
       </datalist>
@@ -193,14 +193,8 @@
     </div>
 
 
-      <!-- <input type="image" id="btnOpen" class="indstillinger" src="img/indstilling_ikon.png" alt="Indstillinger"> -->
-
-    <!-- Checkboxe uden p5, da der gik kluder med p5 -->
-    <!-- <input type='checkbox' id='coronaTrapper'>
-    <label for='Corona trapper'></label><br> -->
-
     <!-- versionen man er på lige nu, husk at ændre den, hver gang github bliver updateret for nu af -->
-   <p id='updated'>Updated: </p>
+   <p id='updated'>Updated: 02-10-2021 </p>
 
 
     <!-- Hjælpere -->
