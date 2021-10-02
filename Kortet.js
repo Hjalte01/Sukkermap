@@ -1,5 +1,5 @@
 let kortImg;
-let planTegningImg;
+var planTegningImg;
 let canvasStr = 1500;
 let canvasZoom = 1536;
 let canvasHeightDiff = 0.4933;
@@ -10,7 +10,6 @@ var planTegning = undefined;
 var figurer = [];
 var søgefelt;
 var indreBygninger = [];
-var menu;
 var popupBox;
 
 
@@ -22,7 +21,6 @@ function setup(){
     }
 
     popupBox = new PopupBox();
-    menu = new Menu();
     ydreTing = new YdreBygning();
     indreTing = new IndreBygning();
     arraySetup = new Arrays();
@@ -47,7 +45,6 @@ function draw(){
         }
 
         søgefelt.inputfelt();
-        // menu.mainMenu();
         
 
     }
@@ -63,8 +60,7 @@ function preload(){
     sal1Img = loadImage('img/1.sal.png')//1.sal
     sal2Img = loadImage('img/2.sal.png')//2.sal
     sal3Img = loadImage('img/3.sal.png')//3.sal
-    questionMark = loadImage('img/question mark.png'); //question mark til menu
-    planTegningImg = loadImage('img/stue.png');
+    planTegningImg = loadImage('img/plantegningIcon.png');
 }
 
 
