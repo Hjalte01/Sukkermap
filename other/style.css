@@ -115,11 +115,12 @@ h1 {
     border: none;
     outline: none;
     color: white;
-    /* padding: 14px 16px; */
+    padding: 14px 16px;
     background-color: black;
     font-family: inherit;
     margin: 0;
     position: relative;
+    float: right;
 }
   
 .dropbtn:hover, .dropbtn:focus {
@@ -133,6 +134,7 @@ h1 {
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
+    top: 10%;
     right: 0;
 }
   
