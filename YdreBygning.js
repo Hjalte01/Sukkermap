@@ -2,6 +2,12 @@ let punkterlængde = [];
 let parameter;
 let clickArealSum = 0;
 var planTegningImg
+let imgPlantegningIcon = document.createElement("img");
+imgPlantegningIcon.src = "img/plantegningIcon.png";
+// document.body.appendChild(imgPlantegningIcon);
+
+// document.getElementById("defaultCanvas0").appendChild("imgPlantegningIcon");   
+
 
 
 class YdreBygning{
@@ -19,11 +25,14 @@ class YdreBygning{
         background(kortImg);
 
 
-        planTegningImg.width = width/10;
-        planTegningImg.height = width/10;
+        // planTegningImg.width = width/10;
+        // planTegningImg.height = width/10;
         // Jeg tror det er "image" der er noget galt med, hvilket er indbygget i p5, og for at bruge html version "img", så skal vi kunne få fat i canvaset
         // Hvilket vi også har haft lidt problemer med...
-        image(planTegningImg, width-planTegningImg.width, 0);
+        // image(planTegningImg, width-planTegningImg.width, 0);
+        
+
+
 
         
         
@@ -41,10 +50,10 @@ class YdreBygning{
     områder(){ 
 
 
-        if(figurer[0].pointConnections([[width-planTegningImg.width, 0], [width, 0], [width, planTegningImg.height], [width-planTegningImg.width, planTegningImg.height]], "LINES", "#00000000")){
-            planTegning = 0;
-            triCount.change = true;
-        } 
+        // if(figurer[0].pointConnections([[width-planTegningImg.width, 0], [width, 0], [width, planTegningImg.height], [width-planTegningImg.width, planTegningImg.height]], "LINES", "#00000000")){
+            // planTegning = 0;
+            // triCount.change = true;
+        // } 
     }
     
 

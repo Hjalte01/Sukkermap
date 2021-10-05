@@ -15,7 +15,9 @@ var popupBox;
 
 
 function setup(){
-    createCanvas(canvasStr*0.75, canvasStr*canvasHeightDiff*0.75); //canvas
+    const canvas = createCanvas(canvasStr*0.75, canvasStr*canvasHeightDiff*0.75); //canvas
+    canvas.parent("canvasErHer");
+    // canvas.style("display", "block");
     for(let i = 0; i <= 5; i++){ //tilføj en figur
         figurer[i] = new YdreBygning(20); //personlig countdown lav en ny figur, uden argument for ingen countdown
     }
@@ -60,7 +62,7 @@ function preload(){
     sal1Img = loadImage('img/1.sal.png')//1.sal
     sal2Img = loadImage('img/2.sal.png')//2.sal
     sal3Img = loadImage('img/3.sal.png')//3.sal
-    planTegningImg = loadImage('img/plantegningIcon.png');
+    // planTegningImg = loadImage('img/plantegningIcon.png');
 }
 
 
