@@ -4,7 +4,8 @@ let clickArealSum = 0;
 var planTegningImg
 let imgPlantegningIcon = document.createElement("img");
 imgPlantegningIcon.src = "img/plantegningIcon.png";
-// document.body.appendChild(imgPlantegningIcon);
+imgPlantegningIcon.style("display", "block");
+defaultCanvas0.appendChild(imgPlantegningIcon);
 
 // document.getElementById("defaultCanvas0").appendChild("imgPlantegningIcon");   
 

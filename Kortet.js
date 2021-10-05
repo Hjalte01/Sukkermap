@@ -17,7 +17,7 @@ var popupBox;
 function setup(){
     const canvas = createCanvas(canvasStr*0.75, canvasStr*canvasHeightDiff*0.75); //canvas
     canvas.parent("canvasErHer");
-    // canvas.style("display", "block");
+    canvas.style("display", "block");
     for(let i = 0; i <= 5; i++){ //tilføj en figur
         figurer[i] = new YdreBygning(20); //personlig countdown lav en ny figur, uden argument for ingen countdown
     }
