@@ -146,7 +146,7 @@ class Astar{
             textSize(12);
             stroke(0);
             if(start != undefined) if(start.tag == `${planTegning}. sal` || start.tag == "stue" && planTegning == 0 || planTegning == undefined) text(start.text, start.x, start.y);
-            if(end != undefined) if(start.tag == `${planTegning}. sal` || start.tag == "stue" && planTegning == 0 || planTegning == undefined) text(end.text, end.x, end.y);
+            if(end != undefined) if(end.tag == `${planTegning}. sal` || end.tag == "stue" && planTegning == 0 || planTegning == undefined) text(end.text, end.x, end.y);
 
 
         // Hvis kortet er sorteret færdigt, så sker dette
@@ -170,7 +170,7 @@ class Astar{
             textSize(12);
             stroke(0);
             if(start != undefined) if(start.tag == `${planTegning}. sal` || start.tag == "stue" && planTegning == 0 || planTegning == undefined) text(start.text, start.x, start.y);
-            if(end != undefined) if(start.tag == `${planTegning}. sal` || start.tag == "stue" && planTegning == 0 || planTegning == undefined) text(end.text, end.x, end.y);
+            if(end != undefined) if(end.tag == `${planTegning}. sal` || end.tag == "stue" && planTegning == 0 || planTegning == undefined) text(end.text, end.x, end.y);
 
 
             //trekant animation
