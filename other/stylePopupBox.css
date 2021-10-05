@@ -47,7 +47,7 @@
     background:#121026;
     margin:auto;
     padding: 20px;
-    border: 5px solid greenyellow;
+    border: 5px solid #eb5332;
     width: 80%;
 }
 
@@ -116,7 +116,7 @@
 
 
 .popupBox-content h1{
-    color:#eb5332;
+    color:#ffffff;
     text-align: center;
 
 }
@@ -126,12 +126,13 @@
     font-size: 20px;
     font-weight: 700;
     color:#eb5332;
+    /*color:#eb5332; */
 }
 
 
 
 label{
-    color: #eb5332;
+    color: #ffffff;
     text-align: center;
     text-decoration: none;
     font-size: 20px;

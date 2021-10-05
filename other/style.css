@@ -49,7 +49,7 @@ li {
     /* height: auto;
     width: auto; */
     padding: 5px 0px;
-    font-family: Arial, sans-serif ;
+    font-family:verdana;
 
 }
 
@@ -61,11 +61,11 @@ li a {
     position: relative;
     display: block;
     padding: 25px;
-    color: #eb5332;
+    color: white;
     text-align: center;
     text-decoration: none;
     font-size: 25px;
-    font-weight: 800;
+    /* font-weight: 800; */
 }
 
 
