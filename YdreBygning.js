@@ -16,6 +16,7 @@ class YdreBygning{
 
     ydreBygningCanvas(){
         background(kortImg);
+        
 
 
         planTegningImg.width = width/10;
@@ -24,8 +25,8 @@ class YdreBygning{
         // Hvilket vi også har haft lidt problemer med...
         image(planTegningImg, width-planTegningImg.width, 0);
         
-
-
+        // drawImage(planTegningImg, 0, 0, width/10, width/10);
+        
 
         
         

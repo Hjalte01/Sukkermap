@@ -15,14 +15,24 @@ var plantegningImg;
 
 let imgPlantegningIcon = document.createElement("img");
 imgPlantegningIcon.src = "img/plantegningIcon.png";
+imgPlantegningIcon.style.width = "300px";
+imgPlantegningIcon.style.height = "300px";
+imgPlantegningIcon.alt = "hahfdsafhasdhfsa";
+imgPlantegningIcon.style.display = "block";
+imgPlantegningIcon.style.backgroundColor = "red";
+imgPlantegningIcon.style.padding = "100px";
+
 
 
 
 
 
 function setup(){
-    const canvas = createCanvas(canvasStr*0.75, canvasStr*canvasHeightDiff*0.75); //canvas
+    const canvas = createCanvas(canvasStr*0.75/10, canvasStr*canvasHeightDiff*0.75/10); //canvas
     canvas.parent("canvasErHer");
+    canvas.child(imgPlantegningIcon);
+    // document.body.appendChild(imgPlantegningIcon);
+
 
     // canvas.addChild(imgPlantegningIcon);
     canvas.style("display", "block");
