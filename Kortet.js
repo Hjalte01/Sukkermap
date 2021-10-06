@@ -1,7 +1,5 @@
 let kortImg;
 var planTegningImg;
-let canvasStr = 1500;
-let canvasZoom = 1536;
 let canvasHeightDiff = 0.4933;
 var arraySetup;
 var ydreTing;
@@ -19,8 +17,15 @@ var popupBox;
 
 
 function setup(){
-    const canvas = createCanvas(canvasStr*0.75, canvasStr*canvasHeightDiff*0.75); //canvas
+    let canvasStr = windowWidth-40;
+    const canvas = createCanvas(canvasStr, canvasStr*canvasHeightDiff); //canvas
     canvas.style("display", "block");
+    canvas.style("margin", "10px");
+    // canvas.style("margin-top", "10px");
+    // canvas.style("margin-bottom", "0");
+
+
+
 
     for(let i = 0; i <= 5; i++){ //tilføj en figur
         figurer[i] = new YdreBygning(20); //personlig countdown lav en ny figur, uden argument for ingen countdown

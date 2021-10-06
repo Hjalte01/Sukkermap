@@ -1,15 +1,18 @@
 /*ikonet på indstillingerne før boksen kommer frem*/
 
 .indstillingerDiv{
-    display: block;
+    display: flex;
     width: 65px;
-    height: 65px;;
-    padding: 14px;
-    float: right; 
+    height: 65px;
+    margin-right: 10px;
+
+
 }
 
 
 .indstillinger {
+    display: flex;
+    justify-self: end;
     width: 65px;
     height: 65px;
     animation: indstillinger-img-animation 3s linear 0; 

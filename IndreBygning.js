@@ -18,7 +18,6 @@ class IndreBygning extends YdreBygning{
         pop();
         
         pile();
-        tilbageKnap();
 
         pathfindingAlgorithm.loop();
 
@@ -51,13 +50,6 @@ class IndreBygning extends YdreBygning{
 
     
 }   
-
-function tilbageKnap(){
-    if(figurer[3].pointConnections([[width-110, 0], [width, 0], [width, 35], [width-110, 35]], "LINES", "#000", "Kortet")){
-        planTegning = undefined;
-        triCount.change = true;
-    } 
-}
 
 
 function pile(){

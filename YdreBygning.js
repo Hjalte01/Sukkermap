@@ -17,34 +17,9 @@ class YdreBygning{
     ydreBygningCanvas(){
         background(kortImg);
         
-
-
-        
-
-        
-        
-    
-        
-
-        ydreTing.områder();
         pathfindingAlgorithm.loop();
-
-
     }
 
-
-
-    områder(){ 
-
-
-        if(figurer[0].pointConnections([[width-planTegningImg.width, 0], [width, 0], [width, planTegningImg.height], [width-planTegningImg.width, planTegningImg.height]], "LINES", "#00000000")){
-            planTegning = 0;
-            triCount.change = true;
-        } 
-    }
-    
-
- 
 
     /*
     Når man kalder denne metode, så kan man give den punkter, som danner en figur. Derefter kan man specifikkere figuren

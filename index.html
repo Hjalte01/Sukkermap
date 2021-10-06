@@ -12,6 +12,7 @@
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="other/style.css">
     <link rel="stylesheet" href="other/stylePopupBox.css">
+    <link rel="stylesheet" type="text/css" href="other/mobil.css">
 
     <meta charset="utf-8">
     <!--favicon logo-->
@@ -51,156 +52,171 @@
       </button>
       <div class="dropdown-content" id="myDropdown">
         <a href="html/kontakt.html">Kontakt os</a>
-        <a href="html/koden.html">Om koden</a>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Donation</a>
         <a href="html/projektet.html">Om projektet</a>
         <a href="index.html">Sukkermap</a>
       </div>
     </div>
 
+    <div id="containerForInputs">
+         <!-- Array list i søgefletet, som har id valList-->
+      <form class="listInputForm">
+        <p id='fra'>Fra:</p>
+        <input list="valgList1" id='listInput1' value=''> 
+        <datalist id="valgList1"> 
+          <option id='111' value='Tog(F/Rød) endestation'>
+          <option id='112' value='Tog(A/E/F) mellemstation'>
+          <option id='113' value='Spar'>
+          <option id='114' value='Parkeringsplads'>
+          <option id='115' value='I bil'>
+          <option id='0'   value='Administrationen'>
+          <option id='1'   value='Atriumgården'>
+          <option id='2'   value='Auditoriet'>  
+          <option id='3'   value='Biografen'>
+          <option id='4'   value='Biologi'>
+          <option id='5'   value='Fysik'>
+          <option id='106' value='Kantinen'>
+          <option id='6'   value='Kemi'>
+          <option id='7'   value='Metalværstedet'>
+          <option id='107' value='Spisesal'>
+          <option id='8'   value='Studievejledning'> 
+          <option id='108' value='Testcenter'>
+          <option id='9'   value='Træværkstedet'>
+          <option id='10'  value='Tårnet'>
+          <!-- stue -->
+          <option id='11'  value='001'>
+          <option id='12'  value='002'>  
+          <option id='13'  value='003'>
+          <option id='14'  value='036'>
+          <option id='15'  value='037'>
+          <option id='16'  value='038'>
+          <option id='17'  value='039'>
+          <option id='18'  value='071'> 
+          <option id='19'  value='073'>
+          <option id='20'  value='074'>
+          <option id='21'  value='074A'>
+          <option id='22'  value='075'>
+          <option id='23'  value='076'>  
+          <option id='24'  value='077'>
+          <option id='25'  value='078'>
+          <option id='26'  value='081'>
+          <!-- 1 sal -->
+          <option id='27'  value='103'>
+          <option id='28'  value='105'>
+          <option id='29'  value='106'> 
+          <option id='30'  value='107A'>
+          <option id='31'  value='110'>
+          <option id='32'  value='112'>
+          <option id='33'  value='113'>
+          <option id='34'  value='115'>  
+          <option id='35'  value='116'>
+          <option id='36'  value='118'>
+          <option id='37'  value='126'>
+          <option id='38'  value='127'>
+          <option id='39'  value='128'>
+          <option id='40'  value='129'> 
+          <option id='41'  value='130'>
+          <option id='42'  value='141'>
+          <option id='43'  value='142'>
+          <option id='44'  value='143'>
+          <option id='45'  value='144'>  
+          <option id='46'  value='145'>
+          <option id='47'  value='151'>
+          <option id='48'  value='152'>
+          <option id='49'  value='153'>
+          <option id='110' value='154'>
+          <option id='50'  value='155'>
+          <option id='51'  value='170'>
+          <option id='52'  value='172'>
+          <option id='53'  value='173'>
+          <option id='54'  value='174'>
+          <option id='55'  value='175'> 
+          <option id='56'  value='176'>
+          <option id='57'  value='180'>
+          <option id='58'  value='181'>
+          <option id='59'  value='182'>
+          <option id='60'  value='183'>
+          <option id='61'  value='191'>
+          <option id='62'  value='192'> 
+          <option id='63'  value='193'>
+          <!-- 2 sal -->
+          <option id='64'  value='206'>
+          <option id='65'  value='207'>
+          <option id='66'  value='208'>
+          <option id='67'  value='209'>  
+          <option id='68'  value='212'>
+          <option id='69'  value='213'>
+          <option id='70'  value='216'>
+          <option id='71'  value='218'>
+          <option id='72'  value='219'>
+          <option id='73'  value='220'> 
+          <option id='74'  value='221'>
+          <option id='75'  value='222'>
+          <option id='76'  value='223'>
+          <option id='77'  value='224'>
+          <option id='78'  value='225'>  
+          <option id='79'  value='226'>
+          <option id='80'  value='241'>
+          <option id='81'  value='242'>
+          <option id='82'  value='243'>
+          <option id='83'  value='244'>
+          <option id='85'  value='251'>
+          <option id='84'  value='252'>
+          <option id='109' value='252'>
+          <option id='86'  value='253'>
+          <option id='87'  value='254'>
+          <option id='88'  value='255'>
+          <option id='89'  value='280'> 
+          <option id='90'  value='281'>
+          <option id='91'  value='282'>
+          <option id='92'  value='283'>
+          <!-- 3 sal -->
+          <option id='93'  value='302'>
+          <option id='94'  value='316A'>
+          <option id='95'  value='341'> 
+          <option id='96'  value='374'>
+          <option id='97'  value='375'>
+          <option id='98'  value='376'>
+          <option id='99'  value='377'>
+          <option id='100' value='378'>  
+          <option id='101' value='380'>
+          <option id='102' value='381'>
+          <option id='103' value='382'>
+          <option id='104' value='383'>
+          <!-- 4 sal -->
+          <option id='105' value='480'>
+        </datalist>
+      </form>
 
-       <!-- Array list i søgefletet, som har id valList-->
-    <form class="listInputForm">
-      <p id='fra'>Fra:</p>
-      <input list="valgList1" id='listInput1' value=''> 
-      <datalist id="valgList1"> 
-        <option id='111' value='Tog(F/Rød) endestation'>
-        <option id='112' value='Tog(A/E/F) mellemstation'>
-        <option id='113' value='Spar'>
-        <option id='114' value='Parkeringsplads'>
-        <option id='115' value='I bil'>
-        <option id='0'   value='Administrationen'>
-        <option id='1'   value='Atriumgården'>
-        <option id='2'   value='Auditoriet'>  
-        <option id='3'   value='Biografen'>
-        <option id='4'   value='Biologi'>
-        <option id='5'   value='Fysik'>
-        <option id='106' value='Kantinen'>
-        <option id='6'   value='Kemi'>
-        <option id='7'   value='Metalværstedet'>
-        <option id='107' value='Spisesal'>
-        <option id='8'   value='Studievejledning'> 
-        <option id='108' value='Testcenter'>
-        <option id='9'   value='Træværkstedet'>
-        <option id='10'  value='Tårnet'>
-        <!-- stue -->
-        <option id='11'  value='001'>
-        <option id='12'  value='002'>  
-        <option id='13'  value='003'>
-        <option id='14'  value='036'>
-        <option id='15'  value='037'>
-        <option id='16'  value='038'>
-        <option id='17'  value='039'>
-        <option id='18'  value='071'> 
-        <option id='19'  value='073'>
-        <option id='20'  value='074'>
-        <option id='21'  value='074A'>
-        <option id='22'  value='075'>
-        <option id='23'  value='076'>  
-        <option id='24'  value='077'>
-        <option id='25'  value='078'>
-        <option id='26'  value='081'>
-        <!-- 1 sal -->
-        <option id='27'  value='103'>
-        <option id='28'  value='105'>
-        <option id='29'  value='106'> 
-        <option id='30'  value='107A'>
-        <option id='31'  value='110'>
-        <option id='32'  value='112'>
-        <option id='33'  value='113'>
-        <option id='34'  value='115'>  
-        <option id='35'  value='116'>
-        <option id='36'  value='118'>
-        <option id='37'  value='126'>
-        <option id='38'  value='127'>
-        <option id='39'  value='128'>
-        <option id='40'  value='129'> 
-        <option id='41'  value='130'>
-        <option id='42'  value='141'>
-        <option id='43'  value='142'>
-        <option id='44'  value='143'>
-        <option id='45'  value='144'>  
-        <option id='46'  value='145'>
-        <option id='47'  value='151'>
-        <option id='48'  value='152'>
-        <option id='49'  value='153'>
-        <option id='110' value='154'>
-        <option id='50'  value='155'>
-        <option id='51'  value='170'>
-        <option id='52'  value='172'>
-        <option id='53'  value='173'>
-        <option id='54'  value='174'>
-        <option id='55'  value='175'> 
-        <option id='56'  value='176'>
-        <option id='57'  value='180'>
-        <option id='58'  value='181'>
-        <option id='59'  value='182'>
-        <option id='60'  value='183'>
-        <option id='61'  value='191'>
-        <option id='62'  value='192'> 
-        <option id='63'  value='193'>
-        <!-- 2 sal -->
-        <option id='64'  value='206'>
-        <option id='65'  value='207'>
-        <option id='66'  value='208'>
-        <option id='67'  value='209'>  
-        <option id='68'  value='212'>
-        <option id='69'  value='213'>
-        <option id='70'  value='216'>
-        <option id='71'  value='218'>
-        <option id='72'  value='219'>
-        <option id='73'  value='220'> 
-        <option id='74'  value='221'>
-        <option id='75'  value='222'>
-        <option id='76'  value='223'>
-        <option id='77'  value='224'>
-        <option id='78'  value='225'>  
-        <option id='79'  value='226'>
-        <option id='80'  value='241'>
-        <option id='81'  value='242'>
-        <option id='82'  value='243'>
-        <option id='83'  value='244'>
-        <option id='85'  value='251'>
-        <option id='84'  value='252'>
-        <option id='109' value='252'>
-        <option id='86'  value='253'>
-        <option id='87'  value='254'>
-        <option id='88'  value='255'>
-        <option id='89'  value='280'> 
-        <option id='90'  value='281'>
-        <option id='91'  value='282'>
-        <option id='92'  value='283'>
-        <!-- 3 sal -->
-        <option id='93'  value='302'>
-        <option id='94'  value='316A'>
-        <option id='95'  value='341'> 
-        <option id='96'  value='374'>
-        <option id='97'  value='375'>
-        <option id='98'  value='376'>
-        <option id='99'  value='377'>
-        <option id='100' value='378'>  
-        <option id='101' value='380'>
-        <option id='102' value='381'>
-        <option id='103' value='382'>
-        <option id='104' value='383'>
-        <!-- 4 sal -->
-        <option id='105' value='480'>
-      </datalist>
-    </form>
+      <!-- til input -->
+      <form class="listInputForm">
+        <p id='til'>Til:</p>
+        <input list="valgList1" id='listInput2' value=""> 
+        <datalist id="valgList1"> 
+        </datalist>
+      </form>
 
-    <form class="listInputForm">
-      <p id='til'>Til:</p>
-      <input list="valgList1" id='listInput2' value=""> 
-      <datalist id="valgList1"> 
-      </datalist>
-    </form>
 
-    <div class="indstillingerDiv">
-      <input type="image" id="btnOpen" class="indstillinger" src="img/indstilling_ikon.png" alt="Indstillinger">
+      <!-- Toggle switch med kort og plantegning -->
+      <form class="listInputForm">
+        <p id="kortEllerPlan">Kort/Plantegning:</p>
+        <label class="switch">
+          <input type="checkbox" id="kortEllerPlanKnap" onclick="kortEllerPlanSwitch()">
+          <span class="slider round"></span>
+        </label>
+      </form>
+
+       <!-- versionen man er på lige nu, husk at ændre den, hver gang github bliver updateret for nu af -->
+       <p id='updated'>Updated: 06-10-2021 </p>
+
+      <!-- indstilling icon -->
+      <div class="indstillingerDiv">
+        <input type="image" id="btnOpen" class="indstillinger" src="img/indstilling_ikon.png" alt="Indstillinger">
+      </div>
+ 
+
     </div>
 
-
-    <!-- versionen man er på lige nu, husk at ændre den, hver gang github bliver updateret for nu af -->
-   <p id='updated'>Updated: 05-10-2021 </p>
 
 
     <!-- Hjælpere -->
@@ -209,18 +225,18 @@
       <div class="popupBox-content" style="width:30%; height:30%; padding: 0%;">
         <span class="xClose" id="hjælperXBtn">&times;</span>
         <div class="hjælpereTitelSection">
-          <!--  -->
+
           <label for="hjælpereTitel">Titel:</label>
           <input id="hjælpereTitel" placeholder="Ex. Lokale 144/printer/toilet/område/m.m." style="width:240px;">
         </div>
         <div>
-          <!--  -->
+
           <p id="hjælperekoordinater" type="text" style="margin: 10px 0 0 10px;"></p>
         </div>
         <div class="hjælpereTitelSection">
-          <!--  -->
+
           <textarea id="beskrivelse" type="text" placeholder="Beskrivelse..." style="width:280px; height:110px;"></textarea>
-          <!--  -->
+
           <button id="hjælpereSubmitBtn">
             <p class="hjælpereRotateParagraph">Submit</p>
           </button>

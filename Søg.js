@@ -4,6 +4,8 @@ var tempAdvInput1;
 var tempAdvInput2;
 var valgArray1;
 var optionsLength;
+var kortEllerPlan = document.getElementById("kortEllerPlanKnap");
+
 
 
 
@@ -24,7 +26,6 @@ class Søg {
         document.getElementById("til").style.fontSize = (100).toString()+"%";
         //position input og paragraph
         document.getElementById("listInput2").style.top = "400px";
-        // document.getElementById("listInput2").style.height = (16*windowWidth/canvasZoom).toString()+"px" + "px";
 
 
         
@@ -48,10 +49,23 @@ class Søg {
                 inputEnd = advInput2;
                 tempAdvInput2 = advInput2;
                 setupBol = true;
-            }
-            
-        }   
+            }  
+        } 
+        
+        
+        
+        
+
+
 
     }
+}
 
+function kortEllerPlanSwitch(){
+    if(kortEllerPlan.checked == false){
+        planTegning = undefined;
+    } else{
+        planTegning = 0;
+        triCount.changed = true;
+    }
 }

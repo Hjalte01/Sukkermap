@@ -1,0 +1,23 @@
+.mainDiv {
+    background-color: brown;
+    margin-left: 50px; 
+    margin-right: 50px; 
+    margin-bottom: 20px;
+
+}
+
+.div1 {
+    
+    background-color: blueviolet;
+    font-size: 35px; 
+    text-align: left;
+}
+
+body{
+    overflow-y: scroll;
+}
+
+p { margin-bottom: 1em; }
+
+body p:last-child { margin-bottom: 0em; }
+
