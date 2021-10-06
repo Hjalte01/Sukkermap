@@ -18,11 +18,13 @@ var popupBox;
 
 function setup(){
     let canvasStr = windowWidth-40;
+    console.log(windowWidth);
+    if(windowWidth < 850) canvasStr = 850;
     const canvas = createCanvas(canvasStr, canvasStr*canvasHeightDiff); //canvas
     canvas.style("display", "block");
     canvas.style("margin", "10px");
-    // canvas.style("margin-top", "10px");
-    // canvas.style("margin-bottom", "0");
+    canvas.style("margin-top", "10px");
+    canvas.style("margin-bottom", "0");
 
 
 

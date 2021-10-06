@@ -8,7 +8,7 @@
 }  
   
   
-/* Hvis skærmen er under 800px så vil css ændres til det her. Det er til mobil*/
+/* Hvis skærmen er under 850px så vil css ændres til det her. Det er til mobil*/
 @media screen and (max-width: 850px) {
 ul.topNav {
     float: none;
