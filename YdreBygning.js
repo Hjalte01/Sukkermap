@@ -19,13 +19,6 @@ class YdreBygning{
         
 
 
-        planTegningImg.width = width/10;
-        planTegningImg.height = width/10;
-        // Jeg tror det er "image" der er noget galt med, hvilket er indbygget i p5, og for at bruge html version "img", så skal vi kunne få fat i canvaset
-        // Hvilket vi også har haft lidt problemer med...
-        image(planTegningImg, width-planTegningImg.width, 0);
-        
-        // drawImage(planTegningImg, 0, 0, width/10, width/10);
         
 
         
