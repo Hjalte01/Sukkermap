@@ -13,7 +13,8 @@ class IndreBygning extends YdreBygning{
         stroke(0);
         strokeWeight(1);
         textSize(30);
-        planTegning == 0 ? text("Stue", width/1.1, width/15) : text(planTegning + ". sal", width/1.1, width/15);
+        
+            
         
         pop();
         

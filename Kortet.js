@@ -69,6 +69,7 @@ function draw(){
 
     }
     popupBox.loop();
+    
 
 }
 

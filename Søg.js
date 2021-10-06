@@ -5,6 +5,8 @@ var tempAdvInput2;
 var valgArray1;
 var optionsLength;
 var kortEllerPlan = document.getElementById("kortEllerPlanKnap");
+let etageP = document.getElementById("etage");
+
 
 
 
@@ -52,6 +54,15 @@ class Søg {
             }  
         } 
         
+
+
+        if(planTegning == undefined){
+            etageP.textContent = ""
+        }else if(planTegning == 0){
+            etageP.textContent = "Stue";
+        }else{
+            etageP.textContent =  planTegning + ". Sal";
+        }
         
         
         
