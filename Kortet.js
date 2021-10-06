@@ -24,7 +24,7 @@ function setup(){
     canvas.style("margin-top", "10px");
     
     
-    canvas.style("width", "calc(100vw - 20px)");
+    canvas.style("width", "calc(100vw - 40px)");
     canvas.style("height", "calc(100vw * 0.4933 - 20px)");
 
     if(windowWidth < 850){
