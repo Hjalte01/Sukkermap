@@ -36,6 +36,13 @@ Mangler:
     hvis man selv må vælge om man vil se rute animationen.
 
 
+9. Oktober 2021
+Bus 7A sted 
+Grøn pil virker ikke på alle planer
+Subpage færdiggøres
+Custom tag med farveruten i select input
+
+
 
 -----------------------------------------------------------------------------------------
 Done:
@@ -66,4 +73,12 @@ nvm. dette her vil bare gerne huske nogle commands jeg så, som var nyttige
     - shift + alt + f --> fikser format(undtaget css og visse andre)
     - ctrl + p (tryk p derefter) --> skifter faner nemmere
     - crtl + x --> slet linje
- 
+
+ -------------------------------------------------------------------------
+ farver 
+
+ Mørkeblå 
+ #121026
+
+ Orange 
+ #eb5332

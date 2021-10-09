@@ -254,7 +254,7 @@ function grønPil(){
             }
 
             push();
-            fill(0, 255, 0);
+            fill('#eb5332');
             noStroke(); 
             // console(triCount);
             let tempPoint1_2 = createVector(path[ceil(triCount.pivot-1)].x - path[ceil(triCount.pivot)].x, path[ceil(triCount.pivot-1)].y - path[ceil(triCount.pivot)].y);

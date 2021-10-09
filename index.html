@@ -11,7 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="other/style.css">
-    <link rel="stylesheet" href="other/stylePopupBox.css">
+    <link rel="stylesheet" href="other/indstillinger.css">
     <link rel="stylesheet" type="text/css" href="other/mobil.css">
 
     <meta charset="utf-8">
@@ -63,7 +63,7 @@
       <form class="listInputForm">
         <p id='fra'>Fra:</p>
         <input list="valgList1" id='listInput1' value=''> 
-        <datalist id="valgList1"> 
+        <datalist id="valgList1">
           <option id='111' value='Tog(F/Rød) endestation'>
           <option id='112' value='Tog(A/E/F) mellemstation'>
           <option id='113' value='Spar'>
@@ -251,24 +251,24 @@
     </div>
 
 
-    <!-- Indstillinger og popup boxen-->
+    <!-- Indstillinger popup boxen-->
     <div id="popupBox" class="popupBoxClass">
       <div class="popupBox-content">
         <span class="xClose" id="xBtn">&times;</span>
         <h1>Indstillinger</h1>
 
-        <div class="content-divider"> 
+        <div class="grid-container"> 
           <!-- farve på ruten -->
           <div class="content-divider-sections">
             <label for="farveRute">Farven på ruten</label>
             <select id="farveRute"style="width:150px; height: 25px;">
+              <option value="rød">Rød</option>
               <option value="pink"> Pink</option>
               <option value="grøn">Grøn</option>
               <option value="blå">Blå</option>
-              <option value="rød">Rød</option>
               <option value="orange">Orange</option>
             </select>
-            <input type="color" id="colorInp">
+            <input type="color" id="colorInp" style="display: none;">
           </div>
           <!-- hastighed pilen -->
           <div class="content-divider-sections">
@@ -285,12 +285,12 @@
             <button id="hjælpBtn">Tryk her for at hjælpe</button>
           </div>
           <!-- Kommer snart etc. -->
-          <div class="content-divider-sections">
+          <!-- <div class="content-divider-sections">
             <label for="farveRute">Kommer snart etc.</label>
-          </div>
+          </div> -->
 
             
-        </div>>
+        </div>
       </div>
     </div>
 

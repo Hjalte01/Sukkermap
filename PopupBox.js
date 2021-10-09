@@ -8,7 +8,7 @@ var hjælpereNavigation = document.getElementById("hjælpereNavigation");
 var hjælpereContainer = document.getElementById("hjælpereContainer");
 var hjælperekoordinater = document.getElementById("hjælperekoordinater");
 
-var farveInp = "rgb(255, 0, 0)";
+var farveInp = 'rgb(255,0,0)';
 var farveSelect = document.getElementById('farveRute');
 var option;
 var hastighedPil = document.getElementById("hastighedPil").value;
@@ -39,8 +39,6 @@ class PopupBox{
 
 
 }
-
-
 
 // Hastighed på pilen
 document.getElementById("hastighedPil").onchange = function(){

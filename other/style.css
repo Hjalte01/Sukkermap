@@ -31,7 +31,8 @@ ul.topNav  {
     padding: 0px;
     /* height: 85px; */
     background-color: #121026;
-    border-bottom: 10px solid #141414;
+    border-bottom: 5px solid black;
+
 
 }
 .listInputForm{
@@ -199,7 +200,7 @@ h1 {
 }
 
 input:checked + .slider {
-    background-color: #2196F3;
+    background-color: #eb5332;
 }
 
 input:focus + .slider {
@@ -237,5 +238,10 @@ input:checked + .slider:before {
 
 }
 
+#etage{
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
 
 

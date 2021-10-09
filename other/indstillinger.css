@@ -51,7 +51,7 @@
     margin:auto;
     padding: 20px;
     border: 5px solid #eb5332;
-    width: 80%;
+    width: 60%;
 }
 
 #hjælpereNavigation{
@@ -82,8 +82,7 @@
     background-color: rgba(0,0,0,0.4); /* sort w/ opacity */
 }
 
-
-
+/*Close button */
 .xClose {
     color: #df2727;
     float:right;
@@ -97,6 +96,7 @@
     cursor: pointer;
 }
 
+/*Hjælp */
 #hjælpereContainer .popupBox-content .xClose{
     padding: 0% 20px 0% 0%;
 }
@@ -167,10 +167,22 @@ select{
     width: auto; 
 }
 
-.content-divider{
+
+/* grid */
+.grid-container{
     height: 100%;
     width: 100%;
+    display: grid;
+    /* grid-template-columns: auto auto auto; */
+    /* padding: 10px; */
 
+}
+
+.content-divider-sections {
+    padding: 20px;
+    font-size: 30px;
+    text-align: left;
+    
 }
 
 
