@@ -21,7 +21,6 @@ function setup(){
     const canvas = createCanvas(canvasStr*0.75, canvasStr*canvasHeightDiff*0.75); //canvas
     canvas.style("display", "block");
     canvas.style("margin", "10px");
-    canvas.style("margin-top", "10px");
     
     
     canvas.style("width", "calc(100vw - 40px)");
@@ -51,7 +50,7 @@ function setup(){
 
 
 function draw(){
-    if(popupBoxContainer.style.display == "" && hjælpereNavigation.style.display == "" && hjælpereContainer.style.display == ""){
+    if(popupBoxContainer.style.display == "" && hjælpereNavigation.style.display == ""){
         clear();
         canvasZoom = screen.width;
         if(planTegning != undefined) {
