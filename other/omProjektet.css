@@ -1,4 +1,4 @@
-.mainDiv {
+/* .mainDiv {
     margin-left: 50px; 
     margin-right: 50px; 
     margin-bottom: 20px;
@@ -11,7 +11,7 @@
     text-align: center;
     display: flex;
     justify-content: center;
-}
+} */
 
 .titel{
     /* height: 70vw; */
@@ -26,7 +26,7 @@
 }
 
 .div1 {
-    font-size: 35px; 
+    font-size: 25px; 
     text-align: center;
     background-color: gray;
 }
@@ -56,7 +56,7 @@ p {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2; */
-    width: 80%;
+    width: 100%;
     padding: 20px;
     text-align: center;
 }
