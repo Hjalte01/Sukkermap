@@ -1,49 +1,49 @@
 .mobilParagraph {
-  color: white;
-  font-size: 2rem;
-  position: absolute;
-  top: 0;
-  margin: 0;
-  padding: 1.2rem 0 0 0.5rem;
-  text-align: left;
+    color: white;
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    margin: 0;
+    padding: 1.2rem 0 0 0.5rem;
 }
 
 /* Hvis skærmen er under 850px så vil css ændres til det her. Det er til mobil*/
 @media screen and (max-width: 850px) {
-  ul.topNav {
-    float: none;
-    padding: auto;
-    display: none;
-  }
-  #fra,
-  #til {
-    text-align: center;
-  }
+    ul.topNav {
+        float: none;
+        padding: auto;
+        display: none;
+    }
+    #fra,
+    #til {
+        text-align: center;
+    }
 
-  form {
-    display: block;
-    text-align: center;
-  }
+    form {
+        display: block;
+        text-align: center;
+    }
 
-  .navbar {
-    display: block;
-  }
-  .dropbtn {
-    display: block;
-  }
+    .navbar {
+        display: block;
+    }
+    .dropbtn {
+        display: block;
+        
+    }
 
-  h1 {
-    font-size: 1.5em;
-    margin: 0;
-    text-align: left;
-  }
-  #updated {
-    display: none;
-  }
+    h1 {
+        font-size: 1.5em;
+        margin: 0;
+        text-align: left;
+    }
+    #updated {
+        display: none;
+    }
 
-  .indstillingerDiv {
-    position: relative;
-    top: 0em;
-    right: 0;
-  }
+    .indstillingerDiv {
+        position: relative;
+        top: 0em;
+        right: 0;
+    }
 }
