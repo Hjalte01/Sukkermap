@@ -1,7 +1,6 @@
 var popupBoxContainer = document.getElementById("popupBox");
 var btnOpen = document.getElementById("btnOpen");
 var xClose = document.getElementById("xBtn");
-var hjælperXBtn = document.getElementById("hjælperXBtn");
 var colorInp = document.getElementById("colorInp");
 var hjælpBtn = document.getElementById("hjælpBtn");
 var hjælpereNavigation = document.getElementById("hjælpereNavigation");
@@ -23,19 +22,18 @@ var hastighedPil = document.getElementById("hastighedPil").value;
 
 class PopupBox{
     constructor(){
-        
+
     }
-  
-  
+
+
     loop(){
         if(mouseIsPressed && hjælpereNavigation.style.display == "block"){
             hjælpereNavigation.style.display = "";
-            hjælpereContainer.style.display = "block";
-            hjælperekoordinater.textContent = `koordinater(${floor(mouseX)}, ${floor(mouseY)})`;
-            
+            window.open('https://docs.google.com/forms/d/e/1FAIpQLSep8enf79hcOt7ceU7cjjck3FUsWZuqNVXYul5Xf5ZrG9XI3g/viewform?usp=pp_url&entry.1017160509=' + `Koordinater(${floor(mouseX)}, ${floor(mouseY)})`, '_blank');
 
-        } 
-    }  
+
+        }
+    }
 
 
 }
@@ -93,14 +91,10 @@ window.onclick = function(event) {
 
 
 
-
+//Knap for indstillinger til hjælp med kordinatter
 hjælpBtn.onclick = function(){
     popupBoxContainer.style.display = "";
     hjælpereNavigation.style.display = "block";
-}
-
-hjælperXBtn.onclick = function(){
-    hjælpereContainer.style.display = "";
 }
 
 
