@@ -47,8 +47,6 @@ farveSelect.onchange = function () {
         farveInp = "rgb(200, 0, 0)";
     } else if (option.value == "orange") {
         farveInp = "rgb(255,165,0)";
-    } else if (option.value == "andet") {
-        farveInp = colorInp.value;
     }
 };
 
