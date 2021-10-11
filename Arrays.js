@@ -1,24 +1,21 @@
-class Arrays{
-    constructor(){
+class Arrays {
+    constructor() {}
 
-    }
-
-    aStarArray(){
-
+    aStarArray() {
         //Kendte steder
-        arrayTemp[0]  = new spot(522, 273, "administrationen", "stue");
-        arrayTemp[1]  = new spot(699, 414, "atriumgården", "stue");
-        arrayTemp[2]  = new spot(681, 468, "auditoriet", "3. sal");
-        arrayTemp[3]  = new spot(92, 110,  "biografen", "3. sal");
-        arrayTemp[4]  = new spot(591, 447, "biologi", "stue");
-        arrayTemp[5]  = new spot(790, 448, "fysik", "stue");
+        arrayTemp[0] = new spot(522, 273, "administrationen", "stue");
+        arrayTemp[1] = new spot(699, 414, "atriumgården", "stue");
+        arrayTemp[2] = new spot(681, 468, "auditoriet", "3. sal");
+        arrayTemp[3] = new spot(92, 110, "biografen", "3. sal");
+        arrayTemp[4] = new spot(591, 447, "biologi", "stue");
+        arrayTemp[5] = new spot(790, 448, "fysik", "stue");
         arrayTemp[351] = new spot(307, 328, "kantinen", "stue");
-        arrayTemp[6]  = new spot(790, 448, "kemi", "stue");
-        arrayTemp[7]  = new spot(500, 101,  "metalværstedet", "stue");
+        arrayTemp[6] = new spot(790, 448, "kemi", "stue");
+        arrayTemp[7] = new spot(500, 101, "metalværstedet", "stue");
         arrayTemp[352] = new spot(265, 284, "spisesal", "stue");
-        arrayTemp[8]  = new spot(577, 373, "studievejledning", "stue");
+        arrayTemp[8] = new spot(577, 373, "studievejledning", "stue");
         arrayTemp[355] = new spot(1008, 496, "testcenter", "3. sal");
-        arrayTemp[9]  = new spot(465, 268, "træværkstedet", "stue");
+        arrayTemp[9] = new spot(465, 268, "træværkstedet", "stue");
         arrayTemp[10] = new spot(291, 267, "tårnet", "stue");
         //lokaler på stuen
         arrayTemp[11] = new spot(853, 371, "001", "stue");
@@ -123,7 +120,7 @@ class Arrays{
         // 4. sal
         arrayTemp[106] = new spot(308, 449, "480", "3. sal"); //4 sal, selvom tag'et er 3. sal
         //wc
-        
+
         //printer
 
         //trappe
@@ -177,7 +174,6 @@ class Arrays{
         arrayTemp[283] = new spot(145, 106, "trappe", "3. sal");
         arrayTemp[323] = new spot(541, 91, "trappe", "2. sal"); //håndarbejde el. lign. over engelsk
         arrayTemp[324] = new spot(541, 91, "trappe", "3. sal");
-
 
         //forbindinger mellem spotsne i stue
         arrayTemp[107] = new spot(595, 411, "binding", "stue");
@@ -385,16 +381,17 @@ class Arrays{
         arrayTemp[358] = new spot(999, 455, "binding", "3. sal");
         arrayTemp[360] = new spot(60, 541, "tog(f/rød) endestation", "stue");
         arrayTemp[361] = new spot(104, 539, "binding", "stue");
-        arrayTemp[362] = new spot(1117, 490, "tog(a/e/f) mellemstation", "stue");
+        arrayTemp[362] = new spot(
+            1117,
+            490,
+            "tog(a/e/f) mellemstation",
+            "stue"
+        );
         arrayTemp[363] = new spot(977, 406, "binding", "stue");
         arrayTemp[364] = new spot(1116, 351, "spar", "stue");
         arrayTemp[365] = new spot(285, 470, "parkeringsplads", "stue");
         arrayTemp[366] = new spot(13, 102, "binding", "stue");
         arrayTemp[367] = new spot(7, 7, "i bil", "stue");
-
-
-        
-
 
         /* kopier dette til console i chrome, for at tilføje alle de seneste naboer
         for(let i = 127; i < arrayTemp.length; i++){
@@ -773,14 +770,5 @@ class Arrays{
         arrayTemp[368].addNeighbors([201, 369, 370]);
         arrayTemp[369].addNeighbors([172, 368]);
         arrayTemp[370].addNeighbors([156, 368]);
-
-
-
-
-
-
-
-
-
-    }    
+    }
 }
