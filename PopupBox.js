@@ -39,21 +39,15 @@ farveSelect.onchange = function () {
 
     if (option.value == "pink") {
         farveInp = "rgb(255, 0, 200)";
-        // document.getElementById("colorInp").style.display = "none";
     } else if (option.value == "blå") {
         farveInp = "rgb(0, 0, 200)";
-        // document.getElementById("colorInp").style.display = "none";
     } else if (option.value == "grøn") {
         farveInp = "rgb(0, 200, 0)";
-        // document.getElementById("colorInp").style.display = "none";
     } else if (option.value == "rød") {
         farveInp = "rgb(200, 0, 0)";
-        // document.getElementById("colorInp").style.display = "none";
     } else if (option.value == "orange") {
         farveInp = "rgb(255,165,0)";
-        // document.getElementById("colorInp").style.display = "none";
     } else if (option.value == "anden farve") {
-        // document.getElementById("colorInp").style.display = "inline";
         document.getElementById("colorInp").click();
     }
 };

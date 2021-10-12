@@ -67,4 +67,9 @@
         /* padding: 100px; */
         margin: 0;
     }
+
+    .mobilHide{
+        display: none;
+    }
+
 }
