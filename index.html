@@ -48,7 +48,7 @@
             <button class="dropbtn" onclick="myFunction()">
                 <p class="arrow down"></p>
             </button>
-            <div class="dropdown-content" id="myDropdown">
+            <div id="myDropdown" class="dropdown-content">
                 <a href="html/kontakt.html">Kontakt os</a>
                 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                     >Donation</a
@@ -58,7 +58,11 @@
             </div>
         </div>
 
-        <div id="containerForInputs">
+        <button class="dropbtnForInputs" onclick="dropDownPhone()">
+            <p class="arrow down"></p>
+        </button>
+
+        <div id="containerForInputs" class="displayContainerForInputs">
             <!-- Array list i søgefletet, som har id valList-->
             <form class="listInputForm">
                 <p id="fra">Fra:</p>
@@ -261,6 +265,10 @@
                             <option value="grøn">Grøn</option>
                             <option value="blå">Blå</option>
                             <option value="orange">Orange</option>
+                            <option value="anden farve">Anden farve</option>
+
+                            <input id="colorInp" type="color"/>
+
                         </select>
                     </div>
                     <!-- hastighed pilen -->

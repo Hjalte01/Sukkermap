@@ -140,3 +140,7 @@ select {
     font-size: 30px;
     text-align: left;
 }
+
+#colorInp {
+    display: none;
+}

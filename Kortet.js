@@ -61,7 +61,15 @@ function draw() {
         søgefelt.inputfelt();
     }
     popupBox.loop();
+
+    
 }
+
+// n =  new Date();
+// y = n.getFullYear();
+// m = n.getMonth() + 1;
+// d = n.getDate();
+// document.getElementById("update").innerHTML = m + "/" + d + "/" + y;
 
 function preload() {
     kortImg = loadImage("img/sukkertoppen.png"); //kortet
