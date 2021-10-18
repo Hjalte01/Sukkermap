@@ -1,35 +1,39 @@
-var boolInput = true;
-/* When the user clicks on the button, 
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-
 // Close the dropdown if the user clicks outside of it
 window.addEventListener("click", function (e) {
-    if (!e.target.matches(".dropbtn") && !e.target.matches(".arrow")) {
-        var myDropdown = document.getElementById("myDropdown");
-        if (myDropdown.classList.contains("show")) {
-            myDropdown.classList.remove("show");
-        }
-    } else if (
-        !e.target.matches(".dropbtnForInputs") &&
-        !e.target.matches(".arrow")
-    ) {
-        var myDropdown = document.getElementById("containerForInputs");
-        if (myDropdown.classList.contains("show")) {
-            myDropdown.classList.remove("show");
+    var myDropdown = document.getElementById("myDropdown");
+    var containerForInputs = document.getElementById("containerForInputs");
+
+    if (containerForInputs != "none" || myDropdown != "none") {
+        if (containerForInputs != "none") {
+            if (!e.target.matches("displayContainerForInputs")) {
+                containerForInputs = "none";
+            }
+        } else {
+            if (!e.target.matches("dropdown-content")) {
+                myDropdown = "none";
+            }
         }
     }
 });
 
-function dropDownPhone() {
-    if (boolInput) {
-        // document.getElementById("containerForInputs").classList.toggle("show");
-        document.getElementById("containerForInputs").style.display = "block";
-        boolInput = false;
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    var myDropdown = document.getElementById("myDropdown");
+
+    if (myDropdown.style.display == "none") {
+        myDropdown.style.display = "block";
     } else {
-        document.getElementById("containerForInputs").style.display = "none";
-        boolInput = true;
+        myDropdown.style.display = "none";
+    }
+}
+
+function dropDownPhone() {
+    var containerForInputs = document.getElementById("containerForInputs");
+
+    if (containerForInputs.style.display == "none") {
+        containerForInputs.style.display = "block";
+    } else {
+        containerForInputs.style.display = "none";
     }
 }

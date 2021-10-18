@@ -144,3 +144,12 @@ select {
 #colorInp {
     display: none;
 }
+
+#hjælpBtn {
+    font-size: 20px;
+    height: 2rem;
+    width: 13rem;
+    background-color: white;
+    text-align: center;
+    text-justify: center;
+}
