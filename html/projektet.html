@@ -16,18 +16,19 @@
         />
 
         <script src="../Dropdown.js" defer></script>
+        <script src="../ScrollBackground.js" defer></script>
     </head>
 
     <header>
-        <ul class="topNav">
-            <li><a href="kontakt.html">Kontakt os</a></li>
+        <ul class="topNav" id="topNav">
+            <li><a id="myLink" href="#" onclick="newPage(2);return false;">Kontakt os</a></li>
             <li>
                 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
                     >Donation</a
                 >
             </li>
             <li><a href="projektet.html">Om projektet</a></li>
-            <li><a href="../index.html">Sukkermap</a></li>
+            <li><a id="myLink" href="#" onclick="newPage(1);return false;">Sukkermap</a></li>
         </ul>
         <div class="navbar">
             <p class="mobilParagraph">Om projektet</p>
@@ -44,12 +45,11 @@
             </div>
         </div>
     </header>
-    <body>
+    <body style="height: 2500px;">
+        <canvas id="scroll-background"></canvas>
         <div class="titel">
             <h1>Projekt Sukkermap</h1>
         </div>
-
-        <div class="parallax">
 
         <div class="div1">
             <p class ="ptext">
@@ -79,9 +79,7 @@
                 benene.
             </p>
         </div>
-
-        <div class="parallax">
-
+<!-- 
     <div class="div1">
         <p class ="ptext">
             Der vi så har skrevet hvert lokale nummer på plantegningerne. Skulle
@@ -109,8 +107,8 @@
             besøgende, med at finde vej til deres nuværende destination. Hvis i
             gerne vil donere til os.
         </p>
-    </div>
+    </div> -->
 </div>
-        <div class="parallax"></div>
+
     </body>
 </html>
