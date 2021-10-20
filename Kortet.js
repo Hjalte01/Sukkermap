@@ -21,6 +21,7 @@ function setup() {
 
   canvas.style("width", "calc(100vw - 40px)");
   canvas.style("height", "calc(100vw * 0.4933 - 20px)");
+  
 
   if (windowWidth < 850) {
     canvas.style("width", "calc(850px - 20px)");
