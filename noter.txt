@@ -62,6 +62,17 @@ Lokaler/steder:
     - Animations pil, samt hastigheden på animationen
 
 
+20. oktober 2021
+ - jQuery scroll med input
+ - Indstillinger lavet færdig
+    - Se all områderne
+    - Session Storage 
+    - Slider til speed pilen 
+
+ - Subpages lavet færdig 
+ - Arrow i input 
+ - Brugertest 
+
 
 
 
