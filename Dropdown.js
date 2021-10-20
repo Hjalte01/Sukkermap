@@ -60,7 +60,7 @@ function containerForInputsBlockFunc(){
 
     containerForInputsKnap.style.transition = "all 2s";
 
-    containerForInputsKnap.style.position = "absolute";    
+    containerForInputsKnap.style.position = "relative";    
     containerForInputsKnap.style.bottom = "0";
     containerForInputsKnap.style.zIndex = "2";
     containerForInputsKnap.style.top = "";
