@@ -7,9 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- P5 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
+    <script src="libraries/p5.min.js"></script>
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script> -->
+
     <!-- css -->
     <link rel="stylesheet" type="text/css" href="other/style.css" />
     <link rel="stylesheet" href="other/indstillinger.css" />
@@ -19,16 +22,19 @@
     <!--favicon logo-->
 
     <!--jQuery-->
-    <script
+    <!-- <script
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
       integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.4.5/jquery.mobile.structure-1.4.5.css"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.4.5/jquery.mobile.structure-1.4.5.css"></script>  -->
+    <!-- Laver fejl, står noget med css/så ved ikke om det nedenunder er rigtigt, da css bliver sat i et "link href" -->
+    <!-- <link rel="stylesheet" type="text/css" href="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.4.5/jquery.mobile.structure-1.4.5.css"/> -->
+
 
     <!-- JavaScript filer-->
-    <script src="ScrollX.js" defer></script>
+    <!-- <script src="ScrollX.js" defer></script> -->
     <script src="Dropdown.js" defer></script>
     <script src="PopupBox.js" defer></script>
     <script src="Astar.js" defer></script>
@@ -38,7 +44,12 @@
     <script src="IndreBygning.js" defer></script>
     <script src="Kortet.js" defer></script>
   </head>
+
+
+
+
   <body>
+
     <header>
       <ul class="topNav">
         <li><a href="html/kontakt.html">Kontakt os</a></li>
@@ -244,7 +255,7 @@
       </form>
 
       <!-- versionen man er på lige nu, husk at ændre den, hver gang github bliver updateret for nu af -->
-      <p id="updated">Updated: 20-10-2021</p>
+      <p id="updated">Updated: 21-10-2021</p>
 
       <!-- indstilling icon -->
       <div class="indstillingerDiv">
@@ -309,5 +320,6 @@
 
     <!-- Canvas'et er her -->
     <div id="canvasErHer"></div>
+
   </body>
 </html>
