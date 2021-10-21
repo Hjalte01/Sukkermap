@@ -42,8 +42,11 @@ Grøn pil virker ikke på alle planer
 Subpage færdiggøres
 Custom tag med farveruten i select input
 
+
+
 -----------------------------------------------------------------------------------------
 Done:
+
 
 - QR-kode
 
@@ -54,8 +57,10 @@ Lokaler/steder:
 - parkeringsplads
 - i bil
 
+
 - Indstillinger
     - Animations pil, samt hastigheden på animationen
+
 
 20. oktober 2021
  - jQuery scroll med input
@@ -88,34 +93,3 @@ nvm. dette her vil bare gerne huske nogle commands jeg så, som var nyttige
 
  Orange 
  #eb5332
-
-
--- Kommentar --
-Teksten til navbar er for stort 
-Halvdelen af størrelse 
-
-Navbar er også stor 
-
-X er for meget ned indstillinger 
-
-Tryk for at hjælpe - X knap
-
-Teksten til at hjælpe, skal have en box
-
-Pilene på kortet skal være noticable 
-
-Mobil
-Mobil nav - Sukkermap skal være til højre istedet for til venstre 
-
-Dropdown mobil 
-- Indstilingerne skal være til højre 
-- For meget plads
-- Teksten mindre i indstillingerne 
-
-Teksten til kort/plantegning skift til arial 
-
-Mobilen 
-Fra og til pop up, når man starter appen 
-
-pc 
-Indstillinger knap kontakt 
