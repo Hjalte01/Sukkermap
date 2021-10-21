@@ -9,37 +9,41 @@ var figurer = [];
 var søgefelt;
 var indreBygninger = [];
 var popupBox;
-var myCanvas;
 
 function setup() {
-	canvasStr = 1500; 
+  canvasStr = 1500;
+  const canvas = createCanvas(
+    canvasStr * 0.75,
+    canvasStr * canvasHeightDiff * 0.75
+  ); //canvas
+  canvas.style("display", "block");
+  canvas.style("margin", "10px");
 
-	if (windowWidth < 850) {
-		myCanvas = createCanvas(850 - 20, 850 * 0.4933 - 20);
-	}else {
-		myCanvas = createCanvas(windowWidth - 40, windowWidth * 0.4933 - 20);
-	}
-	//canvas 
-	myCanvas.parent("canvasErHer"); 
+  canvas.style("width", "calc(100vw - 40px)");
+  canvas.style("height", "calc(100vw * 0.4933 - 20px)");
+  
 
+  if (windowWidth < 850) {
+    canvas.style("width", "calc(850px - 20px)");
+    canvas.style("height", "calc(850px * 0.4933 - 20px");
+  }
 
+  for (let i = 0; i <= 5; i++) {
+    //tilføj en figur
+    figurer[i] = new YdreBygning(20); //personlig countdown lav en ny figur, uden argument for ingen countdown
+  }
 
-	for (let i = 0; i <= 5; i++) {
-	//tilføj en figur
-	figurer[i] = new YdreBygning(20); //personlig countdown lav en ny figur, uden argument for ingen countdown
-	}
-
-	popupBox = new PopupBox();
-	ydreTing = new YdreBygning();
-	indreTing = new IndreBygning();
-	arraySetup = new Arrays();
-	indreBygninger = [
-	indreTing.stue,
-	indreTing.sal1,
-	indreTing.sal2,
-	indreTing.sal3,
-	];
-	søgefelt = new Søg();
+  popupBox = new PopupBox();
+  ydreTing = new YdreBygning();
+  indreTing = new IndreBygning();
+  arraySetup = new Arrays();
+  indreBygninger = [
+    indreTing.stue,
+    indreTing.sal1,
+    indreTing.sal2,
+    indreTing.sal3,
+  ];
+  søgefelt = new Søg();
 }
 
 function draw() {
