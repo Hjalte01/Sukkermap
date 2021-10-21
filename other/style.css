@@ -1,5 +1,9 @@
-html {
+:root{
     --arrow-color: white;
+}
+
+#canvasErHer{
+    margin: 10px;
 }
 
 form {
