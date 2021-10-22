@@ -40,25 +40,28 @@ const updateImage = (index) => {
 preloadImages();
 
 function newPage(intPage) {
-  document.getElementById("topNav").style.animation = "moveNavbarBack 5s";
+  document.getElementById("header").style.animation = "moveNavbarBack 5s";
+
+  setTimeout(function () {
+    document.getElementById("header").style.right = "0";
+    document.getElementById("header").style.transform = "translate(0%)";
+    
+  }, 5000);
 
   if (intPage == 1) {
     setTimeout(function () {
-      document.getElementById("topNav").style.transform = "translateX(50%)";
       location.href = "../index.html";
     }, 5000);
   }
 
   if (intPage == 2) {
     setTimeout(function () {
-      document.getElementById("topNav").style.transform = "translateX(50%)";
       location.href = "kontakt.html";
     }, 5000);
   }
 
   if (intPage == 3) {
     setTimeout(function () {
-      document.getElementById("topNav").style.transform = "translateX(50%)";
       location.href = "donate.html";
     }, 5000);
   }
