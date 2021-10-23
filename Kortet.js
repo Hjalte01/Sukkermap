@@ -12,15 +12,30 @@ var popupBox;
 var myCanvas;
 
 function setup() {
-	canvasStr = 1500; 
+
+	myCanvas = createCanvas(
+		1500 * 0.75,
+		1500 * 0.4933 * 0.75
+		// windowWidth - 40, (windowWidth - 40)* 0.4933
+	);
+
+	// myCanvas.elt.style.width = "100vw";
+	// myCanvas.elt.style.height = "100vh";
+
+
+	
+
+
 
 	if (windowWidth < 850) {
-		myCanvas = createCanvas(850 - 20, 850 * 0.4933 - 20);
+		myCanvas.elt.style.width = "calc(850px - 40px)";
+		myCanvas.elt.style.height = "calc((850px - 40px) * 0.4933px)";
 	}else {
-		myCanvas = createCanvas(windowWidth - 40, windowWidth * 0.4933 - 20);
+	 	myCanvas.elt.style.width = "calc(100vw - 40px)";
+		myCanvas.elt.style.height = "calc((100vw - 40px) * 0.4933)";
 	}
-	//canvas 
-	myCanvas.parent("canvasErHer"); 
+
+	myCanvas.parent("canvasErHer");
 
 
 
@@ -43,6 +58,8 @@ function setup() {
 }
 
 function draw() {
+
+
   if (
     popupBoxContainer.style.display == "" &&
     hjælpereNavigation.style.display == ""

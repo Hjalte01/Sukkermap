@@ -106,7 +106,6 @@
     }
     
     #canvasErHer{
-        margin: 10px;
     
         overflow-y: hidden;
         overflow-x: scroll;
