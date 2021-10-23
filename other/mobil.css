@@ -100,6 +100,7 @@
 
 /* Hvis skærmen er under 850px så vil css ændres til det her. Det er til mobil*/
 @media screen and (max-width: 850px) {
+<<<<<<< HEAD
     .body {
         overflow-y: scroll;
         overflow-x: hidden;
@@ -112,6 +113,8 @@
     }
 
 
+=======
+>>>>>>> fcb5f340a9c3c7e380cc099561801f4846180df2
     ul.topNav {
         float: none;
         padding: auto;
@@ -175,8 +178,6 @@
 
     .mobilHide {
         display: none;
-
-        
     }
 
 

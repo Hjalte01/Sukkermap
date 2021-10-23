@@ -9,23 +9,13 @@ var figurer = [];
 var søgefelt;
 var indreBygninger = [];
 var popupBox;
-var myCanvas;
 
 function setup() {
 
 	myCanvas = createCanvas(
 		1500 * 0.75,
 		1500 * 0.4933 * 0.75
-		// windowWidth - 40, (windowWidth - 40)* 0.4933
 	);
-
-	// myCanvas.elt.style.width = "100vw";
-	// myCanvas.elt.style.height = "100vh";
-
-
-	
-
-
 
 	if (windowWidth < 850) {
 		myCanvas.elt.style.width = "calc(850px - 40px)";
@@ -34,27 +24,25 @@ function setup() {
 	 	myCanvas.elt.style.width = "calc(100vw - 40px)";
 		myCanvas.elt.style.height = "calc((100vw - 40px) * 0.4933)";
 	}
-
 	myCanvas.parent("canvasErHer");
 
 
+  for (let i = 0; i <= 5; i++) {
+    //tilføj en figur
+    figurer[i] = new YdreBygning(20); //personlig countdown lav en ny figur, uden argument for ingen countdown
+  }
 
-	for (let i = 0; i <= 5; i++) {
-	//tilføj en figur
-	figurer[i] = new YdreBygning(20); //personlig countdown lav en ny figur, uden argument for ingen countdown
-	}
-
-	popupBox = new PopupBox();
-	ydreTing = new YdreBygning();
-	indreTing = new IndreBygning();
-	arraySetup = new Arrays();
-	indreBygninger = [
-	indreTing.stue,
-	indreTing.sal1,
-	indreTing.sal2,
-	indreTing.sal3,
-	];
-	søgefelt = new Søg();
+  popupBox = new PopupBox();
+  ydreTing = new YdreBygning();
+  indreTing = new IndreBygning();
+  arraySetup = new Arrays();
+  indreBygninger = [
+    indreTing.stue,
+    indreTing.sal1,
+    indreTing.sal2,
+    indreTing.sal3,
+  ];
+  søgefelt = new Søg();
 }
 
 function draw() {
