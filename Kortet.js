@@ -17,13 +17,16 @@ function setup() {
 		1500 * 0.4933 * 0.75
 	);
 
-	if (windowWidth < 850) {
-		myCanvas.elt.style.width = "calc(850px - 40px)";
-		myCanvas.elt.style.height = "calc((850px - 40px) * 0.4933px)";
+  if (windowWidth < 850) {
+		myCanvas.elt.style.width = "calc(850px - 37px)";
+		myCanvas.elt.style.height = "calc((850px - 37px) * 0.4933)";
 	}else {
-	 	myCanvas.elt.style.width = "calc(100vw - 40px)";
-		myCanvas.elt.style.height = "calc((100vw - 40px) * 0.4933)";
+	 	myCanvas.elt.style.width = "calc(100vw - 37px)";
+		myCanvas.elt.style.height = "calc((100vw - 37px) * 0.4933)";
 	}
+  myCanvas.elt.style.margin = "10px";
+
+
 	myCanvas.parent("canvasErHer");
 
 
