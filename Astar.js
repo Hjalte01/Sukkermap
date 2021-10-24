@@ -315,9 +315,9 @@ function grønPil() {
             }
 
             push();
-            fill("#eb5332");
+            
+            fill("rgb(0, 255, 0)")  //farve på vejledningspil
             noStroke();
-            // console(triCount);
             let tempPoint1_2 = createVector(
                 path[ceil(triCount.pivot - 1)].x - path[ceil(triCount.pivot)].x,
                 path[ceil(triCount.pivot - 1)].y - path[ceil(triCount.pivot)].y

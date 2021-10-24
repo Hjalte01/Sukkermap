@@ -4,6 +4,7 @@
     display: inline-block;
     padding: 10px;
     margin: 0;
+    margin-bottom: 9px;
 }
 .down {
     transform: rotate(45deg);    
@@ -20,7 +21,7 @@
     outline: none;
     color: white;
     width: 4rem;
-    height: 4.5rem;
+    height: 100%;
     padding: 0;
     background-color: black;
     font-family: inherit;
@@ -29,31 +30,47 @@
     float: right;
 }
 
-.dropbtn:hover,
-.dropbtn:focus {
-    background-color: red;
-}
-
 .dropdown-content {
     display: none;
     position: absolute;
     /* background-color: #f9f9f9; */
-    max-width: 50vw;
+    width: 130px;
     /* box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); */
-    z-index: 1;
-    top: 4.5rem;
+    z-index: 3;
+    top: 5rem;
     right: 0;
     background-color: rgba(0, 0, 0, 0.8);
 
 }
 
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: red;
+}
+
+
+
+
 .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
+    box-sizing: border-box;
+    width: 100%;
+    border: solid rgba(255, 255, 255, 0.3);
+    float: left;
+    font-size: 16px;
+    color: white;
+    padding: 14px 16px;
     text-decoration: none;
-    display: block;
-    text-align: left;
+}
+.dropdown-content a:nth-child(1){
+    border-width: 2px 2px 1px 2px;
+}
+
+.dropdown-content a:nth-child(2),
+.dropdown-content a:nth-child(3){
+    border-width: 1px 2px 1px 2px;
+}
+.dropdown-content a:nth-child(4){
+    border-width: 1px 2px 2px 2px;
 }
 
 /* Nav dropdown til mobil */
@@ -71,15 +88,6 @@
     overflow-y: hidden;
 }
 
-.navbar a {
-    float: left;
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
 .mobilParagraph {
     color: white;
     font-size: 2rem;
@@ -94,12 +102,12 @@
 
 .dropbtnForInputs:hover,
 .dropbtnForInputs:focus {
-    background-color: red;
+    background-color: orange;
 
 }
 
-/* Hvis skærmen er under 850px så vil css ændres til det her. Det er til mobil*/
-@media screen and (max-width: 850px) {
+/* Hvis skærmen er under 865px så vil css ændres til det her. Det er til mobil*/
+@media screen and (max-width: 865px) {
     .body {
         overflow-y: scroll;
         overflow-x: hidden;
@@ -151,7 +159,8 @@
 
     .dropbtnForInputs {
         display: flex;
-        align-content: center;
+        background-color: green;    
+        align-items: center;
         justify-content: center;
         position: relative;
         width: 100%;
@@ -176,6 +185,4 @@
     .mobilHide {
         display: none;
     }
-
-
 }

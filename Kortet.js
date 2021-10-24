@@ -8,7 +8,6 @@ var planTegning = undefined;
 var figurer = [];
 var søgefelt;
 var indreBygninger = [];
-var popupBox;
 
 function setup() {
 
@@ -17,9 +16,9 @@ function setup() {
 		1500 * 0.4933 * 0.75
 	);
 
-  if (windowWidth < 850) {
-		myCanvas.elt.style.width = "calc(850px - 37px)";
-		myCanvas.elt.style.height = "calc((850px - 37px) * 0.4933)";
+  if (windowWidth < 865) {
+		myCanvas.elt.style.width = "calc(865px - 37px)";
+		myCanvas.elt.style.height = "calc((865px - 37px) * 0.4933)";
 	}else {
 	 	myCanvas.elt.style.width = "calc(100vw - 37px)";
 		myCanvas.elt.style.height = "calc((100vw - 37px) * 0.4933)";
@@ -35,7 +34,6 @@ function setup() {
     figurer[i] = new YdreBygning(20); //personlig countdown lav en ny figur, uden argument for ingen countdown
   }
 
-  popupBox = new PopupBox();
   ydreTing = new YdreBygning();
   indreTing = new IndreBygning();
   arraySetup = new Arrays();
@@ -65,14 +63,8 @@ function draw() {
 
     søgefelt.inputfelt();
   }
-  popupBox.loop();
 }
 
-// n =  new Date();
-// y = n.getFullYear();
-// m = n.getMonth() + 1;
-// d = n.getDate();
-// document.getElementById("update").innerHTML = m + "/" + d + "/" + y;
 
 function preload() {
   kortImg = loadImage("img/sukkertoppen.png"); //kortet

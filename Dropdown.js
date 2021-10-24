@@ -1,18 +1,13 @@
+var myDropdown = document.getElementById("myDropdown");
+var containerForInputs = document.getElementById("containerForInputs");
+var containerForInputsKnap = document.getElementById("dropbtnForInputs");
+
+
 // Close the dropdown if the user clicks outside of it
 window.addEventListener("click", function (e) {
-    var myDropdown = document.getElementById("myDropdown");
-    var containerForInputs = document.getElementById("containerForInputs");
+    // var myDropdown = document.getElementById("myDropdown");
     
-    if(containerForInputs === undefined || containerForInputs === null){ // i andre html'er end index
-        if(myDropdown.style.display != "" && !e.target.matches(".dropbtn") && !e.target.matches(".dropbtn .arrow.down") && !e.target.matches(".dropdown-content")){
-            myDropdown.style.display = "";
-        }
-    } else if (containerForInputs.style.display != "" || myDropdown.style.display != "") { // i index, da index både har links til andre html og knap til at åbne alle inputs/indstillinger/osv.
-
-        // if (containerForInputs.style.display != "" && !e.target.matches(".dropbtnForInputs") && !e.target.matches(".displayContainerForInputs")) {
-        //     containerForInputs.style.display = "";
-        //     containerForInputsNothingFunc();
-        // } else 
+     if (myDropdown.style.display != "") { // i index, da index både har links til andre html og knap til at åbne alle inputs/indstillinger/osv.
         if(myDropdown.style.display != "" && !e.target.matches(".dropbtn") && !e.target.matches(".dropbtn .arrow.down") && !e.target.matches(".dropdown-content")){
             myDropdown.style.display = "";
         }
@@ -22,7 +17,6 @@ window.addEventListener("click", function (e) {
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {
-    var myDropdown = document.getElementById("myDropdown");
 
     if (myDropdown.style.display == "") {
         myDropdown.style.display = "block";
@@ -32,7 +26,6 @@ function myFunction() {
 }
 
 function dropDownPhone() {
-    var containerForInputs = document.getElementById("containerForInputs");
 
     if (containerForInputs.style.display == "") {
         containerForInputs.style.display = "block";
@@ -46,17 +39,17 @@ function dropDownPhone() {
 }
 
 function containerForInputsNothingFunc() {
-    var containerForInputsKnap = document.getElementById("dropbtnForInputs");
 
     containerForInputsKnap.style.position = "relative";
     containerForInputsKnap.style.top = "0";
     containerForInputsKnap.style.zIndex = "0";
     document.querySelectorAll(".down")[1].style.transform = "rotate(45deg)";
     document.querySelectorAll(".arrow")[1].style.margin = "0";
+    document.querySelectorAll(".arrow")[1].style.marginBottom = "9px";
+
 }
 
 function containerForInputsBlockFunc(){
-    var containerForInputsKnap = document.getElementById("dropbtnForInputs");
 
     containerForInputsKnap.style.transition = "all 2s";
 
@@ -66,6 +59,7 @@ function containerForInputsBlockFunc(){
     containerForInputsKnap.style.top = "";
 
     document.querySelectorAll(".down")[1].style.transform = "rotate(225deg)";
-    document.querySelectorAll(".arrow")[1].style.margin = "0.7rem";
+    document.querySelectorAll(".arrow")[1].style.margin = "0";
+    document.querySelectorAll(".arrow")[1].style.marginTop = "9px";
 }
 
