@@ -5,8 +5,8 @@ var hjælpBtn = document.getElementById("hjælpBtn");
 var hjælpereNavigation = document.getElementById("hjælpereNavigation");
 var hjælpereContainer = document.getElementById("hjælpereContainer");
 var hjælperekoordinater = document.getElementById("hjælperekoordinater");
-var hastighedPil = document.getElementById("hastighedPil").value;
-
+var hastighedPil = document.getElementById("hastighedPil").value / 500;
+document.getElementById("hastighedPilLabel").textContent = hastighedPil * 500 + "%";
 var farveInp = {
     rute: "rgb(255,0,0)",
     pil: "rgb(0, 255, 0)"
@@ -19,15 +19,16 @@ var option = {
     rute: farveSelect.rute.options[farveSelect.rute.selectedIndex],
     pil: farveSelect.pil.options[farveSelect.pil.selectedIndex]
 }
-// var andetFarveInp = {
-//     rute: document.getElementById("farveRute").parentElement.getElementById("colorInp"),
-//     pil: document.getElementById("colorInp")
-// }
+var andetFarveInp = {
+    rute: document.getElementById("farveRute").parentNode.querySelector("#colorInp"),
+    pil: document.getElementById("farvePil").parentNode.querySelector("#colorInp")
+}
 
 
 // Hastighed på pilen
-document.getElementById("hastighedPil").onchange = function () {
-    hastighedPil = document.getElementById("hastighedPil").value;
+document.getElementById("hastighedPil").oninput = function () {
+    hastighedPil = document.getElementById("hastighedPil").value / 500;
+    document.getElementById("hastighedPilLabel").textContent = hastighedPil * 500 + "%";
 };
 
 // skifter farve på ruten iforhold til select
@@ -45,9 +46,7 @@ farveSelect.rute.onchange = function () {
     } else if (option.rute.value == "orange") {
         farveInp.rute = "rgb(255,165,0)";
     } else if (option.rute.value == "anden farve") {
-        // andetFarveInp.rute.click();
-
-        
+        andetFarveInp.rute.click();
     }
 };
 
@@ -65,19 +64,18 @@ farveSelect.pil.onchange = function () {
     } else if (option.pil.value == "orange") {
         farveInp.pil = "rgb(255,165,0)";
     } 
-    // else if (option.pil.value == "anden farve") {
-        // document.getElementById(".farvePilInp #colorInp").click();
-
-    // }
+    else if (option.pil.value == "anden farve") {
+        andetFarveInp.pil.click();
+    }
 }
 
-//skifter farve iforhold til inputtet
-// andetFarveInp.rute.onchange = function () {
-//     farveInp.rute = andetFarveInp.rute.value;
-// };
-// andetFarveInp.pil.onchange = function () {
-//     farveInp.pil = andetFarveInp.pil.value;
-// };
+//skifter farve iforhold til inputtet anden farve
+andetFarveInp.rute.onchange = function () {
+    farveInp.rute = andetFarveInp.rute.value;
+};
+andetFarveInp.pil.onchange = function () {
+    farveInp.pil = andetFarveInp.pil.value;
+};
 
 
 
@@ -113,6 +111,7 @@ hjælpBtn.onclick = function () {
 
 hjælpereNavigation.onclick = function () {
     hjælpereNavigation.style.display = "";
+    document.body.style.overflow = "unset";
     window.open(
         "https://docs.google.com/forms/d/e/1FAIpQLSep8enf79hcOt7ceU7cjjck3FUsWZuqNVXYul5Xf5ZrG9XI3g/viewform?usp=pp_url&entry.1017160509=" +
             `Koordinater(${floor(mouseX)}, ${floor(mouseY)})`,

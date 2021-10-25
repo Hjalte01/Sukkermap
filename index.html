@@ -251,9 +251,10 @@
     <!-- Indstillinger popup boxen-->
     <div id="popupBox" class="popupBoxClass">
       <div class="popupBox-content">
-        <span class="xClose" id="xBtn">&times;</span>
-        <h1>Indstillinger</h1>
-
+        <h1 class="indstillingØvreParagraph">Indstillinger
+          <span class="xClose" id="xBtn">&times;</span>
+        </h1>        
+        
         <div class="grid-container">
           <!-- farve på ruten -->
             <label for="farveRute" class="content-divider-sections">Farve på rute</label>
@@ -274,7 +275,7 @@
               <select id="farvePil" style="width: 150px; height: 25px">
                 <option value="rød">Rød</option>
                 <option value="pink">Pink</option>
-                <option value="grøn">Grøn</option>
+                <option value="grøn" selected="selected">Grøn</option>
                 <option value="blå">Blå</option>
                 <option value="orange">Orange</option>
                 <option value="anden farve" class="mobilHide">Anden farve</option>
@@ -283,8 +284,9 @@
             </div>
           <!-- hastighed pilen -->
             <label for="hastighedPil" class="content-divider-sections">Hastighed på vejledningspil</label>
-            <div class="content-divided-sections">
-              <input id="hastighedPil" value="0.05"/>
+            <div class="content-divided-sections two-sections">
+              <label for="hastighedPil" id="hastighedPilLabel"></label>
+              <input id="hastighedPil" value="25" type="range" list="tickmarks" min="0" max="100"/>
             </div>
           <!-- Hjælp til at danne flere lokaler -->
             <label for="Hjælpere" class="content-divider-sections">Hjælp os med at danne flere lokaler, områder, toileter, printere, osv.</label>
