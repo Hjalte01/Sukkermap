@@ -63,3 +63,11 @@ function containerForInputsBlockFunc(){
     document.querySelectorAll(".arrow")[1].style.marginTop = "9px";
 }
 
+var today = new Date();
+var dateYear = today.getFullYear();
+
+
+
+if(document.getElementById("currentYear") != null) document.getElementById("currentYear").innerHTML = dateYear;
+
+

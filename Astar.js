@@ -122,7 +122,7 @@ class Astar {
 
             noFill();
 
-            stroke(farveInp); //farve option
+            stroke(farveInp.rute); //farve option
 
             strokeWeight(w / 2);
             beginShape();
@@ -151,7 +151,7 @@ class Astar {
             // Hvis kortet er sorteret færdigt, så sker dette
         } else if (end != undefined && start != undefined) {
             noFill();
-            stroke(farveInp); // farve option
+            stroke(farveInp.rute); // farve option
             strokeWeight(w / 2);
             beginShape();
             for (let i = 0; i < path.length; i++) {
@@ -316,7 +316,7 @@ function grønPil() {
 
             push();
             
-            fill("rgb(0, 255, 0)")  //farve på vejledningspil
+            fill(farveInp.pil);  //farve på vejledningspil
             noStroke();
             let tempPoint1_2 = createVector(
                 path[ceil(triCount.pivot - 1)].x - path[ceil(triCount.pivot)].x,

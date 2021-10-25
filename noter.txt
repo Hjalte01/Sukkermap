@@ -73,6 +73,28 @@ Lokaler/steder:
  - Arrow i input 
  - Brugertest 
 
+#todo okt 25 2021
+    Indstillingers 
+        Slider til pil hastighed 
+        Farve selector til pilen 
+        Local storage til indstillingerne
+        Indstillinger bliver delt i kategori X
+        Røde rkyds skal align
+        !Se all områderne 
+        !Animaiton tænd/sluk
+
+    Subpage 
+    Copyrigth ticker effekt
+    
+    !Et lille spil i mellem switch og settings på pc
+
+
+
+
+
+    
+
+    
 
 
 

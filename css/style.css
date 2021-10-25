@@ -116,7 +116,7 @@ h1 {
 }
 
 input:checked + .slider {
-    background-color: #eb5332;
+    background-color: #2196F3;
 }
 
 input:focus + .slider {
@@ -154,4 +154,22 @@ input:checked + .slider:before {
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
 }
+
+footer {
+    position: absolute;
+    height: 25px;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+    padding: 3px;
+    background-color: gray;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  footer p {
+      margin: 0;    
+  }
 

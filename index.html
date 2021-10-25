@@ -5,6 +5,7 @@
 
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
 
     <!-- P5 -->
     <script src="libraries/p5.min.js"></script>
@@ -13,39 +14,6 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" href="css/indstillinger.css" />
     <link rel="stylesheet" type="text/css" href="css/mobil.css" />
-
-    <meta charset="utf-8" />
-    <!--favicon logo-->
-
-    <!--jQuery-->
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    ></script>
-
-
-
-
-
-
-
-
-
-    
-    <!-- jeg kommenterede css biblioteket neden under, da jeg ikke er helt sikker på at du egentlig bruger den og hvis du egentlig gør er du,  -->
-    <!-- så sikker på at det skal være i et script tag og ikke i et link tag?  -->
-    <!-- <script src="https://ajax.aspnetcdn.com/ajax/jquery.mobile/1.4.5/jquery.mobile.structure-1.4.5.css"></script> -->
-
-
-
-
-
-
-
-
-
 
 
 
@@ -296,11 +264,22 @@
                 <option value="grøn">Grøn</option>
                 <option value="blå">Blå</option>
                 <option value="orange">Orange</option>
-                <option value="anden farve" class="mobilHide">
-                  Anden farve
-                </option>
-                <input id="colorInp" type="color" />
+                <option value="anden farve" class="mobilHide">Anden farve</option>
               </select>
+              <input id="colorInp" type="color"/>
+            </div>
+          <!-- farve på pil -->
+          <label for="farvePil" class="content-divider-sections">Farve på pil</label>
+            <div class="content-divided-sections">
+              <select id="farvePil" style="width: 150px; height: 25px">
+                <option value="rød">Rød</option>
+                <option value="pink">Pink</option>
+                <option value="grøn">Grøn</option>
+                <option value="blå">Blå</option>
+                <option value="orange">Orange</option>
+                <option value="anden farve" class="mobilHide">Anden farve</option>
+              </select>
+              <input id="colorInp" type="color"/>
             </div>
           <!-- hastighed pilen -->
             <label for="hastighedPil" class="content-divider-sections">Hastighed på vejledningspil</label>
