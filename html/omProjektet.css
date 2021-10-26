@@ -3,6 +3,10 @@
   --orange:  #eb5332;
 }
 
+html {
+  height: 100%;
+}
+
 .mainDiv {
   margin-left: 50px;
   margin-right: 50px;
@@ -20,7 +24,7 @@
 .titel {
   /* height: 70vw; */
   position: absolute;
-  top: 150px;
+  top: 100px;
   width: 100%;
   /* background-color: #121026; */
   z-index: 1;
@@ -32,8 +36,19 @@
 }
 
 .div1 {
-  position: absolute;
-  top: 400px;
+  position: relative;
+  top: 500px;
+  font-size: 35px;
+  text-align: center;
+  height: auto;
+  width: auto;
+  opacity: 0;
+  transition: opacity 3s;
+
+}
+
+.div2 {
+  position: relative;
   font-size: 35px;
   text-align: center;
   height: auto;
@@ -43,6 +58,7 @@
 body {
   overflow-y: scroll;
   z-index: 1;
+  
 }
 
 .ptext {
@@ -126,5 +142,15 @@ div {
     margin-right: 10;
     margin-left: 10;
     height: 200vw;
+  }
+
+  canvas {
+    background-size: cover;
+    max-width: 100%;
+  }
+
+  div.navbar {
+
+    z-index: 2;
   }
 }

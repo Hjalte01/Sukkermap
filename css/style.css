@@ -3,9 +3,6 @@ html {
 }
 
 
-form {
-}
-
 #fra {
     display: inline-block;
     margin: 0;
@@ -24,6 +21,7 @@ form {
 
 body {
     margin: 0;
+    overflow-x: hidden;
 }
 
 ul.topNav {
@@ -155,13 +153,13 @@ input:checked + .slider:before {
 }
 
 footer {
-    position: absolute;
-    height: 25px;
+    position: relative;
+    height: 50px;
     width: 100%;
-    bottom: 0px;
+    top:100%;
     text-align: center;
     padding: 3px;
-    background-color: gray;
+    background-color:  #121026;
     color: white;
     display: flex;
     flex-direction: row;
@@ -169,6 +167,9 @@ footer {
   }
 
   footer p {
-      margin: 0;    
+      position: relative;    
   }
 
+#currentYear {
+    padding: 0 3px;
+}
