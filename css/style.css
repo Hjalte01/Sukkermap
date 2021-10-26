@@ -166,10 +166,3 @@ footer {
     justify-content: center;
   }
 
-  footer p {
-      position: relative;    
-  }
-
-#currentYear {
-    padding: 0 3px;
-}
