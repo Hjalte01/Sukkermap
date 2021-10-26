@@ -65,7 +65,7 @@ function containerForInputsBlockFunc(){
 
 var today = new Date();
 var dateYear = today.getFullYear();
-var copyrightText = " Copyright © Sukkermap 2020" + dateYear.toString()+ "- Hjalte Bjoernstrup & Joshua Calba All Rights Reserved"
+var copyrightText = " Copyright © Sukkermap 2020-" + dateYear.toString()+ " Hjalte Bjoernstrup & Joshua Calba All Rights Reserved"
 //Copyright © Sukkermap 2020 - Hjalte Bjoernstrup & Joshua Calba All Rights Reserved
 
 document.getElementById("copyrightText").innerHTML = copyrightText;
