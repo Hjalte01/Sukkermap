@@ -108,6 +108,10 @@
 
 /* Hvis skærmen er under 865px så vil css ændres til det her. Det er til mobil*/
 @media screen and (max-width: 865px) {
+     body {
+        height:100%;
+    }
+
     .body {
         overflow-y: scroll;
         overflow-x: hidden;
@@ -187,27 +191,24 @@
     }
     footer {
         position: relative;
-        height: 50px;
+        height: auto;
         width: 100%;
-        top:100%;
+        bottom:0;
         text-align: center;
-        padding: 3px;
         background-color:  #121026;
         color: white;
         display: flex;
         flex-direction: row;
         justify-content: center;
+        padding: 10px;
       }
     
       footer p {
           position: relative;  
-          font-size: 2.5vw;  
+          font-size: 1.5vw;  
           text-align: center;
-          padding-bottom:50%;
-          margin-block-start: auto;
-          margin-block-end: auto;
-          margin-inline-start: auto;
-          margin-inline-end: auto;
+          height: 20px;
+          
           
       }
     
