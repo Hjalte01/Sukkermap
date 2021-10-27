@@ -28,10 +28,18 @@ ul.topNav {
     list-style: none;
     overflow: hidden;
     margin: 0px;
-    padding: 0px;
     /* height: 85px; */
     background-color: #121026;
     border-bottom: 5px solid black;
+}
+
+#sukkermapLogo {
+    position: relative;
+    width:30px;
+    height: 30px;
+    top: 50%;
+    bottom: 50%;
+  
 }
 .listInputForm {
     /* position: inherit; */
@@ -165,5 +173,6 @@ footer {
     flex-direction: row;
     justify-content: center;
   }
+
 
 

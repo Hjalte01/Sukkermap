@@ -41,16 +41,16 @@ preloadImages();
 
 //----
 
-var speed = 4000;
+var speed = 3000;
 
 function newPage(intPage) {
-  document.getElementById("header").style.animation = "moveNavbarBack 5s";
+  document.getElementById("header").style.animation = "moveNavbarBack 3s";
 
   setTimeout(function () {
     document.getElementById("header").style.right = "0";
     document.getElementById("header").style.transform = "translate(0%)";
     
-  }, speed);
+  }, 3000);
 
   if (intPage == 1) {
     setTimeout(function () {

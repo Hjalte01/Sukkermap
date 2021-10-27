@@ -1,6 +1,6 @@
 :root {
-  --blue:  #262310;
-  --orange:  #eb5332;
+  --blue: #262310;
+  --orange: #eb5332;
 }
 
 html {
@@ -44,7 +44,6 @@ html {
   width: auto;
   opacity: 0;
   transition: opacity 3s;
-
 }
 
 .div2 {
@@ -58,7 +57,6 @@ html {
 body {
   overflow-y: scroll;
   z-index: 1;
-  
 }
 
 .ptext {
@@ -93,18 +91,17 @@ div {
 }
 
 @media screen and (min-width: 851px) {
-  header{
+  header {
     z-index: 2;
     position: fixed;
     animation-name: moveNavbar;
     animation-duration: 5s;
     /* right: 50%;
     lav din egen nulpunkt */
-    right:0;
+    right: 0;
     right: 50%;
     transform: translateX(50%);
   }
-
 
   @keyframes moveNavbar {
     from {
@@ -116,7 +113,7 @@ div {
       right: 50%;
       transform: translateX(50%);
       background-color: black;
-    }  
+    }
   }
   @keyframes moveNavbarBack {
     from {
@@ -128,7 +125,6 @@ div {
       transform: translate(0%);
     }
   }
-
 }
 
 /* mobile */
@@ -150,7 +146,11 @@ div {
   }
 
   div.navbar {
-
+    position: fixed;
     z-index: 2;
+  }
+
+  .dropdown-content {
+    position: fixed;
   }
 }
