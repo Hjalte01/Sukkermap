@@ -208,4 +208,8 @@
         justify-content: center;
         margin: 20px 0;
     }
+
+    #copyrightText{
+        font-size: 2.5vw;
+    }
 }
