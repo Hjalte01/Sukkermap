@@ -1,4 +1,4 @@
-html {
+:root {
     --arrow-color: white;
 }
 
@@ -25,20 +25,23 @@ body {
 }
 
 ul.topNav {
+    display: flex;
+    flex-direction: row-reverse;
     list-style: none;
     overflow: hidden;
     margin: 0px;
     /* height: 85px; */
     background-color: #121026;
     border-bottom: 5px solid black;
+    padding: 0 0 0 5rem;
+    position: relative;
+
 }
 
 #sukkermapLogo {
-    position: relative;
-    width:30px;
-    height: 30px;
-    top: 50%;
-    bottom: 50%;
+    height: 5rem;
+    position: absolute;
+    left: 0;
   
 }
 .listInputForm {
@@ -158,21 +161,33 @@ input:checked + .slider:before {
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;
+    margin: auto 0;
 }
 
 footer {
+    box-sizing: border-box;
     position: relative;
-    height: 50px;
-    width: 100%;
-    top:100%;
-    text-align: center;
-    padding: 3px;
+    height: 2.5rem;
+    padding: 3px 0;
     background-color:  #121026;
     color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
+}
+#copyrightText {
+    font-size: 0.6rem;
+    text-align: center;
+}
+
+
+#listInput1, #listInput2{
+    width: 156.8px;
+    height: 16px;
+
+}
+
+#fra, #til{
+    font-size: 100%;
+}
+
 
 
 

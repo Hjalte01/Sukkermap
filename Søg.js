@@ -1,60 +1,49 @@
-var advInput1;
-var advInput2;
 var tempAdvInput1;
 var tempAdvInput2;
-var valgArray1;
-var optionsLength;
+var valgArray1 = [];
 var kortEllerPlan = document.getElementById("kortEllerPlanKnap");
 let etageP = document.getElementById("etage");
+// var advInput1 = document.getElementById("listInput1").value.toLowerCase(); //tager id fra datalist i html filen,
+var advInput1 = document.getElementById("listInput1"); //tager id fra datalist i html filen,
+var advInput2 = document.getElementById("listInput2"); //som er de to inputs i venstre hjørne når koden kører
+
+var advInput1Value = advInput1.value.toLowerCase(); //tager id fra datalist i html filen,
+var advInput2Value = advInput2.value.toLowerCase(); //som er de to inputs i venstre hjørne når koden kører
+
+var optionsLength = document.getElementById("valgList1").options.length; //længden af hvor mange option der er i vores inputliste
+
+
+advInput1.oninput = function(){
+    advInput1Value = advInput1.value.toLowerCase();  
+
+    for (let i = 0; i < valgArray1.length; i++) {
+        if (advInput1Value == valgArray1[i]) {
+            inputStart = advInput1Value;
+            setupBol = true;
+        }
+    }
+}
+
+advInput2.oninput = function(){
+    advInput2Value = advInput2.value.toLowerCase();
+
+    for (let i = 0; i < valgArray1.length; i++) {
+        if (advInput2Value == valgArray1[i]){
+            inputEnd = advInput2Value;
+            setupBol = true;
+        }
+    }
+}
+
+window.onload = function(){
+    for (let i = 0; i < optionsLength; i++) {
+        valgArray1.push(document.getElementById(i).value.toLowerCase()); // Laver et arrat i javascript, fra optionsne i html filen
+    }
+}
+
 
 class Søg {
     inputfelt() {
-        //input felterne
-
-        advInput1 = document.getElementById("listInput1").value.toLowerCase(); //tager id fra datalist i html filen,
-        advInput2 = document.getElementById("listInput2").value.toLowerCase(); //som er de to inputs i venstre hjørne når koden kører
-
-        //scaler input og paragraph
-        document.getElementById("listInput1").style.width =
-            (156.8).toString() + "px";
-        document.getElementById("listInput1").style.height =
-            (16).toString() + "px" + "px";
-        document.getElementById("listInput2").style.width =
-            (156.8).toString() + "px";
-        document.getElementById("listInput2").style.height =
-            (16).toString() + "px" + "px";
-        document.getElementById("fra").style.fontSize = (100).toString() + "%";
-        document.getElementById("til").style.fontSize = (100).toString() + "%";
-        //position input og paragraph
-        document.getElementById("listInput2").style.top = "400px";
-
-        optionsLength = document.getElementById("valgList1").options.length; //længden af hvor mange option der er i vores inputliste
-
-        if (valgArray1 == undefined) {
-            valgArray1 = [];
-            for (let i = 0; i < optionsLength; i++) {
-                valgArray1.push(document.getElementById(i).value.toLowerCase()); // Laver et arrat i javascript, fra optionsne i html filen
-            }
-        }
-
-        for (let i = 0; i < valgArray1.length; i++) {
-            if (
-                (advInput1 == valgArray1[i] && tempAdvInput1 != advInput1) ||
-                (advInput1 == valgArray1[i] && tempAdvInput2 != advInput2)
-            ) {
-                inputStart = advInput1;
-                tempAdvInput1 = advInput1;
-                setupBol = true;
-            }
-            if (
-                (advInput2 == valgArray1[i] && tempAdvInput1 != advInput1) ||
-                (advInput2 == valgArray1[i] && tempAdvInput2 != advInput2)
-            ) {
-                inputEnd = advInput2;
-                tempAdvInput2 = advInput2;
-                setupBol = true;
-            }
-        }
 
         if (planTegning == undefined) {
             etageP.textContent = "";

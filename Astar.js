@@ -316,7 +316,7 @@ function grønPil() {
 
             push();
             
-            fill(farveInp.pil);  //farve på vejledningspil
+            fill(farveInp.vejledningsPil);  //farve på vejledningspil
             noStroke();
             let tempPoint1_2 = createVector(
                 path[ceil(triCount.pivot - 1)].x - path[ceil(triCount.pivot)].x,

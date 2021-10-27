@@ -1,12 +1,22 @@
 /*ikonet på indstillingerne før boksen kommer frem*/
 
+:root{
+    --arrow-streg: #df2727;
+    --arrow-color: #df2727;
+}
+
+
+
+
 .indstillingerDiv {
     width: 65px;
     height: 65px;
     margin-right: 10px;
+    overflow: hidden;
 }
 
 .indstillinger {
+    box-sizing: border-box;
     width: 65px;
     height: 65px;
     animation: indstillinger-img-animation 3s linear 0;
@@ -33,7 +43,7 @@
     justify-content: center;
     position: fixed;
     z-index: 2;
-    top: 5rem;
+    top: 0rem;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.4); /* sort w/ opacity */
@@ -43,7 +53,8 @@
     background: #121026;
     padding: 20px;
     border: 5px solid #eb5332;
-    width: 60%;
+    overflow-y: auto;
+    min-width: 60%;
 }
 
 #hjælpereNavigation {
@@ -65,30 +76,66 @@
 .indstillingØvreParagraph {
     position: relative;
     font-family: unset;
-    margin: 0 0 1.5rem 0;
+    margin: 0 auto 1.5rem auto;
 }
 
+
+/* title bar */
+#indstillingTitleBar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+
+}
 /*Close button */
 .xClose {
     color: #df2727;
     font-size: 75px;
-    /* font-weight: 800; */
-    position: relative;
+    /* position: absolute; */
     height: 3rem;
-    width: 3rem;
-    float: right; 
-    top: -1.5rem; 
-
-
+    position: relative;
+    top: -1.5rem;
 }
-
 .xClose:hover,
 .xClose:focus {
     color: #b41414;
     text-decoration: none;
     cursor: pointer;
 }
+/* tilbage button */
+#arrowBtn{
+    width: 3rem;
+    height: 2.8rem;
+    visibility: hidden;
+}
+#arrowBtn:hover{
+    --arrow-color: #b41414;
+    --arrow-streg: #b41414;
+}
+#arrowBtn .arrow{
+    padding: 8px;
+    border-width: 0 4px 4px 0;
+    width: 0;
+    height: 0;
+    position: relative;
+    top: 0.7rem;
+    left: 0.5rem;
+    border-radius: 0 35%;
+}
+#arrowStreg{
+    position: relative;
+    background-color: var(--arrow-streg);
+    width: 1.8rem;
+    height: 0.25rem;
+    border-radius: 15% 0 0 15%;
+    top: -0.9rem;
+    left: 0.6rem;
+}
 
+
+
+/* content */
 .popupBox-content h1 {
     color: #ffffff;
     text-align: center;
@@ -128,22 +175,19 @@ select {
     text-align: center;
 }
 
-#hjælpBtn {
-    box-sizing: border-box;
-    font-size: 15px;
-    height: 25px;
-    width: 150px;
-    background-color: white;
-    text-align: center;
-}
-
 /* grid */
 .grid-container {
     display: grid;
-    grid-template-columns: 70% 30%;
-    grid-template-rows: repeat(10, 4rem); /* Antal rows, Størrelsen*/
-    height: 100%;
+    grid-auto-rows: minmax(4rem, auto);
     width: 100%;
+    
+}
+.grid-container.one{
+    grid-template-columns: 100%;
+}
+.grid-container.two{
+    grid-template-columns: 70% 30%;
+    display: none;
 }
 
 .content-divider-sections {
@@ -163,6 +207,26 @@ select {
 .content-divider-sections:nth-last-of-type(1) {
     border-width: 1px 2px 2px 2px;
 }
+.content-divider-sections:nth-of-type(1):nth-last-of-type(1){
+    border-width: 2px 2px 2px 2px;
+}
+
+.grid-container.one > div{
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    font-style: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.grid-container.one > div:hover{
+    text-shadow: 3px 3px #b41414;
+}
+
+.grid-container.one > div:active{
+    font-size: 18px;
+}
+
+
 
 .content-divided-sections {
     display: flex;
@@ -184,6 +248,9 @@ select {
 .content-divided-sections:nth-last-of-type(1) {
     border-width: 1px 2px 2px 0;
 }
+.content-divided-sections:nth-of-type(1):nth-last-of-type(1){
+    border-width: 2px 2px 2px 0;
+}
 
 .two-sections{
     flex-direction: column;
@@ -193,15 +260,25 @@ select {
     display: none;
 }
 
+/* container for checkbox */
+.containerForCheckbox {
+    width: 100%;
+    height: 100%;
+    background-color: green;
+}
+.containerForCheckbox > p{
+    color: white;
+    text-align: center;
+}
+
+
+
 @media screen and (max-width: 865px) {
     .popupBox-content {
         width: 100%;
     }
 }
 
-@media screen and (max-width: 580px) {
-    .grid-container{
-        grid-template-rows: none;
-        grid-auto-rows: minmax(4rem, auto);
-    }
-}
+
+
+
