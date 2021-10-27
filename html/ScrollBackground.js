@@ -6,12 +6,12 @@ const context = canvas.getContext("2d");
 // canvas.height = 770;
 
 const currentFrame = (index) =>
-  `../img/scrollBackground/ezgif-frame-${index
+  `../img/scrollBackground/${index
     .toString()
-    .padStart(3, "0")}.jpg`;
+    .padStart(4, "0")}.jpg`;
 
 const preloadImages = () => {
-  for (let i = 1; i < 151; i++) {
+  for (let i = 1; i < 200; i++) {
     const image = new Image();
     image.src = currentFrame(i);
   }
@@ -28,7 +28,7 @@ window.addEventListener("scroll", () => {
   const scrollTop = html.scrollTop;
   const maxScroll = html.scrollHeight - window.innerHeight;
   const scrollFraction = scrollTop / maxScroll;
-  const frameIndex = Math.min(147, Math.floor(scrollFraction * 151));
+  const frameIndex = Math.min(147, Math.floor(scrollFraction * 200));
   requestAnimationFrame(() => updateImage(frameIndex + 1));
 });
 

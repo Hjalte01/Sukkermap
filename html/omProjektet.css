@@ -19,9 +19,7 @@
 
 .titel {
   /* height: 70vw; */
-  position: absolute;
-  top: 100px;
-  width: 100%;
+  position: relative;
   /* background-color: #121026; */
   z-index: 1;
 }
@@ -33,7 +31,6 @@
 
 .div1 {
   position: relative;
-  top: 500px;
   font-size: 35px;
   text-align: center;
   height: auto;
@@ -53,6 +50,8 @@
 body {
   overflow-y: scroll;
   z-index: 1;
+  height: 100%;
+  position: absolute;
 }
 
 .ptext {
@@ -96,6 +95,14 @@ div{
     right: 0;
     right: 50%;
     transform: translateX(50%);
+    margin: 0 auto;
+  }
+
+  section {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    /* background-color: #121026; */
   }
 
   @keyframes moveNavbar {
@@ -129,10 +136,10 @@ div{
     font-size: 5vw;
   }
 
-  .div1 {
+  .div1,
+  .div2 {
     margin-right: 10;
     margin-left: 10;
-    height: 200vw;
   }
 
   canvas {
@@ -147,5 +154,9 @@ div{
 
   .dropdown-content {
     position: fixed;
+  }
+
+  p.text {
+    position: relative;
   }
 }
