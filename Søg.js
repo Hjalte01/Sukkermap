@@ -19,6 +19,7 @@ advInput1.oninput = function(){
     for (let i = 0; i < valgArray1.length; i++) {
         if (advInput1Value == valgArray1[i]) {
             inputStart = advInput1Value;
+            if(inputEnd === undefined && advInput2Value != "") inputEnd = advInput2Value;
             setupBol = true;
         }
     }
@@ -26,10 +27,11 @@ advInput1.oninput = function(){
 
 advInput2.oninput = function(){
     advInput2Value = advInput2.value.toLowerCase();
-
     for (let i = 0; i < valgArray1.length; i++) {
         if (advInput2Value == valgArray1[i]){
             inputEnd = advInput2Value;
+            console.log(inputStart)
+            if(inputStart === undefined && advInput1Value    != "") inputStart = advInput1Value;
             setupBol = true;
         }
     }
