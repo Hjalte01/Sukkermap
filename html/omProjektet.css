@@ -3,10 +3,6 @@
   --orange: #eb5332;
 }
 
-html {
-  height: 100%;
-}
-
 .mainDiv {
   margin-left: 50px;
   margin-right: 50px;
@@ -94,7 +90,6 @@ div{
   header {
     z-index: 2;
     position: fixed;
-    animation-name: moveNavbar;
     animation-duration: 5s;
     /* right: 50%;
     lav din egen nulpunkt */

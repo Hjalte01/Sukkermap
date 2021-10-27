@@ -22,7 +22,7 @@ advInput1.oninput = function(){
             setupBol = true;
         }
     }
-}
+};
 
 advInput2.oninput = function(){
     advInput2Value = advInput2.value.toLowerCase();
@@ -33,13 +33,18 @@ advInput2.oninput = function(){
             setupBol = true;
         }
     }
-}
+};
 
-window.onload = function(){
+
+
+(function(){
     for (let i = 0; i < optionsLength; i++) {
         valgArray1.push(document.getElementById(i).value.toLowerCase()); // Laver et arrat i javascript, fra optionsne i html filen
     }
-}
+})();
+    
+
+
 
 
 class Søg {

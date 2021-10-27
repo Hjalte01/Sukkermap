@@ -41,6 +41,10 @@ var animationSelect = {
     navbarProject: document.getElementsByClassName("containerForCheckbox navbarProject")[0],
 }
 
+window.onload = function(){
+    animationSelect.navbarProject.onclick(localStorage.getItem("animationSelect.navbarProject"));
+}
+
 
 //Indstiling boxen
 //Hvis man trykker på indstilling ikonet, så kommer der en popup box
@@ -172,28 +176,17 @@ animationSelect.animation.onclick = function() {
     tilbageBtn.style.visibility = "visible";
 }
 // on/off animation på navbar i om projectet
-animationSelect.navbarProject.onclick = function() {
-    if(animationSelect.navbarProject.children[0].textContent == "On"){
+animationSelect.navbarProject.onclick = function(localStorageContent) {
+
+    if(localStorageContent == "Off" || animationSelect.navbarProject.children[0].textContent == "On" && typeof localStorageContent !== "string"){
         animationSelect.navbarProject.children[0].textContent = "Off";
         animationSelect.navbarProject.style.background = "red";
-
-        getElementById("header").style.animationName = "";  //need local storage and project.css
-        getElementById("header").style.right = "0";
-        getElementById("header").style.transform = "0";
-
-        
     }else{
         animationSelect.navbarProject.children[0].textContent = "On";
         animationSelect.navbarProject.style.background = "green";
-
-        // getElementById("header").style.animationName = "";
-        // getElementById("header").style.right = "0";
-        // getElementById("header").style.transform = "0";
     }
-
-    
+    localStorage.setItem("animationSelect.navbarProject", animationSelect.navbarProject.children[0].textContent);
 }
-
 
 
 

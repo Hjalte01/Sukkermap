@@ -186,6 +186,7 @@
         position: absolute;
         z-index: 1;
         background-color: rgba(47, 47, 47, 0.9);
+        height: 100%;
     }
 
     .dropbtnForInputs .arrow {
