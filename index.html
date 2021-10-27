@@ -55,7 +55,7 @@
       </div>
 
       <div type="button" class="dropbtnForInputs" id="dropbtnForInputs" tabindex="-1" onclick="dropDownPhone()">
-        <p class="arrow down"</p>
+        <p class="arrow down"></p>
       </div>
 
       
@@ -248,14 +248,35 @@
       Tryk, hvor der skal tilføjes et nyt lokale, område, printere, toilet, osv.
     </div>
 
+
+
+
     <!-- Indstillinger popup boxen-->
     <div id="popupBox" class="popupBoxClass">
       <div class="popupBox-content">
-        <h1 class="indstillingØvreParagraph">Indstillinger
+        <!-- Title til indstillinger -->
+        <div id="indstillingTitleBar">
+          <div id="arrowBtn">
+            <div class="arrow left"></div>
+            <div id="arrowStreg"></div>
+          </div>
+          <h1 class="indstillingØvreParagraph">Indstillinger</h1>  
           <span class="xClose" id="xBtn">&times;</span>
-        </h1>        
-        
-        <div class="grid-container">
+        </div>
+  
+        <!-- Grid container one -->
+        <div class="grid-container one">
+          <!-- farve/hastighed selectoren -->
+          <div class="content-divider-sections farverOgHastigheder">Farver og hastigheder</div>
+          <!-- animation selectoren -->
+          <div class="content-divider-sections animation">Animation</div>
+          <!-- Hjælp til at danne flere lokaler -->
+          <div class="content-divider-sections hjælpBtn">Hjælp os med at danne flere lokaler, områder, toileter, printere, osv.</div>
+          <!-- Billeder til hjemmerskærm - kommer snart -->
+          <div class="content-divider-sections">Kommer snart</div>
+        </div>
+        <!-- grid Container two - farver -->
+        <div class="grid-container two farverOgHastigheder">
           <!-- farve på ruten -->
             <label for="farveRute" class="content-divider-sections">Farve på rute</label>
             <div class="content-divided-sections">
@@ -269,37 +290,63 @@
               </select>
               <input id="colorInp" type="color"/>
             </div>
-          <!-- farve på pil -->
-          <label for="farvePil" class="content-divider-sections">Farve på pil</label>
-            <div class="content-divided-sections">
-              <select id="farvePil" style="width: 150px; height: 25px">
-                <option value="rød">Rød</option>
-                <option value="pink">Pink</option>
-                <option value="grøn" selected="selected">Grøn</option>
-                <option value="blå">Blå</option>
-                <option value="orange">Orange</option>
-                <option value="anden farve" class="mobilHide">Anden farve</option>
-              </select>
-              <input id="colorInp" type="color"/>
-            </div>
-          <!-- hastighed pilen -->
-            <label for="hastighedPil" class="content-divider-sections">Hastighed på vejledningspil</label>
-            <div class="content-divided-sections two-sections">
-              <label for="hastighedPil" id="hastighedPilLabel"></label>
-              <input id="hastighedPil" value="25" type="range" min="0" max="100"/>
-            </div>
-          <!-- Hjælp til at danne flere lokaler -->
-            <label for="Hjælpere" class="content-divider-sections">Hjælp os med at danne flere lokaler, områder, toileter, printere, osv.</label>
-            <div class="content-divided-sections">
-              <div type="button" id="hjælpBtn">Hjælp!!!</div>
-            </div>
-          <!-- Billeder til hjemmerskærm - kommer snart -->
-            <label for="farveRute" class="content-divider-sections">Kommer snart</label>
-            <div class="content-divided-sections">
-
-            </div>
-
+          <!-- farve på vejlednings pil -->
+          <label for="farveVejledningsPil" class="content-divider-sections">Farve på vejlednings pil</label>
+          <div class="content-divided-sections">
+            <select id="farveVejledningsPil" style="width: 150px; height: 25px">
+              <option value="rød">Rød</option>
+              <option value="pink">Pink</option>
+              <option value="grøn" selected="selected">Grøn</option>
+              <option value="blå">Blå</option>
+              <option value="orange">Orange</option>
+              <option value="anden farve" class="mobilHide">Anden farve</option>
+            </select>
+            <input id="colorInp" type="color"/>
+          </div>
+          <!-- hastighed på vejlednings pil -->
+          <label for="hastighedPil" class="content-divider-sections">Hastighed på vejledningspil</label>
+          <div class="content-divided-sections two-sections">
+            <label for="hastighedPil" id="hastighedPilLabel"></label>
+            <input id="hastighedPil" value="25" type="range" min="0" max="100"/>
+          </div>
+          <!-- farve på etage pil -->
+          <label for="farveEtagePil" class="content-divider-sections">Farve på etage pil</label>
+          <div class="content-divided-sections">
+            <select id="farveEtagePil">
+              <option value="rød" selected="selected">Rød</option>
+              <option value="pink">Pink</option>
+              <option value="grøn">Grøn</option>
+              <option value="blå">Blå</option>
+              <option value="orange">Orange</option>
+              <option value="anden farve" class="mobilHide">Anden farve</option>
+            </select>
+            <input id="colorInp" type="color"/>
+          </div>
         </div>
+
+        <!-- Grid container two - animation -->
+        <div class="grid-container two animation">
+          <!-- animation på om projectet navbar -->
+          <label for="navbarProject" class="content-divider-sections">Navigationsbar i Om projektet</label>
+            <div class="content-divided-sections">
+              <div class="containerForCheckbox navbarProject" type="button">
+                <p>On</p>
+              </div>
+            </div>
+            <!-- animation på områderne -->
+            <label for="navbarProject" class="content-divider-sections">Områder vises</label>
+            <div class="content-divided-sections">
+              <div class="containerForCheckbox områder" type="button">
+                <p>On</p>
+              </div>
+            </div>
+        </div>
+
+        
+
+
+
+
       </div>
     </div>
 

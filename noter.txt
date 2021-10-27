@@ -1,10 +1,11 @@
 #todo okt 25 2021
     Indstillingers 
         Slider til pil hastighed 
-        Farve selector til pilen
+        selector til pilen
+        Røde rkyds skal align - tror jeg den gør nu
+
         Local storage til indstillingerne
         Indstillinger bliver delt i kategori X
-        Røde rkyds skal align
         !Se all områderne 
         !Animaiton tænd/sluk
 

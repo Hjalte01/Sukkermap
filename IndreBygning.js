@@ -48,7 +48,7 @@ function pile() {
                     [width / 2 + width / 35, height - height / 20],
                 ],
                 undefined,
-                "rgba(0, 0, 0, 0.5)"
+                farveInp.etagePil
             ) ||
             (keyCode === 40 && figurer[1].countdown <= 0)
         ) {
@@ -67,7 +67,7 @@ function pile() {
                     [width / 2 + width / 35, height / 20],
                 ],
                 undefined,
-                "#00000077"
+                farveInp.etagePil
             ) ||
             (keyCode === 38 && figurer[2].countdown <= 0)
         ) {

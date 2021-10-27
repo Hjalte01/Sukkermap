@@ -9,6 +9,12 @@
 .down {
     transform: rotate(45deg);    
 }
+.left {
+    transform: rotate(135deg);    
+}
+.dropbtn .arrow{
+    --arrow-color: white;
+}
 
 
 
