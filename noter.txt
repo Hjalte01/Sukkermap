@@ -106,3 +106,10 @@ nvm. dette her vil bare gerne huske nogle commands jeg så, som var nyttige
 
  Orange 
  #eb5332
+
+ -----------
+ local tunnel 
+
+npm install -g localtunnel
+cmd: lt --port "The port". 
+

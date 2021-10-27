@@ -43,9 +43,9 @@ function pile() {
         if (
             figurer[1].pointConnections(
                 [
-                    [width / 2, height - height / 250],
-                    [width / 2 - width / 35, height - height / 20],
-                    [width / 2 + width / 35, height - height / 20],
+                    [width / 2, height - height / 150],
+                    [width / 2 - width / 20, height - height / 10],
+                    [width / 2 + width / 20, height - height / 10],
                 ],
                 undefined,
                 farveInp.etagePil
@@ -62,9 +62,9 @@ function pile() {
         if (
             figurer[2].pointConnections(
                 [
-                    [width / 2, height / 250],
-                    [width / 2 - width / 35, height / 20],
-                    [width / 2 + width / 35, height / 20],
+                    [width / 2, height / 150],
+                    [width / 2 - width / 20, height / 10],
+                    [width / 2 + width / 20, height / 10],
                 ],
                 undefined,
                 farveInp.etagePil
