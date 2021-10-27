@@ -39,30 +39,38 @@ const updateImage = (index) => {
 
 preloadImages();
 
+//----
+
+var speed = 3000;
+
 function newPage(intPage) {
-  document.getElementById("header").style.animation = "moveNavbarBack 5s";
+  document.getElementById("header").style.animation = "moveNavbarBack 3s";
 
   setTimeout(function () {
     document.getElementById("header").style.right = "0";
     document.getElementById("header").style.transform = "translate(0%)";
     
-  }, 5000);
+  }, 3000);
 
   if (intPage == 1) {
     setTimeout(function () {
       location.href = "../index.html";
-    }, 5000);
+    }, speed);
   }
 
   if (intPage == 2) {
     setTimeout(function () {
       location.href = "kontakt.html";
-    }, 5000);
+    }, speed);
   }
 
   if (intPage == 3) {
     setTimeout(function () {
       location.href = "donate.html";
-    }, 5000);
+    }, speed);
   }
+}
+showText();
+function showText() {
+  document.getElementById("div1").style.opacity='1';
 }

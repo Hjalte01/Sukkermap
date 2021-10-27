@@ -21,6 +21,7 @@
 
     <header id="header">
         <ul class="topNav" id="topNav">
+            <img src="../img/Sukkermap_logo.png" alt="Sukkermap logo" id="sukkermapLogo">
             <li><a id="myLink" href="#" onclick="newPage(2);return false;">Kontakt os</a></li>
             <li>
                 <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
@@ -31,6 +32,7 @@
             <li><a id="myLink" href="#" onclick="newPage(1);return false;">Sukkermap</a></li>
         </ul>
         <div class="navbar">
+            <img src="../img/Sukkermap_logo.png" alt="Sukkermap logo" id="sukkermapLogo">
             <p class="mobilParagraph">Om projektet</p>
             <button class="dropbtn" onclick="myFunction()">
                 <p class="arrow down"></p>
@@ -43,13 +45,13 @@
             </div>
         </div>
     </header>
-    <body style="height: 2500px;">
+    <body style="height: 2500px;"onload="showText()" >
         <canvas id="scroll-background"></canvas>
         <div class="titel">
             <h1>Projekt Sukkermap</h1>
         </div>
 
-        <div class="div1">
+        <div class="div1" id="div1" >
             <p class ="ptext">
                 Der vi gik på Sukkertoppen, så havde vi sommetider svært ved at
                 finde rundt på skolen, når vi skal fra lokale til lokale. Selv i
@@ -78,8 +80,8 @@
                 benene.
             </p>
         </div>
-<!-- 
-    <div class="div1">
+
+    <div class="div2" id="div1">
         <p class ="ptext">
             Der vi så har skrevet hvert lokale nummer på plantegningerne. Skulle
             vi finde en stifinder algoritme til vores projekt. Vi endte med at
@@ -106,8 +108,11 @@
             besøgende, med at finde vej til deres nuværende destination. Hvis i
             gerne vil donere til os.
         </p>
-    </div> -->
+    </div>
 </div>
 
     </body>
+    <footer>
+        <p id="copyrightText"></p>
+    </footer>
 </html>

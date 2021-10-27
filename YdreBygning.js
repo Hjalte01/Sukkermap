@@ -165,3 +165,7 @@ class YdreBygning {
         } else if (this.countdown > 0) this.countdown--;
     }
 }
+
+
+
+

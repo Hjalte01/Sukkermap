@@ -99,6 +99,7 @@
     font-size: 2rem;
     position: absolute;
     top: 0;
+    right:75px;
     margin: 0;
     padding: 1.2rem 0 0 0.5rem;
 }
@@ -114,6 +115,10 @@
 
 /* Hvis skærmen er under 865px så vil css ændres til det her. Det er til mobil*/
 @media screen and (max-width: 865px) {
+     body {
+        height:100%;
+    }
+
     .body {
         overflow-y: scroll;
         overflow-x: hidden;
@@ -180,7 +185,7 @@
         display: none;
         position: absolute;
         z-index: 1;
-        background-color: rgba(124, 139, 124, 0.9);
+        background-color: rgba(47, 47, 47, 0.9);
     }
 
     .dropbtnForInputs .arrow {
@@ -191,4 +196,43 @@
     .mobilHide {
         display: none;
     }
+
+    #fra, #til, #kortEllerPlan {
+        color:white;
+    }
+
+    .opdeling{
+        display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px 0;
+    }
+
+    footer {
+        position: relative;
+        height: auto;
+        width: 100%;
+        bottom:0;
+        text-align: center;
+        background-color:  #121026;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        /* padding: 10px; */
+        white-space: nowrap;
+      }
+    
+      #copyrightText {
+
+          position: relative;  
+          font-size:2.5vw;
+          text-align: center;
+          height: 20px;
+          
+      }
+    
+    /* {
+    } */
+    
 }

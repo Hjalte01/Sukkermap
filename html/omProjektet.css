@@ -1,6 +1,10 @@
 :root {
-  --blue:  #262310;
-  --orange:  #eb5332;
+  --blue: #262310;
+  --orange: #eb5332;
+}
+
+html {
+  height: 100%;
 }
 
 .mainDiv {
@@ -20,7 +24,7 @@
 .titel {
   /* height: 70vw; */
   position: absolute;
-  top: 150px;
+  top: 100px;
   width: 100%;
   /* background-color: #121026; */
   z-index: 1;
@@ -32,8 +36,18 @@
 }
 
 .div1 {
-  position: absolute;
-  top: 400px;
+  position: relative;
+  top: 500px;
+  font-size: 35px;
+  text-align: center;
+  height: auto;
+  width: auto;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+.div2 {
+  position: relative;
   font-size: 35px;
   text-align: center;
   height: auto;
@@ -77,18 +91,17 @@ div{
 }
 
 @media screen and (min-width: 851px) {
-  header{
+  header {
     z-index: 2;
     position: fixed;
     animation-name: moveNavbar;
     animation-duration: 5s;
     /* right: 50%;
     lav din egen nulpunkt */
-    right:0;
+    right: 0;
     right: 50%;
     transform: translateX(50%);
   }
-
 
   @keyframes moveNavbar {
     from {
@@ -100,7 +113,7 @@ div{
       right: 50%;
       transform: translateX(50%);
       background-color: black;
-    }  
+    }
   }
   @keyframes moveNavbarBack {
     from {
@@ -112,7 +125,6 @@ div{
       transform: translate(0%);
     }
   }
-
 }
 
 /* mobile */
@@ -126,5 +138,19 @@ div{
     margin-right: 10;
     margin-left: 10;
     height: 200vw;
+  }
+
+  canvas {
+    background-size: cover;
+    max-width: 100%;
+  }
+
+  div.navbar {
+    position: fixed;
+    z-index: 2;
+  }
+
+  .dropdown-content {
+    position: fixed;
   }
 }
