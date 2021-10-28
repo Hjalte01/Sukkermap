@@ -257,7 +257,8 @@ select {
 }
 
 #colorInp {
-    display: none;
+    visibility: hidden;
+    position: absolute;
 }
 
 /* container for checkbox */

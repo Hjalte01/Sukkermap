@@ -13,8 +13,19 @@ var advInput2Value = advInput2.value.toLowerCase(); //som er de to inputs i vens
 var optionsLength = document.getElementById("valgList1").options.length; //længden af hvor mange option der er i vores inputliste
 
 
+//option i html til javascript
+(function(){
+    for (let i = 0; i < optionsLength; i++) {
+        valgArray1.push(document.getElementById(i).value.toLowerCase()); // Laver et arrat i javascript, fra optionsne i html filen
+    }
+})();
+
+
+
+
 advInput1.oninput = function(){
-    advInput1Value = advInput1.value.toLowerCase();  
+    advInput1Value = advInput1.value.toLowerCase(); 
+     
 
     for (let i = 0; i < valgArray1.length; i++) {
         if (advInput1Value == valgArray1[i]) {
@@ -22,6 +33,7 @@ advInput1.oninput = function(){
             if(inputEnd === undefined && advInput2Value != "") inputEnd = advInput2Value;
             setupBol = true;
         }
+        
     }
 };
 
@@ -30,21 +42,14 @@ advInput2.oninput = function(){
     for (let i = 0; i < valgArray1.length; i++) {
         if (advInput2Value == valgArray1[i]){
             inputEnd = advInput2Value;
-            console.log(inputStart)
             if(inputStart === undefined && advInput1Value    != "") inputStart = advInput1Value;
             setupBol = true;
         }
     }
 };
 
-
-
-(function(){
-    for (let i = 0; i < optionsLength; i++) {
-        valgArray1.push(document.getElementById(i).value.toLowerCase()); // Laver et arrat i javascript, fra optionsne i html filen
-    }
-})();
-    
+if(advInput1Value != "") advInput1.oninput();
+if(advInput2Value != "") advInput2.oninput();
 
 
 

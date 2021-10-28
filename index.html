@@ -75,7 +75,7 @@
       <section class="opdeling">
         <form class="listInputForm" onsubmit="return false"v>
           <p id="fra">Fra:</p>
-          <input list="valgList1" id="listInput1" value=""/>
+          <input list="valgList1" id="listInput1" value="Tog(F/Rød) endestation"/>
           <datalist id="valgList1">
             <option id="111" value="Tog(F/Rød) endestation"></option>
             <option id="112" value="Tog(A/E/F) mellemstation"></option>
@@ -216,7 +216,7 @@
       <section class="opdeling">
         <form class="listInputForm" onsubmit="return false">
           <p id="til">Til:</p>
-          <input list="valgList1" id="listInput2" value=""/>
+          <input list="valgList1" id="listInput2" value="I bil"/>
           <datalist id="valgList1"> </datalist>
         </form>
       </section>
@@ -279,6 +279,8 @@
           <div class="content-divider-sections animation">Animation</div>
           <!-- Hjælp til at danne flere lokaler -->
           <div class="content-divider-sections hjælpBtn">Hjælp os med at danne flere lokaler, områder, toileter, printere, osv.</div>
+          <!-- Set to default -->
+          <div class="content-divider-sections defaultBtn">Sæt alt til Default</div>
           <!-- Billeder til hjemmerskærm - kommer snart -->
           <div class="content-divider-sections">Kommer snart</div>
         </div>
@@ -310,16 +312,10 @@
             </select>
             <input id="colorInp" type="color"/>
           </div>
-          <!-- hastighed på vejlednings pil -->
-          <label for="hastighedPil" class="content-divider-sections">Hastighed på vejledningspil</label>
-          <div class="content-divided-sections two-sections">
-            <label for="hastighedPil" id="hastighedPilLabel"></label>
-            <input id="hastighedPil" value="25" type="range" min="0" max="100"/>
-          </div>
           <!-- farve på etage pil -->
           <label for="farveEtagePil" class="content-divider-sections">Farve på etage pil</label>
           <div class="content-divided-sections">
-            <select id="farveEtagePil">
+            <select id="farveEtagePil" style="width: 150px; height: 25px">
               <option value="rød" selected="selected">Rød</option>
               <option value="pink">Pink</option>
               <option value="grøn">Grøn</option>
@@ -329,15 +325,21 @@
             </select>
             <input id="colorInp" type="color"/>
           </div>
+           <!-- hastighed på vejlednings pil -->
+           <label for="hastighedPil" class="content-divider-sections">Hastighed på vejledningspil</label>
+           <div class="content-divided-sections two-sections">
+             <label for="hastighedPil" id="hastighedPilLabel"></label>
+             <input id="hastighedPil" value="25" type="range" min="0" max="100"/>
+           </div>
         </div>
 
         <!-- Grid container two - animation -->
         <div class="grid-container two animation">
           <!-- animation på om projectet navbar -->
-          <label for="navbarProject" class="content-divider-sections">Navigationsbar i Om projektet</label>
-            <div class="content-divided-sections">
+          <label for="navbarProject" class="content-divider-sections mobilHide">Navigationsbar i "Om projektet"</label>
+            <div class="content-divided-sections mobilHide">
               <div class="containerForCheckbox navbarProject" type="button">
-                <p>On</p>
+                <p>start</p>
               </div>
             </div>
             <!-- animation på områderne -->
