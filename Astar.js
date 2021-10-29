@@ -362,7 +362,7 @@ function removeFromArray(arr, elt) {
 function heuristic(a, b) {
     try {
         var d = dist(a.x, a.y, b.x, b.y);
-        if (a.text == "trappe" && b.text == "trappe") d += 50;
+        if (a.text == "trappe" && b.text == "trappe") d += 150;
     } catch (err) {
         console.log("err = " + err);
         console.log("a = " + a);

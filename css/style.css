@@ -1,5 +1,6 @@
 :root {
     --arrow-color: white;
+    font-family: verdana, Arial, Helvetica, sans-serif;
 }
 html, body{
     height: 100%;
@@ -50,7 +51,7 @@ ul.topNav {
 }
 .listInputForm {
     /* position: inherit; */
-    margin: 10px;
+    margin: 10px 10px 10px 0;
     display: inline-block;
 }
 
@@ -85,6 +86,8 @@ h1 {
 
 /* Toggle switch */
 #kortEllerPlan {
+    position: relative;
+    top: 0.3rem;
     margin-right: 0.3rem;
     width: 12rem;
     display: inline;
@@ -162,6 +165,8 @@ input:checked + .slider:before {
 }
 
 #etage {
+    position: relative;
+    top: 0.4rem;
     font-size: 20px;
     font-family: Arial, Helvetica, sans-serif;
     text-transform: uppercase;

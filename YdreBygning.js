@@ -3,10 +3,10 @@ let parameter;
 let clickArealSum = 0;
 
 class YdreBygning {
-    constructor(countdown) {
+    constructor() {
         this.centerGæt = createVector(0, 0);
         this.arealSum = 0;
-        this.maxCountdown = countdown;
+        this.maxCountdown = 20;
         this.countdown = 0;
         this.xy;
     }
@@ -15,20 +15,38 @@ class YdreBygning {
         background(kortImg);
 
         pathfindingAlgorithm.loop();
+        this.områder();
     }
 
+    områder(){
+        
+        figurer[3].pointConnections([[23, 98], [114, 40], [120, 50], [187, 25], [294, 25], [295, 118], [191, 121], [78, 183]], "LINES", "rgb(0, 255, 0)", "Biografen");
+        figurer[4].pointConnections([[180, 242], [257, 244], [257, 372], [180, 367]], "LINES", "rgb(0, 255, 0)", "Kantinen");
+        figurer[5].pointConnections([[258, 238], [408, 239], [408, 379], [258, 378]], "LINES", "rgb(0, 255, 0)", "Tårnet");
+        figurer[6].pointConnections([[410, 270], [509, 270], [509, 375], [410, 375]], "LINES", "rgb(0, 255, 0)", "Træværkstedet");
+        figurer[7].pointConnections([[509, 270], [541, 270], [541, 344], [509, 344]], "LINES", "rgb(0, 255, 0)", "Adminstration");
+        figurer[8].pointConnections([[509, 344], [541, 344], [541, 375], [509, 375]], "LINES", "rgb(0, 255, 0)", "Studievejledning");
+        figurer[9].pointConnections([[392, 27], [635, 23], [635, 121], [394, 118]], "LINES", "rgb(0, 255, 0)", "Metalværksted");
+        figurer[10].pointConnections([[540, 142], [650, 142], [651, 163], [715, 163], [715, 214], [670, 214], [670, 269], [542, 269]], "LINES", "rgb(0, 255, 0)", "Lektiecafe");
+        figurer[11].pointConnections([[670, 214], [773, 214], [913, 360], [913, 376], [670, 374]], "LINES", "rgb(0, 255, 0)", "Lærerværelse");
+        figurer[12].pointConnections([[541, 375], [919, 376], [1016, 446], [541, 447]], "LINES", "rgb(0, 255, 0)", "Atriumgården");
+        figurer[13].pointConnections([[540, 448], [1015, 446], [1102, 508], [1101, 535], [540, 535]], "LINES", "rgb(0, 255, 0)", "Fysik/Kemi/Biologi/auditorium");
+        
+
+        
+    }
     /*
     Når man kalder denne metode, så kan man give den punkter, som danner en figur. Derefter kan man specifikkere figuren
     ved det næste argument, f.eks. er "LINES" en figur med kun linjer i stedet for at fylde figuren ud, som den gør, hvis der står undefined.
     Det næste argument er igen et array, hvor det første element viser linjer mellem centergæt og punkterne. 
     Det andet element viser fra mus pos. til punkterne. 
-    f.eks - variable.pointConnections([punkt0], [punkt1], [punkt2], ext.], undefined, [true, true])
+    f.eks - variable.pointConnections([punkt0], [punkt1], [punkt2], ext.], LINES/undefined, farve(rgb), text)
     */
     pointConnections(xy, fyld, fillFarve, texts) {
         // this.visuelt = visuelt; //viser visuelt, hvis true
         if (this.xy == undefined) this.xy = xy;
         push();
-        stroke(fillFarve);
+        stroke(fillFarve); //fillFarve: farve
         strokeWeight(width / 500);
         fill(fillFarve);
 
@@ -60,9 +78,10 @@ class YdreBygning {
         if (texts != undefined) {
             textSize(24);
             noStroke();
-            fill(0);
+            fill(255);
             textAlign(CENTER, CENTER);
-            text(texts, this.centerGæt.x, this.centerGæt.y);
+            let i = text(texts, this.centerGæt.x, this.centerGæt.y);
+            // i.style.textContent;
         }
 
         pop();
@@ -166,6 +185,16 @@ class YdreBygning {
     }
 }
 
+
+
+//kordinatter på x og y til at danne flere områder med func pointConnections
+// let i = [];
+// window.onclick = function(){
+//     i.push(`[${floor(mouseX, 0)}, ${floor(mouseY, 0)}], `);   
+//     for(let index = 0; index < i.length; index++){
+//         console.log(JSON.stringify(i));
+//     }
+// }
 
 
 

@@ -3,20 +3,6 @@
   --orange: #eb5332;
 }
 
-.mainDiv {
-  margin-left: 50px;
-  margin-right: 50px;
-  margin-bottom: 20px;
-  height: 80vw;
-}
-
-.mainDiv h1 {
-  /* color:white;  */
-  text-align: center;
-  /* display: flex;
-    justify-content: center; */
-}
-
 .titel {
   position: relative;
   z-index: 1;
