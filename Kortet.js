@@ -29,9 +29,9 @@ function setup() {
 	myCanvas.parent("canvasErHer");
 
 
-  for (let i = 0; i <= 5; i++) {
+  for (let i = 0; i <= 100; i++) {
     //tilføj en figur
-    figurer[i] = new YdreBygning(20); //personlig countdown lav en ny figur, uden argument for ingen countdown
+    figurer[i] = new YdreBygning(); //personlig countdown lav en ny figur, uden argument for ingen countdown
   }
 
   ydreTing = new YdreBygning();

@@ -3,6 +3,7 @@
 :root{
     --arrow-streg: #df2727;
     --arrow-color: #df2727;
+
 }
 
 .indstillingØvreParagraph {
@@ -75,8 +76,8 @@
 
 
 .indstillingØvreParagraph {
+    font-family: 'Times New Roman', Times, serif;
     position: relative;
-    font-family: unset;
     margin: 0 auto 1.5rem auto;
 }
 
