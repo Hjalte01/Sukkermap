@@ -6,10 +6,12 @@
 #fra {
     display: inline-block;
     margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
 }
 #til {
     margin: 0;
     display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #updated {
@@ -84,6 +86,7 @@ h1 {
     margin-right: 0.3rem;
     width: 12rem;
     display: inline;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .switch {
@@ -165,18 +168,22 @@ input:checked + .slider:before {
 }
 
 footer {
-    box-sizing: border-box;
     position: relative;
-    height: 2.5rem;
-    padding: 3px 0;
+    height: 50px;
+    width: 100%;
+    top:100%;
+    text-align: center;
+    padding: 3px;
     background-color:  #121026;
     color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 #copyrightText {
-    font-size: 0.6rem;
+    font-size: 16px;
     text-align: center;
 }
-
 
 #listInput1, #listInput2{
     width: 156.8px;

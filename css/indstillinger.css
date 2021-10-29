@@ -5,8 +5,9 @@
     --arrow-color: #df2727;
 }
 
-
-
+.indstillingØvreParagraph {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 .indstillingerDiv {
     width: 65px;
