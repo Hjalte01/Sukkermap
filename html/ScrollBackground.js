@@ -1,9 +1,15 @@
+//Link to source code https://codepen.io/SabAsan/pen/ExVzaGb
+// YouTube https://youtu.be/rrf0nPjuums?list=LL 
+
 const html = document.documentElement;
 const canvas = document.getElementById("scroll-background");
 const context = canvas.getContext("2d");
+const frameCount = 299;
 
-// canvas.width = 1158;
-// canvas.height = 770;
+var x = 10;
+
+canvas.width = window.innerWidth;   /// integer values
+canvas.height = window.innerHeight;
 
 const currentFrame = (index) =>
   `../img/scrollBackground/${index
@@ -11,7 +17,7 @@ const currentFrame = (index) =>
     .padStart(4, "0")}.jpg`;
 
 const preloadImages = () => {
-  for (let i = 1; i < 200; i++) {
+  for (let i = 1; i < 300; i++) {
     const image = new Image();
     image.src = currentFrame(i);
   }
@@ -21,21 +27,44 @@ const image = new Image();
 image.src = currentFrame(1);
 
 image.onload = function () {
-  context.drawImage(image, 0, 0, canvas.width, canvas.height);
+   context.drawImage(image, 0, 0, canvas.width, canvas.height);
 };
 
 window.addEventListener("scroll", () => {
   const scrollTop = html.scrollTop;
   const maxScroll = html.scrollHeight - window.innerHeight;
   const scrollFraction = scrollTop / maxScroll;
-  const frameIndex = Math.min(147, Math.floor(scrollFraction * 200));
+  const frameIndex = Math.min(
+    frameCount - 1,
+    Math.ceil(scrollFraction * frameCount)
+  );
   requestAnimationFrame(() => updateImage(frameIndex + 1));
 });
 
 const updateImage = (index) => {
   image.src = currentFrame(index);
+
+  console.log(index)
+    
+    fadeIn(-5,10,20,"titel1",index)
+    fadeIn(20,30,50,"div1",index)
+    fadeIn(60,80,100,"div2",index)
+
   context.drawImage(image, 0, 0, canvas.width, canvas.height);
 };
+
+function fadeIn(minV, midV, maxV, idName, index) {
+  // document.getElementById(idName).style.transform = "matrix(0,0,1,0,1," +(index-115)+")";
+  if (index > (midV - 10) && index < (midV + 10)){
+    document.getElementById(idName).style.opacity= "1";
+  } else if (index <= (midV - 5) && index >= minV || index >= (midV + 5) && index <= maxV) {
+    document.getElementById(idName).style.opacity= "0.5";
+  } else {
+    document.getElementById(idName).style.opacity= "0";
+
+  }
+}
+
 
 preloadImages();
 
@@ -74,23 +103,7 @@ function newPage(intPage) {
         }, speed);
     }
 }
-
-function showText() {
-  document.getElementById("div1").style.opacity='1';
-};
-showText();
-
-
-//ved ikke helt, hvad du bruger det oven over til brugt til animation af navbar, men for nu disabler jeg den her og ændrer nogle css ting,
-//i stedet for at ændrer javascript til at stoppe den med at kører unødvendig script
-
-(localStorage.getItem("animationSelect.navbarProject").onChange = function(){
-    if(localStorage.getItem("animationSelect.navbarProject") == "Off"){
-        speed = 0;
-        
-    }else{
-        document.getElementById("header").style.animationName = "moveNavbar";
-    }
-})();
-
-
+// function showText(idName) {
+//   document.getElementById(idName).style.opacity='1';
+//   console.log(idName)
+// }

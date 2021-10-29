@@ -1,130 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Om projektet</title>
-        <link rel="icon" href="../img/favicon-32x32.png" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Om projektet</title>
+    <link rel="icon" href="../img/favicon-32x32.png" />
 
-        <link rel="stylesheet" type="text/css" href="../css/style.css" />
-        <link rel="stylesheet" type="text/css" href="../css/mobil.css" />
-        <link
-            rel="stylesheet"
-            type="text/css"
-            href="omProjektet.css"
-        />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mobil.css" />
+    <link rel="stylesheet" type="text/css" href="omProjektet.css" />
 
-        <script src="../Dropdown.js" defer></script>
-        <script src="ScrollBackground.js" defer></script>
-    </head>
-    <canvas id="scroll-background"></canvas>
-    <section>
+    <script src="../Dropdown.js" defer></script>
+    <script src="ScrollBackground.js" defer></script>
+  </head>
+  <canvas id="scroll-background"></canvas>
+  <section>
     <header id="header">
-        <ul class="topNav" id="topNav">
-            <a href="../index.html">
-                <img src="../img/Sukkermap_logo.png" alt="Sukkermap logo" id="sukkermapLogo">
-            </a>
-            <li><a id="myLink" href="#" onclick="newPage(2);return false;">Kontakt os</a></li>
-            <li>
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                    >Donation</a
-                >
-            </li>
-            <li><a href="projektet.html">Om projektet</a></li>
-            <li><a id="myLink" href="#" onclick="newPage(1);return false;">Sukkermap</a></li>
-        </ul>
-        <div class="navbar">
-            <a href="../index.html">
-                <img src="../img/Sukkermap_logo.png" alt="Sukkermap logo" id="sukkermapLogo">
-            </a>
-            <p class="mobilParagraph">Om projektet</p>
-            <button class="dropbtn" onclick="myFunction()">
-                <p class="arrow down"></p>
-            </button>
-            <div class="dropdown-content" id="myDropdown">
-                <a href="../index.html">Sukkermap</a>
-                <a href="projektet.html">Om projektet</a>
-                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Donation</a>
-                <a href="kontakt.html">Kontakt os</a>
-            </div>
+      <ul class="topNav" id="topNav">
+        <img
+          src="../img/Sukkermap_logo.png"
+          alt="Sukkermap logo"
+          id="sukkermapLogo"
+        />
+        <li>
+          <a id="myLink" href="#" onclick="newPage(2);return false;"
+            >Kontakt os</a
+          >
+        </li>
+        <li>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Donation</a>
+        </li>
+        <li><a>Om projektet</a></li>
+        <li>
+          <a id="myLink" href="#" onclick="newPage(1);return false;"
+            >Sukkermap</a
+          >
+        </li>
+      </ul>
+      <div class="navbar">
+        <img
+          src="../img/Sukkermap_logo.png"
+          alt="Sukkermap logo"
+          id="sukkermapLogo"
+        />
+        <p class="mobilParagraph">Om projektet</p>
+        <button class="dropbtn" onclick="myFunction()">
+          <p class="arrow down"></p>
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="../index.html">Sukkermap</a>
+          <a href="projektet.html">Om projektet</a>
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Donation</a>
+          <a href="kontakt.html">Kontakt os</a>
         </div>
+      </div>
     </header>
-    </section>
-    
-    <body style="height: 2500px;"onload="showText()" >
-       
-        <div class="titel">
-            <h1>Projekt Sukkermap</h1>
-        </div>
-        </br>
+  </section>
 
-        <div class="div1" id="div1" >
-            <p class ="ptext">
-                Da, vi gik på Sukkertoppen, så havde vi sommetider svært ved at
-                finde rundt på skolen.
-                Selv i vores tredje år, var det svært at huske, hvor de forskellige
-                lokaler lå henne. Så, i slutningen af 2020 snakkede vi om
-                at det kunne være virkelig brugbart, hvis der fandtes et
-                navigations program der kan hjælpe en med at finde rundt på
-                skolen.
-            </p>
-            </br>
+  <body style="height: 2500px">
+    <!-- <body style="height: 2500px;"onload="showText('div1');showText('div2');showText('div3')"" > -->
 
-            <p class ="ptext">
-                I begyndelsen af 2021, så lavede vi en Google docs og fandt på
-                idéer til navigationsprogrammet. Da, vi få uge efter
-                skulle finde et eksamensprojekt til programmering, så blev vi
-                enige om at dette projekt blev vores eksamensprojekt i
-                programmering.
-            </p>
-            </br>
-
-            <p class ="ptext">
-                Vi spurgte Administration om plantegninger af skolen, hvilket
-                hjalp os meget i vores projekt. Nogle få dage efter gik vi
-                rundt på hele skolen, og skrev lokalerne ned på de printet
-                plantegninger. Det tog os en halvanden skoledag at gå rundt på
-                hvert eneste lokale. Det gav os ihvertfald motion i
-                benene.
-            </p>
-            </br>
-        </div>
-
-    <div class="div2" id="div2">
-        <p class ="ptext">
-            Efter vi havde nedskrevet hvert lokale nummer på plantegningerne, så Skulle
-            vi finde en stifinder algoritme til vores projekt. Vi endte med at
-            bruge A* algoritmen, da vi synes den var mest egnet til vores
-            projekt. Siden at algoritmen er en af de hurtigeste stifindings algoritme, hvis
-            ikke den hurtigeste.
-        </p>
-        </br>
-
-        <p class ="ptext">
-            Efter vi havde eksperimenteret med Astar algoritmen, så begyndte vi at
-            sætte koordinater på lokalerne ind i vores canvas fra alle lokaler rundt
-            på skolen. Det tog tid og utallig debugs, men i enden, så løkkes det på
-            den, eller den anden måde.
-        </p>
-
-        <p class ="ptext"> 
-            <!-- Vi viste projektet både til lærer og klassen, og derefter
-            udgav vi den på Lectio og lavet en spørgeskema de skulle besvare.
-            Der var mange der kunne lide den, og vi fik gode feedback fra mange
-            elever og lærere på skolen. -->
-        </p>
-
-        <!-- <p class ="ptext" style="position: static;">
-            Vi håber at Sukkermap vil hjælpe både elever og ansatte, samt
-            besøgende, med at finde vej til deres nuværende destination. Hvis i
-            gerne vil donere til os.    
-        </p> -->
+    <div class="titel" id="titel">
+      <h1 id="titel1">Projekt Sukkermap</h1>
     </div>
-</div>
 
-    </body>
-    <footer>
-        <p id="copyrightText"></p>
-    </footer>
+    <div class="divAll" id="div1">
+      <p class="ptext">
+        Da, vi gik på Sukkertoppen, så havde vi sommetider svært ved at finde rundt på skolen. Selv i vores tredje år, var det svært at huske, hvor de forskellige lokaler lå henne. Så, i slutningen af 2020 snakkede vi om at det kunne være virkelig brugbart, hvis der fandtes et navigations program der kan hjælpe en med at finde rundt på skolen.
+      </p>
+
+      <p class="ptext">
+        I begyndelsen af 2021, så lavede vi en Google docs og fandt på idéer til navigationsprogrammet. Da, vi få uge efter skulle finde et eksamensprojekt til programmering, så blev vi enige om at dette projekt blev vores eksamensprojekt i programmering.
+      </p>
+
+      <p class="ptext">
+        Vi spurgte Administration om plantegninger af skolen, hvilket hjalp os meget i vores projekt. Nogle få dage efter gik vi rundt på hele skolen, og skrev lokalerne ned på de printet plantegninger. Det tog os en halvanden skoledag at gå rundt på hvert eneste lokale. Det gav os ihvertfald motion i benene.
+      </p>
+
+    </div>
+
+    <div class="divAll" id="div2">
+        
+      <p class="ptext">
+        Efter vi havde nedskrevet hvert lokale nummer på plantegningerne, så Skulle vi finde en stifinder algoritme til vores projekt. Vi endte med at bruge A* algoritmen, da vi synes den var mest egnet til vores projekt. Siden at algoritmen er en af de hurtigeste stifindings algoritme, hvis ikke den hurtigeste.
+      </p>
+      <p class="ptext">
+        Efter vi havde eksperimenteret med Astar algoritmen, så begyndte vi at sætte koordinater på lokalerne ind i vores canvas fra alle lokaler rundt på skolen. Det tog tid og utallig debugs, men i enden, så løkkes det på den, eller den anden måde.
+      </p>
+
+      <p class="ptext">
+        Vi viste projektet både til vores lærer og klassen, og derefter udgav vi
+        den på Lectio og lavet en spørgeskema de skulle besvare. Der var mange
+        der kunne lide den, og vi fik gode feedback fra mange elever og lærere
+        på skolen.
+      </p>
+
+      <p class="ptext" style="position: static">
+        Vi håber at Sukkermap vil hjælpe både elever og ansatte, samt besøgende,
+        med at finde vej til deres nuværende destination. 
+      </p>
+    </div>
+  </body>
+  <footer>
+    <p id="copyrightText"></p>
+  </footer>
 </html>
