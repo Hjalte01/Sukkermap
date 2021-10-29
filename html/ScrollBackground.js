@@ -103,7 +103,12 @@ function newPage(intPage) {
         }, speed);
     }
 }
-// function showText(idName) {
-//   document.getElementById(idName).style.opacity='1';
-//   console.log(idName)
-// }
+(localStorage.getItem("animationSelect.navbarProject").onChange = function(){
+  if(localStorage.getItem("animationSelect.navbarProject") == "Off"){
+      speed = 0;
+      
+  }else{
+      document.getElementById("header").style.animationName = "moveNavbar";
+  }
+})();
+
