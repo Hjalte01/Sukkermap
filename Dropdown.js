@@ -73,7 +73,3 @@ var copyrightText =
 //Copyright © Sukkermap 2020 - Hjalte Bjoernstrup & Joshua Calba All Rights Reserved
 
 document.getElementById("copyrightText").innerHTML = copyrightText;
-
-window.onclick = function (e) {
-  console.log(e.target);
-};

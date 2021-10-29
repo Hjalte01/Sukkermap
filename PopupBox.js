@@ -3,6 +3,7 @@ var btnOpen = document.getElementById("btnOpen");
 var xClose = document.getElementsByClassName("xClose")[0];
 var tilbageBtn = document.getElementById("arrowBtn");
 var hjælpBtn = document.getElementsByClassName("content-divider-sections hjælpBtn")[0];
+var defaultBtn = document.getElementsByClassName("content-divider-sections defaultBtn")[0];
 var hjælpereNavigation = document.getElementById("hjælpereNavigation");
 var hjælpereContainer = document.getElementById("hjælpereContainer");
 var hjælperekoordinater = document.getElementById("hjælperekoordinater");
@@ -40,6 +41,22 @@ var animationSelect = {
     animation: document.getElementsByClassName("content-divider-sections animation")[0],
     navbarProject: document.getElementsByClassName("containerForCheckbox navbarProject")[0],
 }
+
+
+
+// local storage
+window.onload = function(){
+    animationSelect.navbarProject.onclick();
+    farveSelect.rute.onchange(localStorage.getItem("farveInp.rute"));
+    farveSelect.vejledningsPil.onchange(localStorage.getItem("farveInp.vejledningsPil"));
+    farveSelect.etagePil.onchange(localStorage.getItem("farveInp.etagePil"));
+    document.getElementById("hastighedPil").oninput(localStorage.getItem("hastighedPil"));
+
+}
+
+
+
+
 
 
 //Indstiling boxen
@@ -85,15 +102,10 @@ farveSelect.farverOgHastigheder.onclick = function() {
     tilbageBtn.style.visibility = "visible";
 }
 
-// Hastighed på vejlednings - pilen
-document.getElementById("hastighedPil").oninput = function () {
-    hastighedPil = document.getElementById("hastighedPil").value / 500;
-    document.getElementById("hastighedPilLabel").textContent = hastighedPil * 500 + "%";
-};
-
-
 // skifter farve på ruten iforhold til select
-farveSelect.rute.onchange = function () {
+farveSelect.rute.onchange = function (localStorageContent) {
+    if(typeof localStorageContent === "string") farveSelect.rute.selectedIndex = localStorage.getItem("farveSelect.rute.selectedIndex");
+
     farveSelect.ruteOption = farveSelect.rute.options[farveSelect.rute.selectedIndex];
 
     if (farveSelect.ruteOption.value == "pink") {
@@ -107,16 +119,26 @@ farveSelect.rute.onchange = function () {
     } else if (farveSelect.ruteOption.value == "orange") {
         farveInp.rute = "rgb(255,165,0)";
     } else if (farveSelect.ruteOption.value == "anden farve") {
-        andetFarveInp.rute.click();
+        if(localStorage.getItem("farveSelect.rute.selectedIndex") != 5){
+            andetFarveInp.rute.click();
+        } else {
+            farveInp.rute = localStorage.getItem("farveInp.rute");
+        }
     }
+    localStorage.setItem("farveSelect.rute.selectedIndex", farveSelect.rute.selectedIndex);
+    localStorage.setItem("farveInp.rute", farveInp.rute);
+    
 };
 //skifter farve iforhold til inputtet "anden farve"
 andetFarveInp.rute.onchange = function () {
     farveInp.rute = andetFarveInp.rute.value;
+    localStorage.setItem("farveInp.rute", farveInp.rute);
 };
 
 // skifter farve på vejledsnings-pilen iforhold til select
-farveSelect.vejledningsPil.onchange = function () {
+farveSelect.vejledningsPil.onchange = function (localStorageContent) {
+    if(typeof localStorageContent === "string") farveSelect.vejledningsPil.selectedIndex = localStorage.getItem("farveSelect.vejledningsPil.selectedIndex");
+
     farveSelect.vejledningsPilOption = farveSelect.vejledningsPil.options[farveSelect.vejledningsPil.selectedIndex];
 
     if (farveSelect.vejledningsPilOption.value == "pink") {
@@ -131,16 +153,26 @@ farveSelect.vejledningsPil.onchange = function () {
         farveInp.vejledningsPil = "rgb(255,165,0)";
     } 
     else if (farveSelect.vejledningsPilOption.value == "anden farve") {
-        andetFarveInp.vejledningsPil.click();
+        if(localStorage.getItem("farveSelect.vejledningsPil.selectedIndex") != 5){
+            andetFarveInp.vejledningsPil.click();
+        } else {
+            farveInp.vejledningsPil = localStorage.getItem("farveInp.vejledningsPil");
+        }
     }
+    localStorage.setItem("farveSelect.vejledningsPil.selectedIndex", farveSelect.vejledningsPil.selectedIndex);
+    localStorage.setItem("farveInp.vejledningsPil", farveInp.vejledningsPil);
+
 }
 //skifter farve iforhold til inputtet "anden farve"
 andetFarveInp.vejledningsPil.onchange = function () {
     farveInp.vejledningsPil = andetFarveInp.vejledningsPil.value;
+    localStorage.setItem("farveInp.vejledningsPil", farveInp.vejledningsPil);
 };
 
 // skifter farve på etage-pilene iforhold til select
-farveSelect.etagePil.onchange = function () {
+farveSelect.etagePil.onchange = function (localStorageContent) {
+    if(typeof localStorageContent === "string") farveSelect.etagePil.selectedIndex = localStorage.getItem("farveSelect.etagePil.selectedIndex");
+
     farveSelect.etagePilOption = farveSelect.etagePil.options[farveSelect.etagePil.selectedIndex];
 
     if (farveSelect.etagePilOption.value == "pink") {
@@ -155,13 +187,35 @@ farveSelect.etagePil.onchange = function () {
         farveInp.etagePil = "rgba(255, 165 ,0 , 0.5)";
     } 
     else if (farveSelect.etagePilOption.value == "anden farve") {
-        andetFarveInp.etagePil.click();
+        if(localStorage.getItem("farveSelect.etagePil.selectedIndex") != 5){
+            andetFarveInp.etagePil.click();
+        } else {
+            farveInp.etagePil = localStorage.getItem("farveInp.etagePil");
+        }
     }
+    localStorage.setItem("farveSelect.etagePil.selectedIndex", farveSelect.etagePil.selectedIndex);
+    localStorage.setItem("farveInp.etagePil", farveInp.etagePil);
 }
 //skifter farve iforhold til inputtet "anden farve"
 andetFarveInp.etagePil.onchange = function () {
     farveInp.etagePil = andetFarveInp.etagePil.value + "75";
+    localStorage.setItem("farveInp.etagePil", farveInp.etagePil);
 };
+
+// Hastighed på vejlednings - pilen
+document.getElementById("hastighedPil").oninput = function (localStorageContent) {
+    if(typeof localStorageContent === "string") {
+        hastighedPil = localStorageContent;
+        document.getElementById("hastighedPil").value = hastighedPil * 500;
+    }else{
+       hastighedPil = document.getElementById("hastighedPil").value / 500; 
+    }
+    
+
+    document.getElementById("hastighedPilLabel").textContent = hastighedPil * 500 + "%";
+    localStorage.setItem("hastighedPil", hastighedPil);
+};
+
 
 
 
@@ -173,27 +227,24 @@ animationSelect.animation.onclick = function() {
 }
 // on/off animation på navbar i om projectet
 animationSelect.navbarProject.onclick = function() {
-    if(animationSelect.navbarProject.children[0].textContent == "On"){
-        animationSelect.navbarProject.children[0].textContent = "Off";
-        animationSelect.navbarProject.style.background = "red";
-
-        getElementById("header").style.animationName = "";  //need local storage and project.css
-        getElementById("header").style.right = "0";
-        getElementById("header").style.transform = "0";
-
-        
-    }else{
+    if(typeof localStorage.getItem("animationSelect.navbarProject") !== "string") {
         animationSelect.navbarProject.children[0].textContent = "On";
+    } else if(animationSelect.navbarProject.children[0].textContent == "start"){
+        animationSelect.navbarProject.children[0].textContent = localStorage.getItem("animationSelect.navbarProject");
+    } else if(localStorage.getItem("animationSelect.navbarProject") == "On"){
+        animationSelect.navbarProject.children[0].textContent = "Off";
+    } else if(localStorage.getItem("animationSelect.navbarProject") == "Off"){
+        animationSelect.navbarProject.children[0].textContent = "On";
+    } 
+
+
+    if(animationSelect.navbarProject.children[0].textContent == "On"){
         animationSelect.navbarProject.style.background = "green";
-
-        // getElementById("header").style.animationName = "";
-        // getElementById("header").style.right = "0";
-        // getElementById("header").style.transform = "0";
+    } else {
+        animationSelect.navbarProject.style.background = "red"
     }
-
-    
+    localStorage.setItem("animationSelect.navbarProject", animationSelect.navbarProject.children[0].textContent);
 }
-
 
 
 
@@ -204,6 +255,7 @@ hjælpBtn.onclick = function () {
     hjælpereNavigation.style.display = "block";
     containerForInputs.style.display = "";
 };
+
 //Sender en over til sheet formel, som hjælper os
 hjælpereNavigation.onclick = function () {
     hjælpereNavigation.style.display = "";
@@ -215,3 +267,11 @@ hjælpereNavigation.onclick = function () {
     );
 };
 
+
+
+// DEFAULT SELECTOREN
+defaultBtn.onclick = function() {
+    localStorage.clear();
+    location.reload();
+    return false;
+};

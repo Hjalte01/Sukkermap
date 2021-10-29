@@ -78,7 +78,6 @@ body {
   header {
     z-index: 2;
     position: fixed;
-    animation-name: moveNavbar;
     animation-duration: 5s;
     /* right: 50%;
     lav din egen nulpunkt */
