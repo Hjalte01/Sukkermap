@@ -275,13 +275,6 @@ animationSelect.områder.onclick = function() {
     localStorage.setItem("animationSelect.områder", animationSelect.områder.children[0].textContent);
 }
 
-
-
-
-
-
-
-
 //HjÆLP SELECTOREN
 //Knap for indstillinger til hjælp med kordinatter
 hjælpSelect.hjælp.onclick = function() {
