@@ -2,7 +2,6 @@ var popupBoxContainer = document.getElementById("popupBox");
 var btnOpen = document.getElementById("btnOpen");
 var xClose = document.getElementsByClassName("xClose")[0];
 var tilbageBtn = document.getElementById("arrowBtn");
-// var hjælpBtn = document.getElementsByClassName("content-divider-sections hjælpBtn")[0];
 var defaultBtn = document.getElementsByClassName("content-divider-sections defaultBtn")[0];
 var hjælpereNavigation = document.getElementById("hjælpereNavigation");
 var hjælpereContainer = document.getElementById("hjælpereContainer");
