@@ -103,6 +103,7 @@ function newPage(intPage) {
         }, speed);
     }
 }
+//animation knap for navbar
 (localStorage.getItem("animationSelect.navbarProject").onChange = function(){
   if(localStorage.getItem("animationSelect.navbarProject") == "Off"){
       speed = 0;

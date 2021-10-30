@@ -40,6 +40,8 @@ var andetFarveInp = {
 var animationSelect = {
     animation: document.getElementsByClassName("content-divider-sections animation")[0],
     navbarProject: document.getElementsByClassName("containerForCheckbox navbarProject")[0],
+    områder: document.getElementsByClassName("containerForCheckbox områder")[0],
+
 }
 
 
@@ -47,6 +49,7 @@ var animationSelect = {
 // local storage
 window.onload = function(){
     animationSelect.navbarProject.onclick();
+    animationSelect.områder.onclick();
     farveSelect.rute.onchange(localStorage.getItem("farveInp.rute"));
     farveSelect.vejledningsPil.onchange(localStorage.getItem("farveInp.vejledningsPil"));
     farveSelect.etagePil.onchange(localStorage.getItem("farveInp.etagePil"));
@@ -225,7 +228,7 @@ animationSelect.animation.onclick = function() {
     gridContainer.animation.style.display = "grid";
     tilbageBtn.style.visibility = "visible";
 }
-// on/off animation på navbar i om projectet
+// on/off animation på navbar i om projectet.js
 animationSelect.navbarProject.onclick = function() {
     if(typeof localStorage.getItem("animationSelect.navbarProject") !== "string") {
         animationSelect.navbarProject.children[0].textContent = "On";
@@ -244,6 +247,27 @@ animationSelect.navbarProject.onclick = function() {
         animationSelect.navbarProject.style.background = "red"
     }
     localStorage.setItem("animationSelect.navbarProject", animationSelect.navbarProject.children[0].textContent);
+}
+
+// on/off animation på områder i index.js
+animationSelect.områder.onclick = function() {
+    if(typeof localStorage.getItem("animationSelect.områder") !== "string") {
+        animationSelect.områder.children[0].textContent = "On";
+    } else if(animationSelect.områder.children[0].textContent == "start"){
+        animationSelect.områder.children[0].textContent = localStorage.getItem("animationSelect.områder");
+    } else if(localStorage.getItem("animationSelect.områder") == "On"){
+        animationSelect.områder.children[0].textContent = "Off";
+    } else if(localStorage.getItem("animationSelect.områder") == "Off"){
+        animationSelect.områder.children[0].textContent = "On";
+    } 
+
+
+    if(animationSelect.områder.children[0].textContent == "On"){
+        animationSelect.områder.style.background = "green";
+    } else {
+        animationSelect.områder.style.background = "red"
+    }
+    localStorage.setItem("animationSelect.områder", animationSelect.områder.children[0].textContent);
 }
 
 

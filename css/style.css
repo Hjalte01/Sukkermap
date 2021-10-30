@@ -6,6 +6,9 @@ html, body{
     height: 100%;
     position: relative;
 }
+#footerFix{
+    min-height: calc(100vh - 2.5rem);
+}
 
 
 #fra {
@@ -178,7 +181,7 @@ input:checked + .slider:before {
 
 footer {
     box-sizing: border-box;
-    position: absolute;
+    position: relative;
     height: 2.5rem;
     width: 100vw;    
     padding: 3px 0;
