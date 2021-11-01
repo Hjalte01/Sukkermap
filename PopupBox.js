@@ -47,9 +47,6 @@ var hjælpSelect = {
     hjælp: document.getElementsByClassName("content-divider-sections hjælp")[0],
     forbedringer: document.getElementsByClassName("content-divider-sections forbedringerBtn")[0],
     koordinater: document.getElementsByClassName("content-divider-sections koordinaterBtn")[0],
-    hjemmeskærm: document.getElementsByClassName("content-divider-sections hjemmeskærm")[0],
-    hjemmeskærmLogo: document.getElementById("hjemmeskærmLogo"),
-
 }
 
 
@@ -310,17 +307,6 @@ hjælpereNavigation.onclick = function () {
         "_blank"
     );
 };
-//logo til hjemmeskærm, hvor dette er knappen
-hjælpSelect.hjemmeskærm.onclick = function(){
-    popupBoxContainer.style.display = "";
-    containerForInputs.style.display = "";
-    hjælpSelect.hjemmeskærmLogo.style.display = "block";
-}
-//logo'et
-hjælpSelect.hjemmeskærmLogo.onclick = function(){
-    hjælpSelect.hjemmeskærmLogo.style.display = "";
-}
-
 
 
 // DEFAULT SELECTOREN

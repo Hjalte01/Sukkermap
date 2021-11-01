@@ -74,21 +74,6 @@
     background-color: rgba(0, 0, 0, 0.4); /* sort w/ opacity */
 }
 
-#hjemmeskærmLogo{
-    width: 100vw;
-    height: 100vh;
-    background-image: url("../img/Sukkermap_logo.png");
-    background-color: wheat;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: absolute;
-    left: 0;
-    top: 0;
-    display: none;
-    z-index: 99;
-}
-
 
 .indstillingØvreParagraph {
     font-family: 'Times New Roman', Times, serif;
