@@ -175,7 +175,7 @@ input:checked + .slider:before {
     margin: auto 0;
 }
 
-footer {
+#footerMain {
     box-sizing: border-box;
     position: relative;
     height: 2.5rem;

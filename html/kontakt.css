@@ -1,29 +1,70 @@
 #typeWriter1 {
-    color: white;
-    font-size: 20px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    display: block;
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  display: block;
 }
 
-.centerBox{
-    width: 100vw;
-    height: calc(100vh - 7.5rem);
-    display: inline-flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+html {
+    height: 100%;
+}
+
+.centerBox {
+  /* width: 100vw;
+    height: calc(100vh - 7.5rem); */
+  width: 100%;
+  text-align: center;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+}
+
+#formDiv {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.divCenter {
     align-content: center;
     justify-content: center;
 }
 
+#inputNavn, #inputEmail, #inputRolle {
+    font-size: 16px;
+}
 
+#btn {
+    color: white;
+    background-color: rgb(57, 57, 235);
+    padding: 12px 28px;
+    border-radius: 12px;
+}
+
+#btn:hover {
+    cursor: pointer;
+    background-color: rgb(28, 28, 190);
+}
 #email {
-    font-size: 20px;
-    color: blue;
-    display: inherit;
-    padding-left: 0.3rem;
+  font-size: 20px;
+  color: blue;
+  display: block;
+  padding-left: 0.3rem;
 }
 
 body {
-    background-color:black;
-    overflow-x: hidden;
+  background-color: rgb(228, 228, 228);
+  overflow-x: hidden;
+}
+
+#footer1 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    padding: 3px 0;
+    background-color:  #121026;
+    color: white;
 }

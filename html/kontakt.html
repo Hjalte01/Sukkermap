@@ -15,7 +15,6 @@
     <script src="TypeWriter.js" defer></script>
   </head>
   <body>
-    <div id="footerFix">
       <header>
         <ul class="topNav">
           <a href="../index.html"><img src="../img/Sukkermap_logo.png" alt="Sukkermap logo" id="sukkermapLogo"></a>
@@ -40,14 +39,40 @@
           <a href="kontakt.html">Kontakt os</a>
         </div>
       </div>
-
-      <div class="centerBox">
+<div class="centerBox">
         <p id="typeWriter1"></p>
         <p id="email"> </p>
       </div>
-    </div>
+      <div id="formDiv">
+        <form name="contact" method="POST" data-netlify="true">
+          <p>
+            <div class ="divCenter">
+            <label> <input id="inputNavn"type="text" name="name" placeholder="Navn"/></label> 
+          </div>  
+          </p>
+          <p>
+            <label> <input id="inputEmail" type="email" name="email" placeholder="e-mail" /></label>
+          </p>
+          <p>
+            <label>Jeg er: <select id="inputRolle"  name="rolle">
+              <option value="elev">Elev</option>
+              <option value="lærer">Lærer</option>
+              <option value="lærer">Ansatte</option>
+              <option value="beseogende">Besøgende</option>
+              <option value="andet">Andet</option>
+            </select></label>
+            
+          </p>
+          <p>
+            <label><textarea name="message" placeholder="Besked" rows="5" cols="33"></textarea></label>
+          </p>
+          <p>
+            <button id="btn"type="submit">Send</button>
+          </p>
+        </form>
+      </div>
   </body>
-  <footer>
+  <footer id="footer1">
     <p id="copyrightText"></p>
   </footer>
 </html>
