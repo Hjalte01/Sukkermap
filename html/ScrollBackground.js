@@ -28,6 +28,9 @@ image.src = currentFrame(1);
 
 image.onload = function () {
    context.drawImage(image, 0, 0, canvas.width, canvas.height);
+  //  context.drawImage(image, 0, 0, 1536, 754);
+  //  context.drawImage(image, 0, 0, 1920, 1080);
+
 };
 
 window.addEventListener("scroll", () => {
@@ -44,29 +47,141 @@ window.addEventListener("scroll", () => {
 const updateImage = (index) => {
   image.src = currentFrame(index);
 
-  console.log(index)
+  document.getElementById("div3").style.display= "flex";
     
-    fadeIn(-5,10,20,"titel1",index)
-    fadeIn(20,30,50,"div1",index)
-    fadeIn(60,80,100,"div2",index)
+    fadeIn(0,0,30,"titel",index);
+    fadeIn(40,50,60,"div1",index);
+    fadeIn(90,130,120,"div2",index);
+    fadeIn(undefined,210,undefined,"div3", index);
+    //fadeIn(undefined,300,undefined,"divFooter", index);
 
   context.drawImage(image, 0, 0, canvas.width, canvas.height);
+  // context.drawImage(image, 0, 0, 1536, 754);
+  // context.drawImage(image, 0, 0, 1920, 1080);
 };
 
 function fadeIn(minV, midV, maxV, idName, index) {
+
+  var interval1 = 20
+  var interval2 = 25
+  var interval3 = 30
+  var interval4 = 35
   // document.getElementById(idName).style.transform = "matrix(0,0,1,0,1," +(index-115)+")";
-  if (index > (midV - 10) && index < (midV + 10)){
+  if (index > (midV - interval1) && index < (midV + interval1)){
     document.getElementById(idName).style.opacity= "1";
-  } else if (index <= (midV - 5) && index >= minV || index >= (midV + 5) && index <= maxV) {
+  } else if (index <= (midV - interval1) && index >= (midV - interval2) || index >= (midV + interval1) && index <= (midV + interval2)) {
+    document.getElementById(idName).style.opacity= "0.75";
+  } else if (index <= (midV - interval2) && index >= (midV - interval3) || index >= (midV + interval2) && index <= (midV + interval3)) {
     document.getElementById(idName).style.opacity= "0.5";
+  } else if (index <= (midV - interval3) && index >= (midV - interval4) || index >= (midV + interval3) && index <= (midV + interval4)) {
+    document.getElementById(idName).style.opacity= "0.25";
   } else {
     document.getElementById(idName).style.opacity= "0";
+  } 
+}
 
-  }
+preloadImages();
+
+//-- Slideshow
+
+document.getElementById("pVersioner").innerHTML = "Version 0.1";
+
+slideShow();
+
+function slideShow() {
+
+    if(document.getElementById("imgVersioner").getAttribute("src") != "../img/slideshow/V1.0.png"){
+    rightArrow();
+    } else {
+      document.getElementById("imgVersioner").src = "../img/slideshow/V0.1.png";
+    } 
+    setTimeout(function(){ slideShow()}, 1500);
+  
 }
 
 
-preloadImages();
+function rightArrow() {
+
+  
+  document.getElementById("leftArrow").style.visibility = "visible";
+
+  if(document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.1.png"){
+    console.log("This is true")
+    document.getElementById("pVersioner").innerHTML = "Version 0.2";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.2.png";
+  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.2.png"){
+    document.getElementById("pVersioner").innerHTML = "Version 0.3";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.3.png";
+  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.3.png"){
+    document.getElementById("pVersioner").innerHTML = "Version 0.4";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.4.png";
+  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.4.png"){
+    document.getElementById("pVersioner").innerHTML = "Version 0.5";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.5.png";
+  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.5.png"){
+    document.getElementById("pVersioner").innerHTML = "Version 0.6";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.6.png";
+  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.6.png"){
+    document.getElementById("pVersioner").innerHTML = "Version 0.7";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.7.png";
+  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.7.png"){
+    document.getElementById("pVersioner").innerHTML = "Version 0.8";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.8.png";
+  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.8.png"){
+    document.getElementById("pVersioner").innerHTML = "Version 0.9";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.9.png";
+    console.log("this works first")
+  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.9.png"){
+    console.log("this works")
+    document.getElementById("rightArrow").style.visibility = "hidden";
+    document.getElementById("pVersioner").innerHTML = "Version 1.0";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V1.0.png";
+    
+  } 
+}
+
+function leftArrow() {
+
+  document.getElementById("rightArrow").style.visibility = "visible";
+
+  if(document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.1.png"){
+    document.getElementById("leftArrow").style.visibility = "hidden";
+    document.getElementById("pVersioner").innerHTML = "Version 0.1";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.1.png";
+  }
+  else if(document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.2.png"){
+    document.getElementById("pVersioner").innerHTML = "Version 0.1";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.1.png";
+  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.3.png"){
+    document.getElementById("pVersioner").innerHTML = "Version 0.2";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.2.png";
+  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.4.png"){
+    document.getElementById("pVersioner").innerHTML = "Version 0.3";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.3.png";
+  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.5.png"){
+    document.getElementById("pVersioner").innerHTML = "Version 0.4";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.4.png";
+  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.6.png"){
+    document.getElementById("pVersioner").innerHTML = "Version 0.5";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.5.png";
+  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.7.png"){
+    document.getElementById("pVersioner").innerHTML = "Version 0.6";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.6.png";
+  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.8.png"){
+    document.getElementById("pVersioner").innerHTML = "Version 0.7";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.7.png";
+  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.9.png"){
+    document.getElementById("pVersioner").innerHTML = "Version 0.8";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.8.png";
+  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V1.0.png"){
+    document.getElementById("pVersioner").innerHTML = "Version 0.9";
+    document.getElementById("imgVersioner").src = "../img/slideshow/V0.9.png";
+  } 
+}
+
+
+
+
 
 //----
 
@@ -103,6 +218,9 @@ function newPage(intPage) {
         }, speed);
     }
 }
+// Sldeishow 
+// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto
+
 (localStorage.getItem("animationSelect.navbarProject").onChange = function(){
   if(localStorage.getItem("animationSelect.navbarProject") == "Off"){
       speed = 0;

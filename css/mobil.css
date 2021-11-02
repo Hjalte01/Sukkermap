@@ -179,8 +179,6 @@
         right: 0;
     }
 
-    
-
     .displayContainerForInputs {
         display: none;
         position: absolute;
@@ -210,7 +208,8 @@
     }
 
     #copyrightText{
-        font-size: 2.5vw;
+        font-size: 2.3vw;
+        
     }
     #etage {
         color: #FFF;
