@@ -49,10 +49,11 @@ const updateImage = (index) => {
 
   document.getElementById("div3").style.display= "flex";
     
-    fadeIn(0,0,30,"titel",index);
-    fadeIn(40,50,60,"div1",index);
-    fadeIn(90,130,120,"div2",index);
-    fadeIn(undefined,210,undefined,"div3", index);
+    fadeIn(0,"titel",index);
+    fadeIn(50,"div1",index);
+    fadeIn(130,"div2",index);
+    fadeIn(200,"div3", index);
+    fadeIn(210,"versionText", index);
     //fadeIn(undefined,300,undefined,"divFooter", index);
 
   context.drawImage(image, 0, 0, canvas.width, canvas.height);
@@ -60,7 +61,7 @@ const updateImage = (index) => {
   // context.drawImage(image, 0, 0, 1920, 1080);
 };
 
-function fadeIn(minV, midV, maxV, idName, index) {
+function fadeIn(midV,idName, index) {
 
   var interval1 = 20
   var interval2 = 25
@@ -84,100 +85,110 @@ preloadImages();
 
 //-- Slideshow
 
-// var arraySlide = [["../img/slideshow/V0.1.png", "1"],["Version 0.1", "1"]];
-// console.log(arraySlide[0][0] + " " + arraySlide[1][0]);
+var arraySlide = [
+  ["../img/slideshow/V0.1.png", "../img/slideshow/V0.3.png", "../img/slideshow/V0.5.png","../img/slideshow/V0.7.png", "../img/slideshow/May_3_2021.png", "../img/slideshow/Aug_31_2021.png", "../img/slideshow/Sep_22_2021.png","../img/slideshow/Oct_12_2021.png", "../img/slideshow/Oct_21_2021.png", "../img/slideshow/nov_1_2021.png"],
+  ["11. februar 2021", "13. februar 2021", "14. februar 2021", "22. februar 2021", "3. maj 2021", "31. august 2021", "22. september 2021", "12. oktober 2021", "21. oktober 2021", "1. november 2021"]];
 
 document.getElementById("pVersioner").innerHTML = "Version 0.1";
 
+var i = 0;
 slideShow();
 
 function slideShow() {
 
-    if(document.getElementById("imgVersioner").getAttribute("src") != "../img/slideshow/V1.0.png"){
-    rightArrow();
-    } else {
-      document.getElementById("imgVersioner").src = "../img/slideshow/V0.1.png";
-    } 
-    setTimeout(function(){ slideShow()}, 1500);
-  
-}
+  document.getElementById("imgVersioner").src = arraySlide[0][i]
+  document.getElementById("pVersioner").innerHTML = arraySlide[1][i];
 
-
-function rightArrow() {
-
-  
-  document.getElementById("leftArrow").style.visibility = "visible";
-
-  if(document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.1.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.2";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.2.png";
-  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.2.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.3";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.3.png";
-  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.3.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.4";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.4.png";
-  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.4.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.5";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.5.png";
-  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.5.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.6";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.6.png";
-  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.6.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.7";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.7.png";
-  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.7.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.8";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.8.png";
-  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.8.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.9";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.9.png";
-  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.9.png"){
-    document.getElementById("rightArrow").style.visibility = "hidden";
-    document.getElementById("pVersioner").innerHTML = "Version 1.0";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V1.0.png";
-    
-  } 
-}
-
-function leftArrow() {
-
-  document.getElementById("rightArrow").style.visibility = "visible";
-
-  if(document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.1.png"){
-    document.getElementById("leftArrow").style.visibility = "hidden";
-    document.getElementById("pVersioner").innerHTML = "Version 0.1";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.1.png";
+  if(i == (arraySlide[0].length - 1)) {
+    i = 0;
+  } else {
+    i++
   }
-  else if(document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.2.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.1";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.1.png";
-  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.3.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.2";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.2.png";
-  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.4.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.3";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.3.png";
-  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.5.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.4";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.4.png";
-  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.6.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.5";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.5.png";
-  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.7.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.6";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.6.png";
-  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.8.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.7";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.7.png";
-  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.9.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.8";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.8.png";
-  } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V1.0.png"){
-    document.getElementById("pVersioner").innerHTML = "Version 0.9";
-    document.getElementById("imgVersioner").src = "../img/slideshow/V0.9.png";
-  } 
+
+  setTimeout(function(){
+    slideShow();
+  }, 2000);
+  
 }
+  
+
+
+
+// function rightArrow() {
+
+  
+//   document.getElementById("leftArrow").style.visibility = "visible";
+
+//   if(document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.1.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.2";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.2.png";
+//   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.2.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.3";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.3.png";
+//   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.3.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.4";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.4.png";
+//   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.4.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.5";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.5.png";
+//   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.5.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.6";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.6.png";
+//   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.6.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.7";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.7.png";
+//   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.7.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.8";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.8.png";
+//   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.8.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.9";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.9.png";
+//   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.9.png"){
+//     document.getElementById("rightArrow").style.visibility = "hidden";
+//     document.getElementById("pVersioner").innerHTML = "Version 1.0";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V1.0.png";
+    
+//   } 
+// }
+
+// function leftArrow() {
+
+//   document.getElementById("rightArrow").style.visibility = "visible";
+
+//   if(document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.1.png"){
+//     document.getElementById("leftArrow").style.visibility = "hidden";
+//     document.getElementById("pVersioner").innerHTML = "Version 0.1";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.1.png";
+//   }
+//   else if(document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.2.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.1";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.1.png";
+//   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.3.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.2";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.2.png";
+//   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.4.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.3";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.3.png";
+//   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.5.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.4";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.4.png";
+//   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.6.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.5";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.5.png";
+//   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.7.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.6";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.6.png";
+//   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.8.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.7";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.7.png";
+//   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.9.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.8";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.8.png";
+//   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V1.0.png"){
+//     document.getElementById("pVersioner").innerHTML = "Version 0.9";
+//     document.getElementById("imgVersioner").src = "../img/slideshow/V0.9.png";
+//   } 
+// }
 
 
 

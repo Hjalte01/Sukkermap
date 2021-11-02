@@ -57,7 +57,7 @@ html {
 #imgVersioner {
   width: auto;
   height: auto;
-  object-fit: cover;
+  object-fit: contain;
   position: relative;
 }
 
