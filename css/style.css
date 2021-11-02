@@ -22,13 +22,6 @@ html, body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#updated {
-    font-size: 12px;
-    color: red;
-    padding: 0 1rem 0 1rem;
-    margin-left: auto;
-}
-
 body {
     margin: 0;
     overflow-x: hidden;
@@ -156,6 +149,9 @@ input:checked + .slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+.opdeling:last-child{
+    margin: auto 10px auto auto;
 }
 
 .displayContainerForInputs {
