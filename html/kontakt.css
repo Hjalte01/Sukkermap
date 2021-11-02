@@ -1,21 +1,26 @@
 #typeWriter1 {
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     display: block;
 }
 
 .centerBox{
-    display: flex;
+    width: 100vw;
+    height: calc(100vh - 7.5rem);
+    display: inline-flex;
     flex-direction: row;
-    margin: auto 300px;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
 }
 
 
 #email {
+    font-size: 20px;
     color: blue;
     display: inherit;
-    padding-left: 0.2rem;
+    padding-left: 0.3rem;
 }
 
 body {

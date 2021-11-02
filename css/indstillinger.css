@@ -62,7 +62,7 @@
 #hjælpereNavigation {
     display: none;
     color: white;
-    font-size: 32px;
+    font-size: 1.3rem;
     font-weight: bold;
     position: fixed;
     z-index: 2;
@@ -93,7 +93,7 @@
 /*Close button */
 .xClose {
     color: #df2727;
-    font-size: 75px;
+    font-size: 60px;
     /* position: absolute; */
     height: 3rem;
     position: relative;
@@ -121,7 +121,7 @@
     width: 0;
     height: 0;
     position: relative;
-    top: 0.7rem;
+    top: 0.4rem;
     left: 0.5rem;
     border-radius: 0 35%;
 }
@@ -131,7 +131,7 @@
     width: 1.8rem;
     height: 0.25rem;
     border-radius: 15% 0 0 15%;
-    top: -0.9rem;
+    top: -1.15rem;
     left: 0.6rem;
 }
 

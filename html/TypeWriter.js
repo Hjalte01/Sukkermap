@@ -3,7 +3,7 @@ var i = 0;
 var ii = 0;
 var txt = "Kontakt os via vores email:";
 var emailTxt = "sukkermapnext@gmail.com";
-var speed = 20;
+var speed = 30;
 
 window.onload = function typeWriter() {
   if (i < txt.length) {

@@ -221,6 +221,7 @@ function newPage(intPage) {
 // Sldeishow 
 // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto
 
+//animation knap for navbar
 (localStorage.getItem("animationSelect.navbarProject").onChange = function(){
   if(localStorage.getItem("animationSelect.navbarProject") == "Off"){
       speed = 0;

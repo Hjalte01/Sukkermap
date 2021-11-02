@@ -2,7 +2,6 @@ var popupBoxContainer = document.getElementById("popupBox");
 var btnOpen = document.getElementById("btnOpen");
 var xClose = document.getElementsByClassName("xClose")[0];
 var tilbageBtn = document.getElementById("arrowBtn");
-var hjælpBtn = document.getElementsByClassName("content-divider-sections hjælpBtn")[0];
 var defaultBtn = document.getElementsByClassName("content-divider-sections defaultBtn")[0];
 var hjælpereNavigation = document.getElementById("hjælpereNavigation");
 var hjælpereContainer = document.getElementById("hjælpereContainer");
@@ -14,6 +13,7 @@ var gridContainer = {
     selectoren: document.getElementsByClassName("grid-container one")[0],
     farverOgHastigheder: document.getElementsByClassName("grid-container two farverOgHastigheder")[0],
     animation: document.getElementsByClassName("grid-container two animation")[0],
+    hjælp: document.getElementsByClassName("grid-container one hjælp")[0],
 }
 // farve/hastighed selectoren
 var farveSelect = {
@@ -40,6 +40,13 @@ var andetFarveInp = {
 var animationSelect = {
     animation: document.getElementsByClassName("content-divider-sections animation")[0],
     navbarProject: document.getElementsByClassName("containerForCheckbox navbarProject")[0],
+    områder: document.getElementsByClassName("containerForCheckbox områder")[0],
+}
+// hjælp selectoren
+var hjælpSelect = {
+    hjælp: document.getElementsByClassName("content-divider-sections hjælp")[0],
+    forbedringer: document.getElementsByClassName("content-divider-sections forbedringerBtn")[0],
+    koordinater: document.getElementsByClassName("content-divider-sections koordinaterBtn")[0],
 }
 
 
@@ -47,6 +54,7 @@ var animationSelect = {
 // local storage
 window.onload = function(){
     animationSelect.navbarProject.onclick();
+    animationSelect.områder.onclick();
     farveSelect.rute.onchange(localStorage.getItem("farveInp.rute"));
     farveSelect.vejledningsPil.onchange(localStorage.getItem("farveInp.vejledningsPil"));
     farveSelect.etagePil.onchange(localStorage.getItem("farveInp.etagePil"));
@@ -225,7 +233,7 @@ animationSelect.animation.onclick = function() {
     gridContainer.animation.style.display = "grid";
     tilbageBtn.style.visibility = "visible";
 }
-// on/off animation på navbar i om projectet
+// on/off animation på navbar i om projectet.js
 animationSelect.navbarProject.onclick = function() {
     if(typeof localStorage.getItem("animationSelect.navbarProject") !== "string") {
         animationSelect.navbarProject.children[0].textContent = "On";
@@ -246,17 +254,50 @@ animationSelect.navbarProject.onclick = function() {
     localStorage.setItem("animationSelect.navbarProject", animationSelect.navbarProject.children[0].textContent);
 }
 
+// on/off animation på områder i index.js
+animationSelect.områder.onclick = function() {
+    if(typeof localStorage.getItem("animationSelect.områder") !== "string") {
+        animationSelect.områder.children[0].textContent = "On";
+    } else if(animationSelect.områder.children[0].textContent == "start"){
+        animationSelect.områder.children[0].textContent = localStorage.getItem("animationSelect.områder");
+    } else if(localStorage.getItem("animationSelect.områder") == "On"){
+        animationSelect.områder.children[0].textContent = "Off";
+    } else if(localStorage.getItem("animationSelect.områder") == "Off"){
+        animationSelect.områder.children[0].textContent = "On";
+    } 
 
+
+    if(animationSelect.områder.children[0].textContent == "On"){
+        animationSelect.områder.style.background = "green";
+    } else {
+        animationSelect.områder.style.background = "red"
+    }
+    localStorage.setItem("animationSelect.områder", animationSelect.områder.children[0].textContent);
+}
 
 //HjÆLP SELECTOREN
 //Knap for indstillinger til hjælp med kordinatter
-hjælpBtn.onclick = function () {
+hjælpSelect.hjælp.onclick = function() {
+    gridContainer.selectoren.style.display = "none";
+    gridContainer.hjælp.style.display = "grid";
+    tilbageBtn.style.visibility = "visible";
+}
+// forbedringer knap
+hjælpSelect.forbedringer.onclick = function () {
     popupBoxContainer.style.display = "";
-    hjælpereNavigation.style.display = "block";
     containerForInputs.style.display = "";
+    window.open(
+        "https://docs.google.com/forms/d/e/1FAIpQLSep8enf79hcOt7ceU7cjjck3FUsWZuqNVXYul5Xf5ZrG9XI3g/viewform?usp=pp_url&entry.1017160509=",
+        "_blank"
+    );
 };
-
-//Sender en over til sheet formel, som hjælper os
+//tilføj lokaler knap
+hjælpSelect.koordinater.onclick = function () {
+    popupBoxContainer.style.display = "";
+    containerForInputs.style.display = "";
+    hjælpereNavigation.style.display = "block";
+};
+//Sender en over til sheet formel med koordinater på ens tryk
 hjælpereNavigation.onclick = function () {
     hjælpereNavigation.style.display = "";
     document.body.style.overflow = "unset";
@@ -268,10 +309,10 @@ hjælpereNavigation.onclick = function () {
 };
 
 
-
 // DEFAULT SELECTOREN
 defaultBtn.onclick = function() {
     localStorage.clear();
     location.reload();
     return false;
 };
+
