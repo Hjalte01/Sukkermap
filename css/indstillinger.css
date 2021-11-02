@@ -275,7 +275,7 @@ select {
 
 
 
-@media screen and (max-width: 880px) {
+@media screen and (max-width: 775px) {
     .popupBox-content {
         width: 100%;
     }

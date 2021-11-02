@@ -16,9 +16,9 @@ function setup() {
 		1500 * 0.4933 * 0.75
 	);
 
-  if (windowWidth < 880) {
-		myCanvas.elt.style.width = "calc(880px - 37px)";
-		myCanvas.elt.style.height = "calc((880px - 37px) * 0.4933)";
+  if (windowWidth < 775) {
+		myCanvas.elt.style.width = "calc(775px - 37px)";
+		myCanvas.elt.style.height = "calc((775px - 37px) * 0.4933)";
 	}else {
 	 	myCanvas.elt.style.width = "calc(100vw - 37px)";
 		myCanvas.elt.style.height = "calc((100vw - 37px) * 0.4933)";

@@ -113,8 +113,8 @@
 
 }
 
-/* Hvis skærmen er under 880px så vil css ændres til det her. Det er til mobil*/
-@media screen and (max-width: 880px) {
+/* Hvis skærmen er under 775px så vil css ændres til det her. Det er til mobil*/
+@media screen and (max-width: 775px) {
      body {
         height:100%;
     }
@@ -139,6 +139,7 @@
     #fra,
     #til {
         text-align: center;
+        margin-left: 0;
     }
 
     form {
