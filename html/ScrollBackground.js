@@ -84,6 +84,9 @@ preloadImages();
 
 //-- Slideshow
 
+// var arraySlide = [["../img/slideshow/V0.1.png", "1"],["Version 0.1", "1"]];
+// console.log(arraySlide[0][0] + " " + arraySlide[1][0]);
+
 document.getElementById("pVersioner").innerHTML = "Version 0.1";
 
 slideShow();
@@ -106,7 +109,6 @@ function rightArrow() {
   document.getElementById("leftArrow").style.visibility = "visible";
 
   if(document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.1.png"){
-    console.log("This is true")
     document.getElementById("pVersioner").innerHTML = "Version 0.2";
     document.getElementById("imgVersioner").src = "../img/slideshow/V0.2.png";
   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.2.png"){
@@ -130,9 +132,7 @@ function rightArrow() {
   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.8.png"){
     document.getElementById("pVersioner").innerHTML = "Version 0.9";
     document.getElementById("imgVersioner").src = "../img/slideshow/V0.9.png";
-    console.log("this works first")
   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.9.png"){
-    console.log("this works")
     document.getElementById("rightArrow").style.visibility = "hidden";
     document.getElementById("pVersioner").innerHTML = "Version 1.0";
     document.getElementById("imgVersioner").src = "../img/slideshow/V1.0.png";

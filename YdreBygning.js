@@ -23,29 +23,20 @@ class YdreBygning {
     }
 
     områder(){
-        figurer[3].pointConnections([[23, 98], [114, 40], [120, 50], [187, 25], [294, 25], [295, 118], [191, 121], [78, 183]], "LINES", "rgb(0, 255, 0)", "Biografen");
-        figurer[4].pointConnections([[180, 242], [257, 244], [257, 370], [180, 370]], "LINES", "rgb(0, 255, 0)", "Kantinen");
-        figurer[5].pointConnections([[258, 238], [408, 239], [408, 379], [258, 378]], "LINES", "rgb(0, 255, 0)", "Tårnet");
-        figurer[6].pointConnections([[410, 270], [509, 270], [509, 375], [410, 375]], "LINES", "rgb(0, 255, 0)", "Træværkstedet");
-        figurer[7].pointConnections([[509, 270], [541, 270], [541, 344], [509, 344]], "LINES", "rgb(0, 255, 0)", "Adminstration", [460, 250]);
-
-
-
-
+        figurer[3].pointConnections([[23, 98], [114, 40], [120, 50], [187, 25], [294, 25], [295, 118], [191, 121], [78, 183]], "LINES", "rgb(0, 200, 0)", "Biografen", undefined, [125, 70, 75, 23]);
+        figurer[4].pointConnections([[180, 242], [257, 244], [257, 370], [180, 370]], "LINES", "rgb(0, 200, 0)", "Kantinen", undefined, [184, 296, 68, 20]);
+        figurer[5].pointConnections([[258, 238], [408, 239], [408, 379], [258, 378]], "LINES", "rgb(0, 200, 0)", "Tårnet", undefined, [307, 297, 54, 20]);
+        figurer[6].pointConnections([[410, 270], [509, 270], [509, 375], [410, 375]], "LINES", "rgb(0, 200, 0)", "Træværksted", undefined, [410, 313, 99, 18]);
+        figurer[7].pointConnections([[509, 270], [541, 270], [541, 375], [509, 375]], "LINES", "rgb(0, 200, 0)", "Administration", [460, 250], [408, 240, 102, 18]);
         figurer[8].pointConnections([[512, 253], [522, 253], [522, 264], [513, 264], [525, 280], [537, 264], [528, 264], [528, 248], [512, 248]], undefined, "rgb(255, 165, 0)", undefined, [450, 400]);
-        figurer[9].pointConnections([[509, 344], [541, 344], [541, 375], [509, 375]], "LINES", "rgb(0, 255, 0)", "Studievejledning", [450, 400]);
-        figurer[10].pointConnections([[512, 397], [522, 397], [522, 386], [513, 386], [525, 370], [537, 386], [528, 386], [528, 402], [512, 402]], undefined, "rgb(255, 165, 0)", undefined, [450, 400]);
+        figurer[9].pointConnections([[541, 344], [573, 344], [573, 375], [541, 375]], "LINES", "rgb(0, 200, 0)", "Studievejledning", [480, 400], [419, 389, 123, 21]);
+        figurer[11].pointConnections([[392, 27], [635, 23], [635, 121], [394, 118]], "LINES", "rgb(0, 200, 0)", "Metalværkstedet", undefined, [452, 61, 125, 19]);
+        figurer[12].pointConnections([[540, 142], [650, 142], [651, 163], [715, 163], [715, 214], [670, 214], [670, 269], [542, 269]], "LINES", "rgb(0, 200, 0)", "Lektiecafe", undefined, [605, 187, 79, 18]);
+        figurer[13].pointConnections([[670, 214], [773, 214], [913, 360], [913, 376], [670, 374]], "LINES", "rgb(0, 200, 0)", "Lærerværelset", undefined, [733, 297, 110, 19]);
+        figurer[14].pointConnections([[541, 375], [919, 376], [1016, 446], [541, 447]], "LINES", "rgb(0, 200, 0)", "Atriumgården", undefined, [703, 401, 102, 20]);
+        figurer[15].pointConnections([[540, 448], [1015, 446], [1102, 508], [1101, 535], [540, 535]], "LINES", "rgb(0, 200, 0)", "Fysik/Kemi/Biologi/Auditorium", [820, 493], [712, 482, 216, 21]); 
+        figurer[10].pointConnections([[544, 397], [554, 397], [554, 386], [545, 386], [557, 370], [569, 386], [560, 386], [560, 402], [544, 402]], undefined, "rgb(255, 165, 0)", undefined, [450, 400]);
 
-
-
-
-
-
-        figurer[11].pointConnections([[392, 27], [635, 23], [635, 121], [394, 118]], "LINES", "rgb(0, 255, 0)", "Metalværksted");
-        figurer[12].pointConnections([[540, 142], [650, 142], [651, 163], [715, 163], [715, 214], [670, 214], [670, 269], [542, 269]], "LINES", "rgb(0, 255, 0)", "Lektiecafe");
-        figurer[13].pointConnections([[670, 214], [773, 214], [913, 360], [913, 376], [670, 374]], "LINES", "rgb(0, 255, 0)", "Lærerværelse");
-        figurer[14].pointConnections([[541, 375], [919, 376], [1016, 446], [541, 447]], "LINES", "rgb(0, 255, 0)", "Atriumgården");
-        figurer[15].pointConnections([[540, 448], [1015, 446], [1102, 508], [1101, 535], [540, 535]], "LINES", "rgb(0, 255, 0)", "Fysik/Kemi/Biologi/auditorium", [820, 493]); 
     }
     /*
     Når man kalder denne metode, så kan man give den punkter, som danner en figur. Derefter kan man specifikkere figuren
@@ -54,7 +45,7 @@ class YdreBygning {
     Det andet element viser fra mus pos. til punkterne. 
     f.eks - variable.pointConnections([punkt0], [punkt1], [punkt2], ext.], LINES/undefined, farve(rgb), text)
     */
-    pointConnections(xy, fyld, fillFarve, texts, textPos) {
+    pointConnections(xy, fyld, fillFarve, texts, textPos, rectPos) {
         // this.visuelt = visuelt; //viser visuelt, hvis true
         if(this.textPos == undefined) this.textPos = textPos;
         if (this.xy == undefined) this.xy = xy;
@@ -86,10 +77,17 @@ class YdreBygning {
         vertex(this.xy[0][0], this.xy[0][1]);
         endShape();
 
-        fill(255, 165, 0);
-        stroke(255, 0, 0);
-        strokeWeight(1);
+
+        fill(0);
+        if(rectPos != undefined) rect(rectPos[0], rectPos[1], rectPos[2], rectPos[3]);
+
+        fill(255);
+        noStroke();
+        // stroke(255, 0, 0);
+        // strokeWeight(1);
         textSize(16);
+
+
 
         textAlign(CENTER, CENTER);
         if (texts != undefined) {

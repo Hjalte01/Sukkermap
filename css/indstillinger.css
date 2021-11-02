@@ -13,7 +13,6 @@
 .indstillingerDiv {
     width: 65px;
     height: 65px;
-    margin-right: 10px;
     overflow: hidden;
 }
 
@@ -22,6 +21,7 @@
     width: 65px;
     height: 65px;
     animation: indstillinger-img-animation 3s linear 0;
+
 }
 
 .indstillinger:hover {
@@ -276,7 +276,7 @@ select {
 
 
 
-@media screen and (max-width: 865px) {
+@media screen and (max-width: 880px) {
     .popupBox-content {
         width: 100%;
     }
