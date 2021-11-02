@@ -53,7 +53,7 @@ const updateImage = (index) => {
     fadeIn(50,"div1",index);
     fadeIn(130,"div2",index);
     fadeIn(200,"div3", index);
-    fadeIn(210,"versionText", index);
+    fadeIn(200,"versionText", index);
     //fadeIn(undefined,300,undefined,"divFooter", index);
 
   context.drawImage(image, 0, 0, canvas.width, canvas.height);
