@@ -14,10 +14,11 @@ canvas.height = window.innerHeight;
 const currentFrame = (index) =>
   `../img/scrollBackground/${index
     .toString()
-    .padStart(4, "0")}.jpg`;
+    .padStart(4, "0")
+  }.jpg`;
 
 const preloadImages = () => {
-  for (let i = 1; i < 300; i++) {
+  for (let i = 1; i <= frameCount; i++) {
     const image = new Image();
     image.src = currentFrame(i);
   }
