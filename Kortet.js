@@ -78,7 +78,7 @@ function draw() {
         push();
         fill(0, 128, 255);
         strokeWeight(2);
-        rotate(52.49*PI/180);
+        rotate(55.5*PI/180);
         for(let i = 14; i >= 0; i-= 13){
             ellipse(ellipseCord.x, ellipseCord.y , i, i);
         }
@@ -159,7 +159,6 @@ function showPosition(position) {
 
       testX = position.coords.latitude;
       testY = position.coords.longitude;
-    //   console.log(testX + ", " + testY)
 
 
     var cordAspectRatio = {
@@ -170,8 +169,7 @@ function showPosition(position) {
     ellipseCord.x = (cord.startX - testX)*1000000*cordAspectRatio.x;
     ellipseCord.y = (testY - cord.startY)*1000000*cordAspectRatio.y; 
 
-    // console.log(ellipseCord.x.toFixed(0) + ", " + ellipseCord.y.toFixed(0));
-    // alert(ellipseCord.x.toFixed(0) + ", " + ellipseCord.y.toFixed(0));
+    console.log(ellipseCord.x.toFixed(0) + ", " + ellipseCord.y.toFixed(0));
 }
 
 
