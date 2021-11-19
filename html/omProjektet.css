@@ -54,6 +54,14 @@ html {
   height: 500px;
 }
 
+#div4 {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  bottom: 10%;
+}
+
+
 #imgVersioner {
   width: auto;
   height: auto;
