@@ -78,7 +78,7 @@ function draw() {
         push();
         fill(0, 128, 255);
         strokeWeight(2);
-        rotate(55.5*PI/180);
+        rotate(57*PI/180);
         for(let i = 14; i >= 0; i-= 13){
             ellipse(ellipseCord.x, ellipseCord.y , i, i);
         }
