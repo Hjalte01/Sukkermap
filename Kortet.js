@@ -96,7 +96,7 @@ function draw() {
 
 setInterval(() => {
     cordLocation();
-}, 2000);
+}, 5000);
 
 
 window.onclick = function(){
