@@ -4,9 +4,13 @@
 const html = document.documentElement;
 const canvas = document.getElementById("scroll-background");
 const context = canvas.getContext("2d");
-const frameCount = 299;
+const frameCount = 300;
 
 var x = 10;
+
+var arraySlide = [
+  ["../img/slideshow/V0.1.png", "../img/slideshow/V0.3.png", "../img/slideshow/V0.5.png","../img/slideshow/V0.7.png", "../img/slideshow/May_3_2021.png", "../img/slideshow/Aug_31_2021.png", "../img/slideshow/Sep_22_2021.png","../img/slideshow/Oct_12_2021.png", "../img/slideshow/Oct_21_2021.png", "../img/slideshow/nov_1_2021.png"],
+  ["11. februar 2021", "13. februar 2021", "14. februar 2021", "22. februar 2021", "3. maj 2021", "31. august 2021", "22. september 2021", "12. oktober 2021", "21. oktober 2021", "1. november 2021"]];
 
 canvas.width = window.innerWidth;   /// integer values
 canvas.height = window.innerHeight;
@@ -16,10 +20,15 @@ const currentFrame = (index) =>
     .toString()
     .padStart(4, "0")}.jpg`;
 
-const preloadImages = () => {
-  for (let i = 1; i < 300; i++) {
+function preloadImages() {
+  for (let i = 1; i <= frameCount; i++) {
     const image = new Image();
     image.src = currentFrame(i);
+  }
+
+  for (let ii = 0; ii < arraySlide[0].length; ii++ ) {
+      const image2 = new Image();
+      image2.src = arraySlide[0][ii];
   }
 };
 
@@ -96,7 +105,7 @@ slideShow();
 
 function slideShow() {
 
-  document.getElementById("imgVersioner").src = arraySlide[0][i]
+  document.getElementById("imgVersioner").src = arraySlide[0][i];
   document.getElementById("pVersioner").innerHTML = arraySlide[1][i];
 
   if(i == (arraySlide[0].length - 1)) {
