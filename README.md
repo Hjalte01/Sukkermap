@@ -1,2 +1,2 @@
 # Sukkermap
-Map af Sukkertoppen gym.
+Map af Sukkertoppen gym. 

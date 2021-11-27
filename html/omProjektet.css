@@ -114,6 +114,13 @@ body {
   z-index: -1;
 }
 
+/* Fikser "om projektet" efter ændring i navbar i style.css */
+li:nth-of-type(1) {
+  margin-right: 0;
+}
+ul.topNav {
+  width: initial;
+}
 
 /* Pc and ipad */
 @media screen and (min-width: 851px) {

@@ -1,3 +1,4 @@
+indexHtml = true;
 let kortImg;
 var planTegningImg;
 let canvasHeightDiff = 0.4933;
@@ -12,6 +13,8 @@ var ellipseCord = {
     x: undefined,
     y: undefined,
 }
+var GpsInterval;
+var scrollGap;
 
 function setup() {
 
@@ -20,15 +23,19 @@ function setup() {
 		1500 * 0.4933 * 0.75
 	);
 
-    if (windowWidth < 775) {
-            myCanvas.elt.style.width = "calc(775px - 37px)";
-            myCanvas.elt.style.height = "calc((775px - 37px) * 0.4933)";
-        }else {
-            myCanvas.elt.style.width = "calc(100vw - 37px)";
-            myCanvas.elt.style.height = "calc((100vw - 37px) * 0.4933)";
-        }
-    myCanvas.elt.style.margin = "10px";
 
+    myCanvas.elt.style.margin = "10px";
+    if (windowWidth < 775) {
+        myCanvas.elt.style.width = "calc(775px - 20px)";
+        myCanvas.elt.style.height = "calc((775px * 0.4933) - 20px)";
+    }else { 
+        myCanvas.elt.style.width = "calc(100vw - 20px)";
+        myCanvas.elt.style.height = "calc((100vw * 0.4933) - 20px)";
+    }
+    
+
+
+    
 
     myCanvas.parent("canvasErHer");
 
@@ -50,19 +57,18 @@ function setup() {
     søgefelt = new Søg();
 
 
-
-    cordLocation();
+    if(windowWidth > 775){ //gør at hvis der er scrollbar, så tilpasser canvasset sig til det
+        scrollGap = document.body.scrollWidth - document.body.clientWidth;
+        document.querySelector(".topNav :nth-of-type(4)").style.paddingRight = scrollGap + "px";
+        myCanvas.elt.style.width = `calc(100vw - 20px - ${scrollGap}px)`;
+    }
 }
 
 function draw() {
-
-
-  if (
-    popupBoxContainer.style.display == "" &&
-    hjælpereNavigation.style.display == ""
-  ) {
+    
     clear();
     canvasZoom = screen.width;
+
     if (planTegning != undefined) {
       indreTing.indreBygningCanvas();
     } else {
@@ -70,59 +76,45 @@ function draw() {
     }
 
     søgefelt.inputfelt();
-    // if(ellipseCord.x >= 0 && ellipseCord.y >= 0 && ellipseCord.x <= width && ellipseCord.y <= height){
-    //   cordLocation();  
-    // }
 
-    if(ellipseCord.x != undefined && ellipseCord.y  != undefined){
-        push();
-        fill(0, 128, 255);
-        strokeWeight(2);
-        rotate(57*PI/180);
-        for(let i = 14; i >= 0; i-= 13){
-            ellipse(ellipseCord.x, ellipseCord.y , i, i);
-        }
-        // console.log(ellipseCord.x.toFixed(0) + ", " + ellipseCord.y.toFixed(0))
 
-        pop();
+    if(localStorage.getItem("animationSelect.Gps") === "On" && ellipseCord.x != undefined && ellipseCord.y  != undefined){
+        drawingCord();
     }
     
-  }
-
-
-//   cordLocation();
-  
 }
-
-setInterval(() => {
-    cordLocation();
-}, 5000);
-
-
-window.onclick = function(){
-    if(ellipseCord.x.toFixed(0) && ellipseCord.y.toFixed(0)){
-
-    }
-    console.log(`${ellipseCord.x.toFixed(0)}, ${ellipseCord.y.toFixed(0)}
-    ${mouseX}, ${mouseY}`)
-}
-
 
 function preload() {
-  kortImg = loadImage("img/sukkertoppen.png"); //kortet
-  stueImg = loadImage("img/stue.png"); //stue
-  sal1Img = loadImage("img/1.sal.png"); //1.sal
-  sal2Img = loadImage("img/2.sal.png"); //2.sal
-  sal3Img = loadImage("img/3.sal.png"); //3.sal
-  planTegningImg = loadImage("img/plantegningIcon.png");
+	kortImg = loadImage("img/sukkertoppen.png"); //kortet
+	stueImg = loadImage("img/stue.png"); //stue
+	sal1Img = loadImage("img/1.sal.png"); //1.sal
+	sal2Img = loadImage("img/2.sal.png"); //2.sal
+	sal3Img = loadImage("img/3.sal.png"); //3.sal
+	planTegningImg = loadImage("img/plantegningIcon.png");
 }
 
+function drawingCord(){
+    push();
+    fill(0, 128, 255);
+    strokeWeight(2);
+    rotate(53*PI/180);
+    for(let i = 14; i >= 0; i-= 13){
+        ellipse(ellipseCord.x, ellipseCord.y , i, i);
+    }
+    pop();
+}
+
+
+
+
+
+
 function cordLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.watchPosition(showPosition, error, options); //, error, options
-  } else { 
-    console.log("Geolocation is not supported by this browser.");
-  }
+	if (navigator.geolocation) {
+		navigator.geolocation.watchPosition(showPosition, error, options); //, error, options
+	} else { 
+		console.log("Geolocation is not supported by this browser.");
+	}
 }
 
 var options = {
@@ -169,7 +161,20 @@ function showPosition(position) {
     ellipseCord.x = (cord.startX - testX)*1000000*cordAspectRatio.x;
     ellipseCord.y = (testY - cord.startY)*1000000*cordAspectRatio.y; 
 
-    console.log(ellipseCord.x.toFixed(0) + ", " + ellipseCord.y.toFixed(0));
+
+    // console.log(ellipseCord.x.toFixed(0) + ", " + ellipseCord.y.toFixed(0));
 }
+
+
+animationSelect.Gps.children[0].onchange = function(){
+    
+    if(localStorage.getItem("animationSelect.Gps") === "On"){
+        GpsInterval = setInterval(function(){cordLocation();}, 4000);
+    }else{
+        clearInterval(GpsInterval);
+    }
+
+};
+
 
 
