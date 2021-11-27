@@ -3,7 +3,7 @@
   <title>Sukkermap</title>
   <link rel="icon" href="img/favicon-32x32.png" />
   <!-- iphone icon når man vil tilføje appen - nok også android det stod der, men er ikke testet-->
-  <link rel="apple-touch-icon-precomposed" href="img/Sukkermap_logo.png" /> 
+  <link rel="apple-touch-icon-precomposed" href="img/Sukkermap_logo.png" />
 
 
   <head>
@@ -34,42 +34,42 @@
     <div id="footerFix">
     <header>
       <ul class="topNav">
-        <li><a href="html/kontakt.html">Kontakt os</a></li>
-        <!-- <li>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Donation</a>
-        </li> -->
-        <li><a href="html/projektet.html">Om projektet</a></li>
-        <li><a href="index.html">Sukkermap</a></li>
-        <a href="index.html">
-          <img src="img/Sukkermap_logo.png" alt="Sukkermap logo" id="sukkermapLogo">
-        </a>
-
-      </ul>
+        <li><a href="index.html">
+            <img onclick='this.style.transform = "scale(0)"' src="img/Sukkermap_logo.png" alt="Sukkermap logo" id="sukkermapLogo">
+        </a></li>
       
+        <li><a href="index.html">Sukkermap</a></li>
+        <li><a href="html/projektet.html">Om projektet</a></li>
+        <li><a href="html/kontakt.html">Kontakt os</a></li>
+        
+      </ul>
+
     </header>
 
     <div id="ScrollX" style="position: relative;">
       <!-- Drowdown i mobil-mode -->
 
       <div class="navbar" id="navbar">
-        <img src="img/Sukkermap_logo.png" alt="Sukkermap logo" id="sukkermapLogo">
+        <div tabindex="0" onkeydown="dropDownPhone(event, [13, 32, undefined], indexRefresh)">
+          <img src="img/Sukkermap_logo.png" alt="Sukkermap logo" id="sukkermapLogo">
+        </div>
+        
         <p class="mobilParagraph">Sukkermap</p>
-        <button class="dropbtn" onclick="myFunction()"> 
+        <button class="dropbtn" onclick="myFunction()">
           <p class="arrow down"></p>
         </button>
         <div id="myDropdown" class="dropdown-content">
           <a href="index.html">Sukkermap</a>
           <a href="html/projektet.html">Om projektet</a>
-          <!-- <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Donation</a> -->
           <a href="html/kontakt.html">Kontakt os</a>
         </div>
       </div>
 
-      <div type="button" class="dropbtnForInputs" id="dropbtnForInputs" tabindex="-1" onclick="dropDownPhone()">
+      <div type="checkbox" class="dropbtnForInputs" id="dropbtnForInputs" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, 40], containerForInputsFunc)">
         <p class="arrow down"></p>
       </div>
 
-      
+
     </div>
     <!--ScrollX ender her -->
 
@@ -231,6 +231,7 @@
           <p id="kortEllerPlan">Kort/Plantegning:</p>
           <label class="switch">
             <input
+              tabindex="-1"
               type="checkbox"
               id="kortEllerPlanKnap"
               onclick="kortEllerPlanSwitch()"
@@ -257,31 +258,29 @@
     </div>
 
 
-
-
     <!-- Indstillinger popup boxen-->
     <div id="popupBox" class="popupBoxClass">
       <div class="popupBox-content">
         <!-- Title til indstillinger -->
         <div id="indstillingTitleBar">
-          <div id="arrowBtn">
+          <div id="arrowBtn" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, undefined], tilbageBtn.onclick)">
             <div class="arrow left"></div>
             <div id="arrowStreg"></div>
           </div>
-          <h1 class="indstillingØvreParagraph">Indstillinger</h1>  
-          <span class="xClose" id="xBtn">&times;</span>
+          <h1 class="indstillingØvreParagraph">Indstillinger</h1>
+          <span class="xClose" id="xBtn" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, undefined], xClose.onclick)">&times;</span>
         </div>
-  
+
         <!-- Grid container one -->
         <div class="grid-container one">
           <!-- farve/hastighed selectoren -->
-          <div class="content-divider-sections farverOgHastigheder">Farver og hastigheder</div>
+          <div class="content-divider-sections farverOgHastigheder" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, undefined], farveSelect.farverOgHastigheder.onclick)">Farver og hastigheder</div>
           <!-- animation selectoren -->
-          <div class="content-divider-sections animation">Animation</div>
+          <div class="content-divider-sections animation" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, undefined], animationSelect.animation.onclick)">Animation</div>
           <!-- Hjælp til at danne flere lokaler -->
-          <div class="content-divider-sections hjælp">Hjælp os</div>
+          <div class="content-divider-sections hjælp" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, undefined], hjælpSelect.hjælp.onclick)">Hjælp os</div>
           <!-- Set to default -->
-          <div class="content-divider-sections defaultBtn">Sæt alt til Default</div>
+          <div class="content-divider-sections defaultBtn" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, undefined], defaultBtn.onclick)">Sæt alt til Default</div>
           <!-- Billeder til hjemmerskærm - kommer snart -->
         </div>
 
@@ -292,7 +291,7 @@
           <!-- farve på ruten -->
             <label for="farveRute" class="content-divider-sections">Farve på rute</label>
             <div class="content-divided-sections">
-              <select id="farveRute" style="width: 150px; height: 25px">
+              <select id="farveRute" style="width: 150px; height: 25px;" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, undefined], farveSelect.rute.onchange)">
                 <option value="rød">Rød</option>
                 <option value="pink">Pink</option>
                 <option value="grøn">Grøn</option>
@@ -305,7 +304,7 @@
           <!-- farve på vejlednings pil -->
           <label for="farveVejledningsPil" class="content-divider-sections">Farve på vejlednings pil</label>
           <div class="content-divided-sections">
-            <select id="farveVejledningsPil" style="width: 150px; height: 25px">
+            <select id="farveVejledningsPil" style="width: 150px; height: 25px" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, undefined], farveSelect.vejledningsPil.onchange)">
               <option value="rød">Rød</option>
               <option value="pink">Pink</option>
               <option value="grøn" selected="selected">Grøn</option>
@@ -318,7 +317,7 @@
           <!-- farve på etage pil -->
           <label for="farveEtagePil" class="content-divider-sections">Farve på etage pil</label>
           <div class="content-divided-sections">
-            <select id="farveEtagePil" style="width: 150px; height: 25px">
+            <select id="farveEtagePil" style="width: 150px; height: 25px" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, undefined], farveSelect.etagePil.onchange)">
               <option value="rød" selected="selected">Rød</option>
               <option value="pink">Pink</option>
               <option value="grøn">Grøn</option>
@@ -332,7 +331,7 @@
            <label for="hastighedPil" class="content-divider-sections">Hastighed på vejledningspil</label>
            <div class="content-divided-sections two-sections">
              <label for="hastighedPil" id="hastighedPilLabel"></label>
-             <input id="hastighedPil" value="25" type="range" min="0" max="100"/>
+             <input id="hastighedPil" value="25" type="range" min="0" max="100" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, undefined], document.getElementById('hastighedPil').oninput)"/>
            </div>
         </div>
 
@@ -341,14 +340,21 @@
           <!-- animation på om projectet navbar -->
           <label for="navbarProject" class="content-divider-sections mobilHide">Navigationsbar i "Om projektet"</label>
             <div class="content-divided-sections mobilHide">
-              <div class="containerForCheckbox navbarProject" type="button">
+              <div class="containerForCheckbox navbarProject" type="button" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, undefined], animationSelect.navbarProject.onclick)">
                 <p>start</p>
               </div>
             </div>
             <!-- animation på områderne -->
             <label for="områder" class="content-divider-sections">Områder vises</label>
             <div class="content-divided-sections">
-              <div class="containerForCheckbox områder" type="button">
+              <div class="containerForCheckbox områder" type="button" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, undefined], animationSelect.områder.onclick)">
+                <p>start</p>
+              </div>
+            </div>
+            <!-- animation på GPS -->
+            <label for="Gps" class="content-divider-sections">GPS</label>
+            <div class="content-divided-sections">
+              <div class="containerForCheckbox Gps" type="button" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, undefined], animationSelect.Gps.onclick)">
                 <p>start</p>
               </div>
             </div>
@@ -356,8 +362,8 @@
 
         <!-- Grid container tre - hjælp -->
         <div class="grid-container one hjælp" style="display: none;">
-          <div class="content-divider-sections forbedringerBtn">Ideér til forbedringer</div>
-          <div class="content-divider-sections koordinaterBtn">Hvor, mangler vi at tilføje noget f.eks. et lokale</div>
+          <div class="content-divider-sections forbedringerBtn" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, undefined], hjælpSelect.forbedringer.onclick)">Ideér til forbedringer</div>
+          <div class="content-divider-sections koordinaterBtn" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, undefined], hjælpSelect.koordinater.onclick)">Hvor, mangler vi at tilføje noget f.eks. et lokale</div>
         </div>
 
         

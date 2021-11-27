@@ -21,12 +21,9 @@ var optionsLength = document.getElementById("valgList1").options.length; //læng
 })();
 
 
-
-
 advInput1.oninput = function(){
     advInput1Value = advInput1.value.toLowerCase(); 
      
-
     for (let i = 0; i < valgArray1.length; i++) {
         if (advInput1Value == valgArray1[i]) {
             inputStart = advInput1Value;
@@ -75,3 +72,8 @@ function kortEllerPlanSwitch() {
         triCount.changed = true;
     }
 }
+
+
+
+// skal kun bruges i index, ellers ville jeg sætte den i dropdown.js
+document.querySelector(".dropbtnForInputs#dropbtnForInputs").addEventListener("click", containerForInputsFunc);

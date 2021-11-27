@@ -20,11 +20,13 @@
     box-sizing: border-box;
     width: 65px;
     height: 65px;
-    animation: indstillinger-img-animation 3s linear 0;
+    animation: indstillinger-img-animation 3s linear forwards infinite;
+    animation-play-state: paused;
 }
 
-.indstillinger:hover {
-    animation-iteration-count: infinite;
+.indstillinger:hover,
+.indstillinger:focus-visible {
+    animation-play-state: running; 
 }
 
 @keyframes indstillinger-img-animation {
@@ -77,7 +79,7 @@
 .indstillingØvreParagraph {
     font-family: 'Times New Roman', Times, serif;
     position: relative;
-    margin: 0 auto 1.5rem auto;
+    margin: 0 auto 0rem auto;
 }
 
 
@@ -87,33 +89,42 @@
     flex-direction: row;
     justify-content: center;
     position: relative;
-
+    height: 4rem;
 }
 /*Close button */
 .xClose {
     color: #df2727;
-    font-size: 60px;
-    /* position: absolute; */
-    height: 3rem;
+    font-size: 4rem;
     position: relative;
     top: -1.5rem;
-}
-.xClose:hover,
-.xClose:focus {
-    color: #b41414;
-    text-decoration: none;
     cursor: pointer;
 }
+.xClose:hover {
+    color: #b41414;
+}
+
+.xClose:focus-visible {
+    color: green;
+}  
+
+
 /* tilbage button */
 #arrowBtn{
     width: 3rem;
     height: 2.8rem;
     visibility: hidden;
 }
-#arrowBtn:hover{
+#arrowBtn:hover {
     --arrow-color: #b41414;
     --arrow-streg: #b41414;
 }
+
+#arrowBtn:focus-visible {
+    --arrow-color: green;
+    --arrow-streg: green;
+}
+
+
 #arrowBtn .arrow{
     padding: 8px;
     border-width: 0 4px 4px 0;
@@ -181,7 +192,7 @@ select {
     display: grid;
     grid-auto-rows: minmax(4rem, auto);
     width: 100%;
-    
+
 }
 .grid-container.one{
     grid-template-columns: 100%;
@@ -219,7 +230,10 @@ select {
     font-style: bold;
     font-family: Arial, Helvetica, sans-serif;
 }
-.grid-container.one > div:hover{
+.grid-container.one div:hover{
+    text-shadow: 3px 3px #b41414;
+}
+.grid-container.one div:focus-visible{
     text-shadow: 3px 3px #b41414;
 }
 
@@ -227,6 +241,10 @@ select {
     font-size: 18px;
 }
 
+
+.grid-container.two.animation .containerForCheckbox:focus-visible {
+    opacity: .5;
+}
 
 
 .content-divided-sections {

@@ -28,12 +28,8 @@
     color: white;
     width: 4rem;
     height: 100%;
-    padding: 0;
     background-color: black;
     font-family: inherit;
-    margin: 0;
-    position: relative;
-    float: right;
 }
 
 .dropdown-content {
@@ -79,6 +75,11 @@
     border-width: 1px 2px 2px 2px;
 }
 
+.dropdown-content a:hover,
+.dropdown-content a:focus-visible {
+    background: red;
+}
+
 /* Nav dropdown til mobil */
 .navbar {
     background-color: #121026;
@@ -92,20 +93,33 @@
     left: 0;
     overflow-x: auto;
     overflow-y: hidden;
+    border-bottom: .3125rem solid black;
+    white-space: nowrap;
+}
+
+.navbar div:nth-child(1){
+    border-radius: 50%;
+    transition: box-shadow 1s;
+    margin: .3rem;  
+    height: 4.4rem;
+    width: 4.4rem;
+}
+
+.navbar div:nth-child(1):hover,
+.navbar div:nth-child(1):focus-visible{
+    box-shadow: 0 0 0 0.3rem red;
 }
 
 .mobilParagraph {
     color: white;
     font-size: 2rem;
-    position: absolute;
-    top: 0;
-    right:75px;
-    margin: 0;
-    padding: 1.2rem 0 0 0.5rem;
+    margin: auto 0 auto auto;
+    padding-right: .8rem;
 }
 .dropbtnForInputs {
     display: none;
 }
+
 
 .dropbtnForInputs:hover,
 .dropbtnForInputs:focus {
@@ -147,7 +161,7 @@
     }
 
     .navbar {
-        display: block;
+        display: flex;
     }
     .dropbtn {
         display: block;
@@ -177,11 +191,12 @@
     }
 
     .displayContainerForInputs {
-        display: none;
+        display: block;
         position: absolute;
         z-index: 1;
         background-color: rgba(47, 47, 47, 0.9);
         height: 100%;
+        transform: translateY(-100%);
     }
 
     .dropbtnForInputs .arrow {
@@ -208,5 +223,8 @@
     }
     #etage {
         color: #FFF;
+    }
+    #ScrollX {
+        z-index: 2;
     }
 }

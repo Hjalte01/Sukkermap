@@ -4,7 +4,6 @@ var xClose = document.getElementsByClassName("xClose")[0];
 var tilbageBtn = document.getElementById("arrowBtn");
 var defaultBtn = document.getElementsByClassName("content-divider-sections defaultBtn")[0];
 var hjælpereNavigation = document.getElementById("hjælpereNavigation");
-var hjælpereContainer = document.getElementById("hjælpereContainer");
 var hjælperekoordinater = document.getElementById("hjælperekoordinater");
 var hastighedPil = document.getElementById("hastighedPil").value / 500;
 document.getElementById("hastighedPilLabel").textContent = hastighedPil * 500 + "%";
@@ -41,6 +40,7 @@ var animationSelect = {
     animation: document.getElementsByClassName("content-divider-sections animation")[0],
     navbarProject: document.getElementsByClassName("containerForCheckbox navbarProject")[0],
     områder: document.getElementsByClassName("containerForCheckbox områder")[0],
+    Gps: document.getElementsByClassName("containerForCheckbox Gps")[0],
 }
 // hjælp selectoren
 var hjælpSelect = {
@@ -55,11 +55,11 @@ var hjælpSelect = {
 window.onload = function(){
     animationSelect.navbarProject.onclick();
     animationSelect.områder.onclick();
+    animationSelect.Gps.onclick();
     farveSelect.rute.onchange(localStorage.getItem("farveInp.rute"));
     farveSelect.vejledningsPil.onchange(localStorage.getItem("farveInp.vejledningsPil"));
     farveSelect.etagePil.onchange(localStorage.getItem("farveInp.etagePil"));
     document.getElementById("hastighedPil").oninput(localStorage.getItem("hastighedPil"));
-
 }
 
 
@@ -78,25 +78,38 @@ btnOpen.onclick = function () {
 xClose.onclick = function () {
     popupBoxContainer.style.display = "";
     document.body.style.overflow = "unset";
+    resetFocusVærdier();
 };
+// sletter fokus på de andre værdier når man går fra den første værdi til xClose
+xClose.onfocus = function () {
+    resetFocusVærdier();
+}
+
+function resetFocusVærdier() {
+    document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(1)").style.background = "unset";
+    document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(2)").style.background = "unset";
+    document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(3)").style.background = "unset";
+    document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(4)").style.background = "unset";
+}
+
 
 // Hvis man klikker udenfor popup Boxen, så lukker den
 window.onclick = function (event) {
     if (event.target == popupBoxContainer) {
         popupBoxContainer.style.display = "";
         document.body.style.overflow = "unset";
-    } else if (event.target == hjælpereContainer) {
-        hjælpereContainer.style.display = "";
-        document.body.style.overflow = "unset";
-    }
+        resetFocusVærdier();
+    } 
 };
 
 tilbageBtn.onclick = function(){
     Object.values(gridContainer).forEach(val => {
         if(val.style.display != "none" && val.style.display != ""){
+            console.log(val);
             val.style.display = "none";
             gridContainer.selectoren.style.display = "grid";
             tilbageBtn.style.visibility = "hidden";
+            resetFocusVærdier();
         }
     });
 
@@ -110,7 +123,18 @@ farveSelect.farverOgHastigheder.onclick = function() {
     tilbageBtn.style.visibility = "visible";
 }
 
-// skifter farve på ruten iforhold til select
+//skifter farve på content 1, når man bruger tab
+farveSelect.rute.onfocus = function() {
+    if(keyCode == 9){
+        document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(1)").style.background = "green";
+    }
+    document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(2)").style.background = "unset";
+    document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(3)").style.background = "unset";
+    document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(4)").style.background = "unset";
+    keyCode = null;
+}
+
+// skifter farve på  ruten iforhold til select
 farveSelect.rute.onchange = function (localStorageContent) {
     if(typeof localStorageContent === "string") farveSelect.rute.selectedIndex = localStorage.getItem("farveSelect.rute.selectedIndex");
 
@@ -142,6 +166,17 @@ andetFarveInp.rute.onchange = function () {
     farveInp.rute = andetFarveInp.rute.value;
     localStorage.setItem("farveInp.rute", farveInp.rute);
 };
+
+//skifter farve på content 2, når man bruger tab
+farveSelect.vejledningsPil.onfocus = function() {
+    if(keyCode == 9){
+        document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(2)").style.background = "green";
+    }
+    document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(1)").style.background = "unset";
+    document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(3)").style.background = "unset";
+    document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(4)").style.background = "unset";
+    keyCode = null;
+}
 
 // skifter farve på vejledsnings-pilen iforhold til select
 farveSelect.vejledningsPil.onchange = function (localStorageContent) {
@@ -177,6 +212,17 @@ andetFarveInp.vejledningsPil.onchange = function () {
     localStorage.setItem("farveInp.vejledningsPil", farveInp.vejledningsPil);
 };
 
+//skifter farve på content 3, når man bruger tab
+farveSelect.etagePil.onfocus = function() {
+    if(keyCode == 9){
+        document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(3)").style.background = "green";
+    }
+    document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(1)").style.background = "unset";
+    document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(2)").style.background = "unset";
+    document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(4)").style.background = "unset";
+    keyCode = null;
+}
+
 // skifter farve på etage-pilene iforhold til select
 farveSelect.etagePil.onchange = function (localStorageContent) {
     if(typeof localStorageContent === "string") farveSelect.etagePil.selectedIndex = localStorage.getItem("farveSelect.etagePil.selectedIndex");
@@ -209,6 +255,17 @@ andetFarveInp.etagePil.onchange = function () {
     farveInp.etagePil = andetFarveInp.etagePil.value + "75";
     localStorage.setItem("farveInp.etagePil", farveInp.etagePil);
 };
+
+//skifter farve på content 4, når man bruger tab
+document.getElementById("hastighedPil").onfocus = function() {
+    if(keyCode == 9){
+        document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(4)").style.background = "green";
+    }
+    document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(1)").style.background = "unset";
+    document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(2)").style.background = "unset";
+    document.querySelector(".grid-container.two.farverOgHastigheder .content-divided-sections:nth-of-type(3)").style.background = "unset";
+    keyCode = null;
+}
 
 // Hastighed på vejlednings - pilen
 document.getElementById("hastighedPil").oninput = function (localStorageContent) {
@@ -257,7 +314,7 @@ animationSelect.navbarProject.onclick = function() {
 // on/off animation på områder i index.js
 animationSelect.områder.onclick = function() {
     if(typeof localStorage.getItem("animationSelect.områder") !== "string") {
-        animationSelect.områder.children[0].textContent = "On";
+        animationSelect.områder.children[0].textContent = "Off";
     } else if(animationSelect.områder.children[0].textContent == "start"){
         animationSelect.områder.children[0].textContent = localStorage.getItem("animationSelect.områder");
     } else if(localStorage.getItem("animationSelect.områder") == "On"){
@@ -273,6 +330,29 @@ animationSelect.områder.onclick = function() {
         animationSelect.områder.style.background = "red"
     }
     localStorage.setItem("animationSelect.områder", animationSelect.områder.children[0].textContent);
+}
+
+// on/off animation på Gps i index.js
+animationSelect.Gps.onclick = function() {
+    if(typeof localStorage.getItem("animationSelect.Gps") !== "string") {
+        animationSelect.Gps.children[0].textContent = "Off";
+    } else if(animationSelect.Gps.children[0].textContent == "start"){
+        animationSelect.Gps.children[0].textContent = localStorage.getItem("animationSelect.Gps");
+    } else if(localStorage.getItem("animationSelect.Gps") == "On"){
+        animationSelect.Gps.children[0].textContent = "Off";
+    } else if(localStorage.getItem("animationSelect.Gps") == "Off"){
+        animationSelect.Gps.children[0].textContent = "On";
+    } 
+
+
+    if(animationSelect.Gps.children[0].textContent == "On"){    
+        animationSelect.Gps.style.background = "green";
+    } else {
+        animationSelect.Gps.style.background = "red"
+    }
+
+    localStorage.setItem("animationSelect.Gps", animationSelect.Gps.children[0].textContent);
+    animationSelect.Gps.children[0].onchange();
 }
 
 //HjÆLP SELECTOREN
@@ -296,6 +376,7 @@ hjælpSelect.koordinater.onclick = function () {
     popupBoxContainer.style.display = "";
     containerForInputs.style.display = "";
     hjælpereNavigation.style.display = "block";
+    resetFocusVærdier();
 };
 //Sender en over til sheet formel med koordinater på ens tryk
 hjælpereNavigation.onclick = function () {
@@ -315,4 +396,3 @@ defaultBtn.onclick = function() {
     location.reload();
     return false;
 };
-

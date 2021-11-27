@@ -18,36 +18,37 @@
   <section>
     <header id="header">
       <ul class="topNav" id="topNav">
+        <li>
         <a href="../index.html">
           <img
+            onclick='this.style.transform = "scale(0)"'
             src="../img/Sukkermap_logo.png"
             alt="Sukkermap logo"
             id="sukkermapLogo"
           />
         </a>
+        </li>
+        <li>
+          <a id="myLink" href="#" onclick="newPage(1);return false;"
+          >Sukkermap</a
+          >
+        </li>
+        <li><a href="projektet.html">Om projektet</a></li>
         <li>
           <a id="myLink" href="#" onclick="newPage(2);return false;"
             >Kontakt os</a
           >
         </li>
-        <!-- <li>
-          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Donation</a>
-        </li> -->
-        <li><a>Om projektet</a></li>
-        <li>
-          <a id="myLink" href="#" onclick="newPage(1);return false;"
-            >Sukkermap</a
-          >
-        </li>
       </ul>
       <div class="navbar">
-        <a href="../index.html">
+        <div>
           <img
             src="../img/Sukkermap_logo.png"
             alt="Sukkermap logo"
             id="sukkermapLogo"
           />
-        </a>
+        </div>
+          
         <p class="mobilParagraph">Om projektet</p>
         <button class="dropbtn" onclick="myFunction()">
           <p class="arrow down"></p>

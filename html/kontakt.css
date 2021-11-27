@@ -35,7 +35,9 @@ html {
 #inputNavn, #inputEmail, #inputRolle {
     font-size: 16px;
 }
-
+#inputRolle:focus-visible {
+    opacity: .3;
+}
 #btn {
     color: white;
     background-color: rgb(57, 57, 235);
@@ -46,6 +48,9 @@ html {
 #btn:hover {
     cursor: pointer;
     background-color: rgb(28, 28, 190);
+}
+#btn:focus-visible {
+    opacity: .3;
 }
 #email {
   font-size: 20px;
