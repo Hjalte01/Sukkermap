@@ -1,25 +1,46 @@
 //Link to source code https://codepen.io/SabAsan/pen/ExVzaGb
-// YouTube https://youtu.be/rrf0nPjuums?list=LL 
+// YouTube https://youtu.be/rrf0nPjuums?list=LL
 
 const html = document.documentElement;
 const canvas = document.getElementById("scroll-background");
 const context = canvas.getContext("2d");
-const frameCount = 300;
+const frameCount = 500;
 
+canvas.style.opacity = "0.7"
 var x = 10;
 
 var arraySlide = [
-  ["../img/slideshow/V0.1.png", "../img/slideshow/V0.3.png", "../img/slideshow/V0.5.png","../img/slideshow/V0.7.png", "../img/slideshow/May_3_2021.png", "../img/slideshow/Aug_31_2021.png", "../img/slideshow/Sep_22_2021.png","../img/slideshow/Oct_12_2021.png", "../img/slideshow/Oct_21_2021.png", "../img/slideshow/nov_1_2021.png"],
-  ["11. februar 2021", "13. februar 2021", "14. februar 2021", "22. februar 2021", "3. maj 2021", "31. august 2021", "22. september 2021", "12. oktober 2021", "21. oktober 2021", "1. november 2021"]];
+  [
+    "../img/slideshow/V0.1.png",
+    "../img/slideshow/V0.3.png",
+    "../img/slideshow/V0.5.png",
+    "../img/slideshow/V0.7.png",
+    "../img/slideshow/May_3_2021.png",
+    "../img/slideshow/Aug_31_2021.png",
+    "../img/slideshow/Sep_22_2021.png",
+    "../img/slideshow/Oct_12_2021.png",
+    "../img/slideshow/Oct_21_2021.png",
+    "../img/slideshow/nov_1_2021.png",
+  ],
+  [
+    "11. februar 2021",
+    "13. februar 2021",
+    "14. februar 2021",
+    "22. februar 2021",
+    "3. maj 2021",
+    "31. august 2021",
+    "22. september 2021",
+    "12. oktober 2021",
+    "21. oktober 2021",
+    "1. november 2021",
+  ],
+];
 
-canvas.width = window.innerWidth;   /// integer values
+canvas.width = window.innerWidth; /// integer values
 canvas.height = window.innerHeight;
 
 const currentFrame = (index) =>
-  `../img/scrollBackground/${index
-    .toString()
-    .padStart(4, "0")
-  }.jpg`;
+  `../img/scrollBackground2/${index.toString().padStart(4, "0")}.jpg`;
 
 function preloadImages() {
   for (let i = 1; i <= frameCount; i++) {
@@ -27,20 +48,18 @@ function preloadImages() {
     image.src = currentFrame(i);
   }
 
-  for (let ii = 0; ii < arraySlide[0].length; ii++ ) {
-      const image2 = new Image();
-      image2.src = arraySlide[0][ii];
+  for (let ii = 0; ii < arraySlide[0].length; ii++) {
+    const image2 = new Image();
+    image2.src = arraySlide[0][ii];
   }
-};
-
+}
 const image = new Image();
 image.src = currentFrame(1);
 
 image.onload = function () {
-   context.drawImage(image, 0, 0, canvas.width, canvas.height);
+  context.drawImage(image, 0, 0, canvas.width, canvas.height);
   //  context.drawImage(image, 0, 0, 1536, 754);
   //  context.drawImage(image, 0, 0, 1920, 1080);
-
 };
 
 window.addEventListener("scroll", () => {
@@ -57,38 +76,46 @@ window.addEventListener("scroll", () => {
 const updateImage = (index) => {
   image.src = currentFrame(index);
 
-  document.getElementById("div3").style.display= "flex";
-    
-    fadeIn(0,"titel",index);
-    fadeIn(50,"div1",index);
-    fadeIn(130,"div2",index);
-    fadeIn(200,"div3", index);
-    fadeIn(200,"versionText", index);
-    //fadeIn(undefined,300,undefined,"divFooter", index);
+  document.getElementById("div3").style.display = "flex";
+
+  fadeIn(0, "titel", index);
+  fadeIn(50, "div1", index);
+  fadeIn(130, "div2", index);
+  fadeIn(200, "div3", index);
+  fadeIn(200, "versionText", index);
+  //fadeIn(undefined,300,undefined,"divFooter", index);
 
   context.drawImage(image, 0, 0, canvas.width, canvas.height);
   // context.drawImage(image, 0, 0, 1536, 754);
   // context.drawImage(image, 0, 0, 1920, 1080);
 };
 
-function fadeIn(midV,idName, index) {
-
-  var interval1 = 20
-  var interval2 = 25
-  var interval3 = 30
-  var interval4 = 35
+function fadeIn(midV, idName, index) {
+  var interval1 = 20;
+  var interval2 = 25;
+  var interval3 = 30;
+  var interval4 = 35;
   // document.getElementById(idName).style.transform = "matrix(0,0,1,0,1," +(index-115)+")";
-  if (index > (midV - interval1) && index < (midV + interval1)){
-    document.getElementById(idName).style.opacity= "1";
-  } else if (index <= (midV - interval1) && index >= (midV - interval2) || index >= (midV + interval1) && index <= (midV + interval2)) {
-    document.getElementById(idName).style.opacity= "0.75";
-  } else if (index <= (midV - interval2) && index >= (midV - interval3) || index >= (midV + interval2) && index <= (midV + interval3)) {
-    document.getElementById(idName).style.opacity= "0.5";
-  } else if (index <= (midV - interval3) && index >= (midV - interval4) || index >= (midV + interval3) && index <= (midV + interval4)) {
-    document.getElementById(idName).style.opacity= "0.25";
+  if (index > midV - interval1 && index < midV + interval1) {
+    document.getElementById(idName).style.opacity = "1";
+  } else if (
+    (index <= midV - interval1 && index >= midV - interval2) ||
+    (index >= midV + interval1 && index <= midV + interval2)
+  ) {
+    document.getElementById(idName).style.opacity = "0.75";
+  } else if (
+    (index <= midV - interval2 && index >= midV - interval3) ||
+    (index >= midV + interval2 && index <= midV + interval3)
+  ) {
+    document.getElementById(idName).style.opacity = "0.5";
+  } else if (
+    (index <= midV - interval3 && index >= midV - interval4) ||
+    (index >= midV + interval3 && index <= midV + interval4)
+  ) {
+    document.getElementById(idName).style.opacity = "0.25";
   } else {
-    document.getElementById(idName).style.opacity= "0";
-  } 
+    document.getElementById(idName).style.opacity = "0";
+  }
 }
 
 preloadImages();
@@ -96,37 +123,108 @@ preloadImages();
 //-- Slideshow
 
 var arraySlide = [
-  ["../img/slideshow/V0.1.png", "../img/slideshow/V0.3.png", "../img/slideshow/V0.5.png","../img/slideshow/V0.7.png", "../img/slideshow/May_3_2021.png", "../img/slideshow/Aug_31_2021.png", "../img/slideshow/Sep_22_2021.png","../img/slideshow/Oct_12_2021.png", "../img/slideshow/Oct_21_2021.png", "../img/slideshow/nov_1_2021.png"],
-  ["11. februar 2021", "13. februar 2021", "14. februar 2021", "22. februar 2021", "3. maj 2021", "31. august 2021", "22. september 2021", "12. oktober 2021", "21. oktober 2021", "1. november 2021"]];
+  [
+    "../img/slideshow/V0.1.png",
+    "../img/slideshow/V0.3.png",
+    "../img/slideshow/V0.5.png",
+    "../img/slideshow/V0.7.png",
+    "../img/slideshow/May_3_2021.png",
+    "../img/slideshow/Aug_31_2021.png",
+    "../img/slideshow/Sep_22_2021.png",
+    "../img/slideshow/Oct_12_2021.png",
+    "../img/slideshow/Oct_21_2021.png",
+    "../img/slideshow/nov_1_2021.png",
+  ],
+  [
+    "11. februar 2021",
+    "13. februar 2021",
+    "14. februar 2021",
+    "22. februar 2021",
+    "3. maj 2021",
+    "31. august 2021",
+    "22. september 2021",
+    "12. oktober 2021",
+    "21. oktober 2021",
+    "1. november 2021",
+  ],
+];
 
 document.getElementById("pVersioner").innerHTML = "Version 0.1";
 
 var i = 0;
-slideShow();
+document.getElementById("imgVersioner").src = arraySlide[0][i];
+document.getElementById("pVersioner").innerHTML = arraySlide[1][i];
 
-function slideShow() {
+function slideShow(bool_arrow) {
+  console.log("Arrow function is running");
 
+  if (bool_arrow) {
+    console.log("Left arrow is running");
+    if (i == 0) {
+      i = arraySlide[0].length - 1;
+    } else {
+      i = i - 1;
+    }
+  } else {
+    console.log("Right arrow is running");
+    if (i == arraySlide[0].length - 1) {
+      i = 0;
+    } else {
+      i++;
+    }
+  }
+  console.log(i);
   document.getElementById("imgVersioner").src = arraySlide[0][i];
   document.getElementById("pVersioner").innerHTML = arraySlide[1][i];
+}
 
-  if(i == (arraySlide[0].length - 1)) {
-    i = 0;
-  } else {
-    i++
+//----
+
+var speed = 3000;
+
+function newPage(intPage) {
+  //den her skal være der for, ellers kan man lige se at navbar bevæger sig en lille smule
+  if (localStorage.getItem("animationSelect.navbarProject") != "Off") {
+    document.getElementById("header").style.animation = "moveNavbarBack 3s";
   }
 
-  setTimeout(function(){
-    slideShow();
-  }, 2000);
-  
+  setTimeout(function () {
+    document.getElementById("header").style.right = "0";
+    document.getElementById("header").style.transform = "translate(0%)";
+  }, 3000);
+
+  if (intPage == 1) {
+    setTimeout(function () {
+      location.href = "../index.html";
+    }, speed);
+  }
+
+  if (intPage == 2) {
+    setTimeout(function () {
+      location.href = "kontakt.html";
+    }, speed);
+  }
+
+  if (intPage == 3) {
+    setTimeout(function () {
+      location.href = "donate.html";
+    }, speed);
+  }
 }
-  
+// Sldeishow
+// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto
 
-
+//animation knap for navbar
+(localStorage.getItem("animationSelect.navbarProject").onChange = function () {
+  if (localStorage.getItem("animationSelect.navbarProject") == "Off") {
+    speed = 0;
+  } else {
+    document.getElementById("header").style.animationName = "moveNavbar";
+  }
+})();
 
 // function rightArrow() {
 
-  
 //   document.getElementById("leftArrow").style.visibility = "visible";
 
 //   if(document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V0.1.png"){
@@ -157,8 +255,8 @@ function slideShow() {
 //     document.getElementById("rightArrow").style.visibility = "hidden";
 //     document.getElementById("pVersioner").innerHTML = "Version 1.0";
 //     document.getElementById("imgVersioner").src = "../img/slideshow/V1.0.png";
-    
-//   } 
+
+//   }
 // }
 
 // function leftArrow() {
@@ -197,58 +295,5 @@ function slideShow() {
 //   } else if (document.getElementById("imgVersioner").getAttribute("src") == "../img/slideshow/V1.0.png"){
 //     document.getElementById("pVersioner").innerHTML = "Version 0.9";
 //     document.getElementById("imgVersioner").src = "../img/slideshow/V0.9.png";
-//   } 
+//   }
 // }
-
-
-
-
-
-//----
-
-var speed = 3000;
-
-function newPage(intPage) {
-
-    //den her skal være der for, ellers kan man lige se at navbar bevæger sig en lille smule
-    if(localStorage.getItem("animationSelect.navbarProject") != "Off") {
-        document.getElementById("header").style.animation = "moveNavbarBack 3s";
-    }
-
-    setTimeout(function () {
-        document.getElementById("header").style.right = "0";
-        document.getElementById("header").style.transform = "translate(0%)";
-
-    }, 3000);
-
-    if (intPage == 1) {
-        setTimeout(function () {
-            location.href = "../index.html";
-        }, speed);
-    }
-
-    if (intPage == 2) {
-        setTimeout(function () {
-            location.href = "kontakt.html";
-        }, speed);
-    }
-
-    if (intPage == 3) {
-        setTimeout(function () {
-            location.href = "donate.html";
-        }, speed);
-    }
-}
-// Sldeishow 
-// https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_slideshow_auto
-
-//animation knap for navbar
-(localStorage.getItem("animationSelect.navbarProject").onChange = function(){
-  if(localStorage.getItem("animationSelect.navbarProject") == "Off"){
-      speed = 0;
-      
-  }else{
-      document.getElementById("header").style.animationName = "moveNavbar";
-  }
-})();
-

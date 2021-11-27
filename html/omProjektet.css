@@ -10,7 +10,7 @@ html {
 
 .titel {
   position: relative;
-  top:5%;
+  top: 5%;
   z-index: 1;
   width: 100%;
   text-align: center;
@@ -36,10 +36,14 @@ html {
   z-index: 1;
 }
 
-#div1, #div2, #div3, .navigationsArrows {
+#div1,
+#div2,
+#div3,
+.navigationsArrows {
   position: relative;
   top: 7.5%;
 }
+
 
 #div2 {
   margin-top: 80px;
@@ -61,7 +65,6 @@ html {
   bottom: 10%;
 }
 
-
 #imgVersioner {
   width: auto;
   height: auto;
@@ -74,9 +77,7 @@ html {
   color: white;
   margin: 10px 0 0 0;
   text-align: center;
-
 }
-
 
 body {
   overflow-y: scroll;
@@ -103,7 +104,7 @@ body {
   height: 75px;
   cursor: pointer;
   margin: 0 25px;
-  display: none;
+  display: block;
 }
 
 #scroll-background {
@@ -113,7 +114,6 @@ body {
   margin: 0;
   z-index: -1;
 }
-
 
 /* Pc and ipad */
 @media screen and (min-width: 851px) {
@@ -195,7 +195,6 @@ body {
   }
   .divAll {
     margin: 10px 10%;
-
   }
 
   .titel {
@@ -223,7 +222,8 @@ body {
     position: relative;
   }
 
-  #div3 {
+  #div3,
+  #div4 {
     height: 200px;
     width: 100%;
   }
@@ -232,6 +232,10 @@ body {
     font-size: 24px;
   }
 
-
+  #imgGithub {
+    width: 75%;
+    height: 100%;
+    object-fit: contain;
+    position: relative;
+  }
 }
-

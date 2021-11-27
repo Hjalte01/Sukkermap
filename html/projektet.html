@@ -62,7 +62,7 @@
     </header>
   </section>
 
-  <body style="height: 2500px">
+  <body style="height: 2500px; background-color: black ;" >
     <div id="footerFix" style="min-height: calc(2500px - 2.5rem)">
       <!-- <body style="height: 2500px;"onload="showText('div1');showText('div2');showText('div3')"" > -->
 
@@ -127,9 +127,9 @@
         <img id="imgVersioner" src="../img/slideshow/V0.1.png" />
       </div>
       <div class="navigationsArrows" id="versionText">
-        <!-- <img class= "arrows" id="leftArrow" src="../img/left_arrow.png" alt="venstre pil" onclick="leftArrow()"> -->
+         <img class= "arrows" id="leftArrow" src="../img/left_arrow.png" alt="venstre pil" onclick="slideShow(true)">
         <p id="pVersioner"></p>
-        <!-- <img class= "arrows" id="rightArrow"src="../img/right_arrow.png" alt="højre pil" onclick="rightArrow(false)"> -->
+        <img class= "arrows" id="rightArrow"src="../img/right_arrow.png" alt="højre pil" onclick="slideShow(false)">
       </div>
     </div>
 
@@ -141,6 +141,7 @@
           srcset="
             https://p.kindpng.com/picc/s/128-1280187_github-logo-png-github-transparent-png.png
           "
+          id ="imgGithub"
       /></a>
     </div>
   </body>
