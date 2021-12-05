@@ -85,7 +85,7 @@ function draw() {
 }
 
 function preload() {
-	kortImg = loadImage("img/sukkertoppen.png"); //kortet
+	kortImg = loadImage("img/sukkertoppen.jpg"); //kortet
 	stueImg = loadImage("img/stue.png"); //stue
 	sal1Img = loadImage("img/1.sal.png"); //1.sal
 	sal2Img = loadImage("img/2.sal.png"); //2.sal
