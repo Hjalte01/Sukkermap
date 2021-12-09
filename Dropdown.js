@@ -44,10 +44,13 @@ function containerForInputsFunc() {
         containerForInputs.style.display = "block";
         document.querySelector(".displayContainerForInputs").style.transition = "transform 1s";
         document.querySelector(".displayContainerForInputs").style.transform = "translateY(0%)";
+        document.querySelector(".dropbtnForInputs#dropbtnForInputs").style.background = "orange";
         containerForInputsBlockFunc();
     } else {
         containerForInputs.style.display = "";
         document.querySelector(".displayContainerForInputs").style.transform = "translateY(-100%)";
+        document.querySelector(".dropbtnForInputs#dropbtnForInputs").style.background = "green";
+
         containerForInputsNothingFunc();
     }
 }

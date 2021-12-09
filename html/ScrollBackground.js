@@ -80,9 +80,9 @@ const updateImage = (index) => {
 
   fadeIn(0, "titel", index);
   fadeIn(50, "div1", index);
-  fadeIn(130, "div2", index);
-  fadeIn(200, "div3", index);
-  fadeIn(200, "versionText", index);
+  fadeIn(170, "div2", index);
+  fadeIn(250, "div3", index);
+  fadeIn(250, "versionText", index);
   //fadeIn(undefined,300,undefined,"divFooter", index);
 
   context.drawImage(image, 0, 0, canvas.width, canvas.height);
@@ -91,10 +91,10 @@ const updateImage = (index) => {
 };
 
 function fadeIn(midV, idName, index) {
-  var interval1 = 20;
-  var interval2 = 25;
-  var interval3 = 30;
-  var interval4 = 35;
+  var interval1 = 50;
+  var interval2 = interval1 + 60;
+  var interval3 = interval1 + 70;
+  var interval4 = interval1 + 80;
   // document.getElementById(idName).style.transform = "matrix(0,0,1,0,1," +(index-115)+")";
   if (index > midV - interval1 && index < midV + interval1) {
     document.getElementById(idName).style.opacity = "1";
