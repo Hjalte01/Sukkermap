@@ -81,8 +81,8 @@ const updateImage = (index) => {
   fadeIn(0, "titel", index);
   fadeIn(50, "div1", index);
   fadeIn(170, "div2", index);
-  fadeIn(250, "div3", index);
-  fadeIn(250, "versionText", index);
+  fadeIn(240, "div3", index);
+  fadeIn(240, "versionText", index);
   //fadeIn(undefined,300,undefined,"divFooter", index);
 
   context.drawImage(image, 0, 0, canvas.width, canvas.height);
