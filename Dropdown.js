@@ -55,7 +55,7 @@ function containerForInputsFunc() {
 
         containerForInputsNothingFunc();
     }
-    document.querySelector("#focus-remove").focus();
+    // document.querySelector("#focus-remove").focus();
 
 }
 
