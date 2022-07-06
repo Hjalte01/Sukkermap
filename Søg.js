@@ -25,7 +25,7 @@ advInput1.oninput = function(){
     advInput1Value = advInput1.value.toLowerCase(); 
      
     for (let i = 0; i < valgArray1.length; i++) {
-        if (advInput1Value == valgArray1[i]) {
+        if (advInput1Value == valgArray1[i] || advInput1Value === easterEgg) {
             inputStart = advInput1Value;
             if(inputEnd === undefined && advInput2Value != "") inputEnd = advInput2Value;
             setupBol = true;
@@ -36,10 +36,13 @@ advInput1.oninput = function(){
 
 advInput2.oninput = function(){
     advInput2Value = advInput2.value.toLowerCase();
+
+    // if (advInput2Value == "testcenter")
+
     for (let i = 0; i < valgArray1.length; i++) {
-        if (advInput2Value == valgArray1[i]){
+        if (advInput2Value == valgArray1[i] || advInput2Value === easterEgg ){
             inputEnd = advInput2Value;
-            if(inputStart === undefined && advInput1Value    != "") inputStart = advInput1Value;
+            if(inputStart === undefined && advInput1Value != "") inputStart = advInput1Value;
             setupBol = true;
         }
     }
