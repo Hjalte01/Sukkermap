@@ -62,7 +62,7 @@ html {
   position: relative;
   width: 100%;
   text-align: center;
-  top: 10vw;
+  margin: 10vw 0;
 }
 
 #imgVersioner {
@@ -107,7 +107,6 @@ body {
   display: block;
 }
 
-
 /* Fikser "om projektet" efter ændring i navbar i style.css */
 li:nth-of-type(1) {
   margin-right: 0;
@@ -116,11 +115,11 @@ ul.topNav {
   width: initial;
 }
 
-  #imgGithub {
-    width: 35vw;
-    height: 100%;
-    object-fit: contain;
-  }
+#imgGithub {
+  width: 35vw;
+  height: 100%;
+  object-fit: contain;
+}
 
 /* Pc and ipad */
 @media screen and (min-width: 851px) {
@@ -142,7 +141,7 @@ ul.topNav {
     margin: 0;
     z-index: -1;
   }
-  
+
   section {
     position: relative;
     width: 100%;
@@ -190,11 +189,7 @@ ul.topNav {
   } */
 
   body {
-    background: url(../img/scrollBackground2/0001.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: -800px -180px;
-    
+    background-color: #121026;
   }
 
   div.navbar {
@@ -254,7 +249,6 @@ ul.topNav {
 
   #scroll-background {
     display: none;
-    
   }
 
   /* body {
