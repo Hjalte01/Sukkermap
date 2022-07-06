@@ -12,16 +12,17 @@ var x = 10;
 
 var arraySlide = [
   [
-    "../img/slideshow 2/V0.1.jpg",
-    "../img/slideshow 2/V0.3.jpg",
-    "../img/slideshow 2/V0.5.jpg",
-    "../img/slideshow 2/V0.7.jpg",
-    "../img/slideshow 2/May_3_2021.jpg",
-    "../img/slideshow 2/Aug_31_2021.jpg",
-    "../img/slideshow 2/Sep_22_2021.jpg",
-    "../img/slideshow 2/Oct_12_2021.jpg",
-    "../img/slideshow 2/Oct_21_2021.jpg",
-    "../img/slideshow 2/nov_1_2021.jpg",
+    "../img/slideshow/V0.1.jpg",
+    "../img/slideshow/V0.3.jpg",
+    "../img/slideshow/V0.5.jpg",
+    "../img/slideshow/V0.7.jpg",
+    "../img/slideshow/May_3_2021.jpg",
+    "../img/slideshow/Aug_31_2021.jpg",
+    "../img/slideshow/Sep_22_2021.jpg",
+    "../img/slideshow/Oct_12_2021.jpg",
+    "../img/slideshow/Oct_21_2021.jpg",
+    "../img/slideshow/nov_1_2021.jpg",
+    "../img/slideshow/Dec_9_2021.png",
   ],
   [
     "11. februar 2021",
@@ -34,6 +35,7 @@ var arraySlide = [
     "12. oktober 2021",
     "21. oktober 2021",
     "1. november 2021",
+    "9. december 2021",
   ],
 ];
 
@@ -134,16 +136,17 @@ preloadImages();
 
 var arraySlide = [
   [
-    "../img/slideshow 2/V0.1.jpg",
-    "../img/slideshow 2/V0.3.jpg",
-    "../img/slideshow 2/V0.5.jpg",
-    "../img/slideshow 2/V0.7.jpg",
-    "../img/slideshow 2/May_3_2021.jpg",
-    "../img/slideshow 2/Aug_31_2021.jpg",
-    "../img/slideshow 2/Sep_22_2021.jpg",
-    "../img/slideshow 2/Oct_12_2021.jpg",
-    "../img/slideshow 2/Oct_21_2021.jpg",
-    "../img/slideshow 2/nov_1_2021.jpg",
+    "../img/slideshow/V0.1.jpg",
+    "../img/slideshow/V0.3.jpg",
+    "../img/slideshow/V0.5.jpg",
+    "../img/slideshow/V0.7.jpg",
+    "../img/slideshow/May_3_2021.jpg",
+    "../img/slideshow/Aug_31_2021.jpg",
+    "../img/slideshow/Sep_22_2021.jpg",
+    "../img/slideshow/Oct_12_2021.jpg",
+    "../img/slideshow/Oct_21_2021.jpg",
+    "../img/slideshow/nov_1_2021.jpg",
+    "../img/slideshow/Dec_9_2021.png",
   ],
   [
     "11. februar 2021",
@@ -156,6 +159,7 @@ var arraySlide = [
     "12. oktober 2021",
     "21. oktober 2021",
     "1. november 2021",
+    "9. december 2021",
   ],
 ];
 
