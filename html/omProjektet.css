@@ -31,7 +31,9 @@ html {
   text-align: center;
   justify-self: center;
   vertical-align: middle;
-  opacity: 0;
+  /* opacity: 0; */
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
   font-size: 20px;
   z-index: 1;
 }
@@ -41,13 +43,11 @@ html {
 #div3,
 .navigationsArrows {
   position: relative;
-  top: 7.5%;
 }
 
-
-#div2 {
+/* #div2 {
   margin-top: 80px;
-}
+} */
 
 #div3 {
   display: block;
@@ -62,7 +62,7 @@ html {
   position: relative;
   width: 100%;
   text-align: center;
-  bottom: 10%;
+  top: 10vw;
 }
 
 #imgVersioner {
@@ -107,13 +107,6 @@ body {
   display: block;
 }
 
-#scroll-background {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  margin: 0;
-  z-index: -1;
-}
 
 /* Fikser "om projektet" efter ændring i navbar i style.css */
 li:nth-of-type(1) {
@@ -122,6 +115,12 @@ li:nth-of-type(1) {
 ul.topNav {
   width: initial;
 }
+
+  #imgGithub {
+    width: 35vw;
+    height: 100%;
+    object-fit: contain;
+  }
 
 /* Pc and ipad */
 @media screen and (min-width: 851px) {
@@ -136,7 +135,14 @@ ul.topNav {
     transform: translateX(50%);
     margin: 0 auto;
   }
-
+  #scroll-background {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin: 0;
+    z-index: -1;
+  }
+  
   section {
     position: relative;
     width: 100%;
@@ -166,6 +172,10 @@ ul.topNav {
       transform: translate(0%);
     }
   }
+
+  body {
+    background-color: #000;
+  }
 }
 
 /* mobile */
@@ -174,9 +184,17 @@ ul.topNav {
     font-size: 16px;
   }
 
-  canvas {
+  /* canvas {
     background: center center no-repeat;
     background-size: cover;
+  } */
+
+  body {
+    background: url(../img/scrollBackground2/0001.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: -800px -180px;
+    
   }
 
   div.navbar {
@@ -193,13 +211,7 @@ ul.topNav {
   }
 
   #scroll-background {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    margin: 0;
-    z-index: -1;
-    background-size: auto auto;
-    scroll-behavior: smooth;
+    display: none;
   }
   .divAll {
     margin: 10px 10%;
@@ -240,10 +252,16 @@ ul.topNav {
     font-size: 24px;
   }
 
-  #imgGithub {
-    width: 75%;
-    height: 100%;
-    object-fit: contain;
-    position: relative;
+  #scroll-background {
+    display: none;
+    
   }
+
+  /* body {
+    display: block;
+    background-image: url("../img/scrollBackground2/0001.jpg") top repeat, url("../img/scrollBackground2/0006.jpg") bottom repeat;
+    background-repeat:round;
+    object-fit: cover;
+    text-align: center;
+  } */
 }

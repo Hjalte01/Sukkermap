@@ -1,6 +1,7 @@
 //Link to source code https://codepen.io/SabAsan/pen/ExVzaGb
 // YouTube https://youtu.be/rrf0nPjuums?list=LL
 
+// Scroll background for pc
 const html = document.documentElement;
 const canvas = document.getElementById("scroll-background");
 const context = canvas.getContext("2d");
@@ -78,11 +79,11 @@ const updateImage = (index) => {
 
   document.getElementById("div3").style.display = "flex";
 
-  fadeIn(0, "titel", index);
-  fadeIn(50, "div1", index);
-  fadeIn(130, "div2", index);
-  fadeIn(200, "div3", index);
-  fadeIn(200, "versionText", index);
+  // fadeIn(0, "titel", index);
+  // fadeIn(75, "div1", index);
+  // fadeIn(130, "div2", index);
+  // fadeIn(200, "div3", index);
+  // fadeIn(200, "versionText", index);
   //fadeIn(undefined,300,undefined,"divFooter", index);
 
   context.drawImage(image, 0, 0, canvas.width, canvas.height);

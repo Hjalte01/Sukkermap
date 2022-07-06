@@ -15,6 +15,8 @@
     <script src="ScrollBackground.js" defer></script>
   </head>
   <canvas id="scroll-background"></canvas>
+  <!-- <canvas id="background-mobile"> </canvas> -->
+  
   <section>
     <header id="header">
       <ul class="topNav" id="topNav">
@@ -29,13 +31,13 @@
         </a>
         </li>
         <li>
-          <a id="myLink" href="#" onclick="newPage(1);return false;"
+          <a id="myLink" href="#" onclick="newPage(1);"
           >Sukkermap</a
           >
         </li>
         <li><a href="projektet.html">Om projektet</a></li>
         <li>
-          <a id="myLink" href="#" onclick="newPage(2);return false;"
+          <a id="myLink" href="#" onclick="newPage(2);"
             >Kontakt os</a
           >
         </li>
@@ -63,8 +65,8 @@
     </header>
   </section>
 
-  <body style="height: 2500px; background-color: black ;" >
-    <div id="footerFix" style="min-height: calc(2500px - 2.5rem)">
+  <body style="height: 2500px;" >
+    <div id="footerFix" style="min-height: calc(2800px - 2.5rem)">
       <!-- <body style="height: 2500px;"onload="showText('div1');showText('div2');showText('div3')"" > -->
 
       <div class="titel" id="titel" style="margin: 200px 0 200px 0">
@@ -99,7 +101,7 @@
       <div class="divAll" id="div2">
         <p class="ptext">
           Efter vi havde nedskrevet hvert lokale nummer på plantegningerne, så
-          Skulle vi finde en stifinder algoritme til vores projekt. Vi endte med
+          skulle vi finde en stifinder algoritme til vores projekt. Vi endte med
           at bruge A* algoritmen, da vi synes den var mest egnet til vores
           projekt. Siden at algoritmen er en af de hurtigeste stifindings
           algoritme, hvis ikke den hurtigeste.
@@ -132,19 +134,17 @@
         <p id="pVersioner"></p>
         <img class= "arrows" id="rightArrow"src="../img/right_arrow.png" alt="højre pil" onclick="slideShow(false)">
       </div>
-    </div>
-
-    <div id="div4">
+          <div id="div4">
       <a href="https://github.com/Sukkermap/Sukkermap/tree/main" target="_blank"
         ><img
-          src="../img/githublogo.png"
+          src="https://www.kindpng.com/picc/m/128-1280187_github-logo-png-github-transparent-png.png"
           alt="Source code"
-          srcset="
-            https://p.kindpng.com/picc/s/128-1280187_github-logo-png-github-transparent-png.png
-          "
           id ="imgGithub"
       /></a>
     </div>
+
+    </div>
+
   </body>
   <div id="footerMain">
     <footer id="footer">
