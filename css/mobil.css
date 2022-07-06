@@ -120,12 +120,6 @@
     display: none;
 }
 
-
-.dropbtnForInputs:hover,
-.dropbtnForInputs:focus {
-    background-color: orange;
-}
-
 /* Hvis skærmen er under 775px så vil css ændres til det her. Det er til mobil*/
 @media screen and (max-width: 775px) {
      body {

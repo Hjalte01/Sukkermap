@@ -65,13 +65,16 @@
         </div>
       </div>
 
-      <div type="checkbox" class="dropbtnForInputs" id="dropbtnForInputs" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, 40], containerForInputsFunc)">
+      <div class="dropbtnForInputs" id="dropbtnForInputs" tabindex="0" onkeydown="dropDownPhone(event, [13, 32, 40], containerForInputsFunc)">
         <p class="arrow down"></p>
       </div>
 
-
     </div>
     <!--ScrollX ender her -->
+
+    <!-- Fjern focus -->
+    <input id="focus-remove" type="text" style="position: absolute; opacity: 0;" onfocus="blur()"/>
+
 
     <!-- Til, fra input bokse, samt indstillinger og plantegnin/kort switch. -->
     <div id="containerForInputs" class="displayContainerForInputs">

@@ -12,16 +12,16 @@ var x = 10;
 
 var arraySlide = [
   [
-    "../img/slideshow/V0.1.png",
-    "../img/slideshow/V0.3.png",
-    "../img/slideshow/V0.5.png",
-    "../img/slideshow/V0.7.png",
-    "../img/slideshow/May_3_2021.png",
-    "../img/slideshow/Aug_31_2021.png",
-    "../img/slideshow/Sep_22_2021.png",
-    "../img/slideshow/Oct_12_2021.png",
-    "../img/slideshow/Oct_21_2021.png",
-    "../img/slideshow/nov_1_2021.png",
+    "../img/slideshow 2/V0.1.jpg",
+    "../img/slideshow 2/V0.3.jpg",
+    "../img/slideshow 2/V0.5.jpg",
+    "../img/slideshow 2/V0.7.jpg",
+    "../img/slideshow 2/May_3_2021.jpg",
+    "../img/slideshow 2/Aug_31_2021.jpg",
+    "../img/slideshow 2/Sep_22_2021.jpg",
+    "../img/slideshow 2/Oct_12_2021.jpg",
+    "../img/slideshow 2/Oct_21_2021.jpg",
+    "../img/slideshow 2/nov_1_2021.jpg",
   ],
   [
     "11. februar 2021",
@@ -92,10 +92,19 @@ const updateImage = (index) => {
 };
 
 function fadeIn(midV, idName, index) {
+
+  if (window.innerWidth < 850) { // til Mobil
+  var interval1 = 50;
+  var interval2 = interval1 + 60;
+  var interval3 = interval1 + 70;
+  var interval4 = interval1 + 80;
+  } else { // til PC og iPad
   var interval1 = 20;
   var interval2 = 25;
   var interval3 = 30;
   var interval4 = 35;
+  }
+
   // document.getElementById(idName).style.transform = "matrix(0,0,1,0,1," +(index-115)+")";
   if (index > midV - interval1 && index < midV + interval1) {
     document.getElementById(idName).style.opacity = "1";
@@ -125,16 +134,16 @@ preloadImages();
 
 var arraySlide = [
   [
-    "../img/slideshow/V0.1.png",
-    "../img/slideshow/V0.3.png",
-    "../img/slideshow/V0.5.png",
-    "../img/slideshow/V0.7.png",
-    "../img/slideshow/May_3_2021.png",
-    "../img/slideshow/Aug_31_2021.png",
-    "../img/slideshow/Sep_22_2021.png",
-    "../img/slideshow/Oct_12_2021.png",
-    "../img/slideshow/Oct_21_2021.png",
-    "../img/slideshow/nov_1_2021.png",
+    "../img/slideshow 2/V0.1.jpg",
+    "../img/slideshow 2/V0.3.jpg",
+    "../img/slideshow 2/V0.5.jpg",
+    "../img/slideshow 2/V0.7.jpg",
+    "../img/slideshow 2/May_3_2021.jpg",
+    "../img/slideshow 2/Aug_31_2021.jpg",
+    "../img/slideshow 2/Sep_22_2021.jpg",
+    "../img/slideshow 2/Oct_12_2021.jpg",
+    "../img/slideshow 2/Oct_21_2021.jpg",
+    "../img/slideshow 2/nov_1_2021.jpg",
   ],
   [
     "11. februar 2021",
