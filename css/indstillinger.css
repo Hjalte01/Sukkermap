@@ -1,304 +1,286 @@
 /*ikonet på indstillingerne før boksen kommer frem*/
 
-:root{
-    --arrow-streg: #df2727;
-    --arrow-color: #df2727;
-
+:root {
+	--arrow-streg: #df2727;
+	--arrow-color: #df2727;
 }
 
 .indstillingØvreParagraph {
-    font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 .indstillingerDiv {
-    width: 65px;
-    height: 65px;
-    overflow: hidden;
+	width: 65px;
+	height: 65px;
+	overflow: hidden;
 }
 
 .indstillinger {
-    box-sizing: border-box;
-    width: 65px;
-    height: 65px;
-    animation: indstillinger-img-animation 3s linear forwards infinite;
-    animation-play-state: paused;
+	box-sizing: border-box;
+	width: 65px;
+	height: 65px;
+	animation: indstillinger-img-animation 3s linear forwards infinite;
+	animation-play-state: paused;
 }
 
 .indstillinger:hover,
 .indstillinger:focus-visible {
-    animation-play-state: running; 
+	animation-play-state: running;
 }
 
 @keyframes indstillinger-img-animation {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
 }
-
-
 
 /* Pop up box css */
 .popupBoxClass {
-    display: none;
-    justify-content: center;
-    position: fixed;
-    z-index: 2;
-    top: 0rem;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* sort w/ opacity */
+	display: none;
+	justify-content: center;
+	position: fixed;
+	z-index: 2;
+	top: 0rem;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4); /* sort w/ opacity */
 }
 
 .popupBox-content {
-    background: #121026;
-    padding: 20px;
-    border: 5px solid #eb5332;
-    overflow-y: auto;
-    min-width: 60%;
+	background: #121026;
+	padding: 20px;
+	border: 5px solid #eb5332;
+	overflow-y: auto;
+	min-width: 60%;
 }
 
 #hjælpereNavigation {
-    display: none;
-    color: white;
-    font-size: 1.3rem;
-    font-weight: bold;
-    position: fixed;
-    z-index: 2;
-    padding-top: 10%;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4); /* sort w/ opacity */
+	display: none;
+	color: white;
+	font-size: 1.3rem;
+	font-weight: bold;
+	position: fixed;
+	z-index: 2;
+	padding-top: 10%;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.4); /* sort w/ opacity */
 }
-
 
 .indstillingØvreParagraph {
-    font-family: 'Times New Roman', Times, serif;
-    position: relative;
-    margin: 0 auto 0rem auto;
+	font-family: 'Times New Roman', Times, serif;
+	position: relative;
+	margin: 0 auto 0rem auto;
 }
 
-
 /* title bar */
-#indstillingTitleBar{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    position: relative;
-    height: 4rem;
+#indstillingTitleBar {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	position: relative;
+	height: 4rem;
 }
 /*Close button */
 .xClose {
-    color: #df2727;
-    font-size: 4rem;
-    position: relative;
-    top: -1.5rem;
-    cursor: pointer;
+	color: #df2727;
+	font-size: 4rem;
+	position: relative;
+	top: -1.5rem;
+	cursor: pointer;
 }
 .xClose:hover {
-    color: #b41414;
+	color: #b41414;
 }
 
 .xClose:focus-visible {
-    color: green;
-}  
-
+	color: green;
+}
 
 /* tilbage button */
-#arrowBtn{
-    width: 3rem;
-    height: 2.8rem;
-    visibility: hidden;
+#arrowBtn {
+	width: 3rem;
+	height: 2.8rem;
+	visibility: hidden;
 }
 #arrowBtn:hover {
-    --arrow-color: #b41414;
-    --arrow-streg: #b41414;
+	--arrow-color: #b41414;
+	--arrow-streg: #b41414;
 }
 
 #arrowBtn:focus-visible {
-    --arrow-color: green;
-    --arrow-streg: green;
+	--arrow-color: green;
+	--arrow-streg: green;
 }
 
-
-#arrowBtn .arrow{
-    padding: 8px;
-    border-width: 0 4px 4px 0;
-    width: 0;
-    height: 0;
-    position: relative;
-    top: 0.4rem;
-    left: 0.5rem;
-    border-radius: 0 35%;
+#arrowBtn .arrow {
+	padding: 8px;
+	border-width: 0 4px 4px 0;
+	width: 0;
+	height: 0;
+	position: relative;
+	top: 0.4rem;
+	left: 0.5rem;
+	border-radius: 0 35%;
 }
-#arrowStreg{
-    position: relative;
-    background-color: var(--arrow-streg);
-    width: 1.8rem;
-    height: 0.25rem;
-    border-radius: 15% 0 0 15%;
-    top: -1.15rem;
-    left: 0.6rem;
+#arrowStreg {
+	position: relative;
+	background-color: var(--arrow-streg);
+	width: 1.8rem;
+	height: 0.25rem;
+	border-radius: 15% 0 0 15%;
+	top: -1.15rem;
+	left: 0.6rem;
 }
-
-
 
 /* content */
 .popupBox-content h1 {
-    color: #ffffff;
-    text-align: center;
+	color: #ffffff;
+	text-align: center;
 }
 
 .popupBox-content p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    color: #eb5332;
-    /*color:#eb5332; */
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 20px;
+	font-weight: 700;
+	color: #eb5332;
+	/*color:#eb5332; */
 }
 
 label {
-    color: #ffffff;
-    text-align: center;
-    text-decoration: none;
-    font-size: 20px;
-    font-weight: 700;
-    font-style: bold;
-    font-family: Arial, Helvetica, sans-serif;
+	color: #ffffff;
+	text-align: center;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: 700;
+	font-style: bold;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 select {
-    color: black;
-    font-size: 15px;
-    text-align: center;
-    max-width: 100%;
+	color: black;
+	font-size: 15px;
+	text-align: center;
+	max-width: 100%;
 }
 
 #hastighedPil {
-    box-sizing: border-box;
-    width: 150px;
-    height: 25px;
-    max-width: 100%;
-    font-size: 15px;
-    text-align: center;
+	box-sizing: border-box;
+	width: 150px;
+	height: 25px;
+	max-width: 100%;
+	font-size: 15px;
+	text-align: center;
 }
 
 /* grid */
 .grid-container {
-    display: grid;
-    grid-auto-rows: minmax(4rem, auto);
-    width: 100%;
-
+	display: grid;
+	grid-auto-rows: minmax(4rem, auto);
+	width: 100%;
 }
-.grid-container.one{
-    grid-template-columns: 100%;
+.grid-container.one {
+	grid-template-columns: 100%;
 }
-.grid-container.two{
-    grid-template-columns: 70% 30%;
-    display: none;
+.grid-container.two {
+	grid-template-columns: 70% 30%;
+	display: none;
 }
 
 .content-divider-sections {
-    display: grid;
-    align-items: center;
-    box-sizing: border-box;
-    border: solid rgba(255, 255, 255, 0.3);
-    padding: 0 0 0 0.8rem;
-    text-align: start;
+	display: grid;
+	align-items: center;
+	box-sizing: border-box;
+	border: solid rgba(255, 255, 255, 0.3);
+	padding: 0 0 0 0.8rem;
+	text-align: start;
 }
 .content-divider-sections:nth-of-type(n + 1) {
-    border-width: 1px 2px;
+	border-width: 1px 2px;
 }
 .content-divider-sections:nth-of-type(1) {
-    border-width: 2px 2px 1px 2px;
+	border-width: 2px 2px 1px 2px;
 }
 .content-divider-sections:nth-last-of-type(1) {
-    border-width: 1px 2px 2px 2px;
+	border-width: 1px 2px 2px 2px;
 }
-.content-divider-sections:nth-of-type(1):nth-last-of-type(1){
-    border-width: 2px 2px 2px 2px;
-}
-
-.grid-container.one > div{
-    color: white;
-    font-size: 20px;
-    font-weight: 700;
-    font-style: bold;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.grid-container.one div:hover{
-    text-shadow: 3px 3px #b41414;
-}
-.grid-container.one div:focus-visible{
-    text-shadow: 3px 3px #b41414;
+.content-divider-sections:nth-of-type(1):nth-last-of-type(1) {
+	border-width: 2px 2px 2px 2px;
 }
 
-.grid-container.one > div:active{
-    font-size: 18px;
+.grid-container.one > div {
+	color: white;
+	font-size: 20px;
+	font-weight: 700;
+	font-style: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.grid-container.one div:hover {
+	text-shadow: 3px 3px #b41414;
+}
+.grid-container.one div:focus-visible {
+	text-shadow: 3px 3px #b41414;
 }
 
+.grid-container.one > div:active {
+	font-size: 18px;
+}
 
 .grid-container.two.animation .containerForCheckbox:focus-visible {
-    opacity: .5;
+	opacity: 0.5;
 }
-
 
 .content-divided-sections {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    border: solid rgba(255, 255, 255, 0.3);
-    padding: 0;
-    font-size: 30px;
-    height: 100%;
-    width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	border: solid rgba(255, 255, 255, 0.3);
+	padding: 0;
+	font-size: 30px;
+	height: 100%;
+	width: 100%;
 }
 .content-divided-sections:nth-of-type(n + 1) {
-    border-width: 1px 2px 1px 0;
+	border-width: 1px 2px 1px 0;
 }
 .content-divided-sections:nth-of-type(1) {
-    border-width: 2px 2px 1px 0;
+	border-width: 2px 2px 1px 0;
 }
 .content-divided-sections:nth-last-of-type(1) {
-    border-width: 1px 2px 2px 0;
+	border-width: 1px 2px 2px 0;
 }
-.content-divided-sections:nth-of-type(1):nth-last-of-type(1){
-    border-width: 2px 2px 2px 0;
+.content-divided-sections:nth-of-type(1):nth-last-of-type(1) {
+	border-width: 2px 2px 2px 0;
 }
 
-.two-sections{
-    flex-direction: column;
+.two-sections {
+	flex-direction: column;
 }
 
 #colorInp {
-    visibility: hidden;
-    position: absolute;
+	visibility: hidden;
+	position: absolute;
 }
 
 /* container for checkbox */
 .containerForCheckbox {
-    width: 100%;
-    height: 100%;
-    background-color: green;
+	width: 100%;
+	height: 100%;
+	background-color: green;
 }
-.containerForCheckbox > p{
-    color: white;
-    text-align: center;
+.containerForCheckbox > p {
+	color: white;
+	text-align: center;
 }
-
-
 
 @media screen and (max-width: 775px) {
-    .popupBox-content {
-        width: 100%;
-    }
+	.popupBox-content {
+		width: 100%;
+	}
 }
-
-
-
-

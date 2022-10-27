@@ -1,87 +1,67 @@
 #typeWriter1 {
-  color: rgb(0, 0, 0);
-  font-size: 20px;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  display: block;
+	color: rgb(0, 0, 0);
+	font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
 html {
-  height: 100%;
+	height: 100%;
 }
 
 .centerBox {
-  /* width: 100vw;
-    height: calc(100vh - 7.5rem); */
-  width: 100%;
-  text-align: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-content: center;
-  justify-content: center;
-}
+	position: relative;
+	font-size: 25px;
+	width: 100%;
+	height: calc(100% - 5rem - 2.5rem - 6px - 0.325rem);
 
-#formDiv {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	align-content: center;
+} 
 
-.divCenter {
-  align-content: center;
-  justify-content: center;
-}
-
-#inputNavn,
-#inputEmail,
-#inputRolle {
-  font-size: 16px;
-}
-#inputRolle:focus-visible {
-  opacity: 0.3;
-}
 #btn {
-  color: white;
-  background-color: rgb(57, 57, 235);
-  padding: 12px 28px;
-  border-radius: 12px;
+	color: white;
+	background-color: rgb(57, 57, 235);
+	padding: 12px 28px;
+	border-radius: 12px;
 }
 
 #btn:hover {
-  cursor: pointer;
-  background-color: rgb(28, 28, 190);
+	cursor: pointer;
+	background-color: rgb(28, 28, 190);
 }
 #btn:focus-visible {
-  opacity: 0.3;
+	opacity: 0.3;
 }
 #email {
-  font-size: 20px;
-  color: blue;
-  display: block;
-  padding-left: 0.3rem;
+	color: blue;
+	padding-left: 0.3rem;
 }
 
 body {
-  background-color: rgb(228, 228, 228);
-  overflow-x: hidden;
+	background-color: rgb(228, 228, 228);
+	overflow-x: hidden;
+	position: relative;
 }
 
 #footer1 {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 2.5rem;
-  padding: 3px 0;
-  background-color: #121026;
-  color: white;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 2.5rem;
+	padding: 3px 0;
+	background-color: #121026;
+	color: white;
 }
 
 /* mobil */
 @media screen and (max-width: 850px) {
-  #typeWriter1 {
-    margin-bottom: 0;
-  }
+	#typeWriter1 {
+		margin-bottom: 0;
+	}
 
-  #email {
-    margin-top: 10px;
-  }
+	#email {
+		margin-top: 10px;
+	}
 }

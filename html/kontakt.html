@@ -15,62 +15,34 @@
     <script src="TypeWriter.js" defer></script>
   </head>
   <body>
-      <header>
-        <ul class="topNav">
-          <li><a href="../index.html">
-            <img onclick='this.style.transform = "scale(0)"' src="../img/Sukkermap_logo.png" alt="Sukkermap logo" id="sukkermapLogo">
-          </a></li>
-          <li><a href="../index.html">Sukkermap</a></li>
-          <li><a href="projektet.html">Om projektet</a></li>
-          <li><a href="kontakt.html">Kontakt os</a></li>
-        </ul>
-      </header>
-      <div class="navbar">
-        <div>
+    <header>
+      <ul class="topNav">
+        <li><a href="../index.html">
           <img onclick='this.style.transform = "scale(0)"' src="../img/Sukkermap_logo.png" alt="Sukkermap logo" id="sukkermapLogo">
-        </div>
-        <p class="mobilParagraph">Kontakt os</p>
-        <button class="dropbtn" onclick="myFunction()">
-          <p class="arrow down"></p>
-        </button>
-        <div class="dropdown-content" id="myDropdown">
-          <a href="../index.html">Sukkermap</a>
-          <a href="projektet.html">Om projektet</a>
-          <a href="kontakt.html">Kontakt os</a>
-        </div>
+        </a></li>
+        <li><a href="../index.html">Sukkermap</a></li>
+        <li><a href="projektet.html">Om projektet</a></li>
+        <li><a href="kontakt.html">Kontakt os</a></li>
+      </ul>
+    </header>
+    <div class="navbar">
+      <div>
+        <img onclick='this.style.transform = "scale(0)"' src="../img/Sukkermap_logo.png" alt="Sukkermap logo" id="sukkermapLogo">
       </div>
-<div class="centerBox">
-        <p id="typeWriter1"></p>
-        <p id="email"> </p>
+      <p class="mobilParagraph">Kontakt os</p>
+      <button class="dropbtn" onclick="myFunction()">
+        <p class="arrow down"></p>
+      </button>
+      <div class="dropdown-content" id="myDropdown">
+        <a href="../index.html">Sukkermap</a>
+        <a href="projektet.html">Om projektet</a>
+        <a href="kontakt.html">Kontakt os</a>
       </div>
-      <div id="formDiv">
-        <form name="contact" method="POST" data-netlify="true">
-          <p>
-            <div class ="divCenter">
-            <label> <input id="inputNavn"type="text" name="name" placeholder="Navn"/></label> 
-          </div>  
-          </p>
-          <p>
-            <label> <input id="inputEmail" type="email" name="email" placeholder="e-mail" /></label>
-          </p>
-          <p>
-            <label>Jeg er: <select id="inputRolle"  name="rolle">
-              <option value="elev">Elev</option>
-              <option value="lærer">Lærer</option>
-              <option value="lærer">Ansat</option>
-              <option value="beseogende">Besøgende</option>
-              <option value="andet">Andet</option>
-            </select></label>
-            
-          </p>
-          <p>
-            <label><textarea name="message" placeholder="Besked" rows="5" cols="33"></textarea></label>
-          </p>
-          <p>
-            <button id="btn"type="submit">Send</button>
-          </p>
-        </form>
-      </div>
+    </div>
+    <div class="centerBox">
+      <p id="typeWriter1"></p>
+      <p id="email"> </p>
+    </div>
   </body>
   <footer id="footer1">
     <p id="copyrightText"></p>
