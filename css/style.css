@@ -10,7 +10,7 @@ html, body{
     outline: none
 }
 #footerFix{
-    min-height: calc(100vh - 2.5rem);
+    min-height: calc(100vh - 2.5rem - 6px);
 }
 
 
@@ -207,7 +207,6 @@ input:checked + .slider:before {
 }
 
 #footerMain {
-    box-sizing: border-box;
     position: relative;
     height: 2.5rem;
     padding: 3px 0;
