@@ -10,14 +10,14 @@ var advInput2 = document.getElementById("listInput2") //som er de to inputs i ve
 var advInput1Value = advInput1.value.toLowerCase() //tager id fra datalist i html filen,
 var advInput2Value = advInput2.value.toLowerCase() //som er de to inputs i venstre hjørne når koden kører
 
-var optionsLength = document.getElementById("valgList1").options.length //længden af hvor mange option der er i vores inputliste
+var optionsLength = document.getElementById("valgList1").options.length; //længden af hvor mange option der er i vores inputliste
 
 //option i html til javascript
-;(function () {
+(function () {
 	for (let i = 0; i < optionsLength; i++) {
-		valgArray1.push(document.getElementById(i).value.toLowerCase()) // Laver et arrat i javascript, fra optionsne i html filen
+		valgArray1.push(document.getElementById(i).value.toLowerCase()); // Laver et arrat i javascript, fra optionsne i html filen
 	}
-})()
+})();
 
 advInput1.oninput = function () {
 	advInput1Value = advInput1.value.toLowerCase()

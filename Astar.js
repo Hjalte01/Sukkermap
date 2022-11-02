@@ -23,7 +23,7 @@ var triCount = {
 }
 
 class Astar {
-	constructor() {}
+	constructor() { }
 
 	loop() {
 		if (inputStart != undefined && inputEnd != undefined && inputStart != inputEnd) {
@@ -42,9 +42,9 @@ class Astar {
 				neighbor = undefined
 				temp = undefined
 				for (let i = 0; i < arrayTemp.length; i++) {
-					if (arrayTemp[i].text != undefined) {
-						if (arrayTemp[i].text == inputStart) start = arrayTemp[i]
-						if (arrayTemp[i].text == inputEnd) end = arrayTemp[i]
+					if (arrayTemp[i].text.toLowerCase() != undefined) {
+						if (arrayTemp[i].text.toLowerCase() == inputStart) start = arrayTemp[i]
+						if (arrayTemp[i].text.toLowerCase() == inputEnd) end = arrayTemp[i]
 					}
 				}
 				openSet.push(start)
@@ -259,7 +259,7 @@ function removeFromArray(arr, elt) {
 function heuristic(a, b) {
 	try {
 		var d = dist(a.x, a.y, b.x, b.y)
-		if (a.text == "trappe" && b.text == "trappe") d += 150
+		if (a.text.toLowerCase() == "trappe" && b.text.toLowerCase() == "trappe") d += 150
 	} catch (err) {
 		console.log("err = " + err)
 		console.log("a = " + a)
