@@ -1,0 +1,503 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* root */
+:root {
+	--primary-color: #f5f5f5;
+	--line-width: 18px;
+	--orange: #eb5332;
+	--blue: #121026;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+body {
+	/* background-color: #34393e; */
+	/* Black w/opacity/see-through */
+	color: #fff;
+	font-family: "Poppins", sans-serif;
+	padding: 0;
+	margin: 0;
+}
+
+.bg {
+	/* The image used */
+
+	/* Full height */
+	height: 100%;
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	/* Add the blur effect */
+	filter: blur(8px);
+	-webkit-filter: blur(8px);
+
+	/* position: fixed; */
+	position: fixed;
+	z-index: -1;
+
+}
+
+section {
+	position: relative;
+	display: grid;
+	align-items: center;
+	place-items: center;
+	align-content: center;
+	min-height: 80vh;
+	margin: auto 8vw;
+}
+
+.logos {
+	display: flex;
+}
+
+.logo {
+	padding: 20px;
+}
+
+.logo:nth-child(2) {
+	transition-delay: 200ms;
+}
+
+.logo:nth-child(3) {
+	transition-delay: 400ms;
+}
+
+.logo:nth-child(4) {
+	transition-delay: 600ms;
+}
+
+.div-tak {
+	text-align: center;
+	margin-bottom: 10%;
+}
+
+.div-navne {
+	text-align: center;
+	color: white;
+	font-size: 25px;
+	column-count: 2;
+	column-gap: 0;
+	margin-bottom: 50px;
+}
+
+#titel-tak {
+	font-size: 50px;
+	margin-bottom: 25px;
+}
+
+#titel {
+	position: relative;
+	top: 55%;
+	text-align: center;
+}
+
+p {
+
+	margin: 20px 20px;
+}
+
+
+#div-timeline {
+	position: relative;
+	padding-top: 10%;
+	margin-left: 8vw;
+	margin-right: 8vw;
+}
+
+
+.timeline-area {
+	margin: 90px auto;
+	width: 360px;
+	border-left: 2px solid #ccc;
+	padding: O 20px O 30px;
+}
+
+.div-timeline {
+	background-color: #fff;
+	padding: 10px 25px;
+	font-size: 16px;
+	border: 1px solid #ccc;
+	line-height: 1.7;
+	position: relative;
+	height: 110px;
+}
+
+
+
+/* from omProjekt.css  ----------------------*/
+/* Pc and ipad */
+@media screen and (min-width: 851px) {
+	header {
+		z-index: 2;
+		position: fixed;
+		animation-duration: 5s;
+		/* right: 50%;
+    lav din egen nulpunkt */
+		right: 0;
+		right: 50%;
+		transform: translateX(50%);
+		margin: 0 auto;
+	}
+
+	.headerMid {
+		position: relative;
+		width: 100%;
+		height: 80px;
+		/* background-color: #121026; */
+	}
+
+	@keyframes moveNavbar {
+		from {
+			right: 0%;
+			transform: translate(0%);
+			background-color: var(--blue);
+		}
+
+		to {
+			right: 50%;
+			transform: translateX(50%);
+			background-color: black;
+		}
+	}
+
+	@keyframes moveNavbarBack {
+		from {
+			right: 50%;
+			transform: translateX(50%);
+		}
+
+		to {
+			right: 0;
+			transform: translate(0%);
+		}
+	}
+
+	#titel {
+		font-size: 5vw;
+	}
+
+	.p-text {
+		font-size: 1.5vw;
+	}
+
+	#imgGithub {
+		width: 30vw;
+	}
+
+}
+
+/* mobile */
+@media screen and (max-width: 850px) {
+
+	.p-text {
+		font-size: 20px;
+	}
+
+	div.navbar {
+		position: fixed;
+		z-index: 2;
+	}
+
+	.dropdown-content {
+		position: fixed;
+	}
+
+
+	#titel {
+		font-size: 46px;
+		text-align: center;
+	}
+
+	#navigation-middle {
+		position: relative;
+		width: 100%;
+		height: 80px;
+		/* background-color: #121026; */
+	}
+
+	#imgGithub {
+		width: 80vw;
+	}
+
+	.dropdown-content {
+		position: fixed;
+	}
+
+	.div-navne {
+		text-align: center;
+		color: white;
+		font-size: 25px;
+		column-count: 1;
+		margin-bottom: 50px;
+	}
+
+	#titel {
+		font-size: 12vw;
+	}
+
+}
+
+li:nth-of-type(1) {
+	margin-right: 0;
+}
+
+ul.topNav {
+	width: initial;
+}
+
+/* animation scroll -------------------------*/
+.hidden-fadeIn {
+	opacity: 0;
+	/* filter: blur(5px); */
+	transition: all 2s;
+	bottom: -20px;
+}
+
+.show-fadeIn {
+	opacity: 1;
+	/* filter: blur(0px); */
+	bottom: 0;
+}
+
+.hidden-zoomIn {
+	opacity: 0;
+	transition: all 1s;
+	transform: scale(0);
+
+}
+
+.show-zoomIn {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.hidden-slideLeft {
+	opacity: 0;
+	/* filter: blur(5px); */
+	transform: translateX(-100%);
+	transition: all 1s;
+}
+
+.show-slideLeft {
+	opacity: 1;
+	/* filter: blur(0px); */
+	transform: translateX(0);
+}
+
+.hidden-slideRight {
+	opacity: 0;
+	/* filter: blur(5px); */
+	transform: translateX(100%);
+	transition: all 1s;
+}
+
+.show-slideRight {
+	opacity: 1;
+	/* filter: blur(0px); */
+	transform: translateX(0);
+}
+
+.hidden-slideUp {
+	opacity: 0;
+	filter: blur(5px);
+	transform: translateY(100%);
+	transition: all 1s;
+}
+
+.show-slideUp {
+	opacity: 1;
+	filter: blur(0px);
+	transform: translateY(0);
+}
+
+.hidden-slideDown {
+	/* opacity: 0;
+	filter: blur(5px); */
+	transform: translateY(-100%);
+	transition: all 10s;
+}
+
+.show-slideDown {
+	opacity: 1;
+	filter: blur(0px);
+	transform: translateY(0);
+}
+
+.hidden-wipeDown {
+	clip-path: inset(0 0 100% 0);
+	transition: all 4s;
+}
+
+.show-wipeDown {
+	opacity: 1;
+	clip-path: inset(0 0 0 0);
+}
+
+
+/*animation stop preference by the user*/
+@media (prefers-reduced-motion) {
+
+	.hidden-fadeIn,
+	.hidden-zoomIn .hidden-slideDown .hidden-slideLeft .hidden-slideRight .hidden-slideUp .hidden-wipeDown {
+		transition: none;
+	}
+}
+
+p {
+	margin: auto, 520px;
+}
+
+#timeline {
+	position: relative;
+	bottom: 4.55vw;
+	width: 20px;
+	height: 800px;
+	background-color: white;
+	align-items: center;
+	justify-self: center;
+	margin: auto;
+}
+
+/*--- timeline ---*/
+/* The actual timeline (the vertical ruler) */
+.timeline {
+	position: relative;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+	content: '';
+	position: absolute;
+	width: 8px;
+	background-color: white;
+	top: 0;
+	bottom: 0;
+	left: 50%;
+	margin-left: -3px;
+}
+
+.img-version {
+	width: 100%;
+	height: auto;
+}
+
+/* Container around content */
+.container {
+	box-sizing: border-box;
+	padding: 10px 40px;
+	position: relative;
+	background-color: inherit;
+	width: 50%;
+	color: rgb(255, 255, 255);
+	text-align: center;
+	font-family: sans-serif;
+
+}
+
+/* The circles on the timeline */
+.container::after {
+	content: '';
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	right: -17px;
+	background-color: white;
+	border: 4px solid var(--orange);
+	top: 15px;
+	border-radius: 50%;
+	z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+	right: 0;
+	transform: rotateX(0);
+}
+
+/* Place the container to the right */
+.right {
+	left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+	content: " ";
+	height: 0;
+	position: absolute;
+	top: 22px;
+	width: 0;
+	z-index: 1;
+	right: 30px;
+	border: medium solid white;
+	border-width: 10px 0 10px 10px;
+	border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+	content: " ";
+	height: 0;
+	position: absolute;
+	top: 22px;
+	width: 0;
+	z-index: 1;
+	left: 30px;
+	border: medium solid white;
+	border-width: 10px 10px 10px 0;
+	border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+	left: -16px;
+}
+
+/* The actual content */
+.content {
+	padding: 20px 30px;
+	background-color: var(--blue);
+	position: relative;
+	border-radius: 6px;
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 850px) {
+
+	/* Place the timelime to the left */
+	.timeline::after {
+		left: 31px;
+	}
+
+	/* Full-width containers */
+	.container {
+		width: 100%;
+		padding-left: 70px;
+		padding-right: 25px;
+	}
+
+	/* Make sure that all arrows are pointing leftwards */
+	.container::before {
+		left: 60px;
+		border: medium solid white;
+		border-width: 10px 10px 10px 0;
+		border-color: transparent white transparent transparent;
+	}
+
+	/* Make sure all circles are at the same spot */
+	.left::after,
+	.right::after {
+		left: 15px;
+	}
+
+	/* Make all right containers behave like the left ones */
+	.right {
+		left: 0%;
+	}
+}

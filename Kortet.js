@@ -15,19 +15,11 @@ var ellipseCord = {
 }
 var GpsInterval
 var scrollGap
+var arraySetup = new Arrays().aStarArray();
+
 
 function setup() {
 	myCanvas = createCanvas(1500 * 0.75, 1500 * 0.4933 * 0.75)
-
-	myCanvas.elt.style.margin = "10px"
-	if (windowWidth < 775) {
-		myCanvas.elt.style.width = "calc(775px - 20px)"
-		myCanvas.elt.style.height = "calc((775px * 0.4933) - 20px)"
-	} else {
-		myCanvas.elt.style.width = "calc(100vw - 20px)"
-		myCanvas.elt.style.height = "calc((100vw * 0.4933) - 20px)"
-	}
-
 	myCanvas.parent("canvasErHer")
 
 	for (let i = 0; i <= 15; i++) {
@@ -40,13 +32,6 @@ function setup() {
 	arraySetup = new Arrays()
 	indreBygninger = [indreTing.stue, indreTing.sal1, indreTing.sal2, indreTing.sal3]
 	søgefelt = new Søg()
-
-	if (windowWidth > 775) {
-		//gør at hvis der er scrollbar, så tilpasser canvasset sig til det
-		scrollGap = document.body.scrollWidth - document.body.clientWidth
-		document.querySelector(".topNav :nth-of-type(4)").style.paddingRight = scrollGap + "px"
-		myCanvas.elt.style.width = `calc(100vw - 20px - ${scrollGap}px)`
-	}
 }
 
 function draw() {
@@ -117,17 +102,15 @@ function showPosition(position) {
 	cord.height = (cord.startY - cord.slutY) * 1000000
 
 	//           0: bio oppe hjørne      1: bio venstre hjørn    2: bio nedre hjørne    3: bio højre hjørne      4: indgang midte       5: canvas start              6: canvas slut
-	var test = [
-		[55.654509, 12.515428],
-		[55.654489, 12.51511],
-		[55.65431, 12.515137],
-		[55.654308, 12.515463],
-		[55.654026, 12.515952],
-		[cord.startX, cord.startY],
-		[cord.slutX, cord.slutY]
-	]
-	//   testX = test[6][0];
-	//   testY = test[6][1];
+	// var test = [
+	// 	[55.654509, 12.515428],
+	// 	[55.654489, 12.51511],
+	// 	[55.65431, 12.515137],
+	// 	[55.654308, 12.515463],
+	// 	[55.654026, 12.515952],
+	// 	[cord.startX, cord.startY],
+	// 	[cord.slutX, cord.slutY]
+	// ]
 
 	testX = position.coords.latitude
 	testY = position.coords.longitude

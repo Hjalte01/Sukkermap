@@ -28,7 +28,6 @@ class Astar {
 	loop() {
 		if (inputStart != undefined && inputEnd != undefined && inputStart != inputEnd) {
 			if (setupBol) {
-				arraySetup.aStarArray()
 
 				triCount.change = true
 				setupBol = false
@@ -124,8 +123,11 @@ class Astar {
 			strokeWeight(1)
 			textSize(12)
 			stroke(0)
-			if (start != undefined) if (start.tag == `${planTegning}. sal` || (start.tag == "stue" && planTegning == 0) || planTegning == undefined) text(start.text, start.x, start.y)
-			if (end != undefined) if (end.tag == `${planTegning}. sal` || (end.tag == "stue" && planTegning == 0) || planTegning == undefined) text(end.text, end.x, end.y)
+
+
+
+			if (start != undefined) if (start.tag == `${planTegning}. sal` || (start.tag == "stue" && planTegning == 0) || planTegning == undefined) textStartEnd(start)
+			if (end != undefined) if (end.tag == `${planTegning}. sal` || (end.tag == "stue" && planTegning == 0) || planTegning == undefined) textStartEnd(end);
 
 			// Hvis kortet er sorteret færdigt, så sker dette
 		} else if (end != undefined && start != undefined) {
@@ -147,8 +149,18 @@ class Astar {
 			strokeWeight(1)
 			textSize(12)
 			stroke(0)
-			if (start != undefined) if (start.tag == `${planTegning}. sal` || (start.tag == "stue" && planTegning == 0) || planTegning == undefined) text(start.text, start.x, start.y)
-			if (end != undefined) if (end.tag == `${planTegning}. sal` || (end.tag == "stue" && planTegning == 0) || planTegning == undefined) text(end.text, end.x, end.y)
+			if (start != undefined) if (start.tag == `${planTegning}. sal` || (start.tag == "stue" && planTegning == 0) || planTegning == undefined) textStartEnd(start)
+			// {
+			//	fill(255)
+			//	rect(start.x - 2, start.y - textSize(start.text) + 1, textWidth(start.text) + 4, textSize(start.text) + 3);
+			//	stroke(0)
+			//	fill(0)
+			//	text(start.text, start.x, start.y);
+			//}
+			if (end != undefined) if (end.tag == `${planTegning}.sal` || (end.tag == "stue" && planTegning == 0) || planTegning == undefined) textStartEnd(end)
+
+
+
 
 			//trekant animation
 			grønPil()
@@ -170,7 +182,7 @@ class Astar {
 				noStroke()
 				fill(0)
 				for (let i = 0; i < arrayTemp.length; i++) {
-					if (`${planTegning}. sal` == arrayTemp[i].tag) {
+					if (`${planTegning}.sal` == arrayTemp[i].tag) {
 						text(i, arrayTemp[i].x, arrayTemp[i].y)
 					} else if (planTegning == 0) {
 						if ("stue" == arrayTemp[i].tag) {
@@ -192,6 +204,16 @@ class Astar {
 	}
 }
 
+function textStartEnd(tx) {
+	push();
+	fill(255);
+	rect(tx.x - 2, tx.y - textSize(tx.text) + 1, textWidth(tx.text) + 4, textSize(tx.text) + 3);
+	stroke(0);
+	fill(0);
+	text(tx.text, tx.x, tx.y);
+	pop();
+}
+
 function grønPil() {
 	if (triCount.fejl == false) {
 		if (triCount.change == true) {
@@ -207,7 +229,7 @@ function grønPil() {
 				triCount.maxVærdi[0] = path.length - 1
 			} else {
 				for (let i = 0; i < path.length; i++) {
-					if (path[ceil(i)].tag == `${planTegning}. sal` || (path[ceil(i)].tag == "stue" && planTegning == 0)) {
+					if (path[ceil(i)].tag == `${planTegning}.sal` || (path[ceil(i)].tag == "stue" && planTegning == 0)) {
 						if (triCount.change == true) {
 							triCount.mindsteVærdi[triCount.mindsteVærdi.length] = i
 							triCount.change = false
@@ -239,7 +261,7 @@ function grønPil() {
 			noStroke()
 			let tempPoint1_2 = createVector(path[ceil(triCount.pivot - 1)].x - path[ceil(triCount.pivot)].x, path[ceil(triCount.pivot - 1)].y - path[ceil(triCount.pivot)].y)
 			let tempPoint2Rate = 10 / sqrt(tempPoint1_2.x ** 2 + tempPoint1_2.y ** 2)
-			if (path[ceil(triCount.pivot - 1)].tag == `${planTegning}. sal` || planTegning == undefined || (path[ceil(triCount.pivot - 1)].tag == "stue" && planTegning == 0)) {
+			if (path[ceil(triCount.pivot - 1)].tag == `${planTegning}.sal` || planTegning == undefined || (path[ceil(triCount.pivot - 1)].tag == "stue" && planTegning == 0)) {
 				triangle(path[ceil(triCount.pivot)].x - tempPoint1_2.y * tempPoint2Rate, path[ceil(triCount.pivot)].y + tempPoint1_2.x * tempPoint2Rate, path[ceil(triCount.pivot)].x + tempPoint1_2.x * tempPoint2Rate, path[ceil(triCount.pivot)].y + tempPoint1_2.y * tempPoint2Rate, path[ceil(triCount.pivot)].x + tempPoint1_2.y * tempPoint2Rate, path[ceil(triCount.pivot)].y - tempPoint1_2.x * tempPoint2Rate)
 			}
 			pop()

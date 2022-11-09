@@ -22,7 +22,7 @@
 
   <!-- JavaScript filer-->
   <script src="Dropdown.js" defer></script>
-  <script src="PopupBox.js" defer></script>
+  <script src="Indstillinger.js" defer></script>
   <script src="Astar.js" defer></script>
   <script src="Søg.js" defer></script>
   <script src="Arrays.js" defer></script>
@@ -283,6 +283,9 @@
           <!-- Hjælp til at danne flere lokaler -->
           <div class="content-divider-sections hjælp" tabindex="0"
             onkeydown="dropDownPhone(event, [13, 32, undefined], hjælpSelect.hjælp.onclick)">Hjælp os</div>
+          <!--Logs/updates -->
+          <div class="content-divider-sections logs" tabindex="0"
+            onkeydown="dropDownPhone(event, [13, 32, undefined], logsBtn.onclick)">Logs</div>
           <!-- Set to default -->
           <div class="content-divider-sections defaultBtn" tabindex="0"
             onkeydown="dropDownPhone(event, [13, 32, undefined], defaultBtn.onclick)">Sæt alt til Default</div>
@@ -381,6 +384,13 @@
             onkeydown="dropDownPhone(event, [13, 32, undefined], hjælpSelect.koordinater.onclick)">Hvor, mangler vi at
             tilføje noget f.eks. et lokale</div>
         </div>
+
+
+        <div class="grid-container one logs" style="display: none;">
+          <div class="content-divider-sections">Update 1.0.0</div>
+          <div class="content-divider-sections">Update 1.0.1</div>
+        </div>
+
 
 
 

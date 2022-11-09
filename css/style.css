@@ -2,14 +2,18 @@
     --arrow-color: white;
     font-family: verdana, Arial, Helvetica, sans-serif;
 }
-html, body{
+
+html,
+body {
     height: 100%;
     position: relative;
 }
+
 :focus-visible {
     outline: none
 }
-#footerFix{
+
+#footerFix {
     min-height: calc(100vh - 2.5rem - 6px);
 }
 
@@ -19,6 +23,7 @@ html, body{
     margin-left: 10px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 #til {
     margin: 0;
     display: inline-block;
@@ -43,17 +48,18 @@ ul.topNav {
     height: 5rem;
 }
 
-ul.topNav :nth-of-type(1) a{
+ul.topNav :nth-of-type(1) a {
     padding: 0;
     border: 0;
     border-radius: 50%;
     transition: box-shadow 1s;
-    margin: .3rem;  
+    margin: .3rem;
     height: 4.4rem;
 
 }
+
 li:nth-of-type(1) a:hover,
-li:nth-of-type(1) a:focus-visible    {
+li:nth-of-type(1) a:focus-visible {
     box-shadow: 0 0 0 0.3rem red;
 }
 
@@ -101,7 +107,7 @@ li:nth-of-type(n+2) a {
 }
 
 li:nth-of-type(n+2) a:hover,
-li:nth-of-type(n+2) a:focus-visible  {
+li:nth-of-type(n+2) a:focus-visible {
     background-color: #090813;
     border-color: red;
 }
@@ -159,15 +165,15 @@ h1 {
     transition: 0.4s;
 }
 
-input:checked + .slider {
+input:checked+.slider {
     background-color: #2196F3;
 }
 
-input:focus + .slider {
+input:focus+.slider {
     box-shadow: 0 0 1px #2196f3;
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
@@ -180,7 +186,8 @@ input:checked + .slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
-.opdeling:last-child{
+
+.opdeling:last-child {
     margin: auto 10px auto auto;
 }
 
@@ -210,26 +217,31 @@ input:checked + .slider:before {
     position: relative;
     height: 2.5rem;
     padding: 3px 0;
-    background-color:  #121026;
+    background-color: #121026;
     color: white;
     bottom: 0;
     overflow: hidden;
 }
+
 #copyrightText {
     font-size: 0.8rem;
     text-align: center;
 }
 
-#listInput1, #listInput2{
+#listInput1,
+#listInput2 {
     width: 156.8px;
     height: 16px;
 
 }
 
-#fra, #til{
+#fra,
+#til {
     font-size: 100%;
 }
 
-
-
-
+#canvasErHer canvas {
+    margin: 10px;
+    width: calc(100% - 20px) !important;
+    height: calc(100% - 20px) !important;
+}

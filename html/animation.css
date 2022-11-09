@@ -1,0 +1,97 @@
+/* animation scroll -------------------------*/
+.hidden-fadeIn {
+  opacity: 0;
+  /* filter: blur(5px); */
+  transition: all 2s;
+  bottom: -20px;
+}
+
+.show-fadeIn {
+  opacity: 1;
+  /* filter: blur(0px); */
+  bottom: 0;
+}
+
+.hidden-zoomIn {
+  opacity: 0;
+  transition: all 1s;
+  transform: scale(0);
+
+}
+
+.show-zoomIn {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.hidden-slideLeft {
+  opacity: 0;
+  /* filter: blur(5px); */
+  transform: translateX(-100%);
+  transition: all 1s;
+}
+
+.show-slideLeft {
+  opacity: 1;
+  /* filter: blur(0px); */
+  transform: translateX(0);
+}
+
+.hidden-slideRight {
+  opacity: 0;
+  /* filter: blur(5px); */
+  transform: translateX(100%);
+  transition: all 1s;
+}
+
+.show-slideRight {
+  opacity: 1;
+  /* filter: blur(0px); */
+  transform: translateX(0);
+}
+
+.hidden-slideUp {
+  opacity: 0;
+  filter: blur(5px);
+  transform: translateY(100%);
+  transition: all 1s;
+}
+
+.show-slideUp {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0);
+}
+
+.hidden-slideDown {
+  /* opacity: 0;
+	filter: blur(5px); */
+  transform: translateY(-100%);
+  transition: all 10s;
+}
+
+.show-slideDown {
+  opacity: 1;
+  filter: blur(0px);
+  transform: translateY(0);
+}
+
+.hidden-wipeDown {
+  clip-path: inset(0 0 100% 0);
+  transition: all 4s;
+}
+
+.show-wipeDown {
+  opacity: 1;
+  clip-path: inset(0 0 0 0);
+}
+
+
+/*animation stop preference by the user*/
+@media (prefers-reduced-motion) {
+
+  .hidden-fadeIn,
+  .hidden-zoomIn .hidden-slideDown .hidden-slideLeft .hidden-slideRight .hidden-slideUp .hidden-wipeDown {
+    transition: none;
+  }
+}
