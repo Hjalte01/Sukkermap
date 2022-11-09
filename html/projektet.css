@@ -26,7 +26,6 @@ body {
 
 	/* Full height */
 	height: 100%;
-	width: 100%;
 	/* Center and scale the image nicely */
 	background-position: center;
 	background-repeat: no-repeat;
@@ -48,7 +47,7 @@ section {
 	align-items: center;
 	place-items: center;
 	align-content: center;
-	min-height: 80vh;
+	min-height: 100vh;
 	margin: auto 8vw;
 }
 
@@ -93,7 +92,6 @@ section {
 
 #titel {
 	position: relative;
-	top: 55%;
 	text-align: center;
 }
 
@@ -189,6 +187,9 @@ p {
 	#imgGithub {
 		width: 30vw;
 	}
+	.bg {
+		width: 100%;
+	}
 
 }
 
@@ -239,6 +240,10 @@ p {
 
 	#titel {
 		font-size: 12vw;
+	}
+
+	.bg {
+		width: auto;
 	}
 
 }
