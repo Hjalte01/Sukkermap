@@ -69,6 +69,7 @@ Custom tag med farveruten i select input
     - GPS location - test i skolen
     - Backend til hjemmesiden (Firebase, Supabase, appwriter, PocketBase)
     - Sætte navn på lokale (A107s -> Trviselsrum )
+    - Omskriv canvas så den ikke kører draw function når den 
 
 
 -----------------------------------------------------------------------------------------
